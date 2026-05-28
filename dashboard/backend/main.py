@@ -25,7 +25,10 @@ def _load_data() -> pd.DataFrame:
     p = path_for("analyzed_parquet")
     if os.path.exists(p):
         _analyzed = pd.read_parquet(p)
-    logger.info("Loaded %d rows from %s", len(_analyzed), p)
+        logger.info("Loaded %d rows from %s", len(_analyzed), p)
+    else:
+        _analyzed = pd.DataFrame()
+        logger.warning("Parquet file not found at %s", p)
     return _analyzed
 
 
@@ -44,6 +47,8 @@ def _parse_dates(df, time_col):
 
 def _load_json(name):
     p = os.path.join(path_for("output_dir"), name)
+    if os.path.isdir(p):
+        return {}
     if os.path.exists(p):
         with open(p) as f:
             return json.load(f)
@@ -68,7 +73,6 @@ def summary():
     avg_viral = float(df["virality_score"].mean()) if "virality_score" in df.columns else 0
     sources = int(df["source"].nunique()) if "source" in df.columns else 0
     cats = int(df["category"].nunique()) if "category" in df.columns else 0
-    vec = _load_json("chroma_db") or {}
     return {
         "total_articles": n,
         "avg_sentiment": round(avg_sent, 4),
