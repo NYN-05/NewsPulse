@@ -1,72 +1,26 @@
-import type {
-  Summary, SentimentData, CategoryData, TrendData, ClusterData,
-  EntityGraph, EntityTrend, BreakingEvent, TopicCluster,
-  SourceReliability, ViralityData, BiasData, LanguageData,
-  SearchResult, ArticleRecord, SourceCount, CrossDomainData,
-} from "@/types"
-
-const BASE = "/api"
+import type { CrossDomainData, BreakingEvent, SearchResult, NarrativeData, InfluenceData } from "@/types"
 
 async function fetchJSON<T>(url: string): Promise<T> {
   const res = await fetch(url)
-  if (!res.ok) throw new Error(`API ${res.status}: ${res.statusText}`)
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`)
   return res.json()
 }
 
 export const api = {
-  health: () => fetchJSON<{ status: string }>(`${BASE}/health`),
+  health: () => fetchJSON<{ status: string }>("/api/health"),
 
-  summary: (params?: Record<string, string>) => {
-    const q = params ? "?" + new URLSearchParams(params) : ""
-    return fetchJSON<Summary>(`${BASE}/summary${q}`)
-  },
+  crossDomain: () => fetchJSON<CrossDomainData>("/api/cross-domain"),
 
-  sentiment: (params?: Record<string, string>) => {
-    const q = params ? "?" + new URLSearchParams(params) : ""
-    return fetchJSON<SentimentData>(`${BASE}/sentiment${q}`)
-  },
-
-  categories: (params?: Record<string, string>) => {
-    const q = params ? "?" + new URLSearchParams(params) : ""
-    return fetchJSON<CategoryData[]>(`${BASE}/categories${q}`)
-  },
-
-  trends: () => fetchJSON<{ top_keywords: TrendData[] }>(`${BASE}/trends`),
-
-  clusters: () => fetchJSON<ClusterData[]>(`${BASE}/clusters`),
-
-  entityGraph: () => fetchJSON<EntityGraph>(`${BASE}/entity-graph`),
-
-  entityTrends: () => fetchJSON<EntityTrend[]>(`${BASE}/entity-trends`),
-
-  breaking: () => fetchJSON<BreakingEvent[]>(`${BASE}/breaking`),
-
-  topicEvolution: () => fetchJSON<{ clusters: TopicCluster[] }>(`${BASE}/topic-evolution`),
-
-  sourceReliability: () => fetchJSON<SourceReliability>(`${BASE}/source-reliability`),
-
-  virality: (params?: Record<string, string>) => {
-    const q = params ? "?" + new URLSearchParams(params) : ""
-    return fetchJSON<ViralityData>(`${BASE}/virality${q}`)
-  },
-
-  bias: () => fetchJSON<BiasData>(`${BASE}/bias`),
-
-  languages: () => fetchJSON<LanguageData[]>(`${BASE}/languages`),
+  breaking: () => fetchJSON<BreakingEvent[]>("/api/breaking"),
 
   search: (q: string, n = 10) =>
-    fetchJSON<{ results: SearchResult[] }>(`${BASE}/search?q=${encodeURIComponent(q)}&n=${n}`),
+    fetchJSON<{ results: SearchResult[] }>(`/api/search?q=${encodeURIComponent(q)}&n=${n}`),
 
-  data: (params?: Record<string, string>) => {
-    const q = params ? "?" + new URLSearchParams(params) : ""
-    return fetchJSON<ArticleRecord[]>(`${BASE}/data${q}`)
-  },
+  narratives: () => fetchJSON<NarrativeData>("/api/narratives"),
 
-  sources: () => fetchJSON<SourceCount[]>(`${BASE}/sources`),
+  influence: () => fetchJSON<InfluenceData>("/api/influence"),
 
-  crossDomain: () => fetchJSON<CrossDomainData>(`${BASE}/cross-domain`),
+  entityGraph: () => fetchJSON<any>("/api/entity-graph"),
 
-  narratives: () => fetchJSON<any>(`${BASE}/narratives`),
-
-  influence: () => fetchJSON<any>(`${BASE}/influence`),
+  sources: () => fetchJSON<{ name: string; count: number }[]>("/api/sources"),
 }
