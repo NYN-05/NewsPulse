@@ -1,142 +1,142 @@
 [
   {
     "entity": "iran",
-    "total_mentions": 177,
-    "recent_mentions": 170,
-    "momentum": 163,
+    "total_mentions": 232,
+    "recent_mentions": 224,
+    "momentum": 216,
     "peak_date": "2026-05-28"
   },
   {
     "entity": "trump",
-    "total_mentions": 188,
-    "recent_mentions": 165,
-    "momentum": 142,
+    "total_mentions": 249,
+    "recent_mentions": 225,
+    "momentum": 201,
     "peak_date": "2026-05-28"
   },
   {
     "entity": "us",
-    "total_mentions": 147,
-    "recent_mentions": 139,
-    "momentum": 131,
+    "total_mentions": 193,
+    "recent_mentions": 185,
+    "momentum": 177,
     "peak_date": "2026-05-28"
   },
   {
     "entity": "india",
-    "total_mentions": 93,
-    "recent_mentions": 93,
-    "momentum": 93,
+    "total_mentions": 106,
+    "recent_mentions": 106,
+    "momentum": 106,
     "peak_date": "2026-05-28"
   },
   {
     "entity": "u. s.",
-    "total_mentions": 83,
-    "recent_mentions": 71,
-    "momentum": 59,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "siddaramaiah",
-    "total_mentions": 55,
-    "recent_mentions": 55,
-    "momentum": 55,
+    "total_mentions": 107,
+    "recent_mentions": 94,
+    "momentum": 81,
     "peak_date": "2026-05-28"
   },
   {
     "entity": "donald trump",
+    "total_mentions": 72,
+    "recent_mentions": 72,
+    "momentum": 72,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "siddaramaiah",
+    "total_mentions": 68,
+    "recent_mentions": 68,
+    "momentum": 68,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "d",
+    "total_mentions": 56,
+    "recent_mentions": 56,
+    "momentum": 56,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "delhi",
+    "total_mentions": 54,
+    "recent_mentions": 54,
+    "momentum": 54,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "israel",
     "total_mentions": 52,
     "recent_mentions": 52,
     "momentum": 52,
     "peak_date": "2026-05-28"
   },
   {
-    "entity": "delhi",
+    "entity": "karnataka",
+    "total_mentions": 50,
+    "recent_mentions": 50,
+    "momentum": 50,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "uk",
+    "total_mentions": 49,
+    "recent_mentions": 49,
+    "momentum": 49,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "c",
+    "total_mentions": 46,
+    "recent_mentions": 46,
+    "momentum": 46,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "strait of hormuz",
     "total_mentions": 45,
     "recent_mentions": 45,
     "momentum": 45,
     "peak_date": "2026-05-28"
   },
   {
-    "entity": "uk",
-    "total_mentions": 42,
+    "entity": "a",
+    "total_mentions": 43,
     "recent_mentions": 42,
-    "momentum": 42,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "karnataka",
-    "total_mentions": 41,
-    "recent_mentions": 41,
     "momentum": 41,
     "peak_date": "2026-05-28"
   },
   {
-    "entity": "d",
-    "total_mentions": 41,
-    "recent_mentions": 41,
-    "momentum": 41,
+    "entity": "e",
+    "total_mentions": 40,
+    "recent_mentions": 40,
+    "momentum": 40,
     "peak_date": "2026-05-28"
   },
   {
-    "entity": "israel",
+    "entity": "congress",
     "total_mentions": 39,
     "recent_mentions": 39,
     "momentum": 39,
     "peak_date": "2026-05-28"
   },
   {
-    "entity": "c",
-    "total_mentions": 35,
-    "recent_mentions": 35,
-    "momentum": 35,
+    "entity": "texas",
+    "total_mentions": 39,
+    "recent_mentions": 39,
+    "momentum": 39,
+    "peak_date": "2026-05-28"
+  },
+  {
+    "entity": "s",
+    "total_mentions": 38,
+    "recent_mentions": 38,
+    "momentum": 38,
     "peak_date": "2026-05-28"
   },
   {
     "entity": "china",
-    "total_mentions": 43,
-    "recent_mentions": 39,
-    "momentum": 35,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "texas",
-    "total_mentions": 35,
-    "recent_mentions": 35,
-    "momentum": 35,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "strait of hormuz",
-    "total_mentions": 34,
-    "recent_mentions": 34,
-    "momentum": 34,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "senate",
-    "total_mentions": 36,
-    "recent_mentions": 35,
-    "momentum": 34,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "e",
-    "total_mentions": 33,
-    "recent_mentions": 33,
-    "momentum": 33,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "a",
-    "total_mentions": 34,
-    "recent_mentions": 33,
-    "momentum": 32,
-    "peak_date": "2026-05-28"
-  },
-  {
-    "entity": "congress",
-    "total_mentions": 31,
-    "recent_mentions": 31,
-    "momentum": 31,
+    "total_mentions": 46,
+    "recent_mentions": 42,
+    "momentum": 38,
     "peak_date": "2026-05-28"
   }
 ]

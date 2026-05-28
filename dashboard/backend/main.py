@@ -1,4 +1,4 @@
-import os, sys, json, logging
+import os, sys, json, logging, math
 from datetime import datetime, timedelta
 from typing import Optional
 from fastapi import FastAPI, Query
@@ -44,8 +44,6 @@ def _parse_dates(df, time_col):
     parsed[pd.to_datetime(df[time_col], utc=True, errors="coerce") < pd.Timestamp("2020-01-01", tz="UTC")] = pd.NaT
     return parsed
 
-
-import math
 
 def _clean(obj):
     """Recursively replace NaN/Infinity with None for JSON safety."""

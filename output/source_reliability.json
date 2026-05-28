@@ -1,6 +1,6 @@
 {
   "BBC - Business": {
-    "total_articles": 11,
+    "total_articles": 13,
     "reliability_score": 100.0,
     "sensationalism_mean": 0.0,
     "clickbait_mean": 0.0,
@@ -8,7 +8,7 @@
     "avg_bias_intensity": 0.0
   },
   "BBC - Technology": {
-    "total_articles": 13,
+    "total_articles": 14,
     "reliability_score": 100.0,
     "sensationalism_mean": 0.0,
     "clickbait_mean": 0.0,
@@ -56,12 +56,12 @@
     "avg_bias_intensity": 0.0
   },
   "Indian Express - Sports": {
-    "total_articles": 24,
+    "total_articles": 27,
     "reliability_score": 100.0,
     "sensationalism_mean": 0.0,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.52
+    "avg_bias_intensity": 0.46
   },
   "Indian Express - Tech": {
     "total_articles": 20,
@@ -72,23 +72,15 @@
     "avg_bias_intensity": 0.94
   },
   "LiveMint - Tech": {
-    "total_articles": 23,
+    "total_articles": 24,
     "reliability_score": 100.0,
     "sensationalism_mean": 0.0,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.38
+    "avg_bias_intensity": 0.37
   },
   "NDTV": {
     "total_articles": 3,
-    "reliability_score": 100.0,
-    "sensationalism_mean": 0.0,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.0
-  },
-  "NDTV - Top Stories": {
-    "total_articles": 5,
     "reliability_score": 100.0,
     "sensationalism_mean": 0.0,
     "clickbait_mean": 0.0,
@@ -135,29 +127,29 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
-  "LiveMint - Money": {
-    "total_articles": 26,
+  "CBC - Top Stories": {
+    "total_articles": 36,
     "reliability_score": 99.8,
-    "sensationalism_mean": 0.0009,
+    "sensationalism_mean": 0.0007,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0012,
+    "emotional_mean": 0.0009,
+    "avg_bias_intensity": 0.07
+  },
+  "LiveMint - Money": {
+    "total_articles": 29,
+    "reliability_score": 99.8,
+    "sensationalism_mean": 0.0008,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.001,
     "avg_bias_intensity": 0.0
   },
-  "CBC - Top Stories": {
-    "total_articles": 25,
+  "Forbes - Innovation": {
+    "total_articles": 54,
     "reliability_score": 99.7,
-    "sensationalism_mean": 0.001,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0013,
-    "avg_bias_intensity": 0.11
-  },
-  "LiveMint - Companies": {
-    "total_articles": 33,
-    "reliability_score": 99.7,
-    "sensationalism_mean": 0.0011,
+    "sensationalism_mean": 0.0013,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0012,
-    "avg_bias_intensity": 0.28
+    "avg_bias_intensity": 0.56
   },
   "BBC - Science": {
     "total_articles": 20,
@@ -167,98 +159,90 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.45
   },
-  "Forbes - Innovation": {
-    "total_articles": 40,
+  "The Hindu - Home": {
+    "total_articles": 79,
     "reliability_score": 99.6,
-    "sensationalism_mean": 0.0018,
+    "sensationalism_mean": 0.002,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0017,
-    "avg_bias_intensity": 0.65
+    "emotional_mean": 0.0005,
+    "avg_bias_intensity": 0.25
   },
   "ABC News - Top": {
-    "total_articles": 62,
+    "total_articles": 79,
     "reliability_score": 99.5,
-    "sensationalism_mean": 0.0024,
+    "sensationalism_mean": 0.0023,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
-  "Newsweek - Top": {
-    "total_articles": 76,
+  "The Guardian - Sport": {
+    "total_articles": 39,
     "reliability_score": 99.5,
-    "sensationalism_mean": 0.0025,
+    "sensationalism_mean": 0.0024,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.15
-  },
-  "The Hindu - Home": {
-    "total_articles": 60,
-    "reliability_score": 99.5,
-    "sensationalism_mean": 0.0022,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0007,
-    "avg_bias_intensity": 0.05
+    "emotional_mean": 0.0011,
+    "avg_bias_intensity": 0.32
   },
   "Business Standard - Top": {
-    "total_articles": 24,
+    "total_articles": 26,
     "reliability_score": 99.4,
-    "sensationalism_mean": 0.0032,
+    "sensationalism_mean": 0.0029,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.12
-  },
-  "Forbes - Business": {
-    "total_articles": 40,
-    "reliability_score": 99.4,
-    "sensationalism_mean": 0.0028,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0008,
-    "avg_bias_intensity": 0.29
+    "avg_bias_intensity": 0.11
   },
   "Google News - Associated Press": {
-    "total_articles": 25,
+    "total_articles": 28,
     "reliability_score": 99.4,
-    "sensationalism_mean": 0.002,
+    "sensationalism_mean": 0.0018,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0049,
-    "avg_bias_intensity": 0.31
+    "emotional_mean": 0.0044,
+    "avg_bias_intensity": 0.27
   },
   "Indian Express": {
-    "total_articles": 23,
+    "total_articles": 25,
     "reliability_score": 99.4,
-    "sensationalism_mean": 0.0031,
+    "sensationalism_mean": 0.0029,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
   "NY Times - US": {
-    "total_articles": 14,
+    "total_articles": 16,
     "reliability_score": 99.4,
-    "sensationalism_mean": 0.0026,
+    "sensationalism_mean": 0.0023,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0021,
-    "avg_bias_intensity": 0.41
+    "emotional_mean": 0.0018,
+    "avg_bias_intensity": 0.36
   },
   "News18 - India": {
-    "total_articles": 28,
+    "total_articles": 37,
     "reliability_score": 99.4,
-    "sensationalism_mean": 0.003,
+    "sensationalism_mean": 0.0031,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.49
+    "avg_bias_intensity": 0.4
+  },
+  "ABC Australia - News": {
+    "total_articles": 40,
+    "reliability_score": 99.3,
+    "sensationalism_mean": 0.0023,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0045,
+    "avg_bias_intensity": 0.16
   },
   "BBC - Entertainment": {
-    "total_articles": 14,
+    "total_articles": 15,
     "reliability_score": 99.3,
-    "sensationalism_mean": 0.0036,
+    "sensationalism_mean": 0.0033,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
   "BBC - Politics": {
-    "total_articles": 24,
+    "total_articles": 25,
     "reliability_score": 99.3,
-    "sensationalism_mean": 0.0035,
+    "sensationalism_mean": 0.0034,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
@@ -271,6 +255,14 @@
     "emotional_mean": 0.0013,
     "avg_bias_intensity": 0.12
   },
+  "India Today - India": {
+    "total_articles": 31,
+    "reliability_score": 99.3,
+    "sensationalism_mean": 0.0027,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0027,
+    "avg_bias_intensity": 0.29
+  },
   "Indian Express - India": {
     "total_articles": 20,
     "reliability_score": 99.3,
@@ -279,45 +271,53 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
-  "LiveMint - Opinion": {
-    "total_articles": 23,
-    "reliability_score": 99.3,
-    "sensationalism_mean": 0.0034,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0009,
-    "avg_bias_intensity": 0.0
-  },
-  "LiveMint - Politics": {
-    "total_articles": 25,
-    "reliability_score": 99.3,
-    "sensationalism_mean": 0.0035,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0009,
-    "avg_bias_intensity": 0.0
-  },
-  "The Guardian - Sport": {
-    "total_articles": 31,
+  "LiveMint - Companies": {
+    "total_articles": 42,
     "reliability_score": 99.3,
     "sensationalism_mean": 0.003,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0014,
-    "avg_bias_intensity": 0.35
+    "emotional_mean": 0.0019,
+    "avg_bias_intensity": 0.32
   },
-  "NY Times - Home": {
-    "total_articles": 22,
-    "reliability_score": 99.2,
-    "sensationalism_mean": 0.004,
+  "LiveMint - Opinion": {
+    "total_articles": 24,
+    "reliability_score": 99.3,
+    "sensationalism_mean": 0.0033,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.28
+    "emotional_mean": 0.0008,
+    "avg_bias_intensity": 0.0
+  },
+  "LiveMint - Politics": {
+    "total_articles": 28,
+    "reliability_score": 99.3,
+    "sensationalism_mean": 0.0031,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0008,
+    "avg_bias_intensity": 0.0
   },
   "The Atlantic": {
-    "total_articles": 23,
-    "reliability_score": 99.2,
-    "sensationalism_mean": 0.0035,
+    "total_articles": 25,
+    "reliability_score": 99.3,
+    "sensationalism_mean": 0.0032,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0017,
-    "avg_bias_intensity": 0.53
+    "emotional_mean": 0.0016,
+    "avg_bias_intensity": 0.82
+  },
+  "BBC - World": {
+    "total_articles": 25,
+    "reliability_score": 99.2,
+    "sensationalism_mean": 0.0033,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0028,
+    "avg_bias_intensity": 0.17
+  },
+  "Forbes - Business": {
+    "total_articles": 60,
+    "reliability_score": 99.2,
+    "sensationalism_mean": 0.0037,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0005,
+    "avg_bias_intensity": 0.36
   },
   "The Guardian - Technology": {
     "total_articles": 20,
@@ -327,37 +327,29 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.33
   },
-  "Washington Post - Politics": {
-    "total_articles": 11,
-    "reliability_score": 99.2,
-    "sensationalism_mean": 0.0031,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0031,
-    "avg_bias_intensity": 0.0
-  },
-  "BBC - World": {
-    "total_articles": 23,
-    "reliability_score": 99.1,
-    "sensationalism_mean": 0.0036,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0031,
-    "avg_bias_intensity": 0.18
-  },
   "Euronews - Top": {
-    "total_articles": 35,
+    "total_articles": 42,
     "reliability_score": 99.1,
     "sensationalism_mean": 0.0037,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0024,
-    "avg_bias_intensity": 0.27
+    "emotional_mean": 0.0026,
+    "avg_bias_intensity": 0.31
   },
-  "India Today - India": {
-    "total_articles": 22,
+  "NBC News - Top": {
+    "total_articles": 32,
     "reliability_score": 99.1,
-    "sensationalism_mean": 0.0038,
+    "sensationalism_mean": 0.0044,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0038,
-    "avg_bias_intensity": 0.0
+    "emotional_mean": 0.0011,
+    "avg_bias_intensity": 0.28
+  },
+  "NY Times - Home": {
+    "total_articles": 32,
+    "reliability_score": 99.1,
+    "sensationalism_mean": 0.0045,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.29
   },
   "NY Times - Science": {
     "total_articles": 18,
@@ -367,21 +359,21 @@
     "emotional_mean": 0.0018,
     "avg_bias_intensity": 0.0
   },
-  "The Guardian - US": {
-    "total_articles": 22,
+  "Newsweek - Top": {
+    "total_articles": 112,
+    "reliability_score": 99.1,
+    "sensationalism_mean": 0.0045,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.18
+  },
+  "The Hill - Politics": {
+    "total_articles": 53,
     "reliability_score": 99.1,
     "sensationalism_mean": 0.0042,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0018,
-    "avg_bias_intensity": 0.38
-  },
-  "Bloomberg - Markets": {
-    "total_articles": 56,
-    "reliability_score": 99.0,
-    "sensationalism_mean": 0.0049,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.29
+    "emotional_mean": 0.002,
+    "avg_bias_intensity": 0.26
   },
   "CNN - US": {
     "total_articles": 20,
@@ -392,20 +384,28 @@
     "avg_bias_intensity": 0.0
   },
   "Google News - Reuters": {
-    "total_articles": 37,
+    "total_articles": 52,
     "reliability_score": 99.0,
-    "sensationalism_mean": 0.005,
+    "sensationalism_mean": 0.0051,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.27
+    "avg_bias_intensity": 0.19
   },
-  "NBC News - Top": {
-    "total_articles": 21,
+  "Hindustan Times - Latest": {
+    "total_articles": 91,
     "reliability_score": 99.0,
-    "sensationalism_mean": 0.0052,
+    "sensationalism_mean": 0.0049,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.33
+    "emotional_mean": 0.0004,
+    "avg_bias_intensity": 0.45
+  },
+  "Time - Top": {
+    "total_articles": 22,
+    "reliability_score": 99.0,
+    "sensationalism_mean": 0.0045,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0019,
+    "avg_bias_intensity": 0.46
   },
   "Wall Street Journal - Tech": {
     "total_articles": 15,
@@ -415,37 +415,29 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.25
   },
-  "The Guardian - World": {
-    "total_articles": 24,
+  "Economic Times - Top": {
+    "total_articles": 47,
     "reliability_score": 98.9,
-    "sensationalism_mean": 0.0054,
+    "sensationalism_mean": 0.0057,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0007,
-    "avg_bias_intensity": 0.16
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.43
   },
-  "The Hill - Politics": {
-    "total_articles": 38,
-    "reliability_score": 98.9,
-    "sensationalism_mean": 0.0053,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0016,
-    "avg_bias_intensity": 0.19
-  },
-  "Time - Top": {
-    "total_articles": 19,
+  "FT - World": {
+    "total_articles": 36,
     "reliability_score": 98.9,
     "sensationalism_mean": 0.0052,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0022,
-    "avg_bias_intensity": 0.53
+    "emotional_mean": 0.0019,
+    "avg_bias_intensity": 0.23
   },
-  "ABC Australia - News": {
-    "total_articles": 20,
-    "reliability_score": 98.8,
-    "sensationalism_mean": 0.0047,
+  "The Guardian - World": {
+    "total_articles": 26,
+    "reliability_score": 98.9,
+    "sensationalism_mean": 0.0056,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0048,
-    "avg_bias_intensity": 0.17
+    "emotional_mean": 0.0007,
+    "avg_bias_intensity": 0.21
   },
   "BBC - UK": {
     "total_articles": 13,
@@ -455,29 +447,61 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.32
   },
-  "FT - World": {
-    "total_articles": 25,
+  "Bloomberg - Markets": {
+    "total_articles": 71,
     "reliability_score": 98.8,
-    "sensationalism_mean": 0.0054,
+    "sensationalism_mean": 0.0061,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0027,
-    "avg_bias_intensity": 0.15
+    "emotional_mean": 0.0004,
+    "avg_bias_intensity": 0.3
   },
-  "Hindustan Times - Latest": {
-    "total_articles": 69,
+  "LiveMint - News": {
+    "total_articles": 48,
     "reliability_score": 98.8,
     "sensationalism_mean": 0.006,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0005,
-    "avg_bias_intensity": 0.5
+    "emotional_mean": 0.0009,
+    "avg_bias_intensity": 0.15
   },
-  "France24 - Top": {
-    "total_articles": 39,
-    "reliability_score": 98.7,
-    "sensationalism_mean": 0.0059,
+  "NDTV - Top Stories": {
+    "total_articles": 21,
+    "reliability_score": 98.8,
+    "sensationalism_mean": 0.006,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0029,
-    "avg_bias_intensity": 0.44
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.23
+  },
+  "NPR - Top News": {
+    "total_articles": 16,
+    "reliability_score": 98.8,
+    "sensationalism_mean": 0.0057,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0017,
+    "avg_bias_intensity": 0.0
+  },
+  "The Guardian - US": {
+    "total_articles": 29,
+    "reliability_score": 98.8,
+    "sensationalism_mean": 0.0053,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0025,
+    "avg_bias_intensity": 0.4
+  },
+  "The Telegraph - UK": {
+    "total_articles": 24,
+    "reliability_score": 98.8,
+    "sensationalism_mean": 0.0062,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.0
+  },
+  "CBS News - Top": {
+    "total_articles": 70,
+    "reliability_score": 98.7,
+    "sensationalism_mean": 0.0049,
+    "clickbait_mean": 0.0029,
+    "emotional_mean": 0.0008,
+    "avg_bias_intensity": 0.23
   },
   "NPR - Business": {
     "total_articles": 5,
@@ -488,25 +512,17 @@
     "avg_bias_intensity": 0.67
   },
   "The Guardian - Business": {
-    "total_articles": 18,
+    "total_articles": 20,
     "reliability_score": 98.7,
     "sensationalism_mean": 0.0061,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0008,
-    "avg_bias_intensity": 0.15
+    "emotional_mean": 0.0007,
+    "avg_bias_intensity": 0.13
   },
   "The Hindu - National": {
     "total_articles": 20,
     "reliability_score": 98.7,
     "sensationalism_mean": 0.0065,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.0
-  },
-  "The Telegraph - UK": {
-    "total_articles": 22,
-    "reliability_score": 98.7,
-    "sensationalism_mean": 0.0067,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
@@ -519,6 +535,14 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.19
   },
+  "Washington Post - Politics": {
+    "total_articles": 13,
+    "reliability_score": 98.7,
+    "sensationalism_mean": 0.0057,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0027,
+    "avg_bias_intensity": 0.0
+  },
   "CNBC - World": {
     "total_articles": 15,
     "reliability_score": 98.6,
@@ -527,34 +551,26 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.86
   },
-  "LiveMint - News": {
-    "total_articles": 35,
+  "France24 - Top": {
+    "total_articles": 43,
     "reliability_score": 98.6,
-    "sensationalism_mean": 0.0067,
+    "sensationalism_mean": 0.0066,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0006,
-    "avg_bias_intensity": 0.07
+    "emotional_mean": 0.0026,
+    "avg_bias_intensity": 0.4
   },
-  "CBS News - Top": {
-    "total_articles": 53,
+  "CNBC - Top": {
+    "total_articles": 45,
     "reliability_score": 98.5,
-    "sensationalism_mean": 0.0057,
-    "clickbait_mean": 0.0038,
-    "emotional_mean": 0.0005,
-    "avg_bias_intensity": 0.12
+    "sensationalism_mean": 0.003,
+    "clickbait_mean": 0.0089,
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.18
   },
   "NDTV - Tech": {
     "total_articles": 20,
     "reliability_score": 98.5,
     "sensationalism_mean": 0.0074,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.0
-  },
-  "NPR - Top News": {
-    "total_articles": 12,
-    "reliability_score": 98.5,
-    "sensationalism_mean": 0.0076,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
@@ -567,53 +583,45 @@
     "emotional_mean": 0.0033,
     "avg_bias_intensity": 0.21
   },
-  "BBC - Top Stories": {
-    "total_articles": 19,
-    "reliability_score": 98.3,
-    "sensationalism_mean": 0.0082,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0019,
-    "avg_bias_intensity": 0.0
-  },
-  "Economic Times - Top": {
-    "total_articles": 31,
-    "reliability_score": 98.3,
-    "sensationalism_mean": 0.0086,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.0
-  },
-  "NY Times - World": {
-    "total_articles": 16,
-    "reliability_score": 98.3,
-    "sensationalism_mean": 0.0079,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0024,
-    "avg_bias_intensity": 0.0
-  },
   "The Guardian - UK": {
-    "total_articles": 32,
-    "reliability_score": 98.3,
-    "sensationalism_mean": 0.0085,
+    "total_articles": 42,
+    "reliability_score": 98.5,
+    "sensationalism_mean": 0.0075,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0005,
-    "avg_bias_intensity": 0.36
+    "emotional_mean": 0.0007,
+    "avg_bias_intensity": 0.3
   },
-  "Hindustan Times - Sports": {
-    "total_articles": 22,
-    "reliability_score": 98.2,
+  "BBC - Top Stories": {
+    "total_articles": 25,
+    "reliability_score": 98.4,
+    "sensationalism_mean": 0.0078,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0014,
+    "avg_bias_intensity": 0.0
+  },
+  "Sky News - Top": {
+    "total_articles": 31,
+    "reliability_score": 98.4,
     "sensationalism_mean": 0.008,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0042,
-    "avg_bias_intensity": 0.68
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.35
   },
-  "NDTV - World": {
-    "total_articles": 17,
+  "Deutsche Welle - Top": {
+    "total_articles": 29,
     "reliability_score": 98.2,
     "sensationalism_mean": 0.0089,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.24
+    "emotional_mean": 0.0008,
+    "avg_bias_intensity": 0.39
+  },
+  "News18 - World": {
+    "total_articles": 35,
+    "reliability_score": 98.2,
+    "sensationalism_mean": 0.0084,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.002,
+    "avg_bias_intensity": 0.17
   },
   "Wall Street Journal - World": {
     "total_articles": 20,
@@ -623,37 +631,21 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
-  "CNBC - Top": {
-    "total_articles": 34,
+  "Hindustan Times - Sports": {
+    "total_articles": 32,
     "reliability_score": 98.0,
-    "sensationalism_mean": 0.0039,
-    "clickbait_mean": 0.0118,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.24
+    "sensationalism_mean": 0.0093,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0029,
+    "avg_bias_intensity": 0.47
   },
-  "Deutsche Welle - Top": {
-    "total_articles": 24,
+  "NY Times - World": {
+    "total_articles": 22,
     "reliability_score": 98.0,
     "sensationalism_mean": 0.0098,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.24
-  },
-  "LiveMint - Industry": {
-    "total_articles": 26,
-    "reliability_score": 98.0,
-    "sensationalism_mean": 0.0101,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.19
-  },
-  "News18 - World": {
-    "total_articles": 26,
-    "reliability_score": 98.0,
-    "sensationalism_mean": 0.0096,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0014,
-    "avg_bias_intensity": 0.11
+    "emotional_mean": 0.0018,
+    "avg_bias_intensity": 0.0
   },
   "BBC - Health": {
     "total_articles": 18,
@@ -663,13 +655,21 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
-  "Indian Express - World": {
-    "total_articles": 24,
+  "LiveMint - Industry": {
+    "total_articles": 28,
     "reliability_score": 97.9,
-    "sensationalism_mean": 0.0106,
+    "sensationalism_mean": 0.0103,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.0
+    "avg_bias_intensity": 0.18
+  },
+  "NDTV - World": {
+    "total_articles": 20,
+    "reliability_score": 97.9,
+    "sensationalism_mean": 0.0107,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.38
   },
   "NPR - World": {
     "total_articles": 10,
@@ -679,13 +679,13 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
-  "Sky News - Top": {
-    "total_articles": 20,
+  "Times of India": {
+    "total_articles": 140,
     "reliability_score": 97.9,
     "sensationalism_mean": 0.0103,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.43
+    "emotional_mean": 0.0008,
+    "avg_bias_intensity": 0.39
   },
   "CNN - World": {
     "total_articles": 20,
@@ -695,29 +695,37 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.32
   },
-  "Times of India": {
-    "total_articles": 114,
+  "The Independent - UK": {
+    "total_articles": 117,
     "reliability_score": 97.7,
-    "sensationalism_mean": 0.0113,
+    "sensationalism_mean": 0.0112,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.001,
-    "avg_bias_intensity": 0.31
+    "emotional_mean": 0.0007,
+    "avg_bias_intensity": 0.34
   },
-  "New Yorker - News": {
-    "total_articles": 20,
+  "Indian Express - World": {
+    "total_articles": 26,
     "reliability_score": 97.6,
-    "sensationalism_mean": 0.0114,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0017,
-    "avg_bias_intensity": 0.61
-  },
-  "NY Times - Business": {
-    "total_articles": 18,
-    "reliability_score": 97.5,
-    "sensationalism_mean": 0.0127,
+    "sensationalism_mean": 0.0122,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.21
+    "avg_bias_intensity": 0.0
+  },
+  "NY Times - Business": {
+    "total_articles": 19,
+    "reliability_score": 97.6,
+    "sensationalism_mean": 0.012,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.2
+  },
+  "New Yorker - News": {
+    "total_articles": 21,
+    "reliability_score": 97.4,
+    "sensationalism_mean": 0.0128,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.0016,
+    "avg_bias_intensity": 0.58
   },
   "Indian Express - Business": {
     "total_articles": 21,
@@ -727,28 +735,28 @@
     "emotional_mean": 0.0,
     "avg_bias_intensity": 0.0
   },
-  "The Independent - UK": {
-    "total_articles": 100,
-    "reliability_score": 97.3,
-    "sensationalism_mean": 0.0132,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.0008,
-    "avg_bias_intensity": 0.37
-  },
   "LiveMint - Markets": {
-    "total_articles": 47,
-    "reliability_score": 97.0,
-    "sensationalism_mean": 0.0066,
-    "clickbait_mean": 0.017,
+    "total_articles": 65,
+    "reliability_score": 97.2,
+    "sensationalism_mean": 0.0064,
+    "clickbait_mean": 0.0154,
     "emotional_mean": 0.0,
-    "avg_bias_intensity": 0.47
+    "avg_bias_intensity": 0.38
   },
   "India Today - Business": {
-    "total_articles": 23,
-    "reliability_score": 96.5,
-    "sensationalism_mean": 0.0174,
+    "total_articles": 24,
+    "reliability_score": 96.7,
+    "sensationalism_mean": 0.0167,
     "clickbait_mean": 0.0,
     "emotional_mean": 0.0,
+    "avg_bias_intensity": 0.0
+  },
+  "Deccan Herald - Home": {
+    "total_articles": 87,
+    "reliability_score": 96.4,
+    "sensationalism_mean": 0.0169,
+    "clickbait_mean": 0.0,
+    "emotional_mean": 0.005,
     "avg_bias_intensity": 0.0
   },
   "Politico - Congress": {
@@ -760,20 +768,12 @@
     "avg_bias_intensity": 0.19
   },
   "Al Jazeera - Top": {
-    "total_articles": 32,
-    "reliability_score": 96.2,
-    "sensationalism_mean": 0.0185,
+    "total_articles": 46,
+    "reliability_score": 96.0,
+    "sensationalism_mean": 0.0193,
     "clickbait_mean": 0.0,
-    "emotional_mean": 0.0026,
-    "avg_bias_intensity": 0.35
-  },
-  "Deccan Herald - Home": {
-    "total_articles": 62,
-    "reliability_score": 96.1,
-    "sensationalism_mean": 0.0177,
-    "clickbait_mean": 0.0,
-    "emotional_mean": 0.007,
-    "avg_bias_intensity": 0.0
+    "emotional_mean": 0.0018,
+    "avg_bias_intensity": 0.24
   },
   "Washington Post - Business": {
     "total_articles": 3,
