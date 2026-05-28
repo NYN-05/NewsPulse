@@ -1,0 +1,3002 @@
+[
+  {
+    "source_entity": "iran",
+    "target_entity": "us",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 60,
+    "source_diversity": 22,
+    "strength": 30.6,
+    "example_articles": [
+      "Khamenei sidelined? Iran's Supreme leader not involved in US peace talks: Report. Questions are mounting over Supreme Leader Khamenei's direct involvement in Iran's ongoing US negotiations, with repor",
+      "S Hunger Crisis Worsens Beyond Covid Years: New York Fed. The survey was conducted before the Iran war, which has hiked the price of groceries in US (File)",
+      "War LIVE Updates: US, Iran Trade Strikes After Trump's 'Negotiating On Fumes' Warning. US Iran War LIVE Updates"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 50,
+    "source_diversity": 29,
+    "strength": 28.7,
+    "example_articles": [
+      "War LIVE Updates: US, Iran Trade Strikes After Trump's 'Negotiating On Fumes' Warning. US Iran War LIVE Updates",
+      "Trump\u2019s shifting social media posts deepen confusion over possible Iran deal. ",
+      "China\u2019s Top Diplomat Makes Veiled Jabs at Trump From UN. China\u2019s top diplomat made thinly veiled jabs at President Donald Trump\u2019s foreign policy from the United Nations, using an address to criticize "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "u. s.",
+    "source_sector": "global_events",
+    "target_sector": "finance",
+    "cooccurrence_count": 32,
+    "source_diversity": 17,
+    "strength": 17.9,
+    "example_articles": [
+      "Iran war challenged again as Kuwait faces a missile attack. Tensions in West Asia escalated again after Kuwait said it intercepted incoming missiles and drones, with the U.S. blaming Iran for breachin",
+      "War Live Updates: U.S. and Iran Trade Strikes, Further Threatening Negotiations. The U.S. military said Iran had launched a ballistic missile toward Kuwait. Iran\u2019s Revolutionary Guards said it had tar",
+      "Resigned to a Long War, Even if U.S. and Iran Make a Deal. Few in Lebanon believe that diplomatic efforts to end the wider war will bring peace to their country, as clashes between Israel and Hezbolla"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "strait of hormuz",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 26,
+    "source_diversity": 18,
+    "strength": 15.8,
+    "example_articles": [
+      "Explosions, More Fighting: Why Bandar Abbas Has Become Ground Zero In US-Iran War. Bandar Abbas sits on Iran\u2019s southern coast, directly overlooking the Strait of Hormuz, which is at the centre of the ",
+      "\u2018Don\u2019t Care About Midterms\u2019: Trump Rejects Political Pressure To Seal Deal, Says Iran \u2018Negotiating On Fumes\u2019. Trump said the upcoming midterm elections and rising gas prices, triggered by Iran\u2019s closu",
+      "Threatens Oman Over the Strait, Then Says, \u2018They\u2019ll Be Fine.\u2019. President Trump said there would be serious repercussions if Iran and Oman move forward with a deal to open the Strait of Hormuz."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "trump",
+    "target_entity": "u. s.",
+    "source_sector": "politics",
+    "target_sector": "finance",
+    "cooccurrence_count": 24,
+    "source_diversity": 14,
+    "strength": 13.8,
+    "example_articles": [
+      "Agrees to Joint Strikes With U.S. Against Drug Gangs. The deal is part of a broader effort by the Trump administration to press Latin American countries to agree to joint operations inside their borde",
+      "Is Becoming a Fentanyl Exporter, and a Target for Trump. The drug is increasingly manufactured in and trafficked from the U.S.\u2019s northern neighbor, though the numbers remain small compared with Mexico",
+      "Tok Restoring Service for U.S. Users, After Trump Signals He Will Save It. The president-elect said he will issue an executive order, and the app said it will work on a long-term solution with the inc"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "senate",
+    "target_entity": "texas",
+    "source_sector": "politics",
+    "target_sector": "energy",
+    "cooccurrence_count": 21,
+    "source_diversity": 10,
+    "strength": 11.4,
+    "example_articles": [
+      "Talarico Opens Texas Senate Campaign Against Ken Paxton With Houston Rally. Personal attacks and a packed campaign rally set the tone for what is likely to be a rancorous contest in Texas for U.S. Sen",
+      "Democrats Think They Can Flip Texas. With Ken Paxton defeating Senator John Cornyn in Texas\u2019 Republican runoff for the Senate, The New York Times\u2019s national political correspondent Shane Goldmacher ex",
+      "Texas Senate primaries, Democrats are fired up about their chances in the fall. Democrats see an opportunity to flip several GOP-held Senate seats this fall, including Texas, where the matchup was off"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "israel",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 17,
+    "source_diversity": 11,
+    "strength": 10.1,
+    "example_articles": [
+      "Iran\u2019s Revolutionary Guards say region will not see peace until Israel is 'destroyed'. ",
+      "FIFA-issued multiple-entry US visas for 2026 World Cup amid security fears and Donald Trump remarks. There have been question marks over Iran's participation in the tournament due to the Middle East w",
+      "Iran-US-Israel War News Live: Iran Condemns Ceasefire Violations After US Strikes Near Bandar Abbas. Iran US War Ceasefire News Updates Today: Trump has that Tehran wanted a deal but it had not yet of"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "washington",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 16,
+    "source_diversity": 12,
+    "strength": 10.0,
+    "example_articles": [
+      "S arsenal depleted? Restocking THAAD, Tomahawk & Patriot missiles could take years. A recent Iran conflict has significantly depleted US high-end missile stockpiles, raising alarms in Washington. Crit",
+      "Quick Edit | US-Iran ceasefire under threat: both sides must return to peace talks right away. The fragile truce in the Gulf risks yielding to an armed flare-up, with peace talks between Washington an",
+      "US launches new attacks on Iran. The strikes come despite a ceasefire between Tehran and Washington as the two countries hold peace talks."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "tehran",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 15,
+    "source_diversity": 13,
+    "strength": 9.9,
+    "example_articles": [
+      "Khamenei sidelined? Iran's Supreme leader not involved in US peace talks: Report. Questions are mounting over Supreme Leader Khamenei's direct involvement in Iran's ongoing US negotiations, with repor",
+      "Quick Edit | US-Iran ceasefire under threat: both sides must return to peace talks right away. The fragile truce in the Gulf risks yielding to an armed flare-up, with peace talks between Washington an",
+      "Iran-US-Israel War News Live: Iran Condemns Ceasefire Violations After US Strikes Near Bandar Abbas. Iran US War Ceasefire News Updates Today: Trump has that Tehran wanted a deal but it had not yet of"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "donald trump",
+    "target_entity": "iran",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 15,
+    "source_diversity": 11,
+    "strength": 9.3,
+    "example_articles": [
+      "FIFA-issued multiple-entry US visas for 2026 World Cup amid security fears and Donald Trump remarks. There have been question marks over Iran's participation in the tournament due to the Middle East w",
+      "Iran\u2019s oil reservoirs explode as Donald Trump is claiming?. ",
+      "China\u2019s Top Diplomat Makes Veiled Jabs at Trump From UN. China\u2019s top diplomat made thinly veiled jabs at President Donald Trump\u2019s foreign policy from the United Nations, using an address to criticize "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "ken paxton",
+    "target_entity": "texas",
+    "source_sector": "politics",
+    "target_sector": "energy",
+    "cooccurrence_count": 14,
+    "source_diversity": 8,
+    "strength": 8.0,
+    "example_articles": [
+      "Trump-backed challenger beats veteran US senator in Texas primary. Ken Paxton's victory sets up what will be a closely watched contest in November's midterm elections.",
+      "Talarico Opens Texas Senate Campaign Against Ken Paxton With Houston Rally. Personal attacks and a packed campaign rally set the tone for what is likely to be a rancorous contest in Texas for U.S. Sen",
+      "Democrats Think They Can Flip Texas. With Ken Paxton defeating Senator John Cornyn in Texas\u2019 Republican runoff for the Senate, The New York Times\u2019s national political correspondent Shane Goldmacher ex"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "oman",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 11,
+    "source_diversity": 11,
+    "strength": 7.7,
+    "example_articles": [
+      "Trump threatens to \u2018blow up\u2019 US ally Oman if it does not \u2018behave\u2019 over strait of Hormuz | First Thing. President makes comments after reports Iran and Oman have discussed jointly charging a toll for s",
+      "East crisis live: Iran says Trump\u2019s threats to \u2018blow up\u2019 Oman \u2018dangerous and bullying\u2019. US president said ally would be at risk if it did not \u2018behave just like everybody else\u2019Hezbollah has claimed doz",
+      "Threatens Oman Over the Strait, Then Says, \u2018They\u2019ll Be Fine.\u2019. President Trump said there would be serious repercussions if Iran and Oman move forward with a deal to open the Strait of Hormuz."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "strait of hormuz",
+    "target_entity": "trump",
+    "source_sector": "energy",
+    "target_sector": "politics",
+    "cooccurrence_count": 10,
+    "source_diversity": 10,
+    "strength": 7.0,
+    "example_articles": [
+      "Trump declares \u2018no one\u2019 will control Strait of Hormuz, US military ready to release blockaded boats. ",
+      "\u2018Don\u2019t Care About Midterms\u2019: Trump Rejects Political Pressure To Seal Deal, Says Iran \u2018Negotiating On Fumes\u2019. Trump said the upcoming midterm elections and rising gas prices, triggered by Iran\u2019s closu",
+      "Threatens Oman Over the Strait, Then Says, \u2018They\u2019ll Be Fine.\u2019. President Trump said there would be serious repercussions if Iran and Oman move forward with a deal to open the Strait of Hormuz."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "oman",
+    "target_entity": "trump",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 10,
+    "source_diversity": 10,
+    "strength": 7.0,
+    "example_articles": [
+      "Trump threatens to \u2018blow up\u2019 US ally Oman if it does not \u2018behave\u2019 over strait of Hormuz | First Thing. President makes comments after reports Iran and Oman have discussed jointly charging a toll for s",
+      "East crisis live: Iran says Trump\u2019s threats to \u2018blow up\u2019 Oman \u2018dangerous and bullying\u2019. US president said ally would be at risk if it did not \u2018behave just like everybody else\u2019Hezbollah has claimed doz",
+      "Threatens Oman Over the Strait, Then Says, \u2018They\u2019ll Be Fine.\u2019. President Trump said there would be serious repercussions if Iran and Oman move forward with a deal to open the Strait of Hormuz."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "israel",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 10,
+    "source_diversity": 6,
+    "strength": 5.8,
+    "example_articles": [
+      "US, Israel seek to 'bring nation to its knees'. ",
+      "EastLiveIran supreme leader says US, Israel seek to 'bring nation to its knees'. ",
+      "FIFA-issued multiple-entry US visas for 2026 World Cup amid security fears and Donald Trump remarks. There have been question marks over Iran's participation in the tournament due to the Middle East w"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "kuwait",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 8,
+    "source_diversity": 8,
+    "strength": 5.6,
+    "example_articles": [
+      "Iran war challenged again as Kuwait faces a missile attack. Tensions in West Asia escalated again after Kuwait said it intercepted incoming missiles and drones, with the U.S. blaming Iran for breachin",
+      "S accuses Iran of \u2018egregious ceasefire violation\u2019 after attack on Kuwait as talks falter. ",
+      "War Live Updates: U.S. and Iran Trade Strikes, Further Threatening Negotiations. The U.S. military said Iran had launched a ballistic missile toward Kuwait. Iran\u2019s Revolutionary Guards said it had tar"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "beijing",
+    "target_entity": "china",
+    "source_sector": "politics",
+    "target_sector": "finance",
+    "cooccurrence_count": 8,
+    "source_diversity": 7,
+    "strength": 5.6,
+    "example_articles": [
+      "Beijing promised to 'fight back' over Taiwan leader's US visit. But this time it has more to lose. An anticipated meeting between Taiwan's President Tsai Ing-wen and US House Speaker Kevin McCarthy in",
+      "China's Great Wall. Having lived in Beijing for almost 12 years, I've had plenty of time to travel widely in China.",
+      "ChatGPT moment? \u2013 podcast. Last month at Beijing\u2019s half marathon, a robot named Lightning beat the human world record by nearly seven minutes. It\u2019s the latest in a string of AI-powered milestones that"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "strait of hormuz",
+    "target_entity": "u. s.",
+    "source_sector": "energy",
+    "target_sector": "finance",
+    "cooccurrence_count": 8,
+    "source_diversity": 8,
+    "strength": 5.6,
+    "example_articles": [
+      "S-Iran Peace Talks in Doubt After Second Clash in 3 Days. The United States and Iran once again exchanged fire, sending oil prices rising and casting new doubt on peace talks. Iranian media report tha",
+      "2% after Iran says it targeted U.S. airbase following fresh American strikes. Oil prices rose on Thursday after fresh U.S. strikes in Iran renewed concerns over disruptions to commercial shipping thro",
+      "Oman after Trump 'blow 'em up' remark. Iran reupped its backing for Oman on Thursday, after President Trump warned the Arab nation to \u201cbehave\u201d or face consequences. Iranian Foreign Ministry spokespers"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "strait of hormuz",
+    "target_entity": "us",
+    "source_sector": "energy",
+    "target_sector": "politics",
+    "cooccurrence_count": 9,
+    "source_diversity": 6,
+    "strength": 5.4,
+    "example_articles": [
+      "Trump threatened to bomb Oman, amid Iran war escalation?. The US president has issued a stark warning to a US ally, in a sign of rising tensions over Strait of Hormuz.",
+      "US trade air strikes after Trump dismisses report of Hormuz deal. Iran's Revolutionary Guard targeted a US airbase on Thursday after the US military carried out what a Washington official said were st",
+      "US-Iran fighting escalates. Benchmark prices for crude oil rose on Thursday as Iran said it targeted a US airbase in response to American air strikes. Commercial traffic through the Strait of Hormuz, "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "paxton",
+    "target_entity": "texas",
+    "source_sector": "politics",
+    "target_sector": "energy",
+    "cooccurrence_count": 9,
+    "source_diversity": 6,
+    "strength": 5.4,
+    "example_articles": [
+      "Republicans are worried about Ken Paxton as a Senate nominee. Few politicians have garnered as much scandal in Texas as Paxton, but he has ignited the MAGA base, who see him as a fighter.",
+      "Texas blue with Paxton vs. Talarico Senate race. State Attorney General Ken Paxton's win in the Texas Senate primary exhilarated President Trump and the MAGA base on Tuesday night. But the victory als",
+      "Talarico after Paxton wins runoff. Texas Republicans are ramping up their attacks against state Democratic Rep. James Talarico following the Ken Paxton runoff win against incumbent Sen. John Cornyn. C"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "middle east",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 8,
+    "source_diversity": 7,
+    "strength": 5.3,
+    "example_articles": [
+      "FIFA-issued multiple-entry US visas for 2026 World Cup amid security fears and Donald Trump remarks. There have been question marks over Iran's participation in the tournament due to the Middle East w",
+      "S Stock Market Today Live Updates: Wall Street eyes tepid start amid Middle East tensions; oil & bond yields spike. US Stock Market Today Live Updates: Fresh tensions between US and Iran has dampened ",
+      "Iran war: Oil shortages threaten global energy security. Strategic petroleum reserves are declining rapidly as countries release emergency crude supplies to cushion the economic impact of the Middle E"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "james talarico",
+    "target_entity": "texas",
+    "source_sector": "politics",
+    "target_sector": "energy",
+    "cooccurrence_count": 8,
+    "source_diversity": 6,
+    "strength": 5.0,
+    "example_articles": [
+      "Talarico Opens Texas Senate Campaign Against Ken Paxton With Houston Rally. Personal attacks and a packed campaign rally set the tone for what is likely to be a rancorous contest in Texas for U.S. Sen",
+      "A high-stakes U.S. Senate Race in Texas is expected to be a bitter contest. A U.S. Senate race in Texas is now set with the state's Attorney General Ken Paxton winning the GOP nomination in a primary ",
+      "Texas after Ken Paxton\u2019s win. Ken Paxton has trailed Democratic state Rep. James Talarico in fundraising. Some Republicans say the party will have to spend millions to win the Senate race."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "hormuz",
+    "target_entity": "iran",
+    "source_sector": "military",
+    "target_sector": "global_events",
+    "cooccurrence_count": 7,
+    "source_diversity": 7,
+    "strength": 4.9,
+    "example_articles": [
+      "S Sanctions Iran's Persian Gulf Strait Authority Set To Manage Hormuz. Iran's chokehold on the strait has caused worldwide energy shocks",
+      "Trump threatens to \u2018blow up\u2019 US ally Oman if it does not \u2018behave\u2019 over strait of Hormuz | First Thing. President makes comments after reports Iran and Oman have discussed jointly charging a toll for s",
+      "US trade air strikes after Trump dismisses report of Hormuz deal. Iran's Revolutionary Guard targeted a US airbase on Thursday after the US military carried out what a Washington official said were st"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "china",
+    "target_entity": "us",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 7,
+    "source_diversity": 6,
+    "strength": 4.6,
+    "example_articles": [
+      "AI late but that could turn out to be an advantage as this technology evolves. The US and China dominate artificial intelligence (AI), be it development or diffusion. But Japan, once a global tech lea",
+      "'Nvidia's Huang Can't Have White House Access': Laura Loomer Calls Him 'National Security Risk'. Nvidia chief Jensen Huang will join Tsinghua University's advisory board, a move that US activist has f",
+      "Beijing promised to 'fight back' over Taiwan leader's US visit. But this time it has more to lose. An anticipated meeting between Taiwan's President Tsai Ing-wen and US House Speaker Kevin McCarthy in"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "john cornyn",
+    "target_entity": "texas",
+    "source_sector": "politics",
+    "target_sector": "energy",
+    "cooccurrence_count": 7,
+    "source_diversity": 5,
+    "strength": 4.6,
+    "example_articles": [
+      "Democrats Think They Can Flip Texas. With Ken Paxton defeating Senator John Cornyn in Texas\u2019 Republican runoff for the Senate, The New York Times\u2019s national political correspondent Shane Goldmacher ex",
+      "Cornyn in Senate primary in a big win for MAGA. John Cornyn became the second Republican senator to lose his seat in less than two weeks. A Trump endorsement helped propel Texas Attorney General Ken P",
+      "Who\u2019s on top of Trump\u2019s 2028 revenge list. In today's issue: \u25aa Trump\u2019s next possible targets for retribution \u25aa U.S.-Iran deal in limbo \u25aa \u201c60 Minutes\u201d correspondent not renewed \u25aa Another Hamas leader k"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "tehran",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 6,
+    "source_diversity": 6,
+    "strength": 4.5,
+    "example_articles": [
+      "Khamenei sidelined? Iran's Supreme leader not involved in US peace talks: Report. Questions are mounting over Supreme Leader Khamenei's direct involvement in Iran's ongoing US negotiations, with repor",
+      "Quick Edit | US-Iran ceasefire under threat: both sides must return to peace talks right away. The fragile truce in the Gulf risks yielding to an armed flare-up, with peace talks between Washington an",
+      "US launches new attacks on Iran. The strikes come despite a ceasefire between Tehran and Washington as the two countries hold peace talks."
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "google",
+    "target_entity": "polymarket",
+    "source_sector": "technology",
+    "target_sector": "finance",
+    "cooccurrence_count": 6,
+    "source_diversity": 6,
+    "strength": 4.5,
+    "example_articles": [
+      "Polymarket. US DoJ alleges software engineer Michele Spagnuolo, 36, earned $1.2m betting on Google\u2019s most-searched listThe US justice department has charged a Google software engineer with using insid",
+      "Google Insider Trading Case Hits Polymarket. Charges against a Google employee who bet on Polymarket have raised concerns that the issue may dent momentum in the fast-growing sector.",
+      "U.S. strikes Iran again. And, DOJ charges Google staffer over Polymarket trades. The U.S. says it has struck Iran again as peace talks continue to end the conflict. And, the federal government has cha"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "texas",
+    "target_entity": "trump",
+    "source_sector": "energy",
+    "target_sector": "politics",
+    "cooccurrence_count": 8,
+    "source_diversity": 4,
+    "strength": 4.4,
+    "example_articles": [
+      "Cornyn in Senate primary in a big win for MAGA. John Cornyn became the second Republican senator to lose his seat in less than two weeks. A Trump endorsement helped propel Texas Attorney General Ken P",
+      "Who\u2019s on top of Trump\u2019s 2028 revenge list. In today's issue: \u25aa Trump\u2019s next possible targets for retribution \u25aa U.S.-Iran deal in limbo \u25aa \u201c60 Minutes\u201d correspondent not renewed \u25aa Another Hamas leader k",
+      "Texas blue with Paxton vs. Talarico Senate race. State Attorney General Ken Paxton's win in the Texas Senate primary exhilarated President Trump and the MAGA base on Tuesday night. But the victory als"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "china",
+    "target_entity": "india",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 7,
+    "source_diversity": 5,
+    "strength": 4.3,
+    "example_articles": [
+      "Beyond combat capability, how AMCA will help India beat China in the long race. ",
+      "India, China hold 'constructive' talks on LAC; agree border peace key to normalising ties. ",
+      "India, China hold forward-looking talks on border delimitation, management. According to the MEA, the two sides reviewed the situation along the India-China border and expressed satisfaction over the "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "u. s",
+    "target_entity": "u. s.",
+    "source_sector": "military",
+    "target_sector": "finance",
+    "cooccurrence_count": 6,
+    "source_diversity": 6,
+    "strength": 4.2,
+    "example_articles": [
+      "Russia's Crude Exports Fairly Stable Despite U.S. Sanctions, Goldman Says. Oil edged lower in early trade as Goldman Sachs said the latest round of U.S. sanctions against Russia haven\u2019t had a signific",
+      "A high-stakes U.S. Senate Race in Texas is expected to be a bitter contest. A U.S. Senate race in Texas is now set with the state's Attorney General Ken Paxton winning the GOP nomination in a primary ",
+      "2% after Iran says it targeted U.S. airbase following fresh American strikes. Oil prices rose on Thursday after fresh U.S. strikes in Iran renewed concerns over disruptions to commercial shipping thro"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "rajya sabha",
+    "target_entity": "siddaramaiah",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 7,
+    "source_diversity": 4,
+    "strength": 4.0,
+    "example_articles": [
+      "Karnataka after Siddaramaiah resigns as CM. Karnataka chief minister Siddaramaiah resigned on Thursday following months of speculation over a leadership change, clearing the path for his deputy, DK Sh",
+      "\"No Interest In National Politics\": Siddaramaiah Declines Rajya Sabha Offer. Siddaramaiah will be heading for Delhi later today.",
+      "Politics Live Updates: Declined Rajya Sabha Seat Offer, Says Siddaramaiah. Karnataka Politics Live Updates: A change in leadership in the three-year-old Karnataka government appears imminent, with Sid"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "pakistan",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 7,
+    "source_diversity": 4,
+    "strength": 4.0,
+    "example_articles": [
+      "Khamenei sidelined? Iran's Supreme leader not involved in US peace talks: Report. Questions are mounting over Supreme Leader Khamenei's direct involvement in Iran's ongoing US negotiations, with repor",
+      "Iran, US-Israel War Live Updates | Pakistan Foreign Minister Dar to visit Washington on Friday, meet Rubio. ",
+      "Iran, US-Israel War Live Updates | Pakistan Foreign Minister Dar to visit Washington on Friday, meet Rubio. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "kuwait",
+    "target_entity": "u. s.",
+    "source_sector": "military",
+    "target_sector": "finance",
+    "cooccurrence_count": 6,
+    "source_diversity": 5,
+    "strength": 3.9,
+    "example_articles": [
+      "Iran war challenged again as Kuwait faces a missile attack. Tensions in West Asia escalated again after Kuwait said it intercepted incoming missiles and drones, with the U.S. blaming Iran for breachin",
+      "War Live Updates: U.S. and Iran Trade Strikes, Further Threatening Negotiations. The U.S. military said Iran had launched a ballistic missile toward Kuwait. Iran\u2019s Revolutionary Guards said it had tar",
+      "Kuwait air defenses activated against 'missile and drone threats'; U.S. carries out new strikes in Iran. This comes as tensions in the Middle East escalated once again, with the U.S. military carrying"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "tehran",
+    "target_entity": "trump",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 6,
+    "source_diversity": 5,
+    "strength": 3.9,
+    "example_articles": [
+      "Quick Edit | US-Iran ceasefire under threat: both sides must return to peace talks right away. The fragile truce in the Gulf risks yielding to an armed flare-up, with peace talks between Washington an",
+      "Iran-US-Israel War News Live: Iran Condemns Ceasefire Violations After US Strikes Near Bandar Abbas. Iran US War Ceasefire News Updates Today: Trump has that Tehran wanted a deal but it had not yet of",
+      "Any Plausible Iran Deal Is a Humiliation for Trump. Even as the U.S. claims to be nearing an agreement to end the conflict, Tehran\u2019s ability to close the Strait of Hormuz and hold the global economy h"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "blair",
+    "target_entity": "labour",
+    "source_sector": "energy",
+    "target_sector": "global_events",
+    "cooccurrence_count": 6,
+    "source_diversity": 5,
+    "strength": 3.9,
+    "example_articles": [
+      "Streeting accuse Blair of ignoring inequality as they hit back at ex-PM. Labour mayor Burnham and former minister Streeting were responding to the former PM's 5,600-word essay.",
+      "Blair is strong on diagnosis, deluded on prescription: Britain\u2019s ills can\u2019t be fixed by him | Larry Elliott. The former PM\u2019s essay rightly calls for a coherent economic plan, but then sets too much st",
+      "Blair wants to leave our future to the markets. I believe democracy can still shape our lives for the better | Wes Streeting. The inequality caused by technological innovation is not a given. Labour c"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "hezbollah",
+    "target_entity": "israel",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 5,
+    "source_diversity": 5,
+    "strength": 3.8,
+    "example_articles": [
+      "DTV Ground Report From Israel's Most Active Conflict Zone Near Lebanon Border. In Northern Israel, Hezbollah threat still looms large. Ground report from Tefen.",
+      "Israel\u2019s military tells residents across southern Lebanon to leave as it fights Hezbollah. ",
+      "14 across southern Lebanon ahead of Washington talks. Israeli military intensified strikes in southern Lebanon, killing at least 14, including women and children. An Israeli soldier was killed by a He"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "eu",
+    "target_entity": "europe",
+    "source_sector": "global_events",
+    "target_sector": "finance",
+    "cooccurrence_count": 6,
+    "source_diversity": 4,
+    "strength": 3.6,
+    "example_articles": [
+      "Indians head to Europe in record numbers, EU teams flag gaps in VFS visa centres. ",
+      "EU-Mercosur trade agreement allow \u2018worm-infested\u2019 Brazilian coffee into Europe?. Posts by French and Polish politicians have falsely connected a rejected shipment of Brazilian coffee to the EU-Mercosu",
+      "Russia? First, Europe needs to pick an envoy \u2013 and know what it wants to say. With the US bogged down in its war against Iran, Ukraine has been urging Europe to step up and play an active role in nego"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "middle east",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 6,
+    "source_diversity": 4,
+    "strength": 3.6,
+    "example_articles": [
+      "FIFA-issued multiple-entry US visas for 2026 World Cup amid security fears and Donald Trump remarks. There have been question marks over Iran's participation in the tournament due to the Middle East w",
+      "S stock market today: Dow Jones, Nasdaq slip as Middle East tensions intensify; Brent crude rebounds. US stock futures pointed to a weak opening as tensions in West Asia raised crude oil prices, heigh",
+      "S Stock Market Today Live Updates: Wall Street eyes tepid start amid Middle East tensions; oil & bond yields spike. US Stock Market Today Live Updates: Fresh tensions between US and Iran has dampened "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bandar abbas",
+    "target_entity": "iran",
+    "source_sector": "military",
+    "target_sector": "global_events",
+    "cooccurrence_count": 6,
+    "source_diversity": 4,
+    "strength": 3.6,
+    "example_articles": [
+      "Explosions, More Fighting: Why Bandar Abbas Has Become Ground Zero In US-Iran War. Bandar Abbas sits on Iran\u2019s southern coast, directly overlooking the Strait of Hormuz, which is at the centre of the ",
+      "Iran-US-Israel War News Live: Iran Condemns Ceasefire Violations After US Strikes Near Bandar Abbas. Iran US War Ceasefire News Updates Today: Trump has that Tehran wanted a deal but it had not yet of",
+      "Live updates: US, Iran trade strikes as Trump dismisses political pressure around deal. The U.S. military launched another defensive strike against Iran on Wednesday, shooting down four Iranian one-wa"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "delhi",
+    "target_entity": "imd",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 5,
+    "source_diversity": 4,
+    "strength": 3.5,
+    "example_articles": [
+      "Today LIVE: Strong Dust Storm, Rains Likely In Delhi Shortly, Says Weatherman. Weather Updates Today, Heatwave, IMD Alert LIVE Updates: Light to very light rain is expected during the afternoon and ev",
+      "Delhi weather update: IMD issues orange alert for thunderstorms, hail storms; relief from heatwave. Delhi is likely to get relief from the severe heatwave as IMD forecast thunderstorms, rain, lightnin",
+      "Watch: Heavy Rains Lash Gurugram, Bring Relief From Scorching Heat. Gurugram sees heavy rain, thunderstorms and strong winds after days of 44-46C heat, IMD warns of more storms and hail in Haryana and"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "tehran",
+    "target_entity": "washington",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 5,
+    "strength": 3.5,
+    "example_articles": [
+      "Quick Edit | US-Iran ceasefire under threat: both sides must return to peace talks right away. The fragile truce in the Gulf risks yielding to an armed flare-up, with peace talks between Washington an",
+      "US launches new attacks on Iran. The strikes come despite a ceasefire between Tehran and Washington as the two countries hold peace talks.",
+      "Climbs As Iran, US Trade Strikes; Washington To Halt Landing Access For Iranian Carriers. Iran US War Ceasefire News Updates Today: Trump has that Tehran wanted a deal but it had not yet offered enoug"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "hormuz",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 5,
+    "strength": 3.5,
+    "example_articles": [
+      "Trump threatens to \u2018blow up\u2019 US ally Oman if it does not \u2018behave\u2019 over strait of Hormuz | First Thing. President makes comments after reports Iran and Oman have discussed jointly charging a toll for s",
+      "US trade air strikes after Trump dismisses report of Hormuz deal. Iran's Revolutionary Guard targeted a US airbase on Thursday after the US military carried out what a Washington official said were st",
+      "Hormuz amid new US strikes. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "united states",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 5,
+    "source_diversity": 4,
+    "strength": 3.5,
+    "example_articles": [
+      "Sheinbaum allows Iran team to stay in Mexico during World Cup after US refusal. Fifa approached Mexico after US declined to host Iran squad despite it playing group games in the United StatesMexico\u2019s ",
+      "S strikes Iran, drawing retaliatory attack on American base. The United States struck southern Iran on Thursday, drawing retaliation from Tehran against a US military base, in the most serious clashes",
+      "Gaza International Stabilisation Force in question as troop pledges stall. The Iran war has made it more difficult for Arab and Muslim leaders to openly cooperate with the United States and Israel, wh"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "kyiv",
+    "target_entity": "russia",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 5,
+    "source_diversity": 5,
+    "strength": 3.5,
+    "example_articles": [
+      "Russia Hit Harder? It at Least Wants Ukraine to Think So.. Major attacks on Kyiv, followed by warnings of more, come as Moscow is stalled on the battlefield and at the negotiating table.",
+      "U.S. dismisses claim its diplomats have fled Kyiv as Zelenskyy pens Trump letter. The United States on Thursday reiterated that its diplomats remained in Kyiv despite Russia\u2019s escalating threats, dism",
+      "Ukraine, as Kyiv is warned to brace for a possible major barrage - AP News. Russia maintains attacks on Ukraine, as Kyiv is warned to brace for a possible major barrage AP News"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "oman",
+    "target_entity": "strait of hormuz",
+    "source_sector": "military",
+    "target_sector": "energy",
+    "cooccurrence_count": 5,
+    "source_diversity": 5,
+    "strength": 3.5,
+    "example_articles": [
+      "Threatens Oman Over the Strait, Then Says, \u2018They\u2019ll Be Fine.\u2019. President Trump said there would be serious repercussions if Iran and Oman move forward with a deal to open the Strait of Hormuz.",
+      "Trump threatened to bomb Oman, amid Iran war escalation?. The US president has issued a stark warning to a US ally, in a sign of rising tensions over Strait of Hormuz.",
+      "Oman after Trump 'blow 'em up' remark. Iran reupped its backing for Oman on Thursday, after President Trump warned the Arab nation to \u201cbehave\u201d or face consequences. Iranian Foreign Ministry spokespers"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "strait of hormuz",
+    "target_entity": "tehran",
+    "source_sector": "energy",
+    "target_sector": "military",
+    "cooccurrence_count": 5,
+    "source_diversity": 5,
+    "strength": 3.5,
+    "example_articles": [
+      "S strikes Iran, drawing retaliatory attack on American base. The United States struck southern Iran on Thursday, drawing retaliation from Tehran against a US military base, in the most serious clashes",
+      "Pentagon official: Iran still threatens Strait of Hormuz. Tehran\u2019s ability to scare off commercial ships continues to give it leverage in any peace negotiation with the U.S.",
+      "Any Plausible Iran Deal Is a Humiliation for Trump. Even as the U.S. claims to be nearing an agreement to end the conflict, Tehran\u2019s ability to close the Strait of Hormuz and hold the global economy h"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "eu",
+    "target_entity": "ukraine",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 5,
+    "source_diversity": 5,
+    "strength": 3.5,
+    "example_articles": [
+      "Ukraine: EU's Kallas warns against Russian mediator 'trap'. The European Union's top diplomat, Kaja Kallas, has warned member states against falling into a Russian \"trap\" in future negotiations on Ukr",
+      "Russia? First, Europe needs to pick an envoy \u2013 and know what it wants to say. With the US bogged down in its war against Iran, Ukraine has been urging Europe to step up and play an active role in nego",
+      "Ukraine war briefing: EU foreign policy chief warns of Russian peace talks \u2018trap\u2019. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "u. s",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 5,
+    "source_diversity": 4,
+    "strength": 3.5,
+    "example_articles": [
+      "2% after Iran says it targeted U.S. airbase following fresh American strikes. Oil prices rose on Thursday after fresh U.S. strikes in Iran renewed concerns over disruptions to commercial shipping thro",
+      "Iran war. Investors may regret it. Oil markets remain volatile as traders struggle to interpret contradictory signals on prospects for U.S.-Iran peace agreement.",
+      "East tensions rattle Asia markets after fresh U.S. strikes in Iran. Asia-Pacific markets fell Thursday while oil prices surged after fresh U.S. strikes in Iran heightened fears of a wider Middle East "
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "abc news",
+    "target_entity": "danny new",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 8,
+    "source_diversity": 1,
+    "strength": 3.5,
+    "example_articles": [
+      "ATCH: 2 hikers recount close encounter with grizzly bears. ABC News' Danny New talks to two hikers in Glacier National Park who are now laughing about their close encounter with grizzly bears.",
+      "ATCH: Father, daughter take road trip to save 2 calves. ABC News' Danny New speaks with filmmaker Joanna Zelman and her father, Jared, who helped transport two 10-day-old calves from farms in Vermont ",
+      "ATCH: 2 hikers recount close encounter with grizzly bears. ABC News' Danny New talks to two hikers in Glacier National Park who are now laughing about their close encounter with grizzly bears."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "reuters",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 6,
+    "source_diversity": 3,
+    "strength": 3.3,
+    "example_articles": [
+      "Oman after Trump 'blow 'em up' remark. Iran reupped its backing for Oman on Thursday, after President Trump warned the Arab nation to \u201cbehave\u201d or face consequences. Iranian Foreign Ministry spokespers",
+      "Trump to implement mail-in voting executive order - Reuters. ",
+      "Trump refiles $10 billion defamation suit against WSJ over report on Epstein ties - Reuters. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "juan manuel cerundolo",
+    "target_entity": "paris",
+    "source_sector": "startups",
+    "target_sector": "global_events",
+    "cooccurrence_count": 6,
+    "source_diversity": 3,
+    "strength": 3.3,
+    "example_articles": [
+      "Open 2026 | Jannik Sinner stunned by Juan Manuel Cerundolo in second-round Paris shocker. ",
+      "Sinner collapses in Paris heat, crashes out of French Open in second-round shock. World number one Jannik Sinner dramatically crashed out of the French Open after a stunning physical collapse in the P",
+      "Open 2026 | Jannik Sinner stunned by Juan Manuel Cerundolo in second-round Paris shocker. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "oman",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 4,
+    "strength": 3.2,
+    "example_articles": [
+      "Trump threatens to \u2018blow up\u2019 US ally Oman if it does not \u2018behave\u2019 over strait of Hormuz | First Thing. President makes comments after reports Iran and Oman have discussed jointly charging a toll for s",
+      "East crisis live: Iran says Trump\u2019s threats to \u2018blow up\u2019 Oman \u2018dangerous and bullying\u2019. US president said ally would be at risk if it did not \u2018behave just like everybody else\u2019Hezbollah has claimed doz",
+      "Trump threatened to bomb Oman, amid Iran war escalation?. The US president has issued a stark warning to a US ally, in a sign of rising tensions over Strait of Hormuz."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "doj",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 4,
+    "strength": 3.2,
+    "example_articles": [
+      "100% tax on California payees of Trump\u2019s $1.8bn fund. State\u2019s governor looks to thwart US president\u2019s plan to divert money to allies, including January 6 riotersSign up for the Breaking News US newsle",
+      "Department launches criminal investigation into Trump sex assault accuser E Jean Carroll, says report. DOJ investigation will reportedly focus on whether Carroll committed perjury in her civil lawsuit",
+      "Trump over sexual assault allegation faces DOJ investigation: Report. Federal prosecutors in Chicago are investigating E. Jean Carroll for potential perjury during her lawsuits against Donald Trump. T"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "united states",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 4,
+    "strength": 3.2,
+    "example_articles": [
+      "US has deported thousands to third countries. This must stop | James A Goldston and Natasha Arnpriester. Monitors estimate 17,500 people have been sent to countries they may never have visited \u2013 and w",
+      "Sheinbaum allows Iran team to stay in Mexico during World Cup after US refusal. Fifa approached Mexico after US declined to host Iran squad despite it playing group games in the United StatesMexico\u2019s ",
+      "France's nuclear umbrella. Norway \u200bwill open talks with France on joining its nuclear umbrella, French President Emmanuel Macron and Norwegian Prime Minister \u200bJonas Gahr Stoere said on Wednesday, refl"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "cuba",
+    "target_entity": "iran",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 5,
+    "source_diversity": 4,
+    "strength": 3.2,
+    "example_articles": [
+      "Iran, the US wants an easy scalp: keep your eyes on Cuba | Owen Jones. The decision to charge Ra\u00fal Castro is grimly reminiscent of the run-up to Trump\u2019s military operation in Venezuela. Meanwhile, the",
+      "Interview: Tom Llamas sits down with Secretary of State Marco Rubio. On the sidelines of the Trump-Xi Summit in Beijing, NBC News' Tom Llamas sits down with Secretary of State Marco Rubio to discuss C",
+      "Cuba invasion. The Navy\u2019s presence in the Caribbean has not reduced despite the Iran war."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "europe",
+    "target_entity": "us",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 3,
+    "strength": 3.2,
+    "example_articles": [
+      "500,000 soldiers in Ukraine. PRESS REVIEW \u2013 Thursday, May 28, 2026: Papers discuss whether Russia could potentially invade Europe. But first, Spanish front pages cover the latest developments in the p",
+      "France's nuclear umbrella. Norway \u200bwill open talks with France on joining its nuclear umbrella, French President Emmanuel Macron and Norwegian Prime Minister \u200bJonas Gahr Stoere said on Wednesday, refl",
+      "EU-US comparisons. There is no well-defined single answer to whether the US has been outgrowing Europe"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "delhi",
+    "target_entity": "ncr",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 3.1,
+    "example_articles": [
+      "Rain, Thunderstorms Bring Relief From Heat In Delhi-NCR. Rain battered several parts of Delhi on Thursday evening.",
+      "Centre, Delhi govt working on six road projects to decongest major NCR intersections: CM Gupta. Centre, Delhi govt working on six road projects to decongest major NCR intersections: CM Gupta",
+      "Watch: Heavy Rains Lash Gurugram, Bring Relief From Scorching Heat. Gurugram sees heavy rain, thunderstorms and strong winds after days of 44-46C heat, IMD warns of more storms and hail in Haryana and"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "hezbollah",
+    "target_entity": "lebanon",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 3.1,
+    "example_articles": [
+      "Israel\u2019s military tells residents across southern Lebanon to leave as it fights Hezbollah. ",
+      "14 across southern Lebanon ahead of Washington talks. Israeli military intensified strikes in southern Lebanon, killing at least 14, including women and children. An Israeli soldier was killed by a He",
+      "Resigned to a Long War, Even if U.S. and Iran Make a Deal. Few in Lebanon believe that diplomatic efforts to end the wider war will bring peace to their country, as clashes between Israel and Hezbolla"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "israel",
+    "target_entity": "washington",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 3.1,
+    "example_articles": [
+      "14 across southern Lebanon ahead of Washington talks. Israeli military intensified strikes in southern Lebanon, killing at least 14, including women and children. An Israeli soldier was killed by a He",
+      "Guardian view on Lebanon\u2019s suffering: the \u2018ceasefire\u2019 didn\u2019t stop Israeli attacks. Now they\u2019re intensifying again | Editorial. Civilians including children are among the thousands to have died in this",
+      "Mandelson risks would have been impossible, says former MI6 chief. Vetting of former UK ambassador to Washington warned of ties to senior figures in China, Russia and IsraelA former head of MI6 has sa"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "lebanon",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 3.1,
+    "example_articles": [
+      "Guardian view on Lebanon\u2019s suffering: the \u2018ceasefire\u2019 didn\u2019t stop Israeli attacks. Now they\u2019re intensifying again | Editorial. Civilians including children are among the thousands to have died in this",
+      "East crisis live: Iran says Trump\u2019s threats to \u2018blow up\u2019 Oman \u2018dangerous and bullying\u2019. US president said ally would be at risk if it did not \u2018behave just like everybody else\u2019Hezbollah has claimed doz",
+      "Resigned to a Long War, Even if U.S. and Iran Make a Deal. Few in Lebanon believe that diplomatic efforts to end the wider war will bring peace to their country, as clashes between Israel and Hezbolla"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "jannik sinner",
+    "target_entity": "juan manuel cerundolo",
+    "source_sector": "global_events",
+    "target_sector": "startups",
+    "cooccurrence_count": 6,
+    "source_diversity": 2,
+    "strength": 3.0,
+    "example_articles": [
+      "Open LIVE: Jannik Sinner\u2019s tournament in danger after suddenly struggling in heat. Sinner led Juan Manuel Cerundolo 6-3 6-2 5-1 and was on the brink of the third round before he reported feeling dizzy",
+      "Open 2026 | Jannik Sinner stunned by Juan Manuel Cerundolo in second-round Paris shocker. ",
+      "Open LIVE: Jannik Sinner\u2019s stunning collapse blows tournament wide open. Sinner led Juan Manuel Cerundolo 6-3 6-2 5-1, only to suddenly wilt in the heat; Cerundolo stuns the world No 1 in five sets an"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bengaluru",
+    "target_entity": "siddaramaiah",
+    "source_sector": "technology",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 3,
+    "strength": 2.9,
+    "example_articles": [
+      "Karnataka after Siddaramaiah resigns as CM. Karnataka chief minister Siddaramaiah resigned on Thursday following months of speculation over a leadership change, clearing the path for his deputy, DK Sh",
+      "CM buzz intensifies as Siddaramaiah meets DK Shivakumar over breakfast, Governor not in Bengaluru. Karnataka Governor Thawar Chand Gehlot arrived in Indore, Madhya Pradesh, on Thursday morning amid he",
+      "Bengaluru, Governor Gehlot out of town: Will Siddaramaiah step down as Karnataka CM today?. Karnataka Chief Minister Siddaramaiah had sought an appointment with Governor Thawarchand Gehlot in Bengalur"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bengaluru",
+    "target_entity": "karnataka",
+    "source_sector": "technology",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 3,
+    "strength": 2.9,
+    "example_articles": [
+      "Karnataka after Siddaramaiah resigns as CM. Karnataka chief minister Siddaramaiah resigned on Thursday following months of speculation over a leadership change, clearing the path for his deputy, DK Sh",
+      "CM buzz intensifies as Siddaramaiah meets DK Shivakumar over breakfast, Governor not in Bengaluru. Karnataka Governor Thawar Chand Gehlot arrived in Indore, Madhya Pradesh, on Thursday morning amid he",
+      "Bengaluru, Governor Gehlot out of town: Will Siddaramaiah step down as Karnataka CM today?. Karnataka Chief Minister Siddaramaiah had sought an appointment with Governor Thawarchand Gehlot in Bengalur"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "u. s.",
+    "target_entity": "united states",
+    "source_sector": "finance",
+    "target_sector": "military",
+    "cooccurrence_count": 5,
+    "source_diversity": 3,
+    "strength": 2.9,
+    "example_articles": [
+      "S-Iran Peace Talks in Doubt After Second Clash in 3 Days. The United States and Iran once again exchanged fire, sending oil prices rising and casting new doubt on peace talks. Iranian media report tha",
+      "U.S. dismisses claim its diplomats have fled Kyiv as Zelenskyy pens Trump letter. The United States on Thursday reiterated that its diplomats remained in Kyiv despite Russia\u2019s escalating threats, dism",
+      "33-year sentence for sexually exploiting over 140 children in U.S.. A Canadian man has been sentenced in the United States to more than 30 years in prison for what American officials described as a wi"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "canada",
+    "target_entity": "gujarat",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "Canada; family informed after 12 days. A young Indian student, Vidhi, living in Canada for higher studies and aiming for permanent residency, was found murdered in the Niagara region. She was reported",
+      "22-Year-Old Student From Gujarat Stabbed To Death In Canada. Vidhi Kalpeshbhai Meghani was stabbed earlier this month",
+      "22-Year-Old Student From Gujarat Killed In Knife Attack In Canada\u2019s Niagara. Canadian police have registered a case and launched a search operation to trace the suspect involved in the attack."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "israel",
+    "target_entity": "trump",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "Iran-US-Israel War News Live: Iran Condemns Ceasefire Violations After US Strikes Near Bandar Abbas. Iran US War Ceasefire News Updates Today: Trump has that Tehran wanted a deal but it had not yet of",
+      "Mideast Is Baffled by Trump\u2019s Call to Expand Abraham Accords. The president said more countries should be required to recognize Israel as part of a deal to end the war with Iran. Analysts say the chan",
+      "Trump pushes for Iran deal. Israel is \u201cdeepening its operation\u201d in Lebanon, Prime Minister Benjamin Netanyahu said."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "labour",
+    "target_entity": "tony blair",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "Tony Blair's intervention change the Labour debate?. While the former PM still has some admirers in Labour, others wings of the party are not listening.",
+      "Guardian view on Tony Blair\u2019s advice for Labour: policymaking like it\u2019s 1999 will not lead to a revival | Editorial. A scathing essay by the former prime minister rehashes assumptions that underpinned",
+      "Blair. Former Labour PM Sir Tony Blair has accused the government of having \"no coherent plan\" for the country."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "hormuz",
+    "target_entity": "trump",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "Trump threatens to \u2018blow up\u2019 US ally Oman if it does not \u2018behave\u2019 over strait of Hormuz | First Thing. President makes comments after reports Iran and Oman have discussed jointly charging a toll for s",
+      "US trade air strikes after Trump dismisses report of Hormuz deal. Iran's Revolutionary Guard targeted a US airbase on Thursday after the US military carried out what a Washington official said were st",
+      "'Won\u2019t tolerate': After Trump, US treasury secy warns Oman over Hormuz toll, working with Iran. US and Iranian negotiators have reportedly agreed on a 60-day memorandum of understanding aimed at exten"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "maga",
+    "target_entity": "texas",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.8,
+    "example_articles": [
+      "Cornyn in Senate primary in a big win for MAGA. John Cornyn became the second Republican senator to lose his seat in less than two weeks. A Trump endorsement helped propel Texas Attorney General Ken P",
+      "Republicans are worried about Ken Paxton as a Senate nominee. Few politicians have garnered as much scandal in Texas as Paxton, but he has ignited the MAGA base, who see him as a fighter.",
+      "Texas blue with Paxton vs. Talarico Senate race. State Attorney General Ken Paxton's win in the Texas Senate primary exhilarated President Trump and the MAGA base on Tuesday night. But the victory als"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "putin",
+    "target_entity": "ukraine",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "Putin in glitzy Cannes is not enough for beleaguered Ukrainians. Andrei Zvyagintsev urged Russian President Vladimir Putin to end the \u201cbloodbath\u201d \u2014 but in Ukraine his remarks elicited ridicule and fru",
+      "Ukraine\u2019s ambassador on Trump, Putin and the path to peace. ",
+      "A Desperate Putin Expand The Ukraine War To Other Countries?. The U.S. must confront the ugly possibility that an angry Putin may expand his war with Ukraine to other countries."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "strait of hormuz",
+    "target_entity": "washington",
+    "source_sector": "energy",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "US trade air strikes after Trump dismisses report of Hormuz deal. Iran's Revolutionary Guard targeted a US airbase on Thursday after the US military carried out what a Washington official said were st",
+      "S-Iran truce deal ready, but needs Trump's final approval, says report. Tensions around the Strait of Hormuz escalated sharply on Thursday after Iranian media reported multiple maritime confrontations",
+      "U.S., Iran exchange fire threatening peace talks. Washington says it shot down five drones over the Strait of Hormuz while Tehran fires ballistic missiles at American base in Kuwait"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": ". jean carroll",
+    "target_entity": "oj",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.8,
+    "example_articles": [
+      "OJ launches criminal probe into E. Jean Carroll \u2014 reports. The US Justice Department has launched a criminal inquiry into former magazine writer E. Jean Carroll, who accused Donald Trump of sexually a",
+      "OJ investigating whether Trump accuser E. Jean Carroll committed perjury. The Justice Department is conducting a criminal investigation into whether author E. Jean Carroll committed perjury in connect",
+      "OJ Opens Criminal Probe Into Trump Accuser E. Jean Carroll. The Justice Department\u2019s probe comes at a time when it faces growing scrutiny over its attempts to go after the president\u2019s critics and poli"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "tehran",
+    "target_entity": "u. s.",
+    "source_sector": "military",
+    "target_sector": "finance",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "Beijing has learned about the US from the Iran war. Current and former U.S. defense officials worry headwinds from the conflict with Tehran leave Beijing with the upper hand.",
+      "Any Plausible Iran Deal Is a Humiliation for Trump. Even as the U.S. claims to be nearing an agreement to end the conflict, Tehran\u2019s ability to close the Strait of Hormuz and hold the global economy h",
+      "U.S. strikes as Trump claims Tehran is negotiating on \"fumes\". Iran and the U.S. launched new strikes overnight despite the ceasefire and ongoing negotiations that have been apparently progressing. CB"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "jan",
+    "target_entity": "roland garros",
+    "source_sector": "startups",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 4,
+    "strength": 2.8,
+    "example_articles": [
+      "Sinner crashes out of Roland Garros, 30-match winning streak ends at hands of Juan Manuel Cerundolo. An ailing Jannik Sinner fell in five sets to Argentinian Juan Manuel Cerundolo; the men's number on",
+      "French Open exit as Cerundolo recovers from two-sets down. World number one Jannick Sinner beaten by 56th-ranked Argentinian opponent Juan Manuel Cerundolo at Roland Garros.",
+      "Sinner\u2019s Sudden Exit Means Roland Garros Is Wide Open. Jannik Sinner\u2019s Sudden Exit Means Roland Garros Is Wide Open"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "cbs news",
+    "target_entity": "u. s.",
+    "source_sector": "global_events",
+    "target_sector": "finance",
+    "cooccurrence_count": 6,
+    "source_diversity": 1,
+    "strength": 2.7,
+    "example_articles": [
+      "U.S. and Iran launch new strikes as Trump shrugs off war impact: \"I don't care about the midterms\". A U.S. official insists the U.S.-Iran ceasefire is holding despite new strikes launched overnight. T",
+      "U.S. strikes as Trump claims Tehran is negotiating on \"fumes\". Iran and the U.S. launched new strikes overnight despite the ceasefire and ongoing negotiations that have been apparently progressing. CB",
+      "U.S. hopes to contain Ebola outbreak spread with facility in Kenya. The Trump administration is building a facility to contain Americans who contracted Ebola in Kenya and avoid spread in the U.S. CBS "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "finserv",
+    "target_entity": "finserv intelligence",
+    "source_sector": "global_events",
+    "target_sector": "technology",
+    "cooccurrence_count": 5,
+    "source_diversity": 2,
+    "strength": 2.6,
+    "example_articles": [
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv launches group-wide AI and deep-tech research initiative. Bajaj Finserv has launched Finserv Intelligence, an AI-focused innovation platform, and plans to invest up to Rs 2,000 crore in AI-led",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "jill biden",
+    "target_entity": "joe biden",
+    "source_sector": "social",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 2,
+    "strength": 2.6,
+    "example_articles": [
+      "\u2018I Thought He Was Having A Stroke\u2019: Jill Biden On Joe Biden\u2019s 2024 Debate Performance. Jill Biden says Joe Bidens faltering June 2024 debate against Donald Trump \"scared her to death\" and she feared t",
+      "Opener: New U.S. strikes in Iran. U.S.-Iran peace talks may be in jeopardy after new American strikes against Iran. Also, former first lady Jill Biden speaks out on former President Joe Biden's perfor",
+      "Biden reaction to CBS on Joe Biden's 2024 debate performance goes viral. Former first lady Jill Biden's comments to \"CBS Sunday Morning\" about her husband's 2024 debate performance have gone viral. CB"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "mojtaba",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 2,
+    "strength": 2.6,
+    "example_articles": [
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "israel",
+    "target_entity": "mojtaba",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 2,
+    "strength": 2.6,
+    "example_articles": [
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "cbs news",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 5,
+    "source_diversity": 2,
+    "strength": 2.6,
+    "example_articles": [
+      "U.S. and Iran launch new strikes as Trump shrugs off war impact: \"I don't care about the midterms\". A U.S. official insists the U.S.-Iran ceasefire is holding despite new strikes launched overnight. T",
+      "Biden\u2019s disastrous debate with Trump \u2018frightened\u2019 Jill Biden. The former first lady said in a CBS News interview she thought her husband was \u201chaving a stroke.\u201d",
+      "U.S. strikes as Trump claims Tehran is negotiating on \"fumes\". Iran and the U.S. launched new strikes overnight despite the ceasefire and ongoing negotiations that have been apparently progressing. CB"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "talarico",
+    "target_entity": "texas",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 5,
+    "source_diversity": 2,
+    "strength": 2.6,
+    "example_articles": [
+      "Talarico's Chances of Beating Paxton Dip With 3 Bookmakers After GOP Runoff. On Tuesday, Texas Attorney General Paxton\u2014who received President Trump's backing\u2014secured the GOP nomination for the Senate ",
+      "Talarico says he brought in $3M in 24 hours after GOP runoff. Texas Senate Democratic candidate James Talarico announced Thursday that his campaign brought in over $3 million after Texas Attorney Gene",
+      "Talarico's Chances of Beating Paxton Dip With 3 Bookmakers After GOP Runoff. On Tuesday, Texas Attorney General Paxton\u2014who received President Trump's backing\u2014secured the GOP nomination for the Senate "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "gulf",
+    "target_entity": "iran",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "Khamenei sidelined? Iran's Supreme leader not involved in US peace talks: Report. Questions are mounting over Supreme Leader Khamenei's direct involvement in Iran's ongoing US negotiations, with repor",
+      "Quick Edit | US-Iran ceasefire under threat: both sides must return to peace talks right away. The fragile truce in the Gulf risks yielding to an armed flare-up, with peace talks between Washington an",
+      "Oman after Trump 'blow 'em up' remark. Iran reupped its backing for Oman on Thursday, after President Trump warned the Arab nation to \u201cbehave\u201d or face consequences. Iranian Foreign Ministry spokespers"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "russia",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 2,
+    "strength": 2.5,
+    "example_articles": [
+      "Claims Discovery Of US-Linked Bioweapons Programme In Ukraine. Russia has long accused the US of funding biological research programmes in Ukraine.",
+      "500,000 soldiers in Ukraine. PRESS REVIEW \u2013 Thursday, May 28, 2026: Papers discuss whether Russia could potentially invade Europe. But first, Spanish front pages cover the latest developments in the p",
+      "Russia? First, Europe needs to pick an envoy \u2013 and know what it wants to say. With the US bogged down in its war against Iran, Ukraine has been urging Europe to step up and play an active role in nego"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "cm",
+    "target_entity": "siddaramaiah",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "\u2018High Command Asked, I Resigned\u2019: Siddaramaiah Steps Down As Karnataka CM. Congress leader Siddaramaiah resigned as Karnataka chief minister, saying he submitted his resignation at Lok Bhavan and noti",
+      "Watch: Karnataka CM change: Siddaramaiah resigns, what\u2019s next? | Above the Fold | 28.05.2026. From Siddaramaiah\u2019s resignation and the Congress leadership transition in Karnataka to India-China talks o",
+      "To Meet Rahul Gandhi On Friday After Outgoing CM's Flight Diverted Due To Bad Weather. Rahul Gandhi and outgoing Karnataka Chief Minister Siddaramaiah postponed their Thursday meeting to Friday after "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "arsenal",
+    "target_entity": "mike",
+    "source_sector": "global_events",
+    "target_sector": "technology",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "If you\u2019re still on Elon Musk\u2019s X, ask yourself this: why? | Jonathan Liew. Some argue that quitting the platform formerly known as Twitter cedes the space to malign actors. But it\u2019s an open sewer, bey",
+      "Campbell: \u2018PSG are favourites but sometimes you need a little luck\u2019. Former England defender on why he walked out on Arsenal, their chances in the Champions League final and Tuchel wielding the axe\u201cTh",
+      "Budapest. Josh Kroenke says there will be no \u2018standing still\u2019Extending Mikel Arteta\u2019s contract the \u2018utmost priority\u2019Josh Kroenke has promised that Arsenal intend to strengthen their squad even if they"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "house",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "Visits Greene in Costa Rica for Fishing and \u2018Spicy\u2019 Political Talks. The two Republican critics of President Trump \u2014 Thomas Massie, who lost his House primary last week, and Marjorie Taylor Greene, wh",
+      "House could leave town, blowing Trump's deadline for immigration funding bill. GOP leaders are waiting to see if the Senate can make progress with the party-line legislation.",
+      "Dems launch \u2018End Corruption Caucus\u2019 with eyes on Trump. A small band of House Democrats has formed a new group designed to combat corruption in Washington \u2014 a move that comes amid growing criticism th"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "middle east",
+    "target_entity": "u. s.",
+    "source_sector": "military",
+    "target_sector": "finance",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "Prices Climb on Renewed Hostilities in Middle East. Oil prices jumped after the U.S. said it shot down four Iranian attack drones, casting doubt once again on the prospects for a peace deal.",
+      "Kuwait air defenses activated against 'missile and drone threats'; U.S. carries out new strikes in Iran. This comes as tensions in the Middle East escalated once again, with the U.S. military carrying",
+      "NBC Daily Open: Oil falls on Iran peace hopes \u2014 then U.S. launches airstrikes. Global markets rally as investors continue to price in Middle East de-escalation."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "kyiv",
+    "target_entity": "ukraine",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "Ukraine\u2019s Street Style Is Shaped by the War. In Kyiv, military-inspired fashion can be seen everywhere. Soldiers and civilians alike say it\u2019s a show of solidarity, not a fad.",
+      "Russia Hit Harder? It at Least Wants Ukraine to Think So.. Major attacks on Kyiv, followed by warnings of more, come as Moscow is stalled on the battlefield and at the negotiating table.",
+      "Ukraine, as Kyiv is warned to brace for a possible major barrage - AP News. Russia maintains attacks on Ukraine, as Kyiv is warned to brace for a possible major barrage AP News"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bandar abbas",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "Live updates: US, Iran trade strikes as Trump dismisses political pressure around deal. The U.S. military launched another defensive strike against Iran on Wednesday, shooting down four Iranian one-wa",
+      "US ceasefire 'violations' after strikes in south. Iran condemned on Thursday what it called violations by the United States after its strikes on the southern port city of Bandar Abbas, while vowing to",
+      "S attacks Bandar Abbas again: Why is the port so important for Iran?. Bandar Abbas, which the US has targeted multiple times, occupies a strategically sensitive position in Strait of Hormuz."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "pentagon",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "Kuwait after second round of U.S. strikes in days. Iran says it targeted a U.S. base in retaliation for the second set of what the Pentagon calls \"purely defensive\" strikes carried out this week.",
+      "Pentagon official: Iran still threatens Strait of Hormuz. Tehran\u2019s ability to scare off commercial ships continues to give it leverage in any peace negotiation with the U.S.",
+      "Pentagon's estimate for Iran war grows to $29B. The latest increase comes even as the U.S. says the fighting has largely stopped."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "oj",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "OJ investigating whether Trump accuser E. Jean Carroll committed perjury. The Justice Department is conducting a criminal investigation into whether author E. Jean Carroll committed perjury in connect",
+      "OJ Opens Criminal Probe Into Trump Accuser E. Jean Carroll. The Justice Department\u2019s probe comes at a time when it faces growing scrutiny over its attempts to go after the president\u2019s critics and poli",
+      "OJ opens investigation into Trump accuser E. Jean Carroll for perjury. The Justice Department is investigating author E. Jean Carroll, who sued President Trump in civil court for sexual assault and de"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "canada",
+    "target_entity": "mexico",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 3,
+    "strength": 2.5,
+    "example_articles": [
+      "It's crunch time for Canada's trade deal with the U.S. and Mexico. ",
+      "Canada and Mexico towards China. The renegotiation of the USMCA deal is peripheral to the green tech revolution in world trade",
+      "S, Mexico, Canada announce Ebola-related travel measures for World Cup. World Cup hosts agree steps to counter Ebola threat after WHO declares public health emergency of international concern"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "by",
+    "target_entity": "byju",
+    "source_sector": "startups",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "From $22bn to zero: Success, not failure, brought Byju's down. Byju's, once a $22 billion edtech giant, has collapsed. Founder Byju Raveendran faces jail for contempt. The remarkable thing about Byju\u2019",
+      "Byju\u2019s founder Byju Raveendran gets six-month jail term in Singapore. Byju Raveendran sentenced to six months in jail for contempt by a Singapore court over disobeyed orders regarding his assets.",
+      "From company's $22 billion valuation to jail sentence: The rise and fall of Byju Raveendran. Byju Raveendran, founder of Byju's, has been sentenced to six months in prison by a Singapore court due to "
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "bjp",
+    "target_entity": "haryana",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "Over 4 Decades, Haryana BJP Gets Its Second Woman Chief. Archana Gupta, a doctor by profession, is presently the state general secretary of the party.",
+      "JP\u2019s civic poll win historic, reflects public trust: Saini. Haryana CM Nayab Singh Saini credits BJP's civic election win to hard work and public trust, pledging faster development in Sonepat and new ",
+      "Archana Gupta, the noted radiologist who is BJP's new Haryana chief?. Before Archana Gupta, Mohan Lal Badoli was the state president of BJP in Harayana. Prior to this appointment, Archana Gupta served"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "delhi",
+    "target_entity": "punjab",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "JP names new state chiefs for Delhi, Punjab and Haryana. ",
+      "Pak-linked terror module planning attacks in UP, Delhi, Punjab. Police bust Pak-linked terror module planning attacks in UP, Delhi, Punjab",
+      "Alert: North India May Get Relief From Heatwave Between May 28 And 30. IMD forecasts gradual relief from north India heatwave May 28-30, with thunderstorms, gusty winds and light rain in Delhi, Punjab"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "bangladesh",
+    "target_entity": "donald trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "Bangladesh spares rare albino buffalo nicknamed \u2018Donald Trump\u2019 from Eid al-Adha sacrifice after viral fame. ",
+      "\u2018Donald Trump\u2019 buffalo in Bangladesh will be spared sacrifice. An albino buffalo with a blond forelock has shot to fame in Bangladesh as people say it resembles Donald Trump.",
+      "Viral \u2018Donald Trump\u2019 buffalo spared from Eid sacrifice and sent to zoo. Bangladesh's national zoo has taken custody of a rare albino buffalo nicknamed \"Donald Trump\", sparing the animal from sacrifice"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "china",
+    "target_entity": "taiwan",
+    "source_sector": "finance",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "S-China Conflict Over Taiwan Risks Nuclear Escalation: Study. China has ramped up pressure on Taiwan by increasing its military presence",
+      "Beijing promised to 'fight back' over Taiwan leader's US visit. But this time it has more to lose. An anticipated meeting between Taiwan's President Tsai Ing-wen and US House Speaker Kevin McCarthy in",
+      "Trump\u2019s Beijing trip should make Taiwan \u2018nervous,\u2019 Slotkin says. The Senate Armed Services member and former Pentagon official warned the president could easily fall into a trap due to his eagerness t"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "santanu sen",
+    "target_entity": "tmc",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "People rejected us: Santanu Sen quits TMC, cites corruption, RG Kar case. People rejected us: Santanu Sen quits TMC, cites corruption, RG Kar case",
+      "MC Faces Second Resignation In 2 Days As Santanu Sen Quits Spokesperson Role. TMC leader and former Rajya Sabha MP Santanu Sen resigns as national spokesperson amid post election turmoil, a day after ",
+      "'When my conscience did not agree, I fought publicly for party': Santanu Sen resigns as TMC national spokesperson. "
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "lebanon",
+    "target_entity": "washington",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "14 across southern Lebanon ahead of Washington talks. Israeli military intensified strikes in southern Lebanon, killing at least 14, including women and children. An Israeli soldier was killed by a He",
+      "Guardian view on Lebanon\u2019s suffering: the \u2018ceasefire\u2019 didn\u2019t stop Israeli attacks. Now they\u2019re intensifying again | Editorial. Civilians including children are among the thousands to have died in this",
+      "Beirut southern suburb ahead of crucial Washington talks. Israel\u2019s air force carried out an airstrike on a southern suburb of the capital, Beirut, Thursday afternoon, the Israeli military said, furthe"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "european commission",
+    "target_entity": "temu",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "U fines Temu \u20ac200m for allowing sale of illegal products. The European Commission says the Chinese-owned online retailer failed to take account of risks from baby toys and faulty chargers sold on its ",
+      "U fines Temu for failing to stop sale of illegal and dangerous products. European Commission finds shoppers on Chinese website very likely to find unsafe items and imposes \u20ac200m penaltyEU regulators h",
+      "U fines Chinese e-commerce giant Temu \u20ac200 million for dangerous baby toys and faulty chargers. An investigation by the European Commission said the Chinese e-commerce site had inadequate risk assessm"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "senate",
+    "target_entity": "u. s.",
+    "source_sector": "politics",
+    "target_sector": "finance",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "Talarico Opens Texas Senate Campaign Against Ken Paxton With Houston Rally. Personal attacks and a packed campaign rally set the tone for what is likely to be a rancorous contest in Texas for U.S. Sen",
+      "Morning news brief. U.S. conducts another strike against Iran, Democrats are hopeful about their chances to retake GOP-held Senate seats, a town in eastern DRC is emerging as the epicenter of the late",
+      "A high-stakes U.S. Senate Race in Texas is expected to be a bitter contest. A U.S. Senate race in Texas is now set with the state's Attorney General Ken Paxton winning the GOP nomination in a primary "
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "texas",
+    "target_entity": "u. s.",
+    "source_sector": "energy",
+    "target_sector": "finance",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "Talarico Opens Texas Senate Campaign Against Ken Paxton With Houston Rally. Personal attacks and a packed campaign rally set the tone for what is likely to be a rancorous contest in Texas for U.S. Sen",
+      "A high-stakes U.S. Senate Race in Texas is expected to be a bitter contest. A U.S. Senate race in Texas is now set with the state's Attorney General Ken Paxton winning the GOP nomination in a primary ",
+      "Who\u2019s on top of Trump\u2019s 2028 revenge list. In today's issue: \u25aa Trump\u2019s next possible targets for retribution \u25aa U.S.-Iran deal in limbo \u25aa \u201c60 Minutes\u201d correspondent not renewed \u25aa Another Hamas leader k"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "gop",
+    "target_entity": "texas",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "A high-stakes U.S. Senate Race in Texas is expected to be a bitter contest. A U.S. Senate race in Texas is now set with the state's Attorney General Ken Paxton winning the GOP nomination in a primary ",
+      "Who\u2019s on top of Trump\u2019s 2028 revenge list. In today's issue: \u25aa Trump\u2019s next possible targets for retribution \u25aa U.S.-Iran deal in limbo \u25aa \u201c60 Minutes\u201d correspondent not renewed \u25aa Another Hamas leader k",
+      "Texas GOP finally turned on Cornyn. The senator was a towering figure in Texas and national politics. His loss signals the end of an era for the Republican establishment."
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "strait of hormuz",
+    "target_entity": "u. s",
+    "source_sector": "energy",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.4,
+    "example_articles": [
+      "2% after Iran says it targeted U.S. airbase following fresh American strikes. Oil prices rose on Thursday after fresh U.S. strikes in Iran renewed concerns over disruptions to commercial shipping thro",
+      "Pentagon official: Iran still threatens Strait of Hormuz. Tehran\u2019s ability to scare off commercial ships continues to give it leverage in any peace negotiation with the U.S.",
+      "Deal Hangs In Balance As Iran Claims It Retaliated After Fresh U.S. Strikes. The U.S. military reportedly struck a drone control site in southern Iran after shooting down several drones over the Strai"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "paris",
+    "target_entity": "sin",
+    "source_sector": "global_events",
+    "target_sector": "startups",
+    "cooccurrence_count": 4,
+    "source_diversity": 2,
+    "strength": 2.2,
+    "example_articles": [
+      "Open 2026: Sinner wilting in heat and into fifth set with Cerundolo: day five updates \u2013 live. Updates from the fifth day\u2019s play at Roland Garros Mensik: playing in Paris heat \u2018insane\u2019 | Mail DanielBac",
+      "Open 2026: Sinner labouring in heat, Osaka downs Vekic, and more on day five \u2013 live. Updates from the fifth day\u2019s play at Roland Garros Mensik: playing in Paris heat \u2018insane\u2019 | Mail DanielBack with Ko",
+      "Open 2026: Sinner stunned by Cer\u00fandolo after wilting in brutal heat: day five updates \u2013 live. Updates from the fifth day\u2019s play at Roland Garros Mensik: playing in Paris heat \u2018insane\u2019 | Mail DanielBac"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "europe",
+    "target_entity": "france",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 2,
+    "strength": 2.2,
+    "example_articles": [
+      "Europe heatwave 'brutal reminder' of climate change. The UN climate chief said Wednesday that a record-breaking early heatwave scorching a swathe of western Europe was \"a brutal reminder of the spiral",
+      "France's nuclear umbrella. Norway \u200bwill open talks with France on joining its nuclear umbrella, French President Emmanuel Macron and Norwegian Prime Minister \u200bJonas Gahr Stoere said on Wednesday, refl",
+      "France moves towards symbolic repealing of slavery legislation. France is Thursday expected to move towards repealing outdated legislation that defines people enslaved in its colonies as \"moveable goo"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "u. s.",
+    "target_entity": "us",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 2,
+    "strength": 2.2,
+    "example_articles": [
+      "Live updates: US, Iran trade strikes as Trump dismisses political pressure around deal. The U.S. military launched another defensive strike against Iran on Wednesday, shooting down four Iranian one-wa",
+      "US response. An Ebola outbreak in the Congo is fast outpacing containment efforts in the region as questions and concerns mount in the U.S. over the Trump administration\u2019s preparedness and response. H",
+      "Beijing has learned about the US from the Iran war. Current and former U.S. defense officials worry headwinds from the conflict with Tehran leave Beijing with the upper hand."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "ap news",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 2.2,
+    "example_articles": [
+      "P Exclusive: Trump administration tells prosecutors to stand down on Venezuela leader, sources say - AP News. AP Exclusive: Trump administration tells prosecutors to stand down on Venezuela leader, so",
+      "3-hour medical visit to Walter Reed and declares 'Everything checked out PERFECTLY' - AP News. Trump wraps up 3-hour medical visit to Walter Reed and declares 'Everything checked out PERFECTLY' AP New",
+      "Trump\u2019s Justice Department scrubs its website of news releases about Jan. 6 defendants - AP News. Trump\u2019s Justice Department scrubs its website of news releases about Jan. 6 defendants AP News"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "gop",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.136,
+    "example_articles": [
+      "Who\u2019s on top of Trump\u2019s 2028 revenge list. In today's issue: \u25aa Trump\u2019s next possible targets for retribution \u25aa U.S.-Iran deal in limbo \u25aa \u201c60 Minutes\u201d correspondent not renewed \u25aa Another Hamas leader k",
+      "Trump pursues legacy, control and revenge. GOP lawmakers fear a self-interested president is needlessly risking their party\u2019s majorities.",
+      "Trump\u2019s disappearing China hawks. The once vocal GOP wing that warned against making deals with Beijing has largely left the conversation ahead of Trump\u2019s China summit."
+    ],
+    "sentiment_variance": 0.119
+  },
+  {
+    "source_entity": "fifa",
+    "target_entity": "new jersey",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.122,
+    "example_articles": [
+      "Fifa is being investigated over World Cup ticket prices. New York and New Jersey are looking into the association after fans have reportedly been \"misled\" over ticket sales and seat locations.",
+      "IFA faces US probe over World Cup ticket prices less than two weeks before the tournament. The attorneys general of New York and New Jersey have issued subpoenas to FIFA as part of a formal investigat",
+      "IFA World Cup: New York and New Jersey prosecutors probe 'sky-high' ticket prices. US prosecutors have subpoenaed FIFA over expensive World Cup tickets, saying the event is \"not an invitation to explo"
+    ],
+    "sentiment_variance": 0.074
+  },
+  {
+    "source_entity": "fifa",
+    "target_entity": "new york",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.122,
+    "example_articles": [
+      "Fifa is being investigated over World Cup ticket prices. New York and New Jersey are looking into the association after fans have reportedly been \"misled\" over ticket sales and seat locations.",
+      "IFA faces US probe over World Cup ticket prices less than two weeks before the tournament. The attorneys general of New York and New Jersey have issued subpoenas to FIFA as part of a formal investigat",
+      "IFA World Cup: New York and New Jersey prosecutors probe 'sky-high' ticket prices. US prosecutors have subpoenaed FIFA over expensive World Cup tickets, saying the event is \"not an invitation to explo"
+    ],
+    "sentiment_variance": 0.074
+  },
+  {
+    "source_entity": "new jersey",
+    "target_entity": "new york",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.122,
+    "example_articles": [
+      "Fifa is being investigated over World Cup ticket prices. New York and New Jersey are looking into the association after fans have reportedly been \"misled\" over ticket sales and seat locations.",
+      "IFA faces US probe over World Cup ticket prices less than two weeks before the tournament. The attorneys general of New York and New Jersey have issued subpoenas to FIFA as part of a formal investigat",
+      "IFA World Cup: New York and New Jersey prosecutors probe 'sky-high' ticket prices. US prosecutors have subpoenaed FIFA over expensive World Cup tickets, saying the event is \"not an invitation to explo"
+    ],
+    "sentiment_variance": 0.074
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "iran",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.114,
+    "example_articles": [
+      "India cuts June-July domestic flights by a fourth amid jet fuel price surge due to Iran war. ",
+      "Iran war exposed India\u2019s over-reliance on imported petrochemicals. It isn\u2019t just oil and fertilizers. The Iran war has shredded India\u2019s petrochemical supply chain, forcing manufacturers to scramble fo",
+      "India newsletter: Iran war disruptions, Modi's appeal to boost India's hospitality sector. Indian Prime Minister Narendra Modi's appeal to curb foreign travel is proving to be a boon to the local trav"
+    ],
+    "sentiment_variance": 0.047
+  },
+  {
+    "source_entity": "byju",
+    "target_entity": "singapore",
+    "source_sector": "global_events",
+    "target_sector": "finance",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.107,
+    "example_articles": [
+      "Singapore court sentenced Byju\u2019s founder to jail. ",
+      "Byju\u2019s founder Byju Raveendran gets six-month jail term in Singapore. Byju Raveendran sentenced to six months in jail for contempt by a Singapore court over disobeyed orders regarding his assets.",
+      "From company's $22 billion valuation to jail sentence: The rise and fall of Byju Raveendran. Byju Raveendran, founder of Byju's, has been sentenced to six months in prison by a Singapore court due to "
+    ],
+    "sentiment_variance": 0.025
+  },
+  {
+    "source_entity": "gujarat",
+    "target_entity": "niagara",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Canada; family informed after 12 days. A young Indian student, Vidhi, living in Canada for higher studies and aiming for permanent residency, was found murdered in the Niagara region. She was reported",
+      "22-Year-Old Student From Gujarat Killed In Knife Attack In Canada\u2019s Niagara. Canadian police have registered a case and launched a search operation to trace the suspect involved in the attack.",
+      "22-year-old Indian-origin student from Gujarat stabbed to death in Canada's Niagara. The student, who had been living in Canada for the past three years for higher education while also working part-ti"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "delhi",
+    "target_entity": "rajya sabha",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Karnataka after Siddaramaiah resigns as CM. Karnataka chief minister Siddaramaiah resigned on Thursday following months of speculation over a leadership change, clearing the path for his deputy, DK Sh",
+      "\"No Interest In National Politics\": Siddaramaiah Declines Rajya Sabha Offer. Siddaramaiah will be heading for Delhi later today.",
+      "Rajya Sabha, No Retirement: Why Outgoing Karnataka CM Siddaramaiah Picked Bengaluru Over Delhi. By remaining firmly anchored in Bengaluru, Siddaramaiah ensures he stays indispensable to Karnataka\u2019s po"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "karnataka",
+    "target_entity": "rajya sabha",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Karnataka after Siddaramaiah resigns as CM. Karnataka chief minister Siddaramaiah resigned on Thursday following months of speculation over a leadership change, clearing the path for his deputy, DK Sh",
+      "Politics Live Updates: Declined Rajya Sabha Seat Offer, Says Siddaramaiah. Karnataka Politics Live Updates: A change in leadership in the three-year-old Karnataka government appears imminent, with Sid",
+      "Rajya Sabha, No Retirement: Why Outgoing Karnataka CM Siddaramaiah Picked Bengaluru Over Delhi. By remaining firmly anchored in Bengaluru, Siddaramaiah ensures he stays indispensable to Karnataka\u2019s po"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "china",
+    "target_entity": "iran",
+    "source_sector": "finance",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "S arsenal depleted? Restocking THAAD, Tomahawk & Patriot missiles could take years. A recent Iran conflict has significantly depleted US high-end missile stockpiles, raising alarms in Washington. Crit",
+      "China\u2019s Top Diplomat Makes Veiled Jabs at Trump From UN. China\u2019s top diplomat made thinly veiled jabs at President Donald Trump\u2019s foreign policy from the United Nations, using an address to criticize ",
+      "Interview: Tom Llamas sits down with Secretary of State Marco Rubio. On the sidelines of the Trump-Xi Summit in Beijing, NBC News' Tom Llamas sits down with Secretary of State Marco Rubio to discuss C"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "china",
+    "target_entity": "washington",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "S arsenal depleted? Restocking THAAD, Tomahawk & Patriot missiles could take years. A recent Iran conflict has significantly depleted US high-end missile stockpiles, raising alarms in Washington. Crit",
+      "Mandelson risks would have been impossible, says former MI6 chief. Vetting of former UK ambassador to Washington warned of ties to senior figures in China, Russia and IsraelA former head of MI6 has sa",
+      "Payments group accused of being \u2018Chinese backdoor\u2019 moves staff out of China. Australia-founded Airwallex is pursuing US expansion amid intensifying rivalry between Washington and Beijing"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "supreme court",
+    "target_entity": "vin",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Vinesh\u2019s comeback hits fresh roadblock as WFI moves SC against Delhi HC order. Olympian Vinesh Phogat faces a new challenge as the Wrestling Federation of India (WFI) appeals to the Supreme Court, que",
+      "FI moves Supreme Court after Delhi HC allows Vinesh Phogat to compete in Asian Games selection trials. Earlier, on May 22, a Delhi High Court division bench allowed Vinesh Phogat's participation in th",
+      "FI moves Supreme Court against Delhi HC order allowing Vinesh Phogat in Asian Games trials. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "delhi hc",
+    "target_entity": "vin",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Vinesh\u2019s comeback hits fresh roadblock as WFI moves SC against Delhi HC order. Olympian Vinesh Phogat faces a new challenge as the Wrestling Federation of India (WFI) appeals to the Supreme Court, que",
+      "FI moves Supreme Court after Delhi HC allows Vinesh Phogat to compete in Asian Games selection trials. Earlier, on May 22, a Delhi High Court division bench allowed Vinesh Phogat's participation in th",
+      "FI moves Supreme Court against Delhi HC order allowing Vinesh Phogat in Asian Games trials. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "karnataka cm",
+    "target_entity": "siddaramaiah",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "K Shivakumar by his side, Siddaramaiah tells Cabinet he\u2019s quitting as Karnataka CM. ",
+      "Karnataka CM, says he respects high command decision. Siddaramaiah resigns as Karnataka CM, says he respects high command decision",
+      "Congress\u2019s limited win. The party managed the Karnataka CM transition well. But DK Shivakumar begins his stint with Siddaramaiah looming large over state politics"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "ukraine",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "Claims Discovery Of US-Linked Bioweapons Programme In Ukraine. Russia has long accused the US of funding biological research programmes in Ukraine.",
+      "500,000 soldiers in Ukraine. PRESS REVIEW \u2013 Thursday, May 28, 2026: Papers discuss whether Russia could potentially invade Europe. But first, Spanish front pages cover the latest developments in the p",
+      "Russia? First, Europe needs to pick an envoy \u2013 and know what it wants to say. With the US bogged down in its war against Iran, Ukraine has been urging Europe to step up and play an active role in nego"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "persian gulf strait authority",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "S Sanctions Iran's Persian Gulf Strait Authority Set To Manage Hormuz. Iran's chokehold on the strait has caused worldwide energy shocks",
+      "S-Iran truce deal ready, but needs Trump's final approval, says report. Tensions around the Strait of Hormuz escalated sharply on Thursday after Iranian media reported multiple maritime confrontations",
+      "S sanctions Iranian agency trying to control Strait of Hormuz. The Treasury Department on Wednesday sanctioned an Iranian agency attempting to control the Strait of Hormuz. In a release, Treasury said"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "china",
+    "target_entity": "trump",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "China\u2019s Top Diplomat Makes Veiled Jabs at Trump From UN. China\u2019s top diplomat made thinly veiled jabs at President Donald Trump\u2019s foreign policy from the United Nations, using an address to criticize ",
+      "Trump\u2019s disappearing China hawks. The once vocal GOP wing that warned against making deals with Beijing has largely left the conversation ahead of Trump\u2019s China summit.",
+      "Trump\u2019s Beijing trip should make Taiwan \u2018nervous,\u2019 Slotkin says. The Senate Armed Services member and former Pentagon official warned the president could easily fall into a trap due to his eagerness t"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "us",
+    "target_entity": "wall street",
+    "source_sector": "politics",
+    "target_sector": "finance",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "S Stock Market Today Live Updates: Wall Street eyes tepid start amid Middle East tensions; oil & bond yields spike. US Stock Market Today Live Updates: Fresh tensions between US and Iran has dampened ",
+      "S Funding Markets Are Flooded With Cash That\u2019s Here to Stay. An abundance of cash in US funding markets appears to be driven by deeper structural shifts that are unlocking billions of dollars in balan",
+      "S Stock Market Today Live Updates: US stocks edge marginally lower; traders assess inflation data, Mideast developments. US Stock Market Today Live Updates: Fresh tensions between US and Iran has damp"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "bandar abbas",
+    "target_entity": "strait of hormuz",
+    "source_sector": "military",
+    "target_sector": "energy",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Explosions, More Fighting: Why Bandar Abbas Has Become Ground Zero In US-Iran War. Bandar Abbas sits on Iran\u2019s southern coast, directly overlooking the Strait of Hormuz, which is at the centre of the ",
+      "S attacks Bandar Abbas again: Why is the port so important for Iran?. Bandar Abbas, which the US has targeted multiple times, occupies a strategically sensitive position in Strait of Hormuz.",
+      "Iran: US base targeted in missile strike. Iranian state television on Thursday released images it said showed missiles being launched at an American air base from where earlier in the day a strike had"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "texas",
+    "target_entity": "us",
+    "source_sector": "energy",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "Trump-backed challenger beats veteran US senator in Texas primary. Ken Paxton's victory sets up what will be a closely watched contest in November's midterm elections.",
+      "Democrats are feeling optimistic in the US Senate race in Texas. Also in today\u2019s newsletter, how historically low tax refund numbers are adding more financial pressure for US consumers",
+      "FT: Democrats\u2019 hopes for victory in Texas rise after Paxton\u2019s win. Also in today\u2019s newsletter: US hits Iran with fresh strikes while Kirkland & Ellis develops its own AI platform"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "lac",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "India, China hold 'constructive' talks on LAC; agree border peace key to normalising ties. ",
+      "India, China review border situation, discuss normalisation of ties. India and China expressed satisfaction over peace along the LAC during border talks held under the WMCC mechanism in Beijing.",
+      "Watch: Karnataka CM change: Siddaramaiah resigns, what\u2019s next? | Above the Fold | 28.05.2026. From Siddaramaiah\u2019s resignation and the Congress leadership transition in Karnataka to India-China talks o"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "china",
+    "target_entity": "lac",
+    "source_sector": "finance",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "India, China hold 'constructive' talks on LAC; agree border peace key to normalising ties. ",
+      "India, China review border situation, discuss normalisation of ties. India and China expressed satisfaction over peace along the LAC during border talks held under the WMCC mechanism in Beijing.",
+      "Watch: Karnataka CM change: Siddaramaiah resigns, what\u2019s next? | Above the Fold | 28.05.2026. From Siddaramaiah\u2019s resignation and the Congress leadership transition in Karnataka to India-China talks o"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "trump",
+    "target_entity": "wsj",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "Trump refiles $10bn defamation suit against WSJ over report on Epstein ties \u2013 US politics live. The lawsuit is one of several that the president has brought in his personal capacity against news organ",
+      "Trump refiles $10bn lawsuit against WSJ over report on alleged Epstein ties. Legal action claims newspaper tarnished reputation by describing card to Jeffrey Epstein as bearing his signatureDonald Tru",
+      "Trump refiles $10 billion defamation suit against WSJ over report on Epstein ties - Reuters. "
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "donald trump",
+    "target_entity": "hormuz",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Trump threatens to \u2018blow up\u2019 US ally Oman if it does not \u2018behave\u2019 over strait of Hormuz | First Thing. President makes comments after reports Iran and Oman have discussed jointly charging a toll for s",
+      "US trade air strikes after Trump dismisses report of Hormuz deal. Iran's Revolutionary Guard targeted a US airbase on Thursday after the US military carried out what a Washington official said were st",
+      "'Won\u2019t tolerate': After Trump, US treasury secy warns Oman over Hormuz toll, working with Iran. US and Iranian negotiators have reportedly agreed on a 60-day memorandum of understanding aimed at exten"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "doj",
+    "target_entity": "donald trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "100% tax on California payees of Trump\u2019s $1.8bn fund. State\u2019s governor looks to thwart US president\u2019s plan to divert money to allies, including January 6 riotersSign up for the Breaking News US newsle",
+      "Trump over sexual assault allegation faces DOJ investigation: Report. Federal prosecutors in Chicago are investigating E. Jean Carroll for potential perjury during her lawsuits against Donald Trump. T",
+      "E Jean Carroll? Journalist under DOJ's criminal investigation had accused Trump of sexual abuse. The US Justice Department has launched a criminal investigation into E Jean Carroll over claims she gav"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "iran",
+    "target_entity": "mexico",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Sheinbaum allows Iran team to stay in Mexico during World Cup after US refusal. Fifa approached Mexico after US declined to host Iran squad despite it playing group games in the United StatesMexico\u2019s ",
+      "US must issue multiple-entry visas for its World Cup squad. Iran's delegation will be based in Tijuana, Mexico, and will travel to the US for all three group stage matches.",
+      "Mexico's president sees 'no issue' with her country hosting Iran's World Cup team during tournament - AP News. Mexico's president sees 'no issue' with her country hosting Iran's World Cup team during "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "blair",
+    "target_entity": "tony blair",
+    "source_sector": "energy",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Blair\u2019s fossil fuel ideas \u2018bizarre\u2019 in face of energy and climate crises, experts say. Energy specialists say abandoning net zero and increasing oil and gas drilling would cause more instability for B",
+      "Blair. Former Labour PM Sir Tony Blair has accused the government of having \"no coherent plan\" for the country.",
+      "Blair is wrong about my government, Starmer says, as he hits back over Labour criticism. The prime minister \u2018doesn\u2019t agree with much\u2019 of Sir Tony Blair\u2019s scathing 5,700-word essay"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "russia",
+    "target_entity": "u. s.",
+    "source_sector": "military",
+    "target_sector": "finance",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Russia's Crude Exports Fairly Stable Despite U.S. Sanctions, Goldman Says. Oil edged lower in early trade as Goldman Sachs said the latest round of U.S. sanctions against Russia haven\u2019t had a signific",
+      "U.S. dismisses claim its diplomats have fled Kyiv as Zelenskyy pens Trump letter. The United States on Thursday reiterated that its diplomats remained in Kyiv despite Russia\u2019s escalating threats, dism",
+      "Patriot missile systems for Ukraine's war against Russia. Ukrainian President Volodymyr Zelenskyy is urging the U.S. to expand deliveries of Patriot missile systems for the war against Russia. CBS New"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "maga",
+    "target_entity": "senate",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "Cornyn in Senate primary in a big win for MAGA. John Cornyn became the second Republican senator to lose his seat in less than two weeks. A Trump endorsement helped propel Texas Attorney General Ken P",
+      "Republicans are worried about Ken Paxton as a Senate nominee. Few politicians have garnered as much scandal in Texas as Paxton, but he has ignited the MAGA base, who see him as a fighter.",
+      "Texas blue with Paxton vs. Talarico Senate race. State Attorney General Ken Paxton's win in the Texas Senate primary exhilarated President Trump and the MAGA base on Tuesday night. But the victory als"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "ken paxton",
+    "target_entity": "maga",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "Cornyn in Senate primary in a big win for MAGA. John Cornyn became the second Republican senator to lose his seat in less than two weeks. A Trump endorsement helped propel Texas Attorney General Ken P",
+      "Republicans are worried about Ken Paxton as a Senate nominee. Few politicians have garnered as much scandal in Texas as Paxton, but he has ignited the MAGA base, who see him as a fighter.",
+      "Texas blue with Paxton vs. Talarico Senate race. State Attorney General Ken Paxton's win in the Texas Senate primary exhilarated President Trump and the MAGA base on Tuesday night. But the victory als"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "hormuz",
+    "target_entity": "strait of hormuz",
+    "source_sector": "military",
+    "target_sector": "energy",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "US trade air strikes after Trump dismisses report of Hormuz deal. Iran's Revolutionary Guard targeted a US airbase on Thursday after the US military carried out what a Washington official said were st",
+      "Hormuz toll, shipping rule: Inside US-Iran peace deal that awaits Trump's final nod. Citing US officials, the report stated that among the key points of the deal is the reopening of the Strait of Horm",
+      "Hormuz, Suez, Panama: Why one can't charge shipping fees. Iran has been widely condemned for demanding up to $2 million per transit through the Strait of Hormuz. DW explores the reasons why Egypt can "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "u. s.",
+    "target_entity": "washington",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "U.S. dismisses claim its diplomats have fled Kyiv as Zelenskyy pens Trump letter. The United States on Thursday reiterated that its diplomats remained in Kyiv despite Russia\u2019s escalating threats, dism",
+      "Cuba as 3rd war of 2026 looms, 'Pentagon one order away...'. military assets for a possible operation involving Cuba. The USS Nimitz carrier strike group, Marine deployments, and expanded surveillance",
+      "U.S., Iran exchange fire threatening peace talks. Washington says it shot down five drones over the Strait of Hormuz while Tehran fires ballistic missiles at American base in Kuwait"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "middle east",
+    "target_entity": "trump",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Warren: State Department didn't seek TRANSCOM aid in evacuating Americans from Middle East. Democrats have been critical of the Trump administration's handling of Americans stuck in the region after t",
+      "'Won\u2019t tolerate': After Trump, US treasury secy warns Oman over Hormuz toll, working with Iran. US and Iranian negotiators have reportedly agreed on a 60-day memorandum of understanding aimed at exten",
+      "Iran war after Trump threatens to bomb Oman, a key U.S. ally. President Trump issued a stern warning against Oman, a key U.S. ally in the Middle East, amid high tensions in the Strait of Hormuz. CBS N"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "fed",
+    "target_entity": "iran",
+    "source_sector": "finance",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Energy inflation has been more persistent than expected, Fed's Goolsbee tells CNBC. While oil prices have recently fallen on news that a peace deal between the U.S. and Iran could come, prices are sti",
+      "Fed\u2019s Williams Says Monetary Policy Well-Positioned Right Now. Federal Reserve Bank of New York President John Williams said the central bank\u2019s policy is well-positioned to respond to the economic eff",
+      "3 years, Fed's preferred gauge shows. Inflation rose for the second consecutive month as the Iran war drove up gas prices."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "oman",
+    "target_entity": "u. s.",
+    "source_sector": "military",
+    "target_sector": "finance",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Oman after Trump 'blow 'em up' remark. Iran reupped its backing for Oman on Thursday, after President Trump warned the Arab nation to \u201cbehave\u201d or face consequences. Iranian Foreign Ministry spokespers",
+      "Iran war after Trump threatens to bomb Oman, a key U.S. ally. President Trump issued a stern warning against Oman, a key U.S. ally in the Middle East, amid high tensions in the Strait of Hormuz. CBS N",
+      "U.S. sanctions Iran's Hormuz Strait authority, warns Oman not to allow tolls. The latest military and economic actions come as President Trump insists he feels no pressure to make a deal with Iran bef"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "congo",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "US response. An Ebola outbreak in the Congo is fast outpacing containment efforts in the region as questions and concerns mount in the U.S. over the Trump administration\u2019s preparedness and response. H",
+      "DC says green card holders who were recently in countries where Ebola is spreading can\u2019t reenter US. The move expands existing travel restrictions barring foreigners who\u2019ve recently been in Congo, Sou",
+      "US remains low amid Congo outbreak, CDC says. The World Health Organization has declared the outbreak in central Africa \u201ca public health emergency of international concern.\u201d"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "pentagon",
+    "target_entity": "u. s.",
+    "source_sector": "politics",
+    "target_sector": "finance",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Kuwait after second round of U.S. strikes in days. Iran says it targeted a U.S. base in retaliation for the second set of what the Pentagon calls \"purely defensive\" strikes carried out this week.",
+      "Pentagon's estimate for Iran war grows to $29B. The latest increase comes even as the U.S. says the fighting has largely stopped.",
+      "Cuba as 3rd war of 2026 looms, 'Pentagon one order away...'. military assets for a possible operation involving Cuba. The USS Nimitz carrier strike group, Marine deployments, and expanded surveillance"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "justice department",
+    "target_entity": "oj",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "OJ investigating whether Trump accuser E. Jean Carroll committed perjury. The Justice Department is conducting a criminal investigation into whether author E. Jean Carroll committed perjury in connect",
+      "OJ Opens Criminal Probe Into Trump Accuser E. Jean Carroll. The Justice Department\u2019s probe comes at a time when it faces growing scrutiny over its attempts to go after the president\u2019s critics and poli",
+      "OJ opens investigation into Trump accuser E. Jean Carroll for perjury. The Justice Department is investigating author E. Jean Carroll, who sued President Trump in civil court for sexual assault and de"
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "house",
+    "target_entity": "senate",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 3,
+    "source_diversity": 2,
+    "strength": 2.1,
+    "example_articles": [
+      "House could leave town, blowing Trump's deadline for immigration funding bill. GOP leaders are waiting to see if the Senate can make progress with the party-line legislation.",
+      "House effort aims to kill 'anti-weaponization' fund. Reps. Brian Fitzpatrick and Tom Suozzi are drafting legislation as Senate Republicans consider curbs.",
+      "Iran war. Votes in the House and Senate this week to halt the military campaign would prove a stunning embarrassment for the president."
+    ],
+    "sentiment_variance": 1.0
+  },
+  {
+    "source_entity": "brussels",
+    "target_entity": "eu",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "EU rearmament loans. Italian PM is threatening to reject bloc\u2019s funding unless Brussels shows more leniency on energy crisis",
+      "Brexit rules on food exports to be scrapped, government confirms. Agreement affecting meat, plants and packaging promises to end paperwork \u2018hell\u2019 and border delays from 2027Business live \u2013 latest upda",
+      "Brussels faces backlash over carbon trading system as production costs soar. Several EU countries argue that planned cuts to free emissions allowances under the EU Emissions Trading System are too sev"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "putin",
+    "target_entity": "russia",
+    "source_sector": "politics",
+    "target_sector": "military",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Russia after Putin\u2019s threats. The German-Netherlands Corps will be tasked with the command of allied troops in Estonia and Latvia",
+      "Selling Yuan Bonds After Putin\u2019s Visit to Beijing. Russia is selling its second issue of yuan-denominated sovereign bonds after President Vladimir Putin held talks in Beijing last week.",
+      "NATO Putin Should Fear Is One America No Longer Controls. Perspective: Russia may find a less U.S.-controlled NATO angrier, less predictable and readier to hit back."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "mississippi",
+    "target_entity": "supreme court",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Court rules for Black death row inmate from Mississippi over racial bias in makeup of jury. The Supreme Court has ruled for a Black death row inmate from Mississippi who claims there was racial bias i",
+      "Kavanaugh, Roberts Join Supreme Court Liberal Justices in Death Row Ruling. Supreme Court sides 5-4 with Mississippi death row inmate, reviving challenge over alleged racial bias in jury selection.",
+      "Court sides with death-row inmate who alleged racial bias in jury selection. In a case that raised questions about racial bias in the criminal justice system, the Supreme Court threw out the murder co"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "delhi",
+    "target_entity": "jaipur",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 3,
+    "source_diversity": 3,
+    "strength": 2.1,
+    "example_articles": [
+      "Outgoing Karnataka CM Siddaramaiah\u2019s Delhi flight diverted to Jaipur amid heavy rain. ",
+      "LIVE: Siddaramaiah's flight to Delhi lands in Jaipur due to bad weather. AHINDA leaders oppose Congress' decision to ask CM Siddaramaiah to quit",
+      "CM news LIVE Updates | Flight carrying Siddaramaiah lands in Jaipur due to bad weather in Delhi. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "army",
+    "target_entity": "j & k",
+    "source_sector": "military",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil",
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil",
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "army",
+    "target_entity": "karg",
+    "source_sector": "military",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil",
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil",
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "army",
+    "target_entity": "kargil",
+    "source_sector": "military",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil",
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil",
+      "Army, J&K govt plan tourism makeover for Kargil. Army, J&K govt plan tourism makeover for Kargil"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "finserv intelligence",
+    "target_entity": "r &",
+    "source_sector": "technology",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "r &",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "finserv",
+    "target_entity": "india",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "finserv intelligence",
+    "target_entity": "r & am",
+    "source_sector": "technology",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "finserv intelligence",
+    "target_entity": "india",
+    "source_sector": "technology",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "r & am",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins",
+      "Finserv commits \u20b91,500 cr-2,000 cr over 5 years to AI innovation startups to bridge private R&D funding gap. The plan to invest in AI startups will focus on early-stage companies. The initiative, Fins"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "sbi funds management",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "BI Funds starts roadshows for a \u20b913,000-crore IPO, aims launch by July. SBI Funds Management, India\u2019s largest asset manager, is said to be in talks with investors to raise about \u20b913,000 crore through ",
+      "BI Funds starts roadshows for a \u20b913,000-crore IPO, aims launch by July. SBI Funds Management, India\u2019s largest asset manager, is said to be in talks with investors to raise about \u20b913,000 crore through ",
+      "BI Funds starts roadshows for a \u20b913,000-crore IPO, aims launch by July. SBI Funds Management, India\u2019s largest asset manager, is said to be in talks with investors to raise about \u20b913,000 crore through "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bi funds",
+    "target_entity": "india",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "BI Funds starts roadshows for a \u20b913,000-crore IPO, aims launch by July. SBI Funds Management, India\u2019s largest asset manager, is said to be in talks with investors to raise about \u20b913,000 crore through ",
+      "BI Funds starts roadshows for a \u20b913,000-crore IPO, aims launch by July. SBI Funds Management, India\u2019s largest asset manager, is said to be in talks with investors to raise about \u20b913,000 crore through ",
+      "BI Funds starts roadshows for a \u20b913,000-crore IPO, aims launch by July. SBI Funds Management, India\u2019s largest asset manager, is said to be in talks with investors to raise about \u20b913,000 crore through "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "amazon",
+    "target_entity": "cci",
+    "source_sector": "finance",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s",
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s",
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "amazon",
+    "target_entity": "future coupons",
+    "source_sector": "finance",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s",
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s",
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "amazon",
+    "target_entity": "future",
+    "source_sector": "finance",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s",
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s",
+      "Court sets aside CCI\u2019s \u20b9202 crore penalty on Amazon in Future Coupons case. The top court has ordered the refund of any amount deposited with interest, overturning the regulator\u2019s action over Amazon\u2019s"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "k shivakumar",
+    "target_entity": "toyota qual",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res",
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res",
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "siddaramaiah",
+    "target_entity": "toyota qual",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res",
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res",
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "karnataka",
+    "target_entity": "toyota qual",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res",
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res",
+      "K Shivakumar to succeed Siddaramaiah as Karnataka CM\u2014Inside his \u20b91,413.80 cr net worth: Toyota Qualis, Rolex and more. At a breakfast meeting, Chief Minister Siddaramaiah announced his decision to res"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "sennheiser",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "jbl",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "sony",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "india",
+    "target_entity": "nothing",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong",
+      "Best headphones under \u20b910,000: Sony, JBL, Sennheiser and more top audio picks in India. From Sony and JBL to Sennheiser and Nothing, these headphones under \u20b910,000 offer ANC, long battery life, strong"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "asci",
+    "target_entity": "india",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Drinkable sunscreen & betting reels: how offshore platforms and wellness brands dodge India's ad rules. The latest ASCI report reveals how \u2018manufactured\u2019 science and fast-vanishing social media campai",
+      "Drinkable sunscreen & betting reels: how offshore platforms and wellness brands dodge India's ad rules. The latest ASCI report reveals how \u2018manufactured\u2019 science and fast-vanishing social media campai",
+      "Drinkable sunscreen & betting reels: how offshore platforms and wellness brands dodge India's ad rules. The latest ASCI report reveals how \u2018manufactured\u2019 science and fast-vanishing social media campai"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "rbi",
+    "target_entity": "reserve bank of india",
+    "source_sector": "global_events",
+    "target_sector": "finance",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Useful money: RBI's \u20b92.9 trillion surplus transfer to the government struck a delicate balance. The Reserve Bank of India's record payout to the central government adds to the economy\u2019s cushion. Minim",
+      "Useful money: RBI's \u20b92.9 trillion surplus transfer to the government struck a delicate balance. The Reserve Bank of India's record payout to the central government adds to the economy\u2019s cushion. Minim",
+      "Useful money: RBI's \u20b92.9 trillion surplus transfer to the government struck a delicate balance. The Reserve Bank of India's record payout to the central government adds to the economy\u2019s cushion. Minim"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "d k shivakumar",
+    "target_entity": "delhi",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "CM news LIVE Updates | After Siddarmaiah, D K Shivakumar leaves for Delhi. ",
+      "CM news LIVE Updates | After Siddarmaiah, D K Shivakumar leaves for Delhi. ",
+      "CM news LIVE Updates | After Siddarmaiah, D K Shivakumar leaves for Delhi. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "delhi",
+    "target_entity": "siddarmaiah",
+    "source_sector": "politics",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "CM news LIVE Updates | After Siddarmaiah, D K Shivakumar leaves for Delhi. ",
+      "CM news LIVE Updates | After Siddarmaiah, D K Shivakumar leaves for Delhi. ",
+      "CM news LIVE Updates | After Siddarmaiah, D K Shivakumar leaves for Delhi. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "enemy",
+    "target_entity": "israel",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "enemy",
+    "target_entity": "us",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "enemy",
+    "target_entity": "mojtaba",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. ",
+      "Iran, US-Israel War Live Updates | Enemy's plan is to bring Iran to its knees: Mojtaba slams US, Israel. "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "breaking news us",
+    "target_entity": "us",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Trump refiles $10bn defamation suit against WSJ over report on Epstein ties \u2013 US politics live. The lawsuit is one of several that the president has brought in his personal capacity against news organ",
+      "Trump\u2019s justice department reportedly opens criminal investigation into E Jean Carroll \u2013 as it happened. This live blog is now closed.US justice department reportedly opens criminal inquiry into Trump",
+      "100% tax on California payees of Trump\u2019s $1.8bn fund. State\u2019s governor looks to thwart US president\u2019s plan to divert money to allies, including January 6 riotersSign up for the Breaking News US newsle"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "breaking news us",
+    "target_entity": "trump",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Trump refiles $10bn defamation suit against WSJ over report on Epstein ties \u2013 US politics live. The lawsuit is one of several that the president has brought in his personal capacity against news organ",
+      "Trump\u2019s justice department reportedly opens criminal investigation into E Jean Carroll \u2013 as it happened. This live blog is now closed.US justice department reportedly opens criminal inquiry into Trump",
+      "100% tax on California payees of Trump\u2019s $1.8bn fund. State\u2019s governor looks to thwart US president\u2019s plan to divert money to allies, including January 6 riotersSign up for the Breaking News US newsle"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "sergej barbarez",
+    "target_entity": "\u2019 network",
+    "source_sector": "energy",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "herzegovina",
+    "target_entity": "\u2019 network",
+    "source_sector": "energy",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "com",
+    "target_entity": "sergej barbarez",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "guardian",
+    "target_entity": "sergej barbarez",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "com",
+    "target_entity": "herzegovina",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "guardian",
+    "target_entity": "herzegovina",
+    "source_sector": "global_events",
+    "target_sector": "energy",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art",
+      "Herzegovina World Cup 2026 team guide. After finally getting his chance to manage his country, Sergej Barbarez has conjured the passion and energy that could make his team an interesting watchThis art"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "danny new",
+    "target_entity": "glacier national park",
+    "source_sector": "military",
+    "target_sector": "global_events",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: 2 hikers recount close encounter with grizzly bears. ABC News' Danny New talks to two hikers in Glacier National Park who are now laughing about their close encounter with grizzly bears.",
+      "ATCH: 2 hikers recount close encounter with grizzly bears. ABC News' Danny New talks to two hikers in Glacier National Park who are now laughing about their close encounter with grizzly bears.",
+      "ATCH: 2 hikers recount close encounter with grizzly bears. ABC News' Danny New talks to two hikers in Glacier National Park who are now laughing about their close encounter with grizzly bears."
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "coast guard investigative service",
+    "target_entity": "u. s",
+    "source_sector": "finance",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bahamas",
+    "target_entity": "coast guard investigative service",
+    "source_sector": "global_events",
+    "target_sector": "finance",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "coast guard",
+    "target_entity": "coast guard investigative service",
+    "source_sector": "military",
+    "target_sector": "finance",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "coast guard investigative service",
+    "target_entity": "us",
+    "source_sector": "finance",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bahamas",
+    "target_entity": "u. s",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "u. s",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bahamas",
+    "target_entity": "coast guard",
+    "source_sector": "global_events",
+    "target_sector": "military",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "bahamas",
+    "target_entity": "us",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "coast guard",
+    "target_entity": "us",
+    "source_sector": "military",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new ",
+      "ATCH: Coast Guard wants to send US divers to Bahamas in Lynette Hooker search. The Coast Guard Investigative Service is preparing to ask the Bahamas for permission to send in U.S divers to search new "
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "abc news",
+    "target_entity": "brian buckmir",
+    "source_sector": "global_events",
+    "target_sector": "technology",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: Dog sets off gun injuring woman in the arm. A dog left alone in a truck apparently set off a shotgun shooting a woman in the arm outside a store. ABC News' legal contributor Brian Buckmire has t",
+      "ATCH: Dog sets off gun injuring woman in the arm. A dog left alone in a truck apparently set off a shotgun shooting a woman in the arm outside a store. ABC News' legal contributor Brian Buckmire has t",
+      "ATCH: Dog sets off gun injuring woman in the arm. A dog left alone in a truck apparently set off a shotgun shooting a woman in the arm outside a store. ABC News' legal contributor Brian Buckmire has t"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "disneyland",
+    "target_entity": "us",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: New Soarin\u2019 Across America immerses viewers in sites across US. NatGeo provided fun facts about all 50 states for riders waiting in line for a revamped version of the flight simulator experience",
+      "ATCH: New Soarin\u2019 Across America immerses viewers in sites across US. NatGeo provided fun facts about all 50 states for riders waiting in line for a revamped version of the flight simulator experience",
+      "ATCH: New Soarin\u2019 Across America immerses viewers in sites across US. NatGeo provided fun facts about all 50 states for riders waiting in line for a revamped version of the flight simulator experience"
+    ],
+    "sentiment_variance": 0
+  },
+  {
+    "source_entity": "natgeo",
+    "target_entity": "us",
+    "source_sector": "global_events",
+    "target_sector": "politics",
+    "cooccurrence_count": 4,
+    "source_diversity": 1,
+    "strength": 1.9,
+    "example_articles": [
+      "ATCH: New Soarin\u2019 Across America immerses viewers in sites across US. NatGeo provided fun facts about all 50 states for riders waiting in line for a revamped version of the flight simulator experience",
+      "ATCH: New Soarin\u2019 Across America immerses viewers in sites across US. NatGeo provided fun facts about all 50 states for riders waiting in line for a revamped version of the flight simulator experience",
+      "ATCH: New Soarin\u2019 Across America immerses viewers in sites across US. NatGeo provided fun facts about all 50 states for riders waiting in line for a revamped version of the flight simulator experience"
+    ],
+    "sentiment_variance": 0
+  }
+]

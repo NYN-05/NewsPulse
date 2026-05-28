@@ -33,6 +33,7 @@ from intelligence.event_detection import detect_breaking_events
 from intelligence.virality import predict_virality
 from intelligence.bias import analyze_bias, compute_source_reliability
 from intelligence.topics import track_topic_evolution
+from intelligence.cross_domain import cross_domain_pipeline
 from multilingual.detect import detect_language
 from alerts.engine import AlertEngine
 from observability.metrics import metrics
