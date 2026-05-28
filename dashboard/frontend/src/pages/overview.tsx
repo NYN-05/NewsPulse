@@ -29,25 +29,25 @@ function KpiCard({ title, value, icon: Icon, subtitle, trend }: {
   trend?: { direction: "up" | "down" | "neutral"; label: string }
 }) {
   return (
-    <motion.div variants={item} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-4 transition-colors hover:border-[var(--color-primary)]/30">
+    <motion.div variants={item} className="rounded-xl border border-(--color-border) bg-card p-4 transition-colors hover:border-primary/30">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-xs font-medium text-[var(--color-muted-foreground)] uppercase tracking-wider">{title}</p>
+          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{title}</p>
           <p className="mt-1.5 text-2xl font-bold tracking-tight">{value}</p>
-          {subtitle && <p className="mt-0.5 text-xs text-[var(--color-muted-foreground)]">{subtitle}</p>}
+          {subtitle && <p className="mt-0.5 text-xs text-muted-foreground">{subtitle}</p>}
           {trend && (
             <p className={cn(
               "mt-1 text-xs font-medium",
               trend.direction === "up" && "text-emerald-400",
               trend.direction === "down" && "text-red-400",
-              trend.direction === "neutral" && "text-[var(--color-muted-foreground)]",
+              trend.direction === "neutral" && "text-muted-foreground",
             )}>
               {trend.label}
             </p>
           )}
         </div>
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-primary)]/10">
-          <Icon className="h-4 w-4 text-[var(--color-primary)]" />
+        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+          <Icon className="h-4 w-4 text-primary" />
         </div>
       </div>
     </motion.div>
@@ -64,12 +64,12 @@ function TrendingPill({ word, count, maxCount }: { word: string; count: number; 
 
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1 text-sm transition-colors hover:border-[var(--color-primary)]/50 hover:bg-[var(--color-primary)]/5"
+      className="inline-flex items-center gap-1.5 rounded-full border border-(--color-border) px-3 py-1 text-sm transition-colors hover:border-primary/50 hover:bg-primary/5"
       style={{ background: `rgba(99,102,241,${opacity})` }}
     >
-      <TrendingUp className="h-3 w-3 text-[var(--color-primary)]" />
+      <TrendingUp className="h-3 w-3 text-primary" />
       {word}
-      <span className="text-xs text-[var(--color-muted-foreground)]">{count}</span>
+      <span className="text-xs text-muted-foreground">{count}</span>
     </span>
   )
 }
@@ -167,16 +167,16 @@ export function OverviewPage() {
       {/* Sentiment + Trending */}
       <motion.div variants={item} className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {/* Sentiment Snapshot */}
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="flex items-center gap-2 mb-3">
-            <MessageSquare className="h-4 w-4 text-[var(--color-primary)]" />
+            <MessageSquare className="h-4 w-4 text-primary" />
             <h3 className="font-semibold text-sm">Sentiment at a Glance</h3>
           </div>
-          <p className="text-xs text-[var(--color-muted-foreground)] mb-4">
+          <p className="text-xs text-muted-foreground mb-4">
             {sentimentLabel}. The pie chart shows the proportion of positive, negative, and neutral stories.
           </p>
           {sentPie.length > 0 && <SimplePieChart data={sentPie} />}
-          <div className="mt-3 flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
+          <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" /> Positive
             <span className="inline-block h-2 w-2 rounded-full bg-red-400 ml-2" /> Negative
             <span className="inline-block h-2 w-2 rounded-full bg-gray-400 ml-2" /> Neutral
@@ -184,12 +184,12 @@ export function OverviewPage() {
         </div>
 
         {/* Trending Now */}
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5 lg:col-span-2">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5 lg:col-span-2">
           <div className="flex items-center gap-2 mb-3">
-            <TrendingUp className="h-4 w-4 text-[var(--color-accent)]" />
+            <TrendingUp className="h-4 w-4 text-accent" />
             <h3 className="font-semibold text-sm">Trending Now</h3>
           </div>
-          <p className="text-xs text-[var(--color-muted-foreground)] mb-4">
+          <p className="text-xs text-muted-foreground mb-4">
             Most frequently mentioned keywords across all sources. Larger badges indicate higher mention volume.
           </p>
           <div className="flex flex-wrap gap-2">
@@ -198,7 +198,7 @@ export function OverviewPage() {
             ))}
           </div>
           {trends.length > 30 && (
-            <p className="mt-3 text-xs text-[var(--color-muted-foreground)]">
+            <p className="mt-3 text-xs text-muted-foreground">
               +{trends.length - 30} more keywords
             </p>
           )}
@@ -208,19 +208,19 @@ export function OverviewPage() {
       {/* Hot Topics + Categories */}
       <motion.div variants={item} className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {/* Hot Topics */}
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="flex items-center gap-2 mb-3">
-            <BarChart3 className="h-4 w-4 text-[var(--color-secondary)]" />
+            <BarChart3 className="h-4 w-4 text-secondary" />
             <h3 className="font-semibold text-sm">Most Discussed Topics Today</h3>
           </div>
-          <p className="text-xs text-[var(--color-muted-foreground)] mb-4">
+          <p className="text-xs text-muted-foreground mb-4">
             Top article clusters ranked by volume. Click a topic to see which sources are driving the conversation.
           </p>
           <div className="space-y-2">
             {topClusters.map((c) => (
               <div
                 key={c.label}
-                className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-muted)]/30 px-3 py-2"
+                className="flex items-center justify-between rounded-lg border border-(--color-border) bg-muted/30 px-3 py-2"
               >
                 <div className="flex items-center gap-2 min-w-0">
                   <span className="text-sm truncate">{c.label}</span>
@@ -231,12 +231,12 @@ export function OverviewPage() {
                   )}
                 </div>
                 <div className="flex items-center gap-3 shrink-0 ml-2">
-                  <span className="text-xs text-[var(--color-muted-foreground)]">{c.count} articles</span>
+                  <span className="text-xs text-muted-foreground">{c.count} articles</span>
                   <span className={cn(
                     "text-xs font-medium",
                     (c.avg_sentiment ?? 0) > 0.1 ? "text-emerald-400"
                     : (c.avg_sentiment ?? 0) < -0.1 ? "text-red-400"
-                    : "text-[var(--color-muted-foreground)]",
+                    : "text-muted-foreground",
                   )}>
                     {(c.avg_sentiment ?? 0) > 0.1 ? "Positive"
                     : (c.avg_sentiment ?? 0) < -0.1 ? "Negative"
@@ -249,12 +249,12 @@ export function OverviewPage() {
         </div>
 
         {/* Category Breakdown */}
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="flex items-center gap-2 mb-3">
-            <Globe className="h-4 w-4 text-[var(--color-accent)]" />
+            <Globe className="h-4 w-4 text-accent" />
             <h3 className="font-semibold text-sm">Category Breakdown</h3>
           </div>
-          <p className="text-xs text-[var(--color-muted-foreground)] mb-4">
+          <p className="text-xs text-muted-foreground mb-4">
             How articles are distributed across categories. This shows which subjects are getting the most coverage.
           </p>
           <SimpleBarChart
@@ -278,7 +278,7 @@ export function OverviewPage() {
           return (
             <span
               key={link.id}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--color-border)] px-3 py-1.5 text-xs font-medium text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-(--color-border) px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/5 transition-colors cursor-pointer"
             >
               <Icon className="h-3 w-3" />
               {link.label}

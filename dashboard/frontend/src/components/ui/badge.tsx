@@ -1,14 +1,14 @@
 import { cn } from "@/lib/utils"
 
 const variants: Record<string, string> = {
-  default: "bg-[var(--color-muted)] text-[var(--color-foreground)]",
+  default: "bg-muted text-foreground",
   positive: "bg-emerald-500/20 text-emerald-400",
   negative: "bg-red-500/20 text-red-400",
   neutral: "bg-gray-500/20 text-gray-400",
-  primary: "bg-[var(--color-primary)] text-white",
+  primary: "bg-primary text-white",
   warning: "bg-amber-500/20 text-amber-400",
   info: "bg-cyan-500/20 text-cyan-400",
-  outline: "border border-[var(--color-border)] text-[var(--color-foreground)]",
+  outline: "border border-(--color-border) text-foreground",
 }
 
 export function Badge({ variant = "default", className, children }: { variant?: string; className?: string; children: React.ReactNode }) {

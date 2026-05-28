@@ -15,7 +15,7 @@ export function EntityGraphPage() {
   }, [])
 
   if (loading) return <Spinner className="mt-20" />
-  if (!data || "error" in data) return <p className="text-center text-[var(--color-muted-foreground)]">No entity graph data. Run pipeline first.</p>
+  if (!data || "error" in data) return <p className="text-center text-muted-foreground">No entity graph data. Run pipeline first.</p>
 
   return (
     <div className="space-y-4">
@@ -30,7 +30,7 @@ export function EntityGraphPage() {
 
       <Card>
         <CardTitle>Interactive Graph</CardTitle>
-        <div className="text-xs text-[var(--color-muted-foreground)] mb-2">Drag to pan · Scroll to zoom · Click nodes to explore</div>
+        <div className="text-xs text-muted-foreground mb-2">Drag to pan · Scroll to zoom · Click nodes to explore</div>
         <EntityGraphFlow nodes={data.nodes} edges={data.edges} height={500} />
       </Card>
 
@@ -39,12 +39,12 @@ export function EntityGraphPage() {
           <CardTitle>Top Entities by Centrality</CardTitle>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead><tr className="border-b border-[var(--color-border)] text-left">
+              <thead><tr className="border-b border-(--color-border) text-left">
                 <th className="p-2">Entity</th><th className="p-2">Type</th><th className="p-2">Centrality</th><th className="p-2">Betweenness</th>
               </tr></thead>
               <tbody>
                 {data.nodes.map((n) => (
-                  <tr key={n.id} className="border-b border-[var(--color-border)]">
+                  <tr key={n.id} className="border-b border-(--color-border)">
                     <td className="p-2 font-medium capitalize">{n.id}</td>
                     <td className="p-2"><Badge>{n.type}</Badge></td>
                     <td className="p-2">{n.centrality.toFixed(4)}</td>
@@ -60,16 +60,16 @@ export function EntityGraphPage() {
           <CardTitle>Communities</CardTitle>
           <div className="space-y-2">
             {data.stats.communities.map((c) => (
-              <div key={c.id} className="rounded-lg bg-[var(--color-muted)] p-3">
+              <div key={c.id} className="rounded-lg bg-muted p-3">
                 <div className="mb-1 flex items-center justify-between">
                   <span className="text-sm font-medium">Community {c.id + 1}</span>
                   <Badge>{c.size} members</Badge>
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {c.members.slice(0, 8).map((m) => (
-                    <span key={m} className="rounded bg-[var(--color-card)] px-1.5 py-0.5 text-[10px] capitalize">{m}</span>
+                    <span key={m} className="rounded bg-card px-1.5 py-0.5 text-[10px] capitalize">{m}</span>
                   ))}
-                  {c.members.length > 8 && <span className="text-[10px] text-[var(--color-muted-foreground)]">+{c.members.length - 8} more</span>}
+                  {c.members.length > 8 && <span className="text-[10px] text-muted-foreground">+{c.members.length - 8} more</span>}
                 </div>
               </div>
             ))}

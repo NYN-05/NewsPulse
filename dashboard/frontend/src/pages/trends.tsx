@@ -31,9 +31,9 @@ export function TrendsPage() {
         description="The most frequently mentioned keywords across all news sources. These are the words and phrases dominating the news cycle right now. Larger bars mean more mentions."
       />
 
-      <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+      <div className="rounded-xl border border-(--color-border) bg-card p-5">
         <div className="mb-4 flex items-center gap-2">
-          <Hash className="h-4 w-4 text-[var(--color-secondary)]" />
+          <Hash className="h-4 w-4 text-secondary" />
           <h3 className="font-semibold text-sm">Top Keywords by Frequency</h3>
         </div>
         <HorizontalBarChart
@@ -45,12 +45,12 @@ export function TrendsPage() {
         />
       </div>
 
-      <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+      <div className="rounded-xl border border-(--color-border) bg-card p-5">
         <div className="mb-4 flex items-center gap-2">
-          <TrendingUp className="h-4 w-4 text-[var(--color-accent)]" />
+          <TrendingUp className="h-4 w-4 text-accent" />
           <h3 className="font-semibold text-sm">Keyword Cloud</h3>
         </div>
-        <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+        <p className="mb-4 text-xs text-muted-foreground">
           Keywords sized by frequency. The most-mentioned words appear largest.
         </p>
         <div className="flex flex-wrap items-center gap-2">
@@ -59,11 +59,11 @@ export function TrendsPage() {
             return (
               <span
                 key={t.word}
-                className="inline-block rounded-full border border-[var(--color-border)] px-2.5 py-1 transition-colors hover:border-[var(--color-primary)]/50"
+                className="inline-block rounded-full border border-(--color-border) px-2.5 py-1 transition-colors hover:border-primary/50"
                 style={{ fontSize: `${size * 0.875}rem` }}
               >
                 {t.word}
-                <span className="ml-1 text-xs text-[var(--color-muted-foreground)]">{t.count}</span>
+                <span className="ml-1 text-xs text-muted-foreground">{t.count}</span>
               </span>
             )
           })}

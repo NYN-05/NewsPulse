@@ -52,7 +52,7 @@ function EntityGraphNode({ data }: { data: Record<string, any> }) {
         <Badge variant="outline" className="mt-1 text-[10px]">{data.entityType}</Badge>
       )}
       {data.sector && (
-        <div className="mt-0.5 text-[9px] text-[var(--color-muted-foreground)]">{data.sector}</div>
+        <div className="mt-0.5 text-[9px] text-muted-foreground">{data.sector}</div>
       )}
       <Handle type="source" position={Position.Bottom} />
     </div>

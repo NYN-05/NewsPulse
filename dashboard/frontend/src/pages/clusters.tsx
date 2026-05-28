@@ -35,12 +35,12 @@ export function ClustersPage() {
         description={`${data.length} topic clusters identified. Clusters group related articles together, revealing the main storylines and themes in the news. Each cluster represents a distinct topic being discussed across sources.`}
       />
 
-      <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+      <div className="rounded-xl border border-(--color-border) bg-card p-5">
         <div className="mb-4 flex items-center gap-2">
-          <Layers className="h-4 w-4 text-[var(--color-primary)]" />
+          <Layers className="h-4 w-4 text-primary" />
           <h3 className="font-semibold text-sm">Cluster Size Distribution</h3>
         </div>
-        <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+        <p className="mb-4 text-xs text-muted-foreground">
           How many articles belong to each cluster. Larger clusters represent more dominant storylines.
         </p>
         <SimpleBarChart data={sorted} xKey="label" yKey="count" color="var(--color-primary)" height={300} />
@@ -53,34 +53,34 @@ export function ClustersPage() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.02 }}
-            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-4 transition-colors hover:border-[var(--color-primary)]/30"
+            className="rounded-xl border border-(--color-border) bg-card p-4 transition-colors hover:border-primary/30"
           >
             <div className="mb-3 flex items-center justify-between">
               <span className="font-medium text-sm">{c.label}</span>
               <Badge variant={c.count > 50 ? "warning" : "default"}>{c.count} articles</Badge>
             </div>
             <div className="space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-[var(--color-muted-foreground)]">
+              <div className="flex items-center gap-2 text-muted-foreground">
                 <MessageSquare className="h-3 w-3" />
                 <span>Sentiment: </span>
                 <span className={cn(
                   "font-medium",
                   (c.avg_sentiment ?? 0) > 0.1 ? "text-emerald-400"
                   : (c.avg_sentiment ?? 0) < -0.1 ? "text-red-400"
-                  : "text-[var(--color-foreground)]",
+                  : "text-foreground",
                 )}>
                   {(c.avg_sentiment ?? 0).toFixed(3)}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-[var(--color-muted-foreground)]">
+              <div className="flex items-center gap-2 text-muted-foreground">
                 <Globe className="h-3 w-3" />
                 <span>Top source: </span>
-                <span className="font-medium text-[var(--color-foreground)]">{c.top_source}</span>
+                <span className="font-medium text-foreground">{c.top_source}</span>
               </div>
             </div>
-            <div className="mt-3 h-1.5 w-full rounded-full bg-[var(--color-muted)] overflow-hidden">
+            <div className="mt-3 h-1.5 w-full rounded-full bg-muted overflow-hidden">
               <div
-                className="h-full rounded-full bg-[var(--color-primary)]"
+                className="h-full rounded-full bg-primary"
                 style={{ width: `${(c.count / sorted[0].count) * 100}%` }}
               />
             </div>

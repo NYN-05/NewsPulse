@@ -61,11 +61,11 @@ export function Sidebar({ activeTab, onTabChange }: { activeTab: string; onTabCh
 
   return (
     <aside className={cn(
-      "fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-[var(--color-border)] bg-[var(--color-sidebar)] transition-all duration-300",
+      "fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-(--color-border) bg-sidebar transition-all duration-300",
       sidebarOpen ? "w-60" : "w-0 -translate-x-full overflow-hidden",
     )}>
-      <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-[var(--color-border)] px-5">
-        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[var(--color-primary)] text-xs font-bold text-white">
+      <div className="flex h-14 shrink-0 items-center gap-2.5 border-b border-(--color-border) px-5">
+        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary text-xs font-bold text-white">
           NP
         </div>
         <span className="text-base font-semibold tracking-tight">NewsPulse</span>
@@ -73,7 +73,7 @@ export function Sidebar({ activeTab, onTabChange }: { activeTab: string; onTabCh
       <nav className="flex-1 overflow-y-auto px-3 py-4 scrollbar-thin">
         {navGroups.map((group) => (
           <div key={group.label} className="mb-5">
-            <p className="mb-1.5 px-2 text-[11px] font-medium uppercase tracking-widest text-[var(--color-muted-foreground)]">
+            <p className="mb-1.5 px-2 text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
               {group.label}
             </p>
             {group.items.map((item) => {
@@ -85,8 +85,8 @@ export function Sidebar({ activeTab, onTabChange }: { activeTab: string; onTabCh
                   className={cn(
                     "flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-sm transition-all",
                     activeTab === item.id
-                      ? "bg-[var(--color-primary)]/10 text-[var(--color-primary)] font-medium"
-                      : "text-[var(--color-sidebar-foreground)] hover:bg-[var(--color-muted)] hover:text-[var(--color-foreground)]",
+                      ? "bg-primary/10 text-primary font-medium"
+                      : "text-sidebar-foreground hover:bg-muted hover:text-foreground",
                   )}
                 >
                   <Icon className="h-4 w-4 shrink-0" />
@@ -97,8 +97,8 @@ export function Sidebar({ activeTab, onTabChange }: { activeTab: string; onTabCh
           </div>
         ))}
       </nav>
-      <div className="shrink-0 border-t border-[var(--color-border)] px-4 py-3">
-        <p className="text-[10px] text-[var(--color-muted-foreground)]">
+      <div className="shrink-0 border-t border-(--color-border) px-4 py-3">
+        <p className="text-[10px] text-muted-foreground">
           NewsPulse v2.0
         </p>
       </div>

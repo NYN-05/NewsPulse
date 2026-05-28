@@ -38,12 +38,12 @@ export function ViralityPage() {
       />
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="mb-4 flex items-center gap-2">
-            <TrendingUp className="h-4 w-4 text-[var(--color-accent)]" />
+            <TrendingUp className="h-4 w-4 text-accent" />
             <h3 className="font-semibold text-sm">Virality Score Distribution</h3>
           </div>
-          <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+          <p className="mb-4 text-xs text-muted-foreground">
             How viral scores are spread across articles. A right-skewed distribution means most content has moderate virality, while the tail contains breakout hits.
           </p>
           <SimpleLineChart
@@ -55,26 +55,26 @@ export function ViralityPage() {
           />
         </div>
 
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="mb-4 flex items-center gap-2">
-            <Flame className="h-4 w-4 text-[var(--color-accent)]" />
+            <Flame className="h-4 w-4 text-accent" />
             <h3 className="font-semibold text-sm">Most Viral Articles</h3>
           </div>
-          <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+          <p className="mb-4 text-xs text-muted-foreground">
             Top-performing articles by virality score. These stories are generating the most engagement and discussion.
           </p>
           <div className="space-y-2">
             {data.top_viral.map((a, i) => (
-              <div key={i} className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-muted)]/30 p-3">
+              <div key={i} className="flex items-center justify-between rounded-lg border border-(--color-border) bg-muted/30 p-3">
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium truncate">{a.title}</p>
-                  <p className="text-xs text-[var(--color-muted-foreground)]">{a.source}</p>
+                  <p className="text-xs text-muted-foreground">{a.source}</p>
                 </div>
                 <div className="flex items-center gap-2 shrink-0 ml-2">
                   <Badge variant={a.sentiment === "positive" ? "positive" : a.sentiment === "negative" ? "negative" : "neutral"}>
                     {a.sentiment}
                   </Badge>
-                  <span className="font-bold text-[var(--color-accent)]">{Number(a.virality_score).toFixed(3)}</span>
+                  <span className="font-bold text-accent">{Number(a.virality_score).toFixed(3)}</span>
                 </div>
               </div>
             ))}

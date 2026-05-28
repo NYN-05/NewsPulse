@@ -39,7 +39,7 @@ export function CrossDomainPage() {
 
   if (loading) return <Spinner className="mt-20" />
   if (!data || data.links.length === 0) {
-    return <p className="text-center text-[var(--color-muted-foreground)]">No cross-domain data. Run pipeline with cross_domain step.</p>
+    return <p className="text-center text-muted-foreground">No cross-domain data. Run pipeline with cross_domain step.</p>
   }
 
   return (
@@ -54,23 +54,23 @@ export function CrossDomainPage() {
 
       <div className="flex flex-wrap gap-2">
         {Object.entries(SECTOR_DISPLAY).map(([key, label]) => (
-          <div key={key} className="flex items-center gap-1.5 rounded-full border border-[var(--color-border)] px-3 py-1 text-xs">
+          <div key={key} className="flex items-center gap-1.5 rounded-full border border-(--color-border) px-3 py-1 text-xs">
             <div className="h-2 w-2 rounded-full" style={{ background: SECTOR_COLORS[key] }} />
             <span className="capitalize">{label}</span>
           </div>
         ))}
       </div>
 
-      <div className="flex gap-1 rounded-lg bg-[var(--color-muted)] p-1 text-sm">
+      <div className="flex gap-1 rounded-lg bg-muted p-1 text-sm">
         <button
           onClick={() => setShowChains(false)}
-          className={`flex-1 rounded-md px-3 py-1.5 text-center text-sm font-medium transition-colors ${!showChains ? "bg-[var(--color-card)] text-[var(--color-foreground)]" : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"}`}
+          className={`flex-1 rounded-md px-3 py-1.5 text-center text-sm font-medium transition-colors ${!showChains ? "bg-card text-foreground" : "text-muted-foreground hover:text-foreground"}`}
         >
           Relationship Map
         </button>
         <button
           onClick={() => setShowChains(true)}
-          className={`flex-1 rounded-md px-3 py-1.5 text-center text-sm font-medium transition-colors ${showChains ? "bg-[var(--color-card)] text-[var(--color-foreground)]" : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"}`}
+          className={`flex-1 rounded-md px-3 py-1.5 text-center text-sm font-medium transition-colors ${showChains ? "bg-card text-foreground" : "text-muted-foreground hover:text-foreground"}`}
         >
           Impact Chains
         </button>
@@ -80,7 +80,7 @@ export function CrossDomainPage() {
         <>
           <Card>
             <CardTitle>Cross-Domain Relationship Map</CardTitle>
-            <div className="text-xs text-[var(--color-muted-foreground)] mb-2">
+            <div className="text-xs text-muted-foreground mb-2">
               Nodes colored by sector · Edge thickness = relationship strength · Drag/zoom to explore
             </div>
             <CrossDomainGraph links={data.links} height={500} />
@@ -91,7 +91,7 @@ export function CrossDomainPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-[var(--color-border)] text-left">
+                  <tr className="border-b border-(--color-border) text-left">
                     <th className="p-2">Source Entity</th>
                     <th className="p-2">Sector</th>
                     <th className="p-2">→</th>
@@ -104,7 +104,7 @@ export function CrossDomainPage() {
                 </thead>
                 <tbody>
                   {data.links.slice(0, 50).map((l, i) => (
-                    <tr key={i} className="border-b border-[var(--color-border)]">
+                    <tr key={i} className="border-b border-(--color-border)">
                       <td className="p-2 font-medium capitalize">{l.source_entity}</td>
                       <td className="p-2">
                         <span className="inline-flex items-center gap-1">
@@ -112,7 +112,7 @@ export function CrossDomainPage() {
                           <span className="text-xs">{SECTOR_DISPLAY[l.source_sector] || l.source_sector}</span>
                         </span>
                       </td>
-                      <td className="p-2 text-center text-[var(--color-muted-foreground)]">↔</td>
+                      <td className="p-2 text-center text-muted-foreground">↔</td>
                       <td className="p-2 font-medium capitalize">{l.target_entity}</td>
                       <td className="p-2">
                         <span className="inline-flex items-center gap-1">
@@ -120,7 +120,7 @@ export function CrossDomainPage() {
                           <span className="text-xs">{SECTOR_DISPLAY[l.target_sector] || l.target_sector}</span>
                         </span>
                       </td>
-                      <td className="p-2 font-bold text-[var(--color-accent)]">{l.strength.toFixed(1)}</td>
+                      <td className="p-2 font-bold text-accent">{l.strength.toFixed(1)}</td>
                       <td className="p-2">{l.cooccurrence_count}</td>
                       <td className="p-2">{l.source_diversity}</td>
                     </tr>
@@ -148,11 +148,11 @@ export function CrossDomainPage() {
                     >
                       {entity}
                     </span>
-                    {ci < c.chain.length - 1 && <span className="text-[var(--color-muted-foreground)]">→</span>}
+                    {ci < c.chain.length - 1 && <span className="text-muted-foreground">→</span>}
                   </span>
                 ))}
               </div>
-              <div className="mt-2 flex gap-2 text-xs text-[var(--color-muted-foreground)]">
+              <div className="mt-2 flex gap-2 text-xs text-muted-foreground">
                 <span>Hops: {c.cross_domain_hops}</span>
                 <span>·</span>
                 <span>Weight: {c.total_weight}</span>

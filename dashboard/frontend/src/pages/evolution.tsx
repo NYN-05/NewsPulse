@@ -33,8 +33,8 @@ export function EvolutionPage() {
       />
 
       {clusters.length === 0 && (
-        <div className="flex h-40 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-card)]">
-          <p className="text-sm text-[var(--color-muted-foreground)]">No topic evolution data available.</p>
+        <div className="flex h-40 items-center justify-center rounded-xl border border-(--color-border) bg-card">
+          <p className="text-sm text-muted-foreground">No topic evolution data available.</p>
         </div>
       )}
 
@@ -49,11 +49,11 @@ export function EvolutionPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-              className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5"
+              className="rounded-xl border border-(--color-border) bg-card p-5"
             >
               <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <LineChart className="h-4 w-4 text-[var(--color-primary)]" />
+                  <LineChart className="h-4 w-4 text-primary" />
                   <h3 className="font-semibold text-sm">Cluster {c.cluster}{c.label ? ` — ${c.label}` : ""}</h3>
                 </div>
                 <div className="flex items-center gap-2">
@@ -66,7 +66,7 @@ export function EvolutionPage() {
                   </Badge>
                 </div>
               </div>
-              <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+              <p className="mb-4 text-xs text-muted-foreground">
                 {isGrowing
                   ? "This topic is gaining traction — mention volume is increasing over time."
                   : "This topic is declining — mention volume is shrinking over time."}

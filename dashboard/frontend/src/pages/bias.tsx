@@ -48,12 +48,12 @@ export function BiasPage() {
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {/* Political Leaning */}
         {pieData.length > 0 && (
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+          <div className="rounded-xl border border-(--color-border) bg-card p-5">
             <div className="mb-4 flex items-center gap-2">
-              <Scale className="h-4 w-4 text-[var(--color-primary)]" />
+              <Scale className="h-4 w-4 text-primary" />
               <h3 className="font-semibold text-sm">Political Leaning</h3>
             </div>
-            <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+            <p className="mb-4 text-xs text-muted-foreground">
               How sources are distributed across the political spectrum. This helps identify potential bias in coverage.
             </p>
             <SimplePieChart data={pieData} height={280} />
@@ -74,12 +74,12 @@ export function BiasPage() {
         )}
 
         {/* Aggregate Metrics */}
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="mb-4 flex items-center gap-2">
-            <ShieldCheck className="h-4 w-4 text-[var(--color-primary)]" />
+            <ShieldCheck className="h-4 w-4 text-primary" />
             <h3 className="font-semibold text-sm">Quality Metrics</h3>
           </div>
-          <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+          <p className="mb-4 text-xs text-muted-foreground">
             Aggregate quality scores across all sources. Clickbait and emotional scores measure sensationalism in headlines.
           </p>
           <div className="space-y-3">
@@ -98,8 +98,8 @@ export function BiasPage() {
               higherIs={bias ? (bias.avg_emotional > 0.5 ? "warning" : "better") : "better"}
             />
           </div>
-          <div className="mt-4 rounded-lg bg-[var(--color-muted)]/30 p-3">
-            <p className="text-xs text-[var(--color-muted-foreground)]">
+          <div className="mt-4 rounded-lg bg-muted/30 p-3">
+            <p className="text-xs text-muted-foreground">
               <strong>What this means:</strong> Lower clickbait scores indicate more straightforward, factual headlines. Lower emotional scores suggest more objective reporting.
             </p>
           </div>
@@ -107,12 +107,12 @@ export function BiasPage() {
 
         {/* Source Reliability */}
         {relData.length > 0 && (
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5 lg:col-span-2">
+          <div className="rounded-xl border border-(--color-border) bg-card p-5 lg:col-span-2">
             <div className="mb-4 flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-[var(--color-primary)]" />
+              <ShieldCheck className="h-4 w-4 text-primary" />
               <h3 className="font-semibold text-sm">Source Reliability Scores</h3>
             </div>
-            <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+            <p className="mb-4 text-xs text-muted-foreground">
               Each source's reliability score based on historical accuracy, consistency, and reporting quality. Higher scores mean more trustworthy sources.
             </p>
             <SimpleBarChart
@@ -138,12 +138,12 @@ function MetricRow({ icon: Icon, label, value, format, higherIs }: {
 }) {
   const color = higherIs === "warning"
     ? value > 0.5 ? "text-red-400" : "text-emerald-400"
-    : "text-[var(--color-foreground)]"
+    : "text-foreground"
 
   return (
-    <div className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-muted)]/30 p-3.5">
+    <div className="flex items-center justify-between rounded-lg border border-(--color-border) bg-muted/30 p-3.5">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-[var(--color-muted-foreground)]" />
+        <Icon className="h-4 w-4 text-muted-foreground" />
         <span className="text-sm">{label}</span>
       </div>
       <span className={cn("text-lg font-bold", color)}>

@@ -72,15 +72,15 @@ export default function App() {
 
   if (healthy === false) {
     return (
-      <div className="flex h-screen flex-col items-center justify-center gap-4 bg-[var(--color-background)] text-[var(--color-foreground)] p-4">
+      <div className="flex h-screen flex-col items-center justify-center gap-4 bg-background text-foreground p-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-500/10">
           <span className="text-2xl">📡</span>
         </div>
         <h1 className="text-xl font-bold">Backend Unavailable</h1>
-        <p className="text-sm text-[var(--color-muted-foreground)] text-center max-w-md">
+        <p className="text-sm text-muted-foreground text-center max-w-md">
           The NewsPulse API server is not running. Start it with:
         </p>
-        <code className="rounded-lg bg-[var(--color-muted)] px-3 py-2 text-xs font-mono">
+        <code className="rounded-lg bg-muted px-3 py-2 text-xs font-mono">
           python dashboard/backend/main.py
         </code>
         <button
@@ -88,7 +88,7 @@ export default function App() {
             setHealthy(null)
             api.health().then((h) => setHealthy(h.status === "ok")).catch(() => setHealthy(false))
           }}
-          className="mt-2 rounded-lg bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity"
+          className="mt-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity"
         >
           Retry Connection
         </button>

@@ -36,12 +36,12 @@ export function EntityTrendsPage() {
         description={`Tracking ${data.length} named entities (people, organizations, locations) across news sources. Momentum scores show which entities are gaining or losing attention — positive momentum means increasing mentions.`}
       />
 
-      <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+      <div className="rounded-xl border border-(--color-border) bg-card p-5">
         <div className="mb-4 flex items-center gap-2">
-          <TrendingUp className="h-4 w-4 text-[var(--color-accent)]" />
+          <TrendingUp className="h-4 w-4 text-accent" />
           <h3 className="font-semibold text-sm">Entity Momentum</h3>
         </div>
-        <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+        <p className="mb-4 text-xs text-muted-foreground">
           How each entity's mention frequency is changing. Positive bars mean rising attention; negative bars indicate fading interest.
         </p>
         <SimpleBarChart
@@ -61,28 +61,28 @@ export function EntityTrendsPage() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.03 }}
-            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-4 transition-colors hover:border-[var(--color-accent)]/30"
+            className="rounded-xl border border-(--color-border) bg-card p-4 transition-colors hover:border-accent/30"
           >
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-[var(--color-accent)]" />
+                <Users className="h-4 w-4 text-accent" />
                 <span className="font-medium capitalize">{e.entity}</span>
               </div>
               <Badge variant={e.momentum > 50 ? "warning" : e.momentum > 0 ? "positive" : "negative"}>
                 {e.momentum > 0 ? "+" : ""}{e.momentum.toFixed(1)}
               </Badge>
             </div>
-            <div className="grid grid-cols-2 gap-2 text-xs text-[var(--color-muted-foreground)]">
+            <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
               <div>
-                <p className="font-medium text-[var(--color-foreground)]">{e.total_mentions}</p>
+                <p className="font-medium text-foreground">{e.total_mentions}</p>
                 <p>Total mentions</p>
               </div>
               <div>
-                <p className="font-medium text-[var(--color-foreground)]">{e.recent_mentions}</p>
+                <p className="font-medium text-foreground">{e.recent_mentions}</p>
                 <p>Recent mentions</p>
               </div>
             </div>
-            <div className="mt-2 flex items-center gap-1.5 text-[10px] text-[var(--color-muted-foreground)]">
+            <div className="mt-2 flex items-center gap-1.5 text-[10px] text-muted-foreground">
               <Calendar className="h-3 w-3" />
               Peak: {e.peak_date}
             </div>

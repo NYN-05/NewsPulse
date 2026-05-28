@@ -45,12 +45,12 @@ export function SentimentPage() {
       />
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="mb-4 flex items-center gap-2">
-            <MessageSquare className="h-4 w-4 text-[var(--color-primary)]" />
+            <MessageSquare className="h-4 w-4 text-primary" />
             <h3 className="font-semibold text-sm">Sentiment Distribution</h3>
           </div>
-          <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+          <p className="mb-4 text-xs text-muted-foreground">
             The breakdown of positive, negative, and neutral articles. This helps you understand the overall emotional tone of the news landscape.
           </p>
           <SimplePieChart data={pie} height={300} />
@@ -67,16 +67,16 @@ export function SentimentPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+        <div className="rounded-xl border border-(--color-border) bg-card p-5">
           <div className="mb-4 flex items-center gap-2">
-            <MessageSquare className="h-4 w-4 text-[var(--color-primary)]" />
+            <MessageSquare className="h-4 w-4 text-primary" />
             <h3 className="font-semibold text-sm">Sentiment Breakdown</h3>
           </div>
-          <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+          <p className="mb-4 text-xs text-muted-foreground">
             Detailed breakdown of sentiment categories. The compound score aggregates all article sentiments into a single measure.
           </p>
           <div className="space-y-3">
-            <div className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-muted)]/30 p-3.5">
+            <div className="flex items-center justify-between rounded-lg border border-(--color-border) bg-muted/30 p-3.5">
               <div className="flex items-center gap-2">
                 <Smile className="h-4 w-4 text-emerald-400" />
                 <span className="text-sm font-medium">Compound Score</span>
@@ -85,13 +85,13 @@ export function SentimentPage() {
                 "text-lg font-bold",
                 data.avg_compound > 0.1 ? "text-emerald-400"
                 : data.avg_compound < -0.1 ? "text-red-400"
-                : "text-[var(--color-foreground)]",
+                : "text-foreground",
               )}>
                 {data.avg_compound.toFixed(4)}
               </span>
             </div>
             {Object.entries(data.distribution).map(([k, v]) => (
-              <div key={k} className="flex items-center justify-between rounded-lg border border-[var(--color-border)] bg-[var(--color-muted)]/30 p-3.5">
+              <div key={k} className="flex items-center justify-between rounded-lg border border-(--color-border) bg-muted/30 p-3.5">
                 <div className="flex items-center gap-2">
                   {k === "positive" && <Smile className="h-4 w-4 text-emerald-400" />}
                   {k === "negative" && <Frown className="h-4 w-4 text-red-400" />}

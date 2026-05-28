@@ -28,7 +28,7 @@ export function NarrativesPage() {
   }, [])
 
   if (loading) return <Spinner className="mt-20" />
-  if (!data || !data.summary) return <p className="text-center text-[var(--color-muted-foreground)]">No narrative data. Run pipeline with narratives step.</p>
+  if (!data || !data.summary) return <p className="text-center text-muted-foreground">No narrative data. Run pipeline with narratives step.</p>
 
   const tabs = [
     { id: "emerging" as const, label: "Emerging", count: data.summary.emerging_count },
@@ -40,13 +40,13 @@ export function NarrativesPage() {
     <div className="space-y-4">
       <h1 className="text-xl font-bold">Narrative Evolution</h1>
 
-      <div className="flex gap-1 rounded-lg bg-[var(--color-muted)] p-1 text-sm">
+      <div className="flex gap-1 rounded-lg bg-muted p-1 text-sm">
         {tabs.map((t) => (
           <button
             key={t.id}
             onClick={() => setTab(t.id)}
             className={`flex items-center gap-2 flex-1 rounded-md px-3 py-1.5 text-center text-sm font-medium transition-colors ${
-              tab === t.id ? "bg-[var(--color-card)] text-[var(--color-foreground)]" : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+              tab === t.id ? "bg-card text-foreground" : "text-muted-foreground hover:text-foreground"
             }`}
           >
             {t.label}
@@ -63,7 +63,7 @@ export function NarrativesPage() {
                 <p className="font-medium capitalize">{t.name}</p>
                 <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium capitalize" style={{ background: PHASE_COLORS[t.phase] + "30", color: PHASE_COLORS[t.phase] }}>{t.phase}</span>
               </div>
-              <div className="mt-2 space-y-1 text-xs text-[var(--color-muted-foreground)]">
+              <div className="mt-2 space-y-1 text-xs text-muted-foreground">
                 <p>Type: {t.type}</p>
                 <p>Acceleration: {t.acceleration > 0 ? "+" : ""}{t.acceleration}</p>
                 <p>Total: {t.total_mentions || t.total_articles || 0}</p>
@@ -86,7 +86,7 @@ export function NarrativesPage() {
                   <Badge>{c.total_articles} articles</Badge>
                 </div>
               </div>
-              {c.top_keywords && <p className="mb-2 text-xs text-[var(--color-muted-foreground)]">Keywords: {c.top_keywords.join(", ")}</p>}
+              {c.top_keywords && <p className="mb-2 text-xs text-muted-foreground">Keywords: {c.top_keywords.join(", ")}</p>}
               {c.trajectory && c.trajectory.length > 0 && (
                 <SimpleAreaChart
                   data={c.trajectory.map((t: any) => ({ date: t.date.slice(5, 10), count: t.count }))}
@@ -106,7 +106,7 @@ export function NarrativesPage() {
                 <span className="font-medium capitalize">{e.entity}</span>
                 <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium capitalize" style={{ background: PHASE_COLORS[e.phase] + "30", color: PHASE_COLORS[e.phase] }}>{e.phase}</span>
               </div>
-              <div className="mt-2 space-y-1 text-xs text-[var(--color-muted-foreground)]">
+              <div className="mt-2 space-y-1 text-xs text-muted-foreground">
                 <p>Mentions: {e.total_mentions} (recent 7d: {e.recent_7_days})</p>
                 <p>Acceleration: {e.acceleration > 0 ? "+" : ""}{e.acceleration}</p>
                 <p>Avg sentiment: {e.avg_sentiment.toFixed(3)}</p>

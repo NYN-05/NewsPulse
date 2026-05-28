@@ -31,12 +31,12 @@ export function CategoriesPage() {
         description={`${data.length} categories identified across ${total} articles. Categories group articles by subject matter, helping you see which topics are getting the most coverage at a glance.`}
       />
 
-      <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5">
+      <div className="rounded-xl border border-(--color-border) bg-card p-5">
         <div className="mb-4 flex items-center gap-2">
-          <FolderTree className="h-4 w-4 text-[var(--color-accent)]" />
+          <FolderTree className="h-4 w-4 text-accent" />
           <h3 className="font-semibold text-sm">Article Categories</h3>
         </div>
-        <p className="mb-4 text-xs text-[var(--color-muted-foreground)]">
+        <p className="mb-4 text-xs text-muted-foreground">
           Each bar represents a category and its article count. Longer bars mean more coverage in that area.
         </p>
         <HorizontalBarChart
@@ -50,10 +50,10 @@ export function CategoriesPage() {
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {data.slice(0, 20).map((c) => (
-          <div key={c.name} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-3 text-center">
-            <Layers className="mx-auto h-5 w-5 text-[var(--color-accent)] mb-1.5" />
+          <div key={c.name} className="rounded-xl border border-(--color-border) bg-card p-3 text-center">
+            <Layers className="mx-auto h-5 w-5 text-accent mb-1.5" />
             <p className="text-sm font-medium truncate" title={c.name}>{c.name}</p>
-            <p className="text-xs text-[var(--color-muted-foreground)]">{c.count} articles</p>
+            <p className="text-xs text-muted-foreground">{c.count} articles</p>
           </div>
         ))}
       </div>

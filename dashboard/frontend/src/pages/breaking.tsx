@@ -47,8 +47,8 @@ export function BreakingPage() {
       />
 
       {data.length === 0 && (
-        <div className="flex h-40 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-card)]">
-          <p className="text-sm text-[var(--color-muted-foreground)]">No breaking signals at this time.</p>
+        <div className="flex h-40 items-center justify-center rounded-xl border border-(--color-border) bg-card">
+          <p className="text-sm text-muted-foreground">No breaking signals at this time.</p>
         </div>
       )}
 
@@ -62,12 +62,12 @@ export function BreakingPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.03 }}
-              className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-4 transition-colors hover:border-[var(--color-accent)]/50"
+              className="rounded-xl border border-(--color-border) bg-card p-4 transition-colors hover:border-accent/50"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-accent)]/10">
-                    <Icon className="h-4 w-4 text-[var(--color-accent)]" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent]/10">
+                    <Icon className="h-4 w-4 text-accent" />
                   </div>
                   <div>
                     <p className="font-medium capitalize">{kw}</p>
@@ -76,13 +76,13 @@ export function BreakingPage() {
                     </Badge>
                   </div>
                 </div>
-                <span className="text-xl font-bold text-[var(--color-accent)]">{e.score.toFixed(0)}</span>
+                <span className="text-xl font-bold text-accent">{e.score.toFixed(0)}</span>
               </div>
-              <div className="flex gap-4 text-xs text-[var(--color-muted-foreground)]">
+              <div className="flex gap-4 text-xs text-muted-foreground">
                 <span>Articles: {e.recent_count || 0}</span>
                 <span>Burst: {e.burst_factor?.toFixed(1) || "—"}× normal</span>
               </div>
-              <p className="mt-2 text-[11px] text-[var(--color-muted-foreground)] italic">
+              <p className="mt-2 text-[11px] text-muted-foreground italic">
                 {sigLabels[e.signal] || "Anomaly detected"}
               </p>
             </motion.div>

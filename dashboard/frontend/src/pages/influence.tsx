@@ -15,7 +15,7 @@ export function InfluencePage() {
   }, [])
 
   if (loading) return <Spinner className="mt-20" />
-  if (!data || !data.summary) return <p className="text-center text-[var(--color-muted-foreground)]">No influence data. Run pipeline with influence step.</p>
+  if (!data || !data.summary) return <p className="text-center text-muted-foreground">No influence data. Run pipeline with influence step.</p>
 
   const tabs = [
     { id: "entities" as const, label: "Influential Entities", count: data.summary.total_entities_scored },
@@ -27,20 +27,20 @@ export function InfluencePage() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-bold">Influence Map</h1>
-        <div className="flex gap-2 text-xs text-[var(--color-muted-foreground)]">
-          <span>Top influencer: <strong className="text-[var(--color-foreground)] capitalize">{data.summary.top_influencer || "—"}</strong></span>
+        <div className="flex gap-2 text-xs text-muted-foreground">
+          <span>Top influencer: <strong className="text-foreground capitalize">{data.summary.top_influencer || "—"}</strong></span>
           <span>·</span>
-          <span>Top amplifier: <strong className="text-[var(--color-foreground)]">{data.summary.top_amplifier || "—"}</strong></span>
+          <span>Top amplifier: <strong className="text-foreground">{data.summary.top_amplifier || "—"}</strong></span>
         </div>
       </div>
 
-      <div className="flex gap-1 rounded-lg bg-[var(--color-muted)] p-1 text-sm">
+      <div className="flex gap-1 rounded-lg bg-muted p-1 text-sm">
         {tabs.map((t) => (
           <button
             key={t.id}
             onClick={() => setTab(t.id)}
             className={`flex items-center gap-2 flex-1 rounded-md px-3 py-1.5 text-center text-sm font-medium transition-colors ${
-              tab === t.id ? "bg-[var(--color-card)] text-[var(--color-foreground)]" : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+              tab === t.id ? "bg-card text-foreground" : "text-muted-foreground hover:text-foreground"
             }`}
           >
             {t.label}
@@ -62,15 +62,15 @@ export function InfluencePage() {
             <CardTitle>Entity Details</CardTitle>
             <div className="overflow-x-auto">
               <table className="w-full text-xs">
-                <thead><tr className="border-b border-[var(--color-border)] text-left">
+                <thead><tr className="border-b border-(--color-border) text-left">
                   <th className="p-1.5">Entity</th><th className="p-1.5">Score</th><th className="p-1.5">Mentions</th>
                   <th className="p-1.5">Sources</th><th className="p-1.5">Cross-Domain</th>
                 </tr></thead>
                 <tbody>
                   {data.entity_influence.slice(0, 30).map((e: any, i: number) => (
-                    <tr key={i} className="border-b border-[var(--color-border)]">
+                    <tr key={i} className="border-b border-(--color-border)">
                       <td className="p-1.5 font-medium capitalize">{e.entity}</td>
-                      <td className="p-1.5 font-bold text-[var(--color-accent)]">{e.influence_score.toFixed(2)}</td>
+                      <td className="p-1.5 font-bold text-accent">{e.influence_score.toFixed(2)}</td>
                       <td className="p-1.5">{e.total_mentions}</td>
                       <td className="p-1.5">{e.source_count}</td>
                       <td className="p-1.5">{e.cross_domain_links}</td>
@@ -96,15 +96,15 @@ export function InfluencePage() {
             <CardTitle>Source Details</CardTitle>
             <div className="overflow-x-auto">
               <table className="w-full text-xs">
-                <thead><tr className="border-b border-[var(--color-border)] text-left">
+                <thead><tr className="border-b border-(--color-border) text-left">
                   <th className="p-1.5">Source</th><th className="p-1.5">Score</th><th className="p-1.5">Articles</th>
                   <th className="p-1.5">Entities</th><th className="p-1.5">Categories</th>
                 </tr></thead>
                 <tbody>
                   {data.source_amplification.slice(0, 25).map((s: any, i: number) => (
-                    <tr key={i} className="border-b border-[var(--color-border)]">
+                    <tr key={i} className="border-b border-(--color-border)">
                       <td className="max-w-[180px] truncate p-1.5 font-medium">{s.source}</td>
-                      <td className="p-1.5 font-bold text-[var(--color-primary)]">{s.amplification_score.toFixed(2)}</td>
+                      <td className="p-1.5 font-bold text-primary">{s.amplification_score.toFixed(2)}</td>
                       <td className="p-1.5">{s.total_articles}</td>
                       <td className="p-1.5">{s.entity_count}</td>
                       <td className="p-1.5">{s.category_count}</td>
@@ -122,16 +122,16 @@ export function InfluencePage() {
           <CardTitle>Information Propagation Speed</CardTitle>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead><tr className="border-b border-[var(--color-border)] text-left">
+              <thead><tr className="border-b border-(--color-border) text-left">
                 <th className="p-2">Entity</th><th className="p-2">Spread Speed</th><th className="p-2">Sources</th>
                 <th className="p-2">Articles</th><th className="p-2">Density (day)</th>
                 <th className="p-2">Mean Adoption (hrs)</th>
               </tr></thead>
               <tbody>
                 {data.propagation.map((p: any, i: number) => (
-                  <tr key={i} className="border-b border-[var(--color-border)]">
+                  <tr key={i} className="border-b border-(--color-border)">
                     <td className="p-2 font-medium capitalize">{p.entity}</td>
-                    <td className="p-2 font-bold text-[var(--color-accent)]">{p.spread_speed.toFixed(1)}</td>
+                    <td className="p-2 font-bold text-accent">{p.spread_speed.toFixed(1)}</td>
                     <td className="p-2">{p.source_count}</td>
                     <td className="p-2">{p.article_count}</td>
                     <td className="p-2">{p.density_articles_per_day}</td>
