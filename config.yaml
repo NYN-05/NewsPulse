@@ -45,9 +45,26 @@ trending:
   rising_min_mentions: 2
   rising_min_pct: 50.0
 
+quality:
+  dedup_threshold: 0.85
+  enable_semantic_dedup: true
+  enable_boilerplate_removal: true
+
+vector_store:
+  collection_name: "newspulse"
+  embedding_model: "all-MiniLM-L6-v2"
+
+alerts:
+  breaking_threshold: 20
+  virality_threshold: 0.8
+  webhooks:
+    telegram: ""
+    slack: ""
+    discord: ""
+
 logging:
   level: "INFO"
   format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
 
 dashboard:
-  title: "News Pipeline Dashboard"
+  title: "NewsPulse Intelligence Dashboard"

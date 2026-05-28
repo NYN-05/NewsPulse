@@ -17,6 +17,7 @@ output/models/
 output/plots/
 output/logs/
 output/reports/
+output/chroma_db/
 *.parquet
 *.joblib
 *.db
