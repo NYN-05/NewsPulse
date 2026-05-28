@@ -57,7 +57,9 @@ class AlertEngine:
     def _send_slack(self, text: str):
         url = self.webhook_urls["slack"]
         try:
-            requests.post(url, json={"text": text}, timeout=10)
+            clean = text.replace("*", "").replace("_", "").replace("`", "")
+            payload = {"blocks": [{"type": "section", "text": {"type": "mrkdwn", "text": clean}}]}
+            requests.post(url, json=payload, timeout=10)
         except Exception as e:
             logger.warning("Slack alert failed: %s", e)
 

@@ -1,24 +1,31 @@
 [
   {
+    "entity": "cbs news",
+    "recent_count": 20,
+    "burst_factor": 20000.0,
+    "signal": "entity_spike",
+    "score": 400000.0
+  },
+  {
     "entity": "france",
+    "recent_count": 16,
+    "burst_factor": 16000.0,
+    "signal": "entity_spike",
+    "score": 256000.0
+  },
+  {
+    "entity": "jean carroll",
     "recent_count": 15,
     "burst_factor": 15000.0,
     "signal": "entity_spike",
     "score": 225000.0
   },
   {
-    "entity": "cbs news",
-    "recent_count": 14,
-    "burst_factor": 14000.0,
+    "entity": "kerala",
+    "recent_count": 12,
+    "burst_factor": 12000.0,
     "signal": "entity_spike",
-    "score": 196000.0
-  },
-  {
-    "entity": "jean carroll",
-    "recent_count": 14,
-    "burst_factor": 14000.0,
-    "signal": "entity_spike",
-    "score": 196000.0
+    "score": 144000.0
   },
   {
     "entity": "kenya",
@@ -28,11 +35,32 @@
     "score": 121000.0
   },
   {
-    "entity": "kerala",
+    "entity": "oman",
     "recent_count": 11,
     "burst_factor": 11000.0,
     "signal": "entity_spike",
     "score": 121000.0
+  },
+  {
+    "entity": "juan manuel cerundolo",
+    "recent_count": 11,
+    "burst_factor": 11000.0,
+    "signal": "entity_spike",
+    "score": 121000.0
+  },
+  {
+    "entity": "disney",
+    "recent_count": 10,
+    "burst_factor": 10000.0,
+    "signal": "entity_spike",
+    "score": 100000.0
+  },
+  {
+    "entity": "##iden",
+    "recent_count": 10,
+    "burst_factor": 10000.0,
+    "signal": "entity_spike",
+    "score": 100000.0
   },
   {
     "entity": "kuwait",
@@ -42,11 +70,11 @@
     "score": 100000.0
   },
   {
-    "entity": "arsenal",
-    "recent_count": 8,
-    "burst_factor": 8000.0,
+    "entity": "jill biden",
+    "recent_count": 9,
+    "burst_factor": 9000.0,
     "signal": "entity_spike",
-    "score": 64000.0
+    "score": 81000.0
   },
   {
     "entity": "rajya sabha",
@@ -56,25 +84,11 @@
     "score": 64000.0
   },
   {
-    "entity": "juan manuel cerundolo",
+    "entity": "##nik sinner",
     "recent_count": 8,
     "burst_factor": 8000.0,
     "signal": "entity_spike",
     "score": 64000.0
-  },
-  {
-    "entity": "london",
-    "recent_count": 7,
-    "burst_factor": 7000.0,
-    "signal": "entity_spike",
-    "score": 49000.0
-  },
-  {
-    "entity": "disney",
-    "recent_count": 7,
-    "burst_factor": 7000.0,
-    "signal": "entity_spike",
-    "score": 49000.0
   },
   {
     "entity": "new jersey",
@@ -84,24 +98,10 @@
     "score": 49000.0
   },
   {
-    "entity": "oman",
+    "entity": "bandar abbas",
     "recent_count": 7,
     "burst_factor": 7000.0,
     "signal": "entity_spike",
     "score": 49000.0
-  },
-  {
-    "entity": "hezbollah",
-    "recent_count": 6,
-    "burst_factor": 6000.0,
-    "signal": "entity_spike",
-    "score": 36000.0
-  },
-  {
-    "entity": "albert manifold",
-    "recent_count": 6,
-    "burst_factor": 6000.0,
-    "signal": "entity_spike",
-    "score": 36000.0
   }
 ]

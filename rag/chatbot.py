@@ -7,6 +7,11 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 
+_STOP_TERMS = {"and", "or", "the", "a", "an", "in", "on", "at", "for", "to", "of", "by", "with",
+               "from", "about", "last", "this", "that", "these", "those", "week", "month", "day",
+               "year", "today", "yesterday", "tomorrow"}
+
+
 def _parse_nl_query(query: str) -> Dict:
     q = query.lower().strip()
     filters = {"sentiment": None, "source": None, "category": None, "entity": None, "days": 7}
@@ -20,9 +25,16 @@ def _parse_nl_query(query: str) -> Dict:
 
     for prefix in ["about ", "regarding ", "related to ", "on "]:
         if prefix in q:
-            after = q.split(prefix, 1)[1].split()
-            if after:
-                filters["entity"] = after[0]
+            after_text = q.split(prefix, 1)[1].strip()
+            words = after_text.split()
+            entity_parts = []
+            for w in words:
+                wc = w.strip(".,!?\"'():;[]{}")
+                if wc in _STOP_TERMS:
+                    break
+                entity_parts.append(wc)
+            if entity_parts:
+                filters["entity"] = " ".join(entity_parts)
 
     import re
     numbers = re.findall(r"\d+", q)

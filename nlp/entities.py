@@ -67,11 +67,16 @@ def _extract_entities_gpu(text: str) -> str:
         return json.dumps({"persons": [], "orgs": [], "locations": []})
 
 
+_nlp = None
+
+
 @lru_cache(maxsize=1024)
 def _extract_entities_spacy(text: str) -> str:
-    import spacy
-    nlp = spacy.load("en_core_web_sm", disable=["parser", "lemmatizer"])
-    doc = nlp(text[:10000])
+    global _nlp
+    if _nlp is None:
+        import spacy
+        _nlp = spacy.load("en_core_web_sm", disable=["parser", "lemmatizer"])
+    doc = _nlp(text[:10000])
     persons, orgs, locs = [], [], []
     seen = set()
     for ent in doc.ents:
@@ -83,7 +88,7 @@ def _extract_entities_spacy(text: str) -> str:
             persons.append(ent.text)
         elif ent.label_ in ("ORG", "GPE"):
             orgs.append(ent.text)
-        elif ent.label_ == "LOC":
+        elif ent.label_ in ("LOC", "GPE"):
             locs.append(ent.text)
     return json.dumps({
         "persons": list(dict.fromkeys(persons))[:5],
@@ -106,8 +111,10 @@ def _extract_entities_nltk(text: str) -> str:
             entity = " ".join(word for word, tag in subtree.leaves())
             if subtree.label() == "PERSON":
                 persons.add(entity)
-            elif subtree.label() in ("ORGANIZATION", "GPE"):
+            elif subtree.label() == "ORGANIZATION":
                 orgs.add(entity)
+            elif subtree.label() in ("GPE", "LOC"):
+                locs.add(entity)
     return json.dumps({
         "persons": list(persons)[:5],
         "orgs": list(orgs)[:5],

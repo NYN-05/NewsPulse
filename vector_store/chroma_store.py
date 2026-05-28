@@ -50,7 +50,14 @@ def index_articles(df: pd.DataFrame) -> int:
 
     df = df.drop_duplicates(subset=["link"])
     texts = (df["text"].fillna("") + " " + df["summary"].fillna("")).tolist() if "summary" in df.columns else df["text"].fillna("").tolist()
-    existing_ids = set(col.get()["ids"]) if col.count() > 0 else set()
+    existing_ids = set()
+    try:
+        if col.count() > 0:
+            existing = col.get()
+            if existing and "ids" in existing:
+                existing_ids = set(existing["ids"])
+    except Exception:
+        existing_ids = set()
 
     new_indices = []
     new_texts = []
@@ -134,7 +141,12 @@ def find_similar(link: str, n_results: int = 5) -> List[Dict]:
     if col is None:
         return []
     try:
-        results = col.query(query_texts=[link], n_results=n_results + 1)
+        existing = col.get(ids=[link], include=["embeddings"])
+        if not existing or not existing["ids"]:
+            logger.warning("Link not found in vector DB: %s", link[:80])
+            return []
+        embedding = existing["embeddings"][0]
+        results = col.query(query_embeddings=[embedding], n_results=n_results + 1)
         docs = []
         for i in range(len(results["ids"][0])):
             if results["ids"][0][i] == link:

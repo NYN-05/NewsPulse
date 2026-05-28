@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore", message=".*torch.classes.*")
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,13 +11,11 @@ from datetime import datetime, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from storage.manager import DataManager
-from config.settings import load_config, get
-from compute.gpu_manager import GPUManager
+from config.settings import load_config, get, path_for
 from vector_store.chroma_store import semantic_search, get_collection_stats
 from rag.chatbot import ask, query_articles
 from intelligence.entity_graph import build_entity_graph
 from intelligence.event_detection import detect_breaking_events
-from intelligence.virality import predict_virality
 from intelligence.bias import analyze_bias, compute_source_reliability
 from intelligence.topics import track_topic_evolution
 
@@ -83,7 +84,7 @@ with tabs[0]:
         ax1.set_title("Sentiment Distribution")
         filtered["compound"].hist(bins=20, ax=ax2, edgecolor="black")
         ax2.set_title("Compound Score Distribution")
-        st.pyplot(fig)
+        st.pyplot(fig); plt.close(fig)
         if "sentiment" in filtered.columns and "source" in filtered.columns:
             st.subheader("Sentiment by Source")
             ct = pd.crosstab(filtered["source"], filtered["sentiment"])
@@ -97,7 +98,7 @@ with tabs[1]:
         cats.plot(kind="barh", ax=ax)
         ax.set_title("Top Categories")
         ax.set_xlabel("Count")
-        st.pyplot(fig)
+        st.pyplot(fig); plt.close(fig)
     else:
         st.info("No category data")
 
@@ -113,7 +114,7 @@ with tabs[2]:
         ax.set_yticklabels(titles, fontsize=8)
         ax.set_xlabel("Sensationalism Score")
         ax.set_title("Most Sensational Headlines")
-        st.pyplot(fig)
+        st.pyplot(fig); plt.close(fig)
 
 # --- Tab 4: Clusters ---
 with tabs[3]:
@@ -123,7 +124,7 @@ with tabs[3]:
         clusters.plot(kind="bar", ax=ax)
         ax.set_title("Article Clusters")
         plt.xticks(rotation=45, ha="right")
-        st.pyplot(fig)
+        st.pyplot(fig); plt.close(fig)
         cl = st.selectbox("Explore cluster", clusters.index.tolist())
         if cl:
             st.dataframe(filtered[filtered["cluster_label"] == cl][["title", "source", "sentiment"]].head(10), use_container_width=True)
@@ -137,7 +138,7 @@ with tabs[4]:
         fig, ax = plt.subplots(figsize=(10, 4))
         filtered["virality_score"].hist(bins=20, ax=ax, edgecolor="black")
         ax.set_xlabel("Virality Score")
-        st.pyplot(fig)
+        st.pyplot(fig); plt.close(fig)
         st.subheader("Most Viral Articles")
         viral = filtered.nlargest(10, "virality_score")
         for _, r in viral.iterrows():
@@ -150,13 +151,16 @@ with tabs[4]:
 # --- Tab 6: Entity Graph ---
 with tabs[5]:
     st.subheader("Entity Relationship Graph")
-    if st.button("Build Entity Graph") or os.path.exists("output/entity_graph.json"):
-        if os.path.exists("output/entity_graph.json"):
-            with open("output/entity_graph.json") as f:
+    graph_path = os.path.join(path_for("output_dir"), "entity_graph.json")
+    if st.button("Build Entity Graph") or os.path.exists(graph_path):
+        if os.path.exists(graph_path):
+            with open(graph_path) as f:
                 graph = json.load(f)
         else:
             graph = build_entity_graph(filtered)
-        if "stats" in graph:
+        if "error" in graph:
+            st.warning(graph["error"])
+        elif "stats" in graph:
             st.json(graph["stats"])
             if graph.get("nodes"):
                 st.subheader("Top Entities by Centrality")
@@ -213,7 +217,7 @@ with tabs[8]:
                     fig, ax = plt.subplots(figsize=(8, 2))
                     ax.plot(traj["date"], traj["count"], marker="o")
                     ax.set_title(f"Cluster {c['cluster']}: {c.get('label', '')} ({c['total_articles']} articles)")
-                    st.pyplot(fig)
+                    st.pyplot(fig); plt.close(fig)
     else:
         st.info("Run clustering first")
 
@@ -223,10 +227,13 @@ with tabs[9]:
     query = st.text_input("Search query", placeholder="e.g., 'Karnataka political crisis'")
     if query:
         with st.spinner("Searching..."):
-            results = semantic_search(query)
+            results = semantic_search(query, n_results=20)
         if results:
-            st.success(f"Found {len(results)} results")
-            for r in results:
+            filtered_ids = set(filtered["link"].dropna().unique()) if not filtered.empty else set()
+            if filtered_ids:
+                results = [r for r in results if r.get("link") in filtered_ids]
+            st.success(f"Found {len(results)} results (filtered)")
+            for r in results[:10]:
                 with st.expander(f"{r['title']} ({r['source']}) — Score: {r['score']:.3f}"):
                     st.write(f"**Source:** {r['source']} | **Category:** {r['category']} | **Sentiment:** {r['sentiment']}")
                     st.write(r.get("snippet", "")[:300])
@@ -254,7 +261,12 @@ with tabs[10]:
 
 # --- Tab 12: Data ---
 with tabs[11]:
-    cols = [c for c in filtered.columns if c not in ("text", "full_text", "entities")]
+    exclude = {"text", "full_text", "entities", "summary"}
+    cols = [c for c in filtered.columns if c not in exclude]
     st.dataframe(filtered[cols].head(100), use_container_width=True)
+    if "language" in filtered.columns:
+        st.subheader("Language Distribution")
+        lang_counts = filtered["language"].value_counts()
+        st.dataframe(lang_counts, use_container_width=True)
     csv = filtered.to_csv(index=False).encode("utf-8")
     st.download_button("Download CSV", csv, "news_data.csv", "text/csv")

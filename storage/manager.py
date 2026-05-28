@@ -103,8 +103,11 @@ class DataManager:
 
     def drop_redundant_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         cols_to_drop = []
+        keep_cols = get("storage.keep_columns", [])
+        if keep_cols is None:
+            keep_cols = []
         for col in df.columns:
-            if col not in get("storage.keep_columns", None) and col.endswith("_tmp"):
+            if col not in keep_cols and col.endswith("_tmp"):
                 cols_to_drop.append(col)
         if cols_to_drop:
             df = df.drop(columns=cols_to_drop)

@@ -33,6 +33,8 @@ from intelligence.event_detection import detect_breaking_events
 from intelligence.virality import predict_virality
 from intelligence.bias import analyze_bias, compute_source_reliability
 from intelligence.topics import track_topic_evolution
+from multilingual.detect import detect_language
+from alerts.engine import AlertEngine
 from observability.metrics import metrics
 
 logger = logging.getLogger("pipeline")
@@ -190,6 +192,14 @@ def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
     logger.info("Extracting named entities...")
     to_analyze["entities"] = extract_entities_batch(to_analyze["text"].tolist())
 
+    logger.info("Detecting languages...")
+    to_analyze["language"] = to_analyze["text"].apply(
+        lambda t: detect_language(t) if isinstance(t, str) and t.strip() else "unknown"
+    )
+    non_english = (to_analyze["language"] != "en").sum()
+    if non_english > 0:
+        logger.info("Non-English articles detected: %d", non_english)
+
     logger.info("Analyzing bias and clickbait...")
     bias_results = to_analyze["text"].apply(analyze_bias)
     bias_df = pd.DataFrame.from_records(bias_results)
@@ -235,7 +245,7 @@ def step_comparison(df: pd.DataFrame):
 
 def step_entity_graph(df: pd.DataFrame):
     logger.info("=== Step 6b: Entity Relationship Graph ===")
-    graph = build_entity_graph(df)
+    graph = build_entity_graph(df, max_age_days=365)
     if "stats" in graph:
         stats = graph["stats"]
         logger.info("Entity graph: %d nodes, %d edges", stats.get("total_nodes", 0), stats.get("total_edges", 0))
@@ -260,6 +270,18 @@ def step_breaking_news(df: pd.DataFrame):
     events_path = path_for("output_dir") + "/breaking_events.json"
     with open(events_path, "w") as f:
         json.dump(events, f, indent=2)
+
+
+def step_entity_trends(df: pd.DataFrame):
+    logger.info("=== Step 6ba: Entity Trend Analysis ===")
+    trends = compute_entity_trends(df)
+    if trends:
+        logger.info("Entity trends: %d trending entities", len(trends))
+        for t in trends[:5]:
+            logger.info("  %s (momentum=%d, recent=%d)", t["entity"], t["momentum"], t["recent_mentions"])
+    trends_path = path_for("output_dir") + "/entity_trends.json"
+    with open(trends_path, "w") as f:
+        json.dump(trends, f, indent=2)
 
 
 def step_topic_evolution(df: pd.DataFrame):
@@ -295,6 +317,21 @@ def step_vector_index(df: pd.DataFrame):
         logger.info("Vector DB: %d articles indexed", stats.get("count", 0))
     except ImportError:
         logger.warning("chromadb not installed, skipping vector indexing")
+
+
+def step_alerts(df: pd.DataFrame):
+    logger.info("=== Step 8: Alerts ===")
+    try:
+        engine = AlertEngine()
+        events_path = path_for("output_dir") + "/breaking_events.json"
+        if os.path.exists(events_path):
+            with open(events_path) as f:
+                events = json.load(f)
+            engine.check_breaking_events(events)
+        engine.check_virality_alerts(df)
+        logger.info("Alerts processed")
+    except Exception as e:
+        logger.warning("Alert step failed: %s", e)
 
 
 def step_update_tracking(df: pd.DataFrame):
@@ -340,8 +377,8 @@ def run_pipeline(steps: list = None):
 
     if steps is None:
         steps = ["scrape", "rss", "dedup", "fetch", "analyze", "cluster",
-                 "trends", "compare", "entity_graph", "breaking", "topics",
-                 "reliability", "vector_index", "track"]
+                 "trends", "compare", "entity_graph", "entity_trends", "breaking",
+                 "topics", "reliability", "vector_index", "track", "alerts"]
 
     df = pd.DataFrame()
 
@@ -377,6 +414,8 @@ def run_pipeline(steps: list = None):
         step_comparison(df)
     if "entity_graph" in steps and not df.empty:
         step_entity_graph(df)
+    if "entity_trends" in steps and not df.empty:
+        step_entity_trends(df)
     if "breaking" in steps and not df.empty:
         step_breaking_news(df)
     if "topics" in steps and not df.empty:
@@ -387,6 +426,9 @@ def run_pipeline(steps: list = None):
         step_vector_index(df)
     if "track" in steps and not df.empty:
         step_update_tracking(df)
+
+    if "alerts" in steps and not df.empty:
+        step_alerts(df)
 
     metrics.end_run()
     report = metrics.get_report()

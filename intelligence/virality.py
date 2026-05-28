@@ -10,12 +10,11 @@ logger = logging.getLogger(__name__)
 def compute_virality_score(row: pd.Series) -> float:
     score = 0.0
     weights = {
-        "sentiment_intensity": 0.15,
-        "sensationalism": 0.20,
+        "sentiment_intensity": 0.20,
+        "sensationalism": 0.25,
         "entity_density": 0.10,
-        "source_authority": 0.15,
-        "keyword_momentum": 0.25,
-        "subjectivity": 0.15,
+        "source_authority": 0.20,
+        "subjectivity": 0.25,
     }
 
     compound = row.get("compound", 0)
@@ -42,6 +41,10 @@ def compute_virality_score(row: pd.Series) -> float:
     source = str(row.get("source", ""))
     authority = _source_authority_score(source)
     score += weights["source_authority"] * authority
+
+    clickbait = row.get("clickbait_score", 0)
+    if isinstance(clickbait, (int, float)):
+        score += 0.10 * min(clickbait, 1.0)
 
     score = min(max(score, 0), 1)
     return round(score, 4)

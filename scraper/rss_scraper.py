@@ -90,10 +90,22 @@ def scrape_rss_feed(feed_cfg: dict) -> list:
 def scrape_all_rss(max_workers: int = None) -> list:
     if max_workers is None:
         max_workers = get("scraper.max_workers", 8)
+    seen_urls = {}
+    unique_feeds = []
+    for feed in RSS_FEEDS:
+        url = feed["url"]
+        if url not in seen_urls:
+            seen_urls[url] = feed["name"]
+            unique_feeds.append(feed)
+        else:
+            logger.debug("Skipping duplicate RSS URL: %s (%s merged into %s)", url, feed["name"], seen_urls[url])
+    dup_count = len(RSS_FEEDS) - len(unique_feeds)
+    if dup_count > 0:
+        logger.info("Deduplicated %d duplicate RSS feed URLs (%d unique)", dup_count, len(unique_feeds))
     all_articles = []
-    logger.info("Scraping all %d RSS feeds with %d workers...", len(RSS_FEEDS), max_workers)
+    logger.info("Scraping %d RSS feeds with %d workers...", len(unique_feeds), max_workers)
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(scrape_rss_feed, feed): feed for feed in RSS_FEEDS}
+        futures = {executor.submit(scrape_rss_feed, feed): feed for feed in unique_feeds}
         for future in as_completed(futures):
             try:
                 result = future.result()

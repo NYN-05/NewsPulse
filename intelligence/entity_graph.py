@@ -15,12 +15,22 @@ except ImportError:
     logger.warning("networkx not installed, entity graph disabled")
 
 
-def build_entity_graph(df: pd.DataFrame) -> Dict:
+def build_entity_graph(df: pd.DataFrame, max_age_days: int = None) -> Dict:
     if not HAS_NETWORKX:
         return {"error": "networkx not installed"}
 
     if df.empty or "entities" not in df.columns:
         return {"error": "no entity data"}
+
+    if max_age_days:
+        time_col = "published" if "published" in df.columns and df["published"].notna().sum() > 0 else "scraped_at"
+        if time_col in df.columns:
+            cutoff = pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=max_age_days)
+            df = df.copy()
+            parsed = pd.to_datetime(df[time_col], utc=True, errors="coerce")
+            n_before = len(df)
+            df = df[parsed >= cutoff]
+            logger.debug("Entity graph filtered to last %d days: %d -> %d articles", max_age_days, n_before, len(df))
 
     G = nx.Graph()
     cooccurrence = Counter()

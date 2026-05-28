@@ -63,14 +63,20 @@ def compute_trends(df: pd.DataFrame) -> dict:
         rising = {}
         min_mentions = get("trending.rising_min_mentions", 2)
         min_pct = get("trending.rising_min_pct", 50.0)
+        total_older = max(sum(older_words.values()), 1)
+        total_recent = max(sum(recent_words.values()), 1)
         for word, count in recent_words.items():
             old_count = older_words.get(word, 0)
+            recent_freq = count / total_recent
+            older_freq = old_count / total_older
             if old_count < min_mentions and count >= min_mentions:
-                rising[word] = count
+                if recent_freq > older_freq * 2:
+                    rising[word] = count
             elif old_count >= min_mentions:
                 rise_pct = (count - old_count) / old_count * 100
-                if rise_pct > min_pct:
+                if rise_pct > min_pct and count > old_count:
                     rising[word] = round(rise_pct, 1)
+        rising = dict(sorted(rising.items(), key=lambda x: -x[1])[:20])
         result["rising_keywords"] = rising
 
     return result
