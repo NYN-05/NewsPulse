@@ -1,4 +1,4 @@
-import { useMemo, useCallback, useState } from "react"
+import { useMemo } from "react"
 import {
   ReactFlow,
   Background,
@@ -8,9 +8,6 @@ import {
   Position,
   useNodesState,
   useEdgesState,
-  type Node,
-  type Edge,
-  type NodeProps,
 } from "@xyflow/react"
 import "@xyflow/react/dist/style.css"
 import { Badge } from "@/components/ui/badge"
@@ -35,7 +32,7 @@ const SECTOR_COLORS: Record<string, string> = {
   unknown: "#a1a1aa",
 }
 
-function EntityGraphNode({ data }: NodeProps) {
+function EntityGraphNode({ data }: { data: Record<string, any> }) {
   const color = data.sectorColor || TYPE_COLORS[data.entityType] || "#a1a1aa"
   return (
     <div
@@ -64,67 +61,62 @@ function EntityGraphNode({ data }: NodeProps) {
 
 const nodeTypes = { entityNode: EntityGraphNode }
 
+function makeNodes(entities: any[], positions: { x: number; y: number }[]) {
+  return entities.slice(0, 50).map((n, i) => ({
+    id: n.id,
+    type: "entityNode",
+    position: positions[i % positions.length],
+    data: {
+      label: n.id,
+      entityType: (n as EntityNode).type || n.type || "unknown",
+      sector: n.sector || undefined,
+      sectorColor: n.sector ? SECTOR_COLORS[n.sector] : undefined,
+    },
+  }))
+}
+
+function makeEdges(edges: any[], nodeIds: Set<string>) {
+  return edges
+    .filter((e: any) => nodeIds.has(e.source) && nodeIds.has(e.target))
+    .slice(0, 100)
+    .map((e: any, i: number) => ({
+      id: `e-${i}`,
+      source: e.source,
+      target: e.target,
+      animated: true,
+      style: {
+        stroke: "var(--color-border)",
+        strokeWidth: Math.max(1, Math.min((e.weight || 1) * 0.5, 6)),
+      },
+      label: (e.weight || 0) > 2 ? String(e.weight) : undefined,
+    }))
+}
+
 export function EntityGraphFlow({ nodes: inNodes, edges: inEdges, height = 500 }: {
-  nodes: (EntityNode | { id: string; type?: string; label: string; sector?: string })[]
-  edges: (EntityEdge | { source: string; target: string; weight?: number })[]
+  nodes: any[]
+  edges: any[]
   height?: number
 }) {
-  const [selectedNode, setSelectedNode] = useState<string | null>(null)
+  const positions = [
+    { x: 0, y: 0 }, { x: 200, y: -100 }, { x: -180, y: -80 },
+    { x: 100, y: 120 }, { x: -150, y: 100 }, { x: 250, y: 80 },
+    { x: -250, y: -40 }, { x: 50, y: -180 }, { x: -80, y: -160 },
+    { x: 200, y: 180 }, { x: -200, y: 160 }, { x: 300, y: 0 },
+    { x: 150, y: -50 }, { x: -100, y: 50 }, { x: 0, y: 100 },
+    { x: -300, y: 80 }, { x: 100, y: -250 }, { x: -120, y: 200 },
+  ]
 
-  const rfNodes: Node[] = useMemo(() => {
-    const positions = [
-      { x: 0, y: 0 }, { x: 200, y: -100 }, { x: -180, y: -80 },
-      { x: 100, y: 120 }, { x: -150, y: 100 }, { x: 250, y: 80 },
-      { x: -250, y: -40 }, { x: 50, y: -180 }, { x: -80, y: -160 },
-      { x: 200, y: 180 }, { x: -200, y: 160 }, { x: 300, y: 0 },
-      { x: 150, y: -50 }, { x: -100, y: 50 }, { x: 0, y: 100 },
-    ]
-    return inNodes.slice(0, 50).map((n, i) => ({
-      id: n.id,
-      type: "entityNode",
-      position: positions[i % positions.length],
-      data: {
-        label: n.id,
-        entityType: (n as EntityNode).type || n.type || "unknown",
-        sector: (n as { sector?: string }).sector || undefined,
-        sectorColor: (n as { sector?: string }).sector ? SECTOR_COLORS[(n as { sector?: string }).sector!] : undefined,
-      },
-    }))
-  }, [inNodes])
-
-  const rfEdges: Edge[] = useMemo(() => {
-    const nodeIds = new Set(rfNodes.map((n) => n.id))
-    return inEdges
-      .filter((e) => nodeIds.has(e.source) && nodeIds.has(e.target))
-      .slice(0, 100)
-      .map((e, i) => ({
-        id: `e-${i}`,
-        source: e.source,
-        target: e.target,
-        animated: true,
-        style: {
-          stroke: "var(--color-border)",
-          strokeWidth: Math.max(1, Math.min((e.weight || 1) * 0.5, 6)),
-        },
-        label: (e.weight || 0) > 2 ? String(e.weight) : undefined,
-      }))
-  }, [rfNodes, inEdges])
-
-  const [nodes, , onNodesChange] = useNodesState(rfNodes)
-  const [edges, , onEdgesChange] = useEdgesState(rfEdges)
-
-  const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-    setSelectedNode(node.id === selectedNode ? null : node.id)
-  }, [selectedNode])
+  const [nodes] = useNodesState(useMemo(() => makeNodes(inNodes, positions), [inNodes]))
+  const [edges] = useEdgesState(useMemo(() => {
+    const nodeIds = new Set(makeNodes(inNodes, positions).map((n: any) => n.id))
+    return makeEdges(inEdges, nodeIds)
+  }, [inNodes, inEdges]))
 
   return (
-    <div className="relative" style={{ height }}>
+    <div style={{ height }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onNodeClick={onNodeClick}
         nodeTypes={nodeTypes}
         fitView
         attributionPosition="bottom-left"
@@ -132,9 +124,9 @@ export function EntityGraphFlow({ nodes: inNodes, edges: inEdges, height = 500 }
         <Background color="var(--color-border)" gap={20} />
         <Controls />
         <MiniMap
-          nodeColor={(n) => {
-            const d = n.data
-            return d?.sectorColor || TYPE_COLORS[d?.entityType] || "#a1a1aa"
+          nodeColor={(n: any) => {
+            const d = n.data || {}
+            return d.sectorColor || TYPE_COLORS[d.entityType] || "#a1a1aa"
           }}
           style={{ background: "var(--color-card)", border: "1px solid var(--color-border)" }}
         />
@@ -143,9 +135,8 @@ export function EntityGraphFlow({ nodes: inNodes, edges: inEdges, height = 500 }
   )
 }
 
-export function CrossDomainGraph({ links, sectorMap, height = 500 }: {
+export function CrossDomainGraph({ links, height = 500 }: {
   links: CrossDomainLink[]
-  sectorMap: Record<string, { entity: string; sector: string; type: string }>
   height?: number
 }) {
   const { nodes: cdNodes, edges: cdEdges } = useMemo(() => {
@@ -166,10 +157,11 @@ export function CrossDomainGraph({ links, sectorMap, height = 500 }: {
       { x: -260, y: 20 }, { x: 60, y: -200 }, { x: -90, y: -180 },
       { x: 200, y: 200 }, { x: -220, y: 180 }, { x: 320, y: -40 },
       { x: 160, y: -60 }, { x: -120, y: 60 }, { x: 30, y: 120 },
+      { x: -300, y: 80 }, { x: 100, y: -250 }, { x: -130, y: 200 },
     ]
 
-    const nArr: Node[] = []
-    const eArr: Edge[] = []
+    const nArr: any[] = []
+    const eArr: any[] = []
     let idx = 0
 
     entityMap.forEach((info, entity) => {
@@ -205,16 +197,14 @@ export function CrossDomainGraph({ links, sectorMap, height = 500 }: {
     return { nodes: nArr, edges: eArr }
   }, [links])
 
-  const [nodes, , onNodesChange] = useNodesState(cdNodes)
-  const [edges, , onEdgesChange] = useEdgesState(cdEdges)
+  const [nodes] = useNodesState(cdNodes)
+  const [edges] = useEdgesState(cdEdges)
 
   return (
     <div style={{ height }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         fitView
         attributionPosition="bottom-left"
@@ -222,7 +212,10 @@ export function CrossDomainGraph({ links, sectorMap, height = 500 }: {
         <Background color="var(--color-border)" gap={20} />
         <Controls />
         <MiniMap
-          nodeColor={(n) => SECTOR_COLORS[n.data?.sector] || "#a1a1aa"}
+          nodeColor={(n: any) => {
+            const d = n.data || {}
+            return SECTOR_COLORS[d.sector] || "#a1a1aa"
+          }}
           style={{ background: "var(--color-card)", border: "1px solid var(--color-border)" }}
         />
       </ReactFlow>

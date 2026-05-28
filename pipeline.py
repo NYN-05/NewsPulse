@@ -34,6 +34,8 @@ from intelligence.virality import predict_virality
 from intelligence.bias import analyze_bias, compute_source_reliability
 from intelligence.topics import track_topic_evolution
 from intelligence.cross_domain import cross_domain_pipeline
+from intelligence.narrative_tracker import narrative_pipeline
+from intelligence.influence import influence_pipeline
 from multilingual.detect import detect_language
 from alerts.engine import AlertEngine
 from observability.metrics import metrics
@@ -320,6 +322,17 @@ def step_vector_index(df: pd.DataFrame):
         logger.warning("chromadb not installed, skipping vector indexing")
 
 
+def step_narrative_tracker(df: pd.DataFrame):
+    logger.info("=== Step 6h: Narrative Evolution Tracking ===")
+    result = narrative_pipeline(df)
+    summary = result.get("summary", {})
+    logger.info("Narratives: %d emerging, %d disappearing, %d mutations across %d entities",
+                summary.get("emerging_count", 0),
+                summary.get("disappearing_count", 0),
+                summary.get("total_mutations", 0),
+                summary.get("total_entity_narratives", 0))
+
+
 def step_cross_domain(df: pd.DataFrame):
     logger.info("=== Step 6g: Cross-Domain Relationship Discovery ===")
     result = cross_domain_pipeline(df)
@@ -328,6 +341,16 @@ def step_cross_domain(df: pd.DataFrame):
                 summary.get("total_cross_domain_links", 0),
                 summary.get("total_impact_chains", 0),
                 summary.get("total_entities_mapped", 0))
+
+
+def step_influence(df: pd.DataFrame):
+    logger.info("=== Step 6i: Influence Mapping ===")
+    result = influence_pipeline(df)
+    summary = result.get("summary", {})
+    logger.info("Influence: %d entities scored, %d sources, %d propagation tracks",
+                summary.get("total_entities_scored", 0),
+                summary.get("total_sources_scored", 0),
+                summary.get("total_propagation_tracked", 0))
 
 
 def step_alerts(df: pd.DataFrame):
@@ -389,7 +412,8 @@ def run_pipeline(steps: list = None):
     if steps is None:
         steps = ["scrape", "rss", "dedup", "fetch", "analyze", "cluster",
                  "trends", "compare", "entity_graph", "entity_trends", "breaking",
-                 "topics", "reliability", "cross_domain", "vector_index", "track", "alerts"]
+                 "topics", "reliability", "cross_domain", "narratives", "influence",
+                 "vector_index", "track", "alerts"]
 
     df = pd.DataFrame()
 
@@ -435,6 +459,10 @@ def run_pipeline(steps: list = None):
         step_source_reliability(df)
     if "cross_domain" in steps and not df.empty:
         step_cross_domain(df)
+    if "narratives" in steps and not df.empty:
+        step_narrative_tracker(df)
+    if "influence" in steps and not df.empty:
+        step_influence(df)
     if "vector_index" in steps and not df.empty:
         step_vector_index(df)
     if "track" in steps and not df.empty:

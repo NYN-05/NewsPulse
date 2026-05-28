@@ -170,10 +170,22 @@ def entity_graph():
     return _load_json("entity_graph.json")
 
 
+# ---- Influence Map ----
+@app.get("/api/influence")
+def influence():
+    return _load_json("influence_map.json")
+
+
 # ---- Entity Trends ----
 @app.get("/api/entity-trends")
 def entity_trends():
     return _load_json("entity_trends.json")
+
+
+# ---- Narrative Evolution ----
+@app.get("/api/narratives")
+def narratives():
+    return _load_json("narrative_evolution.json")
 
 
 # ---- Breaking Events ----

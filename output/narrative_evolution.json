@@ -1,0 +1,4392 @@
+{
+  "mutations": [
+    {
+      "window": "2009-07-13 -> 2009-07-20",
+      "prev_window": "2009-07-13",
+      "curr_window": "2009-07-20",
+      "prev_articles": 3,
+      "curr_articles": 20,
+      "retained_keywords": 3,
+      "emerged_keywords": [
+        "better",
+        "coming",
+        "deal",
+        "discuss",
+        "doomed",
+        "heroes",
+        "india",
+        "justifies",
+        "kashmir",
+        "makeover"
+      ],
+      "disappeared_keywords": [
+        "celebrate",
+        "decade",
+        "doesn\"t",
+        "enthuse",
+        "feel",
+        "ignored",
+        "only",
+        "veterans",
+        "victory"
+      ],
+      "keyword_retention_pct": 25.0,
+      "drift_score": 0.821,
+      "article_growth_pct": 566.7
+    },
+    {
+      "window": "2009-07-20 -> 2023-03-27",
+      "prev_window": "2009-07-20",
+      "curr_window": "2023-03-27",
+      "prev_articles": 20,
+      "curr_articles": 10,
+      "retained_keywords": 0,
+      "emerged_keywords": [
+        "able",
+        "about",
+        "conceded",
+        "defeat",
+        "election",
+        "finland's",
+        "from",
+        "front",
+        "left-wing",
+        "leonardo"
+      ],
+      "disappeared_keywords": [
+        "army",
+        "better",
+        "coming",
+        "deal",
+        "discuss",
+        "doomed",
+        "govt",
+        "heroes",
+        "india",
+        "justifies"
+      ],
+      "keyword_retention_pct": 0.0,
+      "drift_score": 1,
+      "article_growth_pct": -50.0
+    },
+    {
+      "window": "2023-03-27 -> 2023-04-03",
+      "prev_window": "2023-03-27",
+      "curr_window": "2023-04-03",
+      "prev_articles": 10,
+      "curr_articles": 11,
+      "retained_keywords": 0,
+      "emerged_keywords": [
+        "been",
+        "covid-19",
+        "crewed",
+        "first",
+        "house",
+        "it's",
+        "judge",
+        "last",
+        "mission",
+        "moon"
+      ],
+      "disappeared_keywords": [
+        "able",
+        "about",
+        "conceded",
+        "defeat",
+        "election",
+        "finland's",
+        "from",
+        "front",
+        "left-wing",
+        "leonardo"
+      ],
+      "keyword_retention_pct": 0.0,
+      "drift_score": 1,
+      "article_growth_pct": 10.0
+    },
+    {
+      "window": "2023-04-03 -> 2023-04-10",
+      "prev_window": "2023-04-03",
+      "curr_window": "2023-04-10",
+      "prev_articles": 11,
+      "curr_articles": 12,
+      "retained_keywords": 2,
+      "emerged_keywords": [
+        "$2.2",
+        "1998",
+        "after",
+        "bank",
+        "hefner",
+        "here's",
+        "home",
+        "hugh",
+        "jordan",
+        "million"
+      ],
+      "disappeared_keywords": [
+        "been",
+        "covid-19",
+        "crewed",
+        "first",
+        "house",
+        "it's",
+        "judge",
+        "last",
+        "mission",
+        "moon"
+      ],
+      "keyword_retention_pct": 10.0,
+      "drift_score": 0.986,
+      "article_growth_pct": 9.1
+    },
+    {
+      "window": "2023-04-10 -> 2023-04-17",
+      "prev_window": "2023-04-10",
+      "curr_window": "2023-04-17",
+      "prev_articles": 12,
+      "curr_articles": 9,
+      "retained_keywords": 1,
+      "emerged_keywords": [
+        "against",
+        "back",
+        "court",
+        "didn't",
+        "fedex",
+        "indianapolis",
+        "lawsuit",
+        "magazine",
+        "mass",
+        "prison"
+      ],
+      "disappeared_keywords": [
+        "$2.2",
+        "1998",
+        "after",
+        "bank",
+        "hefner",
+        "here's",
+        "home",
+        "hugh",
+        "jordan",
+        "million"
+      ],
+      "keyword_retention_pct": 5.0,
+      "drift_score": 0.99,
+      "article_growth_pct": -25.0
+    },
+    {
+      "window": "2023-04-17 -> 2025-01-13",
+      "prev_window": "2023-04-17",
+      "curr_window": "2025-01-13",
+      "prev_articles": 9,
+      "curr_articles": 5,
+      "retained_keywords": 2,
+      "emerged_keywords": [
+        "became",
+        "company",
+        "finnish",
+        "gadget",
+        "hottest",
+        "little-known",
+        "oura\u2019s",
+        "ring",
+        "said",
+        "signals"
+      ],
+      "disappeared_keywords": [
+        "against",
+        "back",
+        "court",
+        "didn't",
+        "fedex",
+        "indianapolis",
+        "lawsuit",
+        "magazine",
+        "mass",
+        "prison"
+      ],
+      "keyword_retention_pct": 10.0,
+      "drift_score": 0.981,
+      "article_growth_pct": -44.4
+    },
+    {
+      "window": "2025-01-13 -> 2025-01-20",
+      "prev_window": "2025-01-13",
+      "curr_window": "2025-01-20",
+      "prev_articles": 5,
+      "curr_articles": 47,
+      "retained_keywords": 3,
+      "emerged_keywords": [
+        "after",
+        "against",
+        "china",
+        "chinese",
+        "early",
+        "from",
+        "gaza",
+        "hostages",
+        "israeli",
+        "latest"
+      ],
+      "disappeared_keywords": [
+        "became",
+        "company",
+        "finnish",
+        "gadget",
+        "hottest",
+        "little-known",
+        "oura\u2019s",
+        "ring",
+        "said",
+        "signals"
+      ],
+      "keyword_retention_pct": 15.0,
+      "drift_score": 0.975,
+      "article_growth_pct": 840.0
+    },
+    {
+      "window": "2025-01-20 -> 2025-01-27",
+      "prev_window": "2025-01-20",
+      "curr_window": "2025-01-27",
+      "prev_articles": 47,
+      "curr_articles": 3,
+      "retained_keywords": 1,
+      "emerged_keywords": [
+        "1.4%",
+        "2.5%",
+        "allowed",
+        "back",
+        "down",
+        "fell",
+        "foot",
+        "four",
+        "gold",
+        "israel"
+      ],
+      "disappeared_keywords": [
+        "after",
+        "against",
+        "china",
+        "chinese",
+        "early",
+        "from",
+        "hostages",
+        "israeli",
+        "latest",
+        "more"
+      ],
+      "keyword_retention_pct": 5.0,
+      "drift_score": 0.994,
+      "article_growth_pct": -93.6
+    },
+    {
+      "window": "2025-01-27 -> 2026-05-04",
+      "prev_window": "2025-01-27",
+      "curr_window": "2026-05-04",
+      "prev_articles": 3,
+      "curr_articles": 4,
+      "retained_keywords": 0,
+      "emerged_keywords": [
+        "beijing",
+        "defense",
+        "distanced",
+        "distinct",
+        "effort",
+        "freedom",
+        "from",
+        "hantavirus",
+        "hormuz",
+        "iran"
+      ],
+      "disappeared_keywords": [
+        "1.4%",
+        "2.5%",
+        "allowed",
+        "back",
+        "down",
+        "fell",
+        "foot",
+        "four",
+        "gaza",
+        "gold"
+      ],
+      "keyword_retention_pct": 0.0,
+      "drift_score": 1,
+      "article_growth_pct": 33.3
+    },
+    {
+      "window": "2026-05-04 -> 2026-05-11",
+      "prev_window": "2026-05-04",
+      "curr_window": "2026-05-11",
+      "prev_articles": 4,
+      "curr_articles": 29,
+      "retained_keywords": 5,
+      "emerged_keywords": [
+        "after",
+        "china",
+        "could",
+        "future",
+        "health",
+        "jr.\u2019s",
+        "just",
+        "make",
+        "more",
+        "over"
+      ],
+      "disappeared_keywords": [
+        "defense",
+        "distanced",
+        "distinct",
+        "effort",
+        "freedom",
+        "from",
+        "hantavirus",
+        "hormuz",
+        "latest",
+        "project"
+      ],
+      "keyword_retention_pct": 25.0,
+      "drift_score": 0.955,
+      "article_growth_pct": 625.0
+    },
+    {
+      "window": "2026-05-11 -> 2026-05-18",
+      "prev_window": "2026-05-11",
+      "curr_window": "2026-05-18",
+      "prev_articles": 29,
+      "curr_articles": 121,
+      "retained_keywords": 6,
+      "emerged_keywords": [
+        "about",
+        "against",
+        "ebola",
+        "from",
+        "fund",
+        "have",
+        "into",
+        "news",
+        "president",
+        "republican"
+      ],
+      "disappeared_keywords": [
+        "beijing",
+        "china",
+        "could",
+        "future",
+        "health",
+        "iran",
+        "jr.\u2019s",
+        "just",
+        "make",
+        "over"
+      ],
+      "keyword_retention_pct": 30.0,
+      "drift_score": 0.968,
+      "article_growth_pct": 317.2
+    },
+    {
+      "window": "2026-05-18 -> 2026-05-25",
+      "prev_window": "2026-05-18",
+      "curr_window": "2026-05-25",
+      "prev_articles": 121,
+      "curr_articles": 2062,
+      "retained_keywords": 15,
+      "emerged_keywords": [
+        "first",
+        "iran",
+        "over",
+        "their",
+        "what"
+      ],
+      "disappeared_keywords": [
+        "ebola",
+        "fund",
+        "into",
+        "republican",
+        "than"
+      ],
+      "keyword_retention_pct": 75.0,
+      "drift_score": 0.939,
+      "article_growth_pct": 1604.1
+    }
+  ],
+  "entity_narratives": [
+    {
+      "entity": "trump",
+      "phase": "accelerating",
+      "acceleration": 149,
+      "total_mentions": 188,
+      "recent_7_days": 165,
+      "first_seen": "2023-04-05",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-05",
+          "count": 2
+        },
+        {
+          "date": "2025-01-19",
+          "count": 1
+        },
+        {
+          "date": "2025-01-20",
+          "count": 1
+        },
+        {
+          "date": "2025-01-24",
+          "count": 1
+        },
+        {
+          "date": "2025-01-25",
+          "count": 2
+        },
+        {
+          "date": "2025-01-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-12",
+          "count": 2
+        },
+        {
+          "date": "2026-05-13",
+          "count": 2
+        },
+        {
+          "date": "2026-05-15",
+          "count": 1
+        },
+        {
+          "date": "2026-05-19",
+          "count": 3
+        },
+        {
+          "date": "2026-05-20",
+          "count": 3
+        },
+        {
+          "date": "2026-05-21",
+          "count": 3
+        },
+        {
+          "date": "2026-05-22",
+          "count": 2
+        },
+        {
+          "date": "2026-05-23",
+          "count": 2
+        },
+        {
+          "date": "2026-05-24",
+          "count": 2
+        },
+        {
+          "date": "2026-05-25",
+          "count": 4
+        },
+        {
+          "date": "2026-05-26",
+          "count": 9
+        },
+        {
+          "date": "2026-05-27",
+          "count": 24
+        },
+        {
+          "date": "2026-05-28",
+          "count": 122
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-05",
+          "avg_sentiment": -0.411,
+          "article_count": 57
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.309,
+          "article_count": 56
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.055,
+          "article_count": 58
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.465,
+          "article_count": 52
+        }
+      ],
+      "sentiment_volatility": 0.92
+    },
+    {
+      "entity": "iran",
+      "phase": "accelerating",
+      "acceleration": 170,
+      "total_mentions": 177,
+      "recent_7_days": 170,
+      "first_seen": "2023-04-03",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-03",
+          "count": 1
+        },
+        {
+          "date": "2026-05-05",
+          "count": 1
+        },
+        {
+          "date": "2026-05-08",
+          "count": 1
+        },
+        {
+          "date": "2026-05-12",
+          "count": 3
+        },
+        {
+          "date": "2026-05-14",
+          "count": 1
+        },
+        {
+          "date": "2026-05-15",
+          "count": 2
+        },
+        {
+          "date": "2026-05-16",
+          "count": 1
+        },
+        {
+          "date": "2026-05-20",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 8
+        },
+        {
+          "date": "2026-05-27",
+          "count": 31
+        },
+        {
+          "date": "2026-05-28",
+          "count": 126
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-03",
+          "avg_sentiment": -0.217,
+          "article_count": 57
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.09,
+          "article_count": 57
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.221,
+          "article_count": 57
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 5
+        }
+      ],
+      "sentiment_volatility": 0.955
+    },
+    {
+      "entity": "india",
+      "phase": "accelerating",
+      "acceleration": 93,
+      "total_mentions": 93,
+      "recent_7_days": 93,
+      "first_seen": "2009-07-23",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2009-07-23",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 3
+        },
+        {
+          "date": "2026-05-26",
+          "count": 4
+        },
+        {
+          "date": "2026-05-27",
+          "count": 23
+        },
+        {
+          "date": "2026-05-28",
+          "count": 62
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2009-07-23",
+          "avg_sentiment": -0.376,
+          "article_count": 106
+        }
+      ],
+      "sentiment_volatility": 0.883
+    },
+    {
+      "entity": "u. s.",
+      "phase": "accelerating",
+      "acceleration": 59,
+      "total_mentions": 83,
+      "recent_7_days": 71,
+      "first_seen": "2025-01-20",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-20",
+          "count": 2
+        },
+        {
+          "date": "2025-01-22",
+          "count": 1
+        },
+        {
+          "date": "2025-01-24",
+          "count": 1
+        },
+        {
+          "date": "2025-01-27",
+          "count": 5
+        },
+        {
+          "date": "2025-04-03",
+          "count": 1
+        },
+        {
+          "date": "2026-05-08",
+          "count": 1
+        },
+        {
+          "date": "2026-05-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-18",
+          "count": 1
+        },
+        {
+          "date": "2026-05-20",
+          "count": 1
+        },
+        {
+          "date": "2026-05-22",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 6
+        },
+        {
+          "date": "2026-05-28",
+          "count": 60
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-20",
+          "avg_sentiment": -0.325,
+          "article_count": 24
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.395,
+          "article_count": 22
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.118,
+          "article_count": 26
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 15
+        }
+      ],
+      "sentiment_volatility": 0.926
+    },
+    {
+      "entity": "siddaramaiah",
+      "phase": "accelerating",
+      "acceleration": 55,
+      "total_mentions": 55,
+      "recent_7_days": 55,
+      "first_seen": "2026-05-26",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 3
+        },
+        {
+          "date": "2026-05-28",
+          "count": 51
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": -0.007,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.996,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.982,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.013,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.999,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.993,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.096,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.213,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.014,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.087,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.626,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.925,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.954,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.963,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.843,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.961,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.993,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 1.0,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.087,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.004,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.915,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.996,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.894
+    },
+    {
+      "entity": "donald trump",
+      "phase": "accelerating",
+      "acceleration": 52,
+      "total_mentions": 52,
+      "recent_7_days": 52,
+      "first_seen": "2023-04-05",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-05",
+          "count": 1
+        },
+        {
+          "date": "2026-05-18",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 2
+        },
+        {
+          "date": "2026-05-26",
+          "count": 3
+        },
+        {
+          "date": "2026-05-27",
+          "count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "count": 40
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-05",
+          "avg_sentiment": -0.362,
+          "article_count": 52
+        }
+      ],
+      "sentiment_volatility": 0.885
+    },
+    {
+      "entity": "delhi",
+      "phase": "accelerating",
+      "acceleration": 45,
+      "total_mentions": 45,
+      "recent_7_days": 45,
+      "first_seen": "2026-05-26",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "count": 37
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": 0.112,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.103,
+          "article_count": 6
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.001,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.886,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.971,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.005,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.006,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.965,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.146,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.954,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.093,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.003,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.004,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.024,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.889,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.981,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.919,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.931
+    },
+    {
+      "entity": "china",
+      "phase": "accelerating",
+      "acceleration": 39,
+      "total_mentions": 43,
+      "recent_7_days": 39,
+      "first_seen": "2023-04-04",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-04",
+          "count": 1
+        },
+        {
+          "date": "2023-04-18",
+          "count": 1
+        },
+        {
+          "date": "2023-09-18",
+          "count": 1
+        },
+        {
+          "date": "2025-01-26",
+          "count": 1
+        },
+        {
+          "date": "2025-01-27",
+          "count": 4
+        },
+        {
+          "date": "2026-05-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 1
+        },
+        {
+          "date": "2026-05-15",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 5
+        },
+        {
+          "date": "2026-05-27",
+          "count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "count": 22
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-04",
+          "avg_sentiment": -0.275,
+          "article_count": 44
+        }
+      ],
+      "sentiment_volatility": 0.93
+    },
+    {
+      "entity": "karnataka",
+      "phase": "accelerating",
+      "acceleration": 41,
+      "total_mentions": 41,
+      "recent_7_days": 41,
+      "first_seen": "2026-05-26",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-26",
+          "count": 2
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 37
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": -0.007,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.981,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.002,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.967,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.0,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.957,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.246,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.794,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.925,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.954,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.814,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.98,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.997,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.996,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.996,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        }
+      ],
+      "sentiment_volatility": 0.88
+    },
+    {
+      "entity": "israel",
+      "phase": "accelerating",
+      "acceleration": 39,
+      "total_mentions": 39,
+      "recent_7_days": 39,
+      "first_seen": "2025-01-25",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-25",
+          "count": 1
+        },
+        {
+          "date": "2025-01-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-19",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 11
+        },
+        {
+          "date": "2026-05-28",
+          "count": 25
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-25",
+          "avg_sentiment": -0.114,
+          "article_count": 24
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.773,
+          "article_count": 13
+        }
+      ],
+      "sentiment_volatility": 0.926
+    },
+    {
+      "entity": "senate",
+      "phase": "accelerating",
+      "acceleration": 35,
+      "total_mentions": 36,
+      "recent_7_days": 35,
+      "first_seen": "2023-04-18",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-18",
+          "count": 1
+        },
+        {
+          "date": "2026-05-17",
+          "count": 1
+        },
+        {
+          "date": "2026-05-19",
+          "count": 1
+        },
+        {
+          "date": "2026-05-20",
+          "count": 1
+        },
+        {
+          "date": "2026-05-21",
+          "count": 2
+        },
+        {
+          "date": "2026-05-26",
+          "count": 2
+        },
+        {
+          "date": "2026-05-27",
+          "count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "count": 23
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-18",
+          "avg_sentiment": -0.105,
+          "article_count": 38
+        }
+      ],
+      "sentiment_volatility": 0.963
+    },
+    {
+      "entity": "texas",
+      "phase": "accelerating",
+      "acceleration": 35,
+      "total_mentions": 35,
+      "recent_7_days": 35,
+      "first_seen": "2025-01-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 10
+        },
+        {
+          "date": "2026-05-28",
+          "count": 24
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-27",
+          "avg_sentiment": -0.064,
+          "article_count": 24
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.569,
+          "article_count": 13
+        }
+      ],
+      "sentiment_volatility": 0.938
+    },
+    {
+      "entity": "strait of hormuz",
+      "phase": "accelerating",
+      "acceleration": 34,
+      "total_mentions": 34,
+      "recent_7_days": 34,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-14",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "count": 26
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-14",
+          "avg_sentiment": -0.15,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.098,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.139,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.326,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 5
+        }
+      ],
+      "sentiment_volatility": 0.993
+    },
+    {
+      "entity": "congress",
+      "phase": "accelerating",
+      "acceleration": 31,
+      "total_mentions": 31,
+      "recent_7_days": 31,
+      "first_seen": "2018-02-25",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2018-02-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 4
+        },
+        {
+          "date": "2026-05-27",
+          "count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "count": 22
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2018-02-25",
+          "avg_sentiment": -0.108,
+          "article_count": 35
+        }
+      ],
+      "sentiment_volatility": 0.962
+    },
+    {
+      "entity": "washington",
+      "phase": "accelerating",
+      "acceleration": 31,
+      "total_mentions": 31,
+      "recent_7_days": 31,
+      "first_seen": "2026-05-12",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 10
+        },
+        {
+          "date": "2026-05-28",
+          "count": 20
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-12",
+          "avg_sentiment": 0.069,
+          "article_count": 6
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.192,
+          "article_count": 8
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.423,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.144,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.932,
+          "article_count": 5
+        }
+      ],
+      "sentiment_volatility": 0.962
+    },
+    {
+      "entity": "europe",
+      "phase": "accelerating",
+      "acceleration": 27,
+      "total_mentions": 27,
+      "recent_7_days": 27,
+      "first_seen": "2026-05-14",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-14",
+          "count": 1
+        },
+        {
+          "date": "2026-05-19",
+          "count": 1
+        },
+        {
+          "date": "2026-05-21",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 3
+        },
+        {
+          "date": "2026-05-28",
+          "count": 21
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-14",
+          "avg_sentiment": 0.065,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.331,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.149,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.992,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.971,
+          "article_count": 6
+        }
+      ],
+      "sentiment_volatility": 0.949
+    },
+    {
+      "entity": "ap news",
+      "phase": "growing",
+      "acceleration": 25,
+      "total_mentions": 25,
+      "recent_7_days": 25,
+      "first_seen": "2026-05-22",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-22",
+          "count": 1
+        },
+        {
+          "date": "2026-05-23",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 3
+        },
+        {
+          "date": "2026-05-26",
+          "count": 9
+        },
+        {
+          "date": "2026-05-27",
+          "count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "count": 4
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-22",
+          "avg_sentiment": 0.227,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": -0.001,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": -0.39,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.975,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.008,
+          "article_count": 4
+        }
+      ],
+      "sentiment_volatility": 0.942
+    },
+    {
+      "entity": "ukraine",
+      "phase": "accelerating",
+      "acceleration": 21,
+      "total_mentions": 21,
+      "recent_7_days": 21,
+      "first_seen": "2026-05-22",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-22",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 17
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-22",
+          "avg_sentiment": -0.325,
+          "article_count": 6
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.968,
+          "article_count": 6
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.309,
+          "article_count": 6
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 2
+        }
+      ],
+      "sentiment_volatility": 0.918
+    },
+    {
+      "entity": "white house",
+      "phase": "accelerating",
+      "acceleration": 21,
+      "total_mentions": 21,
+      "recent_7_days": 21,
+      "first_seen": "2025-01-22",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-22",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 17
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-22",
+          "avg_sentiment": -0.365,
+          "article_count": 20
+        }
+      ],
+      "sentiment_volatility": 0.92
+    },
+    {
+      "entity": "cbs news",
+      "phase": "emerging",
+      "acceleration": 20,
+      "total_mentions": 20,
+      "recent_7_days": 20,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "count": 16
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.994,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.895,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.713,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.998,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.918,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.993,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.901,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.994,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.995
+    },
+    {
+      "entity": "russia",
+      "phase": "accelerating",
+      "acceleration": 19,
+      "total_mentions": 19,
+      "recent_7_days": 19,
+      "first_seen": "2023-04-04",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-04",
+          "count": 1
+        },
+        {
+          "date": "2025-01-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 15
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-04",
+          "avg_sentiment": -0.331,
+          "article_count": 18
+        }
+      ],
+      "sentiment_volatility": 0.958
+    },
+    {
+      "entity": "middle east",
+      "phase": "emerging",
+      "acceleration": 18,
+      "total_mentions": 18,
+      "recent_7_days": 18,
+      "first_seen": "2026-05-24",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-24",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 17
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-24",
+          "avg_sentiment": -0.061,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.979,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.261,
+          "article_count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.497,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.985
+    },
+    {
+      "entity": "google",
+      "phase": "accelerating",
+      "acceleration": 18,
+      "total_mentions": 18,
+      "recent_7_days": 18,
+      "first_seen": "2026-05-22",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-22",
+          "count": 3
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 13
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-22",
+          "avg_sentiment": -0.603,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.94,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.473,
+          "article_count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.35,
+          "article_count": 4
+        }
+      ],
+      "sentiment_volatility": 1.002
+    },
+    {
+      "entity": "canada",
+      "phase": "accelerating",
+      "acceleration": 16,
+      "total_mentions": 18,
+      "recent_7_days": 16,
+      "first_seen": "2025-01-24",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-24",
+          "count": 1
+        },
+        {
+          "date": "2025-03-24",
+          "count": 1
+        },
+        {
+          "date": "2025-04-03",
+          "count": 1
+        },
+        {
+          "date": "2025-08-26",
+          "count": 1
+        },
+        {
+          "date": "2026-04-20",
+          "count": 1
+        },
+        {
+          "date": "2026-05-24",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 9
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-24",
+          "avg_sentiment": 0.018,
+          "article_count": 17
+        }
+      ],
+      "sentiment_volatility": 0.991
+    },
+    {
+      "entity": "amazon",
+      "phase": "growing",
+      "acceleration": 18,
+      "total_mentions": 18,
+      "recent_7_days": 18,
+      "first_seen": "2025-01-24",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-24",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 9
+        },
+        {
+          "date": "2026-05-28",
+          "count": 7
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-24",
+          "avg_sentiment": -0.061,
+          "article_count": 14
+        }
+      ],
+      "sentiment_volatility": 1.007
+    },
+    {
+      "entity": "u. s",
+      "phase": "accelerating",
+      "acceleration": 18,
+      "total_mentions": 18,
+      "recent_7_days": 18,
+      "first_seen": "2025-01-26",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-26",
+          "count": 1
+        },
+        {
+          "date": "2025-01-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-14",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 12
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-20",
+          "avg_sentiment": -0.408,
+          "article_count": 24
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.391,
+          "article_count": 24
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.064,
+          "article_count": 23
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.403,
+          "article_count": 25
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 3
+        }
+      ],
+      "sentiment_volatility": 0.927
+    },
+    {
+      "entity": "abc news",
+      "phase": "emerging",
+      "acceleration": 18,
+      "total_mentions": 18,
+      "recent_7_days": 18,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 13
+        },
+        {
+          "date": "2026-05-28",
+          "count": 5
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.999,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.997,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.87,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.865,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.791,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.999,
+          "article_count": 4
+        }
+      ],
+      "sentiment_volatility": 0.781
+    },
+    {
+      "entity": "lebanon",
+      "phase": "emerging",
+      "acceleration": 17,
+      "total_mentions": 17,
+      "recent_7_days": 17,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 6
+        },
+        {
+          "date": "2026-05-28",
+          "count": 11
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.944,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.854,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.991,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.983,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.686,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.985,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.997,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.993,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.993,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.984,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.944,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.995,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.916,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.979,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.924,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.976
+    },
+    {
+      "entity": "house",
+      "phase": "accelerating",
+      "acceleration": 16,
+      "total_mentions": 17,
+      "recent_7_days": 16,
+      "first_seen": "2023-04-18",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-18",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 1
+        },
+        {
+          "date": "2026-05-20",
+          "count": 1
+        },
+        {
+          "date": "2026-05-21",
+          "count": 3
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 7
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-04",
+          "avg_sentiment": -0.369,
+          "article_count": 43
+        }
+      ],
+      "sentiment_volatility": 0.903
+    },
+    {
+      "entity": "new york",
+      "phase": "accelerating",
+      "acceleration": 17,
+      "total_mentions": 17,
+      "recent_7_days": 17,
+      "first_seen": "2023-04-12",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "count": 11
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-03",
+          "avg_sentiment": -0.727,
+          "article_count": 27
+        }
+      ],
+      "sentiment_volatility": 0.615
+    },
+    {
+      "entity": "supreme court",
+      "phase": "accelerating",
+      "acceleration": 16,
+      "total_mentions": 16,
+      "recent_7_days": 16,
+      "first_seen": "2013-09-11",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2013-09-11",
+          "count": 1
+        },
+        {
+          "date": "2023-04-18",
+          "count": 2
+        },
+        {
+          "date": "2026-05-20",
+          "count": 1
+        },
+        {
+          "date": "2026-05-21",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 9
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2013-09-11",
+          "avg_sentiment": 0.106,
+          "article_count": 15
+        }
+      ],
+      "sentiment_volatility": 0.996
+    },
+    {
+      "entity": "ken paxton",
+      "phase": "emerging",
+      "acceleration": 16,
+      "total_mentions": 16,
+      "recent_7_days": 16,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 7
+        },
+        {
+          "date": "2026-05-28",
+          "count": 9
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.999,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.843,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.983,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.964,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.995,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.999,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.966,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.978,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.022,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.993,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.998,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.993,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.985,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.994,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.993
+    },
+    {
+      "entity": "california",
+      "phase": "accelerating",
+      "acceleration": 16,
+      "total_mentions": 16,
+      "recent_7_days": 16,
+      "first_seen": "2023-04-04",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-04",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 1
+        },
+        {
+          "date": "2026-05-24",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 11
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-04",
+          "avg_sentiment": -0.22,
+          "article_count": 18
+        }
+      ],
+      "sentiment_volatility": 0.928
+    },
+    {
+      "entity": "tehran",
+      "phase": "accelerating",
+      "acceleration": 15,
+      "total_mentions": 15,
+      "recent_7_days": 15,
+      "first_seen": "2026-05-08",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-08",
+          "count": 1
+        },
+        {
+          "date": "2026-05-14",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 11
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-08",
+          "avg_sentiment": -0.102,
+          "article_count": 9
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.009,
+          "article_count": 5
+        }
+      ],
+      "sentiment_volatility": 1.032
+    },
+    {
+      "entity": "america",
+      "phase": "accelerating",
+      "acceleration": 15,
+      "total_mentions": 15,
+      "recent_7_days": 15,
+      "first_seen": "2023-03-06",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-03-06",
+          "count": 1
+        },
+        {
+          "date": "2026-05-24",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 10
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-03-06",
+          "avg_sentiment": -0.083,
+          "article_count": 26
+        }
+      ],
+      "sentiment_volatility": 0.936
+    },
+    {
+      "entity": "paris",
+      "phase": "accelerating",
+      "acceleration": 13,
+      "total_mentions": 13,
+      "recent_7_days": 13,
+      "first_seen": "2026-05-26",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 11
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": -0.975,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.908,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.724,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.646,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.995,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.992,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.995,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.983,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.839,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.992,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.587
+    },
+    {
+      "entity": "west asia",
+      "phase": "accelerating",
+      "acceleration": 12,
+      "total_mentions": 12,
+      "recent_7_days": 12,
+      "first_seen": "2026-05-24",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-24",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 3
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 7
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-24",
+          "avg_sentiment": 0.361,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.023,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.613,
+          "article_count": 3
+        }
+      ],
+      "sentiment_volatility": 0.922
+    },
+    {
+      "entity": "england",
+      "phase": "growing",
+      "acceleration": 12,
+      "total_mentions": 12,
+      "recent_7_days": 12,
+      "first_seen": "2026-05-26",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 5
+        },
+        {
+          "date": "2026-05-28",
+          "count": 6
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": -0.994,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.987,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.932,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.99,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.97,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.995,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.957,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.997,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -1.0,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.87,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.792
+    },
+    {
+      "entity": "gaza",
+      "phase": "accelerating",
+      "acceleration": 12,
+      "total_mentions": 12,
+      "recent_7_days": 12,
+      "first_seen": "2025-01-25",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-25",
+          "count": 2
+        },
+        {
+          "date": "2025-01-26",
+          "count": 1
+        },
+        {
+          "date": "2025-01-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-19",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 7
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-25",
+          "avg_sentiment": -0.338,
+          "article_count": 16
+        }
+      ],
+      "sentiment_volatility": 0.905
+    },
+    {
+      "entity": "labour",
+      "phase": "emerging",
+      "acceleration": 12,
+      "total_mentions": 12,
+      "recent_7_days": 12,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "count": 8
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.982,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.999,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.984,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.992,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -1.0,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.992,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.939,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 1.053
+    },
+    {
+      "entity": "britain",
+      "phase": "accelerating",
+      "acceleration": 12,
+      "total_mentions": 12,
+      "recent_7_days": 12,
+      "first_seen": "2023-04-04",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-04",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 8
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-04",
+          "avg_sentiment": 0.148,
+          "article_count": 13
+        }
+      ],
+      "sentiment_volatility": 1.008
+    },
+    {
+      "entity": "beijing",
+      "phase": "accelerating",
+      "acceleration": 10,
+      "total_mentions": 12,
+      "recent_7_days": 10,
+      "first_seen": "2023-04-03",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-03",
+          "count": 1
+        },
+        {
+          "date": "2023-04-04",
+          "count": 1
+        },
+        {
+          "date": "2023-09-18",
+          "count": 1
+        },
+        {
+          "date": "2025-01-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-08",
+          "count": 1
+        },
+        {
+          "date": "2026-05-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 1
+        },
+        {
+          "date": "2026-05-15",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 4
+        }
+      ],
+      "avg_sentiment": -0.17,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-03",
+          "avg_sentiment": -0.276,
+          "article_count": 11
+        }
+      ],
+      "sentiment_volatility": 1.011
+    },
+    {
+      "entity": "united states",
+      "phase": "accelerating",
+      "acceleration": 12,
+      "total_mentions": 12,
+      "recent_7_days": 12,
+      "first_seen": "2026-05-26",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 10
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-26",
+          "avg_sentiment": 0.002,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.001,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.002,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.022,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.98,
+          "article_count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 1.021
+    },
+    {
+      "entity": "congo",
+      "phase": "accelerating",
+      "acceleration": 12,
+      "total_mentions": 12,
+      "recent_7_days": 12,
+      "first_seen": "2025-01-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-17",
+          "count": 1
+        },
+        {
+          "date": "2026-05-19",
+          "count": 1
+        },
+        {
+          "date": "2026-05-23",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 6
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-27",
+          "avg_sentiment": -0.044,
+          "article_count": 19
+        }
+      ],
+      "sentiment_volatility": 0.99
+    },
+    {
+      "entity": "kenya",
+      "phase": "emerging",
+      "acceleration": 11,
+      "total_mentions": 11,
+      "recent_7_days": 11,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 10
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 1.0,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.991,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.989,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.548,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.845,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.781,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.944,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.746,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.981,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.902,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.891
+    },
+    {
+      "entity": "treasury",
+      "phase": "accelerating",
+      "acceleration": 11,
+      "total_mentions": 11,
+      "recent_7_days": 11,
+      "first_seen": "2025-01-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2025-01-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-26",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 8
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2025-01-27",
+          "avg_sentiment": -0.081,
+          "article_count": 13
+        }
+      ],
+      "sentiment_volatility": 0.987
+    },
+    {
+      "entity": "laos",
+      "phase": "emerging",
+      "acceleration": 11,
+      "total_mentions": 11,
+      "recent_7_days": 11,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 9
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.991,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.999,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.983,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.938,
+          "article_count": 4
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.981,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 1.05
+    },
+    {
+      "entity": "oman",
+      "phase": "emerging",
+      "acceleration": 11,
+      "total_mentions": 11,
+      "recent_7_days": 11,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 10
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.997,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.941,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -1.0,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.997,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.993,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 1.082
+    },
+    {
+      "entity": "guardian",
+      "phase": "accelerating",
+      "acceleration": 11,
+      "total_mentions": 11,
+      "recent_7_days": 11,
+      "first_seen": "2016-08-18",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2016-08-18",
+          "count": 1
+        },
+        {
+          "date": "2017-05-15",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 1
+        },
+        {
+          "date": "2026-05-27",
+          "count": 2
+        },
+        {
+          "date": "2026-05-28",
+          "count": 6
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2016-08-18",
+          "avg_sentiment": 0.225,
+          "article_count": 11
+        }
+      ],
+      "sentiment_volatility": 1.007
+    },
+    {
+      "entity": "arsenal",
+      "phase": "emerging",
+      "acceleration": 11,
+      "total_mentions": 11,
+      "recent_7_days": 11,
+      "first_seen": "2026-05-27",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2026-05-27",
+          "count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "count": 10
+        }
+      ],
+      "avg_sentiment": NaN,
+      "sentiment_trajectory": [
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": 0.908,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.997,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.997,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": 0.986,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -1.0,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.995,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.996,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 1
+        }
+      ],
+      "sentiment_volatility": 0.949
+    }
+  ],
+  "cluster_narratives": [
+    {
+      "cluster": 0,
+      "phase": "accelerating",
+      "acceleration": 829,
+      "total_articles": 975,
+      "recent_7_days": 866,
+      "first_seen": "2009-07-02",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2009-07-02",
+          "count": 1
+        },
+        {
+          "date": "2009-07-14",
+          "count": 1
+        },
+        {
+          "date": "2009-07-22",
+          "count": 1
+        },
+        {
+          "date": "2009-07-23",
+          "count": 1
+        },
+        {
+          "date": "2009-07-24",
+          "count": 4
+        },
+        {
+          "date": "2009-07-25",
+          "count": 1
+        },
+        {
+          "date": "2009-07-26",
+          "count": 5
+        },
+        {
+          "date": "2009-09-21",
+          "count": 1
+        },
+        {
+          "date": "2013-09-11",
+          "count": 1
+        },
+        {
+          "date": "2016-08-18",
+          "count": 1
+        },
+        {
+          "date": "2017-05-15",
+          "count": 1
+        },
+        {
+          "date": "2021-12-10",
+          "count": 1
+        },
+        {
+          "date": "2023-03-06",
+          "count": 1
+        },
+        {
+          "date": "2023-03-30",
+          "count": 1
+        },
+        {
+          "date": "2023-04-03",
+          "count": 7
+        },
+        {
+          "date": "2023-04-04",
+          "count": 3
+        },
+        {
+          "date": "2023-04-05",
+          "count": 2
+        },
+        {
+          "date": "2023-04-06",
+          "count": 1
+        },
+        {
+          "date": "2023-04-07",
+          "count": 1
+        },
+        {
+          "date": "2023-04-10",
+          "count": 1
+        },
+        {
+          "date": "2023-04-11",
+          "count": 1
+        },
+        {
+          "date": "2023-04-12",
+          "count": 1
+        },
+        {
+          "date": "2023-04-14",
+          "count": 1
+        },
+        {
+          "date": "2023-04-17",
+          "count": 3
+        },
+        {
+          "date": "2023-04-18",
+          "count": 6
+        },
+        {
+          "date": "2024-09-12",
+          "count": 1
+        },
+        {
+          "date": "2025-01-19",
+          "count": 1
+        },
+        {
+          "date": "2025-01-25",
+          "count": 6
+        },
+        {
+          "date": "2025-01-27",
+          "count": 6
+        },
+        {
+          "date": "2025-03-24",
+          "count": 2
+        },
+        {
+          "date": "2025-08-26",
+          "count": 1
+        },
+        {
+          "date": "2025-10-01",
+          "count": 1
+        },
+        {
+          "date": "2026-05-07",
+          "count": 2
+        },
+        {
+          "date": "2026-05-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 2
+        },
+        {
+          "date": "2026-05-14",
+          "count": 1
+        },
+        {
+          "date": "2026-05-15",
+          "count": 5
+        },
+        {
+          "date": "2026-05-16",
+          "count": 2
+        },
+        {
+          "date": "2026-05-17",
+          "count": 4
+        },
+        {
+          "date": "2026-05-18",
+          "count": 3
+        },
+        {
+          "date": "2026-05-19",
+          "count": 2
+        },
+        {
+          "date": "2026-05-20",
+          "count": 6
+        },
+        {
+          "date": "2026-05-21",
+          "count": 15
+        },
+        {
+          "date": "2026-05-22",
+          "count": 13
+        },
+        {
+          "date": "2026-05-23",
+          "count": 6
+        },
+        {
+          "date": "2026-05-24",
+          "count": 9
+        },
+        {
+          "date": "2026-05-25",
+          "count": 19
+        },
+        {
+          "date": "2026-05-26",
+          "count": 37
+        },
+        {
+          "date": "2026-05-27",
+          "count": 151
+        },
+        {
+          "date": "2026-05-28",
+          "count": 631
+        }
+      ],
+      "top_keywords": [
+        "with",
+        "after",
+        "from",
+        "that",
+        "trump",
+        "news",
+        "have",
+        "about",
+        "over",
+        "says"
+      ],
+      "avg_sentiment": -0.21,
+      "sentiment_trajectory": [
+        {
+          "date": "2009-07-02",
+          "avg_sentiment": -0.09,
+          "article_count": 308
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.274,
+          "article_count": 308
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.316,
+          "article_count": 308
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 50
+        }
+      ]
+    },
+    {
+      "cluster": 2,
+      "phase": "accelerating",
+      "acceleration": 634,
+      "total_articles": 732,
+      "recent_7_days": 655,
+      "first_seen": "2009-05-25",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2009-05-25",
+          "count": 1
+        },
+        {
+          "date": "2009-07-24",
+          "count": 1
+        },
+        {
+          "date": "2018-11-01",
+          "count": 1
+        },
+        {
+          "date": "2022-03-20",
+          "count": 1
+        },
+        {
+          "date": "2022-03-21",
+          "count": 1
+        },
+        {
+          "date": "2022-03-22",
+          "count": 1
+        },
+        {
+          "date": "2023-04-04",
+          "count": 1
+        },
+        {
+          "date": "2023-04-06",
+          "count": 1
+        },
+        {
+          "date": "2023-04-12",
+          "count": 1
+        },
+        {
+          "date": "2023-04-13",
+          "count": 1
+        },
+        {
+          "date": "2023-04-14",
+          "count": 3
+        },
+        {
+          "date": "2023-04-16",
+          "count": 1
+        },
+        {
+          "date": "2023-04-17",
+          "count": 2
+        },
+        {
+          "date": "2023-04-18",
+          "count": 1
+        },
+        {
+          "date": "2023-09-18",
+          "count": 1
+        },
+        {
+          "date": "2025-01-18",
+          "count": 1
+        },
+        {
+          "date": "2025-01-20",
+          "count": 3
+        },
+        {
+          "date": "2025-01-22",
+          "count": 1
+        },
+        {
+          "date": "2025-01-23",
+          "count": 1
+        },
+        {
+          "date": "2025-01-24",
+          "count": 2
+        },
+        {
+          "date": "2025-01-25",
+          "count": 1
+        },
+        {
+          "date": "2025-01-26",
+          "count": 5
+        },
+        {
+          "date": "2025-01-27",
+          "count": 20
+        },
+        {
+          "date": "2026-03-16",
+          "count": 1
+        },
+        {
+          "date": "2026-03-23",
+          "count": 1
+        },
+        {
+          "date": "2026-04-30",
+          "count": 1
+        },
+        {
+          "date": "2026-05-12",
+          "count": 1
+        },
+        {
+          "date": "2026-05-13",
+          "count": 1
+        },
+        {
+          "date": "2026-05-14",
+          "count": 1
+        },
+        {
+          "date": "2026-05-17",
+          "count": 1
+        },
+        {
+          "date": "2026-05-18",
+          "count": 3
+        },
+        {
+          "date": "2026-05-19",
+          "count": 4
+        },
+        {
+          "date": "2026-05-20",
+          "count": 4
+        },
+        {
+          "date": "2026-05-21",
+          "count": 7
+        },
+        {
+          "date": "2026-05-22",
+          "count": 11
+        },
+        {
+          "date": "2026-05-23",
+          "count": 1
+        },
+        {
+          "date": "2026-05-24",
+          "count": 5
+        },
+        {
+          "date": "2026-05-25",
+          "count": 12
+        },
+        {
+          "date": "2026-05-26",
+          "count": 37
+        },
+        {
+          "date": "2026-05-27",
+          "count": 97
+        },
+        {
+          "date": "2026-05-28",
+          "count": 492
+        }
+      ],
+      "top_keywords": [
+        "with",
+        "that",
+        "from",
+        "will",
+        "more",
+        "after",
+        "about",
+        "over",
+        "could",
+        "their"
+      ],
+      "avg_sentiment": -0.247,
+      "sentiment_trajectory": [
+        {
+          "date": "2009-05-25",
+          "avg_sentiment": -0.235,
+          "article_count": 310
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.26,
+          "article_count": 310
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.266,
+          "article_count": 111
+        }
+      ]
+    },
+    {
+      "cluster": 1,
+      "phase": "accelerating",
+      "acceleration": 354,
+      "total_articles": 364,
+      "recent_7_days": 354,
+      "first_seen": "2009-07-14",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2009-07-14",
+          "count": 1
+        },
+        {
+          "date": "2009-07-15",
+          "count": 1
+        },
+        {
+          "date": "2009-07-23",
+          "count": 5
+        },
+        {
+          "date": "2009-07-25",
+          "count": 1
+        },
+        {
+          "date": "2009-07-26",
+          "count": 1
+        },
+        {
+          "date": "2010-10-13",
+          "count": 1
+        },
+        {
+          "date": "2016-08-18",
+          "count": 1
+        },
+        {
+          "date": "2018-02-25",
+          "count": 1
+        },
+        {
+          "date": "2023-03-31",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 2
+        },
+        {
+          "date": "2026-05-26",
+          "count": 14
+        },
+        {
+          "date": "2026-05-27",
+          "count": 37
+        },
+        {
+          "date": "2026-05-28",
+          "count": 298
+        }
+      ],
+      "top_keywords": [
+        "siddaramaiah",
+        "from",
+        "india",
+        "after",
+        "delhi",
+        "with",
+        "karnataka",
+        "crore",
+        "minister",
+        "over"
+      ],
+      "avg_sentiment": -0.316,
+      "sentiment_trajectory": [
+        {
+          "date": "2009-07-14",
+          "avg_sentiment": -0.316,
+          "article_count": 308
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 55
+        }
+      ]
+    },
+    {
+      "cluster": 5,
+      "phase": "accelerating",
+      "acceleration": 259,
+      "total_articles": 291,
+      "recent_7_days": 270,
+      "first_seen": "2023-04-03",
+      "last_seen": "2026-05-28",
+      "trajectory": [
+        {
+          "date": "2023-04-03",
+          "count": 2
+        },
+        {
+          "date": "2025-01-24",
+          "count": 1
+        },
+        {
+          "date": "2025-01-25",
+          "count": 1
+        },
+        {
+          "date": "2025-01-26",
+          "count": 1
+        },
+        {
+          "date": "2025-01-27",
+          "count": 5
+        },
+        {
+          "date": "2025-04-03",
+          "count": 1
+        },
+        {
+          "date": "2026-04-20",
+          "count": 1
+        },
+        {
+          "date": "2026-05-05",
+          "count": 1
+        },
+        {
+          "date": "2026-05-08",
+          "count": 1
+        },
+        {
+          "date": "2026-05-12",
+          "count": 3
+        },
+        {
+          "date": "2026-05-14",
+          "count": 2
+        },
+        {
+          "date": "2026-05-15",
+          "count": 2
+        },
+        {
+          "date": "2026-05-19",
+          "count": 2
+        },
+        {
+          "date": "2026-05-20",
+          "count": 3
+        },
+        {
+          "date": "2026-05-22",
+          "count": 1
+        },
+        {
+          "date": "2026-05-25",
+          "count": 4
+        },
+        {
+          "date": "2026-05-26",
+          "count": 11
+        },
+        {
+          "date": "2026-05-27",
+          "count": 46
+        },
+        {
+          "date": "2026-05-28",
+          "count": 203
+        }
+      ],
+      "top_keywords": [
+        "iran",
+        "after",
+        "strikes",
+        "with",
+        "trump",
+        "that",
+        "deal",
+        "said",
+        "ceasefire",
+        "hormuz"
+      ],
+      "avg_sentiment": -0.265,
+      "sentiment_trajectory": [
+        {
+          "date": "2023-04-03",
+          "avg_sentiment": -0.218,
+          "article_count": 57
+        },
+        {
+          "date": "2026-05-27",
+          "avg_sentiment": -0.492,
+          "article_count": 56
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.141,
+          "article_count": 58
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.216,
+          "article_count": 57
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": -0.327,
+          "article_count": 57
+        },
+        {
+          "date": "2026-05-28",
+          "avg_sentiment": NaN,
+          "article_count": 5
+        }
+      ]
+    }
+  ],
+  "emerging_topics": [
+    {
+      "type": "cluster",
+      "name": "Cluster 0",
+      "phase": "accelerating",
+      "acceleration": 829,
+      "total_articles": 975,
+      "recent_7_days": 866,
+      "first_seen": "2009-07-02",
+      "keywords": [
+        "with",
+        "after",
+        "from",
+        "that",
+        "trump"
+      ],
+      "avg_sentiment": -0.21
+    },
+    {
+      "type": "cluster",
+      "name": "Cluster 2",
+      "phase": "accelerating",
+      "acceleration": 634,
+      "total_articles": 732,
+      "recent_7_days": 655,
+      "first_seen": "2009-05-25",
+      "keywords": [
+        "with",
+        "that",
+        "from",
+        "will",
+        "more"
+      ],
+      "avg_sentiment": -0.247
+    },
+    {
+      "type": "cluster",
+      "name": "Cluster 1",
+      "phase": "accelerating",
+      "acceleration": 354,
+      "total_articles": 364,
+      "recent_7_days": 354,
+      "first_seen": "2009-07-14",
+      "keywords": [
+        "siddaramaiah",
+        "from",
+        "india",
+        "after",
+        "delhi"
+      ],
+      "avg_sentiment": -0.316
+    },
+    {
+      "type": "cluster",
+      "name": "Cluster 5",
+      "phase": "accelerating",
+      "acceleration": 259,
+      "total_articles": 291,
+      "recent_7_days": 270,
+      "first_seen": "2023-04-03",
+      "keywords": [
+        "iran",
+        "after",
+        "strikes",
+        "with",
+        "trump"
+      ],
+      "avg_sentiment": -0.265
+    },
+    {
+      "type": "entity",
+      "name": "iran",
+      "phase": "accelerating",
+      "acceleration": 170,
+      "total_mentions": 177,
+      "recent_7_days": 170,
+      "first_seen": "2023-04-03",
+      "avg_sentiment": NaN
+    },
+    {
+      "type": "entity",
+      "name": "trump",
+      "phase": "accelerating",
+      "acceleration": 149,
+      "total_mentions": 188,
+      "recent_7_days": 165,
+      "first_seen": "2023-04-05",
+      "avg_sentiment": NaN
+    },
+    {
+      "type": "entity",
+      "name": "india",
+      "phase": "accelerating",
+      "acceleration": 93,
+      "total_mentions": 93,
+      "recent_7_days": 93,
+      "first_seen": "2009-07-23",
+      "avg_sentiment": NaN
+    },
+    {
+      "type": "entity",
+      "name": "u. s.",
+      "phase": "accelerating",
+      "acceleration": 59,
+      "total_mentions": 83,
+      "recent_7_days": 71,
+      "first_seen": "2025-01-20",
+      "avg_sentiment": NaN
+    },
+    {
+      "type": "entity",
+      "name": "siddaramaiah",
+      "phase": "accelerating",
+      "acceleration": 55,
+      "total_mentions": 55,
+      "recent_7_days": 55,
+      "first_seen": "2026-05-26",
+      "avg_sentiment": NaN
+    },
+    {
+      "type": "entity",
+      "name": "donald trump",
+      "phase": "accelerating",
+      "acceleration": 52,
+      "total_mentions": 52,
+      "recent_7_days": 52,
+      "first_seen": "2023-04-05",
+      "avg_sentiment": NaN
+    }
+  ],
+  "disappearing_topics": [
+    {
+      "type": "entity",
+      "name": "army",
+      "phase": "fading",
+      "acceleration": 8,
+      "total_mentions": 8,
+      "last_seen": "2026-05-15"
+    }
+  ],
+  "summary": {
+    "total_entity_narratives": 251,
+    "total_cluster_narratives": 4,
+    "total_mutations": 12,
+    "phase_distribution": {
+      "emerging": 162,
+      "accelerating": 50,
+      "growing": 21,
+      "peaked": 15,
+      "fading": 1,
+      "stable": 1,
+      "resurging": 1
+    },
+    "emerging_count": 10,
+    "disappearing_count": 1
+  }
+}

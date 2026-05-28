@@ -65,4 +65,8 @@ export const api = {
   sources: () => fetchJSON<SourceCount[]>(`${BASE}/sources`),
 
   crossDomain: () => fetchJSON<CrossDomainData>(`${BASE}/cross-domain`),
+
+  narratives: () => fetchJSON<any>(`${BASE}/narratives`),
+
+  influence: () => fetchJSON<any>(`${BASE}/influence`),
 }

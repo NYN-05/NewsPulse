@@ -14,6 +14,9 @@ import { BiasPage } from "@/pages/bias"
 import { EvolutionPage } from "@/pages/evolution"
 import { SearchPage } from "@/pages/search"
 import { DataExplorerPage } from "@/pages/data-explorer"
+import { CrossDomainPage } from "@/pages/cross-domain"
+import { NarrativesPage } from "@/pages/narratives"
+import { InfluencePage } from "@/pages/influence"
 import { api } from "@/services/api"
 import { useStore } from "@/store/dashboard"
 
@@ -24,6 +27,9 @@ const pages: Record<string, React.ReactNode> = {
   clusters: <ClustersPage />,
   trends: <TrendsPage />,
   "entity-graph": <EntityGraphPage />,
+  "cross-domain": <CrossDomainPage />,
+  "narratives": <NarrativesPage />,
+  "influence": <InfluencePage />,
   "entity-trends": <EntityTrendsPage />,
   breaking: <BreakingPage />,
   virality: <ViralityPage />,
