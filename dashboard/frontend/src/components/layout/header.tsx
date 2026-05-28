@@ -1,8 +1,8 @@
-import { Moon, Sun, Menu, Search } from "lucide-react"
+import { Moon, Sun, Menu, Search, Clock } from "lucide-react"
 import { useStore } from "@/store/dashboard"
 
 export function Header({ onSearchClick }: { onSearchClick?: () => void }) {
-  const { toggleSidebar, toggleDark, darkMode, filters, setFilters } = useStore()
+  const { toggleSidebar, toggleDark, darkMode, filters, setFilters, lastUpdated } = useStore()
 
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b border-[var(--color-border)] bg-[var(--color-background)]/80 px-4 backdrop-blur-md">
@@ -20,6 +20,12 @@ export function Header({ onSearchClick }: { onSearchClick?: () => void }) {
       </button>
 
       <div className="flex items-center gap-2 ml-auto">
+        {lastUpdated && (
+          <span className="hidden md:flex items-center gap-1 text-[11px] text-[var(--color-muted-foreground)] mr-1">
+            <Clock className="h-3 w-3" />
+            {new Date(lastUpdated).toLocaleTimeString()}
+          </span>
+        )}
         <div className="flex items-center gap-1.5 text-sm">
           <span className="text-xs text-[var(--color-muted-foreground)] hidden sm:inline">Period:</span>
           <select

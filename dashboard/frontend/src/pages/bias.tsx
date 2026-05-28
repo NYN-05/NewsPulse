@@ -88,14 +88,14 @@ export function BiasPage() {
               label="Clickbait Score"
               value={bias?.avg_clickbait ?? 0}
               format=".4f"
-              higherIs={bias ? bias.avg_clickbait > 0.5 : false ? "warning" : "better"}
+              higherIs={bias ? (bias.avg_clickbait > 0.5 ? "warning" : "better") : "better"}
             />
             <MetricRow
               icon={TrendingUp}
               label="Emotional Score"
               value={bias?.avg_emotional ?? 0}
               format=".4f"
-              higherIs={bias ? bias.avg_emotional > 0.5 : false ? "warning" : "better"}
+              higherIs={bias ? (bias.avg_emotional > 0.5 ? "warning" : "better") : "better"}
             />
           </div>
           <div className="mt-4 rounded-lg bg-[var(--color-muted)]/30 p-3">

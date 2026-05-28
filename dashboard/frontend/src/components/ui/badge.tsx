@@ -8,6 +8,7 @@ const variants: Record<string, string> = {
   primary: "bg-[var(--color-primary)] text-white",
   warning: "bg-amber-500/20 text-amber-400",
   info: "bg-cyan-500/20 text-cyan-400",
+  outline: "border border-[var(--color-border)] text-[var(--color-foreground)]",
 }
 
 export function Badge({ variant = "default", className, children }: { variant?: string; className?: string; children: React.ReactNode }) {

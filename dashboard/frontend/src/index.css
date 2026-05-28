@@ -16,22 +16,44 @@
   --color-border: #27272a;
   --color-sidebar: #141417;
   --color-sidebar-foreground: #a1a1aa;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-slide-up: slide-up 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .dark {
   --color-background: #0f0f11;
   --color-foreground: #f0f0f2;
+  --color-card: #1a1a1e;
+  --color-card-foreground: #e8e8ec;
+  --color-muted: #27272a;
+  --color-muted-foreground: #a1a1aa;
+  --color-border: #27272a;
+  --color-sidebar: #141417;
+  --color-sidebar-foreground: #a1a1aa;
 }
 
 .light {
-  --color-background: #fafafa;
-  --color-foreground: #0a0a0b;
+  --color-background: #f8f9fc;
+  --color-foreground: #1a1b2e;
   --color-card: #ffffff;
-  --color-card-foreground: #0a0a0b;
-  --color-muted: #f4f4f5;
-  --color-border: #e4e4e7;
-  --color-sidebar: #fafafa;
+  --color-card-foreground: #1a1b2e;
+  --color-muted: #f0f1f5;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e7eb;
+  --color-sidebar: #ffffff;
+  --color-sidebar-foreground: #6b7280;
 }
 
 * {
@@ -44,8 +66,36 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--color-muted); border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted-foreground);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+select {
+  cursor: pointer;
+}
+
+input, select, button {
+  font-family: inherit;
+}
