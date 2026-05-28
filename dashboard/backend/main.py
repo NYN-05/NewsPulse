@@ -45,13 +45,26 @@ def _parse_dates(df, time_col):
     return parsed
 
 
+import math
+
+def _clean(obj):
+    """Recursively replace NaN/Infinity with None for JSON safety."""
+    if isinstance(obj, dict):
+        return {k: _clean(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_clean(v) for v in obj]
+    if isinstance(obj, float):
+        if math.isnan(obj) or math.isinf(obj):
+            return None
+    return obj
+
 def _load_json(name):
     p = os.path.join(path_for("output_dir"), name)
     if os.path.isdir(p):
         return {}
     if os.path.exists(p):
         with open(p) as f:
-            return json.load(f)
+            return _clean(json.load(f))
     return {}
 
 
