@@ -48,17 +48,20 @@ def index_articles(df: pd.DataFrame) -> int:
     if df.empty:
         return 0
 
+    df = df.drop_duplicates(subset=["link"])
     texts = (df["text"].fillna("") + " " + df["summary"].fillna("")).tolist() if "summary" in df.columns else df["text"].fillna("").tolist()
     existing_ids = set(col.get()["ids"]) if col.count() > 0 else set()
 
     new_indices = []
     new_texts = []
     new_metadatas = []
+    seen_ids = set()
 
     for idx, row in df.iterrows():
         doc_id = str(row.get("link", f"article_{idx}"))
-        if doc_id in existing_ids:
+        if doc_id in existing_ids or doc_id in seen_ids:
             continue
+        seen_ids.add(doc_id)
         text = texts[idx] if idx < len(texts) else ""
         if not isinstance(text, str) or len(text) < 20:
             continue

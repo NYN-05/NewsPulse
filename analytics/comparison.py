@@ -19,6 +19,9 @@ def _parse_time_column(df, col: str):
     invalid = parsed.isna().sum()
     if invalid > 0:
         logger.warning("%d rows have invalid timestamps in '%s'", invalid, col)
+    # Filter out dates that are clearly wrong (before 2020 or after current+1 year)
+    cutoff_before = pd.Timestamp("2020-01-01", tz="UTC")
+    parsed[parsed < cutoff_before] = pd.NaT
     return parsed
 
 

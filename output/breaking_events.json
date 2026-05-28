@@ -1,0 +1,107 @@
+[
+  {
+    "entity": "france",
+    "recent_count": 15,
+    "burst_factor": 15000.0,
+    "signal": "entity_spike",
+    "score": 225000.0
+  },
+  {
+    "entity": "cbs news",
+    "recent_count": 14,
+    "burst_factor": 14000.0,
+    "signal": "entity_spike",
+    "score": 196000.0
+  },
+  {
+    "entity": "jean carroll",
+    "recent_count": 14,
+    "burst_factor": 14000.0,
+    "signal": "entity_spike",
+    "score": 196000.0
+  },
+  {
+    "entity": "kenya",
+    "recent_count": 11,
+    "burst_factor": 11000.0,
+    "signal": "entity_spike",
+    "score": 121000.0
+  },
+  {
+    "entity": "kerala",
+    "recent_count": 11,
+    "burst_factor": 11000.0,
+    "signal": "entity_spike",
+    "score": 121000.0
+  },
+  {
+    "entity": "kuwait",
+    "recent_count": 10,
+    "burst_factor": 10000.0,
+    "signal": "entity_spike",
+    "score": 100000.0
+  },
+  {
+    "entity": "arsenal",
+    "recent_count": 8,
+    "burst_factor": 8000.0,
+    "signal": "entity_spike",
+    "score": 64000.0
+  },
+  {
+    "entity": "rajya sabha",
+    "recent_count": 8,
+    "burst_factor": 8000.0,
+    "signal": "entity_spike",
+    "score": 64000.0
+  },
+  {
+    "entity": "juan manuel cerundolo",
+    "recent_count": 8,
+    "burst_factor": 8000.0,
+    "signal": "entity_spike",
+    "score": 64000.0
+  },
+  {
+    "entity": "london",
+    "recent_count": 7,
+    "burst_factor": 7000.0,
+    "signal": "entity_spike",
+    "score": 49000.0
+  },
+  {
+    "entity": "disney",
+    "recent_count": 7,
+    "burst_factor": 7000.0,
+    "signal": "entity_spike",
+    "score": 49000.0
+  },
+  {
+    "entity": "new jersey",
+    "recent_count": 7,
+    "burst_factor": 7000.0,
+    "signal": "entity_spike",
+    "score": 49000.0
+  },
+  {
+    "entity": "oman",
+    "recent_count": 7,
+    "burst_factor": 7000.0,
+    "signal": "entity_spike",
+    "score": 49000.0
+  },
+  {
+    "entity": "hezbollah",
+    "recent_count": 6,
+    "burst_factor": 6000.0,
+    "signal": "entity_spike",
+    "score": 36000.0
+  },
+  {
+    "entity": "albert manifold",
+    "recent_count": 6,
+    "burst_factor": 6000.0,
+    "signal": "entity_spike",
+    "score": 36000.0
+  }
+]

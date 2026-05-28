@@ -9,6 +9,33 @@ from datetime import datetime, timedelta
 logger = logging.getLogger(__name__)
 
 
+BREAKING_STOP_WORDS = {
+    "reuters", "bbc", "news", "cnn", "apnews", "aljazeera", "associated",
+    "press", "wires", "afp", "dpa", "upi", "itartass", "xinhua", "kyodo",
+    "commentary", "opinion", "analysis", "report", "update", "breaking",
+    "developing", "justin", "live", "video", "photos", "gallery", "explainer",
+    "summary", "recap", "watch", "listen", "subscribe", "newsletter",
+    "click", "readmore", "read", "story", "articles", "article", "page",
+    "home", "menu", "search", "login", "signup", "register", "email",
+    "please", "privacy", "policy", "terms", "cookies", "copyright",
+    "2024", "2025", "2026", "monday", "tuesday", "wednesday", "thursday",
+    "friday", "saturday", "sunday", "january", "february", "march", "april",
+    "june", "july", "august", "september", "october", "november", "december",
+    "http", "https", "www", "com", "org", "net", "html", "index", "php",
+}
+
+def _is_noise_keyword(word: str) -> bool:
+    if len(word) <= 3:
+        return True
+    if word.isdigit():
+        return True
+    if word in BREAKING_STOP_WORDS:
+        return True
+    if word.startswith("http") or word.startswith("www"):
+        return True
+    return False
+
+
 def detect_breaking_events(df: pd.DataFrame) -> List[Dict]:
     if df.empty:
         return []
@@ -35,14 +62,16 @@ def detect_breaking_events(df: pd.DataFrame) -> List[Dict]:
     for _, row in recent.iterrows():
         text = str(row.get("text", "") or "")
         for w in text.lower().split():
-            if len(w) > 4:
-                recent_words[w] += 1
+            wc = w.strip(".,!?\"'():;[]{}")
+            if not _is_noise_keyword(wc):
+                recent_words[wc] += 1
 
     for _, row in older.iterrows():
         text = str(row.get("text", "") or "")
         for w in text.lower().split():
-            if len(w) > 4:
-                older_words[w] += 1
+            wc = w.strip(".,!?\"'():;[]{}")
+            if not _is_noise_keyword(wc):
+                older_words[wc] += 1
 
     total_older = max(sum(older_words.values()), 1)
 
@@ -93,8 +122,9 @@ def _detect_entity_spikes(recent: pd.DataFrame, older: pd.DataFrame) -> List[Dic
                 continue
             for key in ("persons", "orgs", "locations"):
                 for ent in ents.get(key, []):
-                    if ent.strip():
-                        counter[ent.strip().lower()] += 1
+                    e = ent.strip(" .,!?\"'():;[]{}").lower()
+                    if e and not _is_noise_keyword(e):
+                        counter[e] += 1
 
     total_older = max(sum(older_entities.values()), 1)
     for entity, count in recent_entities.items():
