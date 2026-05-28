@@ -135,3 +135,34 @@ export interface SourceCount {
   name: string
   count: number
 }
+
+export interface CrossDomainLink {
+  source_entity: string
+  target_entity: string
+  source_sector: string
+  target_sector: string
+  cooccurrence_count: number
+  source_diversity: number
+  strength: number
+  sentiment_variance: number
+  example_articles: string[]
+}
+
+export interface ImpactChain {
+  chain: string[]
+  sectors: string[]
+  chain_key: string
+  length: number
+  cross_domain_hops: number
+  total_weight: number
+}
+
+export interface CrossDomainData {
+  links: CrossDomainLink[]
+  chains: ImpactChain[]
+  sector_map: Record<string, { entity: string; type: string; sector: string; confidence: number; mention_count: number }>
+}
+
+export interface SectorColor {
+  [sector: string]: string
+}

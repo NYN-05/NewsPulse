@@ -2,7 +2,7 @@ import type {
   Summary, SentimentData, CategoryData, TrendData, ClusterData,
   EntityGraph, EntityTrend, BreakingEvent, TopicCluster,
   SourceReliability, ViralityData, BiasData, LanguageData,
-  SearchResult, ArticleRecord, SourceCount,
+  SearchResult, ArticleRecord, SourceCount, CrossDomainData,
 } from "@/types"
 
 const BASE = "/api"
@@ -63,4 +63,6 @@ export const api = {
   },
 
   sources: () => fetchJSON<SourceCount[]>(`${BASE}/sources`),
+
+  crossDomain: () => fetchJSON<CrossDomainData>(`${BASE}/cross-domain`),
 }

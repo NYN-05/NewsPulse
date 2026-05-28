@@ -320,6 +320,16 @@ def step_vector_index(df: pd.DataFrame):
         logger.warning("chromadb not installed, skipping vector indexing")
 
 
+def step_cross_domain(df: pd.DataFrame):
+    logger.info("=== Step 6g: Cross-Domain Relationship Discovery ===")
+    result = cross_domain_pipeline(df)
+    summary = result.get("summary", {})
+    logger.info("Cross-domain: %d links, %d chains across %d entities",
+                summary.get("total_cross_domain_links", 0),
+                summary.get("total_impact_chains", 0),
+                summary.get("total_entities_mapped", 0))
+
+
 def step_alerts(df: pd.DataFrame):
     logger.info("=== Step 8: Alerts ===")
     try:
@@ -379,7 +389,7 @@ def run_pipeline(steps: list = None):
     if steps is None:
         steps = ["scrape", "rss", "dedup", "fetch", "analyze", "cluster",
                  "trends", "compare", "entity_graph", "entity_trends", "breaking",
-                 "topics", "reliability", "vector_index", "track", "alerts"]
+                 "topics", "reliability", "cross_domain", "vector_index", "track", "alerts"]
 
     df = pd.DataFrame()
 
@@ -423,6 +433,8 @@ def run_pipeline(steps: list = None):
         step_topic_evolution(df)
     if "reliability" in steps and not df.empty:
         step_source_reliability(df)
+    if "cross_domain" in steps and not df.empty:
+        step_cross_domain(df)
     if "vector_index" in steps and not df.empty:
         step_vector_index(df)
     if "track" in steps and not df.empty:

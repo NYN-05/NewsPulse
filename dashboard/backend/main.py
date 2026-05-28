@@ -151,6 +151,19 @@ def clusters():
     return sorted(result, key=lambda x: -x["count"])
 
 
+# ---- Cross-Domain Relationships ----
+@app.get("/api/cross-domain")
+def cross_domain():
+    links = _load_json("cross_domain_links.json")
+    chains = _load_json("impact_chains.json")
+    sector_map = _load_json("sector_map.json")
+    return {
+        "links": links if isinstance(links, list) else [],
+        "chains": chains if isinstance(chains, list) else [],
+        "sector_map": sector_map if isinstance(sector_map, dict) else {},
+    }
+
+
 # ---- Entity Graph ----
 @app.get("/api/entity-graph")
 def entity_graph():
