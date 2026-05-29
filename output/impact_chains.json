@@ -73,6 +73,24 @@
   },
   {
     "chain": [
+      "bse",
+      "hindustan times",
+      "india",
+      "amca"
+    ],
+    "sectors": [
+      "finance",
+      "technology",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "finance -> technology -> finance -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 4
+  },
+  {
+    "chain": [
       "##endulkar",
       "##v sooryavanshi",
       "india",
@@ -124,6 +142,24 @@
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 4
+  },
+  {
+    "chain": [
+      "##v sooryavanshi",
+      "india",
+      "hindustan times",
+      "bse"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "technology",
+      "finance"
+    ],
+    "chain_key": "politics -> finance -> technology -> finance",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
   },
   {
     "chain": [
@@ -433,6 +469,42 @@
   },
   {
     "chain": [
+      "bse",
+      "hindustan times",
+      "india",
+      "ipl"
+    ],
+    "sectors": [
+      "finance",
+      "technology",
+      "finance",
+      "technology"
+    ],
+    "chain_key": "finance -> technology -> finance -> technology",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "bse",
+      "hindustan times",
+      "india",
+      "pankaj bhadouria"
+    ],
+    "sectors": [
+      "finance",
+      "technology",
+      "finance",
+      "energy"
+    ],
+    "chain_key": "finance -> technology -> finance -> energy",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
       "andrew",
       "uk",
       "israel",
@@ -445,6 +517,42 @@
       "energy"
     ],
     "chain_key": "finance -> politics -> military -> energy",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "bse",
+      "hindustan times",
+      "india",
+      "israel"
+    ],
+    "sectors": [
+      "finance",
+      "technology",
+      "finance",
+      "military"
+    ],
+    "chain_key": "finance -> technology -> finance -> military",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "bse",
+      "hindustan times",
+      "india",
+      "nta"
+    ],
+    "sectors": [
+      "finance",
+      "technology",
+      "finance",
+      "social"
+    ],
+    "chain_key": "finance -> technology -> finance -> social",
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 3
@@ -787,114 +895,6 @@
       "startups"
     ],
     "chain_key": "military -> technology -> politics -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "israel",
-      "china",
-      "siddaramaiah",
-      "ku"
-    ],
-    "sectors": [
-      "military",
-      "politics",
-      "technology",
-      "social"
-    ],
-    "chain_key": "military -> politics -> technology -> social",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "pentagon",
-      "reuters",
-      "delhi",
-      ". k. shivakumar"
-    ],
-    "sectors": [
-      "military",
-      "global_events",
-      "politics",
-      "social"
-    ],
-    "chain_key": "military -> global_events -> politics -> social",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "pentagon",
-      "beijing",
-      "india",
-      "nta"
-    ],
-    "sectors": [
-      "military",
-      "politics",
-      "finance",
-      "social"
-    ],
-    "chain_key": "military -> politics -> finance -> social",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "us department of defense",
-      "trump",
-      "cia",
-      "department of justice"
-    ],
-    "sectors": [
-      "military",
-      "politics",
-      "military",
-      "social"
-    ],
-    "chain_key": "military -> politics -> military -> social",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "israel",
-      "india",
-      "uganda",
-      "##ira"
-    ],
-    "sectors": [
-      "military",
-      "finance",
-      "technology",
-      "global_events"
-    ],
-    "chain_key": "military -> finance -> technology -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "singapore",
-      "sa",
-      "jp",
-      ". k. shivakumar"
-    ],
-    "sectors": [
-      "startups",
-      "military",
-      "politics",
-      "social"
-    ],
-    "chain_key": "startups -> military -> politics -> social",
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 3
