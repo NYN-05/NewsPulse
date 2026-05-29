@@ -1,43 +1,83 @@
 {
   "causal_candidates": [
     {
+      "source": "nato",
+      "target": "romania",
+      "direction": "nato->romania",
+      "mean_lag_hours": 18.8,
+      "lag_samples": 209,
+      "causal_score": 1.0,
+      "evidence_strength": 73,
+      "mechanism": "temporal_precedence"
+    },
+    {
       "source": "nhl",
       "target": "claude lemieux",
       "direction": "nhl->claude lemieux",
-      "mean_lag_hours": 13.0,
-      "lag_samples": 192,
+      "mean_lag_hours": 13.1,
+      "lag_samples": 320,
       "causal_score": 1.0,
-      "evidence_strength": 50,
+      "evidence_strength": 58,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "blair",
       "target": "labour",
       "direction": "blair->labour",
-      "mean_lag_hours": 25.3,
-      "lag_samples": 81,
+      "mean_lag_hours": 27.9,
+      "lag_samples": 137,
       "causal_score": 1.0,
-      "evidence_strength": 30,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "ukraine",
-      "target": "romania",
-      "direction": "ukraine->romania",
-      "mean_lag_hours": 29.8,
-      "lag_samples": 882,
-      "causal_score": 1.0,
-      "evidence_strength": 85,
+      "evidence_strength": 38,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "florida",
       "target": "blue origin",
       "direction": "florida->blue origin",
-      "mean_lag_hours": 16.5,
-      "lag_samples": 153,
+      "mean_lag_hours": 17.1,
+      "lag_samples": 193,
       "causal_score": 1.0,
-      "evidence_strength": 37,
+      "evidence_strength": 47,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "centre",
+      "target": "neet",
+      "direction": "centre->neet",
+      "mean_lag_hours": 23.4,
+      "lag_samples": 76,
+      "causal_score": 1.0,
+      "evidence_strength": 26,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "ukraine",
+      "target": "romania",
+      "direction": "ukraine->romania",
+      "mean_lag_hours": 30.1,
+      "lag_samples": 1355,
+      "causal_score": 1.0,
+      "evidence_strength": 105,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "temu",
+      "target": "european commission",
+      "direction": "temu->european commission",
+      "mean_lag_hours": 25.1,
+      "lag_samples": 24,
+      "causal_score": 1.0,
+      "evidence_strength": 16,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": ". jean carroll",
+      "target": "department of justice",
+      "direction": ". jean carroll->department of justice",
+      "mean_lag_hours": 21.7,
+      "lag_samples": 234,
+      "causal_score": 1.0,
+      "evidence_strength": 52,
       "mechanism": "temporal_precedence"
     },
     {
@@ -45,59 +85,39 @@
       "target": "nta",
       "direction": "supreme court->nta",
       "mean_lag_hours": 36.0,
-      "lag_samples": 328,
+      "lag_samples": 425,
       "causal_score": 1.0,
-      "evidence_strength": 63,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "ukraine",
-      "target": "nato",
-      "direction": "ukraine->nato",
-      "mean_lag_hours": 30.5,
-      "lag_samples": 515,
-      "causal_score": 1.0,
-      "evidence_strength": 74,
+      "evidence_strength": 72,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "supreme court",
       "target": "neet",
       "direction": "supreme court->neet",
-      "mean_lag_hours": 33.8,
-      "lag_samples": 317,
+      "mean_lag_hours": 34.1,
+      "lag_samples": 382,
       "causal_score": 1.0,
-      "evidence_strength": 61,
+      "evidence_strength": 69,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "bond",
+      "target": "pam bondi",
+      "direction": "bond->pam bondi",
+      "mean_lag_hours": 26.3,
+      "lag_samples": 51,
+      "causal_score": 1.0,
+      "evidence_strength": 28,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "new york",
       "target": "penn station",
       "direction": "new york->penn station",
-      "mean_lag_hours": 31.8,
-      "lag_samples": 273,
+      "mean_lag_hours": 31.9,
+      "lag_samples": 282,
       "causal_score": 1.0,
-      "evidence_strength": 52,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "kyiv",
-      "target": "russia",
-      "direction": "kyiv->russia",
-      "mean_lag_hours": 41.2,
-      "lag_samples": 205,
-      "causal_score": 1.0,
-      "evidence_strength": 56,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "florida",
-      "target": "new glenn",
-      "direction": "florida->new glenn",
-      "mean_lag_hours": 14.9,
-      "lag_samples": 41,
-      "causal_score": 1.0,
-      "evidence_strength": 24,
+      "evidence_strength": 57,
       "mechanism": "temporal_precedence"
     },
     {
@@ -105,39 +125,59 @@
       "target": "##tgpt",
       "direction": "cha->##tgpt",
       "mean_lag_hours": 29.1,
-      "lag_samples": 90,
+      "lag_samples": 180,
       "causal_score": 1.0,
-      "evidence_strength": 30,
+      "evidence_strength": 51,
       "mechanism": "temporal_precedence"
     },
     {
-      "source": "centre",
-      "target": "neet",
-      "direction": "centre->neet",
-      "mean_lag_hours": 22.8,
-      "lag_samples": 63,
+      "source": "kyiv",
+      "target": "russia",
+      "direction": "kyiv->russia",
+      "mean_lag_hours": 42.2,
+      "lag_samples": 289,
       "causal_score": 1.0,
-      "evidence_strength": 23,
+      "evidence_strength": 68,
       "mechanism": "temporal_precedence"
     },
     {
-      "source": "delhi",
-      "target": "ncr",
-      "direction": "delhi->ncr",
-      "mean_lag_hours": 28.0,
-      "lag_samples": 312,
+      "source": "siddaramaiah",
+      "target": "k shivakumar",
+      "direction": "siddaramaiah->k shivakumar",
+      "mean_lag_hours": 24.8,
+      "lag_samples": 749,
       "causal_score": 1.0,
-      "evidence_strength": 112,
+      "evidence_strength": 153,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "uk",
+      "target": "kenneth law",
+      "direction": "uk->kenneth law",
+      "mean_lag_hours": 31.5,
+      "lag_samples": 910,
+      "causal_score": 1.0,
+      "evidence_strength": 143,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "gujarat",
+      "target": "rajasthan",
+      "direction": "gujarat->rajasthan",
+      "mean_lag_hours": 27.9,
+      "lag_samples": 134,
+      "causal_score": 1.0,
+      "evidence_strength": 37,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "nta",
       "target": "neet",
       "direction": "nta->neet",
-      "mean_lag_hours": 20.8,
-      "lag_samples": 30,
-      "causal_score": 0.925,
-      "evidence_strength": 24,
+      "mean_lag_hours": 21.1,
+      "lag_samples": 37,
+      "causal_score": 0.938,
+      "evidence_strength": 29,
       "mechanism": "temporal_precedence"
     },
     {
@@ -151,23 +191,53 @@
       "mechanism": "temporal_precedence"
     },
     {
+      "source": "##aibha",
+      "target": "rajasthan royals",
+      "direction": "##aibha->rajasthan royals",
+      "mean_lag_hours": 35.0,
+      "lag_samples": 19,
+      "causal_score": 0.894,
+      "evidence_strength": 16,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "##ps",
+      "target": "house oversight committee",
+      "direction": "##ps->house oversight committee",
+      "mean_lag_hours": 51.4,
+      "lag_samples": 35,
+      "causal_score": 0.847,
+      "evidence_strength": 32,
+      "mechanism": "temporal_precedence"
+    },
+    {
       "source": "##bha",
       "target": "##ai",
       "direction": "##bha->##ai",
       "mean_lag_hours": 19.5,
       "lag_samples": 12,
-      "causal_score": 0.845,
-      "evidence_strength": 11,
+      "causal_score": 0.8,
+      "evidence_strength": 12,
       "mechanism": "temporal_precedence"
     },
     {
-      "source": "green",
-      "target": "chinnappa",
-      "direction": "green->chinnappa",
-      "mean_lag_hours": 24.7,
-      "lag_samples": 22,
-      "causal_score": 0.758,
-      "evidence_strength": 24,
+      "source": "latvia",
+      "target": "estonia",
+      "direction": "latvia->estonia",
+      "mean_lag_hours": 22.6,
+      "lag_samples": 6,
+      "causal_score": 0.675,
+      "evidence_strength": 8,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "islamic state",
+      "target": "syria",
+      "direction": "islamic state->syria",
+      "mean_lag_hours": 19.6,
+      "lag_samples": 6,
+      "causal_score": 0.675,
+      "evidence_strength": 8,
       "mechanism": "temporal_precedence"
     },
     {
@@ -176,28 +246,8 @@
       "direction": "nta->upsc",
       "mean_lag_hours": 21.3,
       "lag_samples": 9,
-      "causal_score": 0.581,
-      "evidence_strength": 16,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "reliance industries",
-      "target": "sat",
-      "direction": "reliance industries->sat",
-      "mean_lag_hours": 13.6,
-      "lag_samples": 12,
-      "causal_score": 0.54,
-      "evidence_strength": 25,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "reliance industries",
-      "target": "sebi",
-      "direction": "reliance industries->sebi",
-      "mean_lag_hours": 13.6,
-      "lag_samples": 12,
-      "causal_score": 0.54,
-      "evidence_strength": 25,
+      "causal_score": 0.537,
+      "evidence_strength": 19,
       "mechanism": "temporal_precedence"
     },
     {
@@ -209,6 +259,26 @@
       "causal_score": 0.5,
       "evidence_strength": 10,
       "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "bank of england",
+      "target": "bailey",
+      "direction": "bank of england->bailey",
+      "mean_lag_hours": 8.6,
+      "lag_samples": 2,
+      "causal_score": 0.425,
+      "evidence_strength": 8,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "bank of england",
+      "target": "andrew bailey",
+      "direction": "bank of england->andrew bailey",
+      "mean_lag_hours": 8.6,
+      "lag_samples": 2,
+      "causal_score": 0.425,
+      "evidence_strength": 8,
+      "mechanism": "temporal_precedence"
     }
   ],
   "causal_chains": [
@@ -219,7 +289,7 @@
         "upsc"
       ],
       "length": 3,
-      "avg_causal_score": 0.79,
+      "avg_causal_score": 0.768,
       "mechanisms": [
         "preference_driven",
         "general"
@@ -228,6 +298,12 @@
   ],
   "causal_graph": {
     "nodes": [
+      {
+        "id": "nato"
+      },
+      {
+        "id": "romania"
+      },
       {
         "id": "nhl"
       },
@@ -241,16 +317,31 @@
         "id": "labour"
       },
       {
-        "id": "ukraine"
-      },
-      {
-        "id": "romania"
-      },
-      {
         "id": "florida"
       },
       {
         "id": "blue origin"
+      },
+      {
+        "id": "centre"
+      },
+      {
+        "id": "neet"
+      },
+      {
+        "id": "ukraine"
+      },
+      {
+        "id": "temu"
+      },
+      {
+        "id": "european commission"
+      },
+      {
+        "id": ". jean carroll"
+      },
+      {
+        "id": "department of justice"
       },
       {
         "id": "supreme court"
@@ -259,10 +350,10 @@
         "id": "nta"
       },
       {
-        "id": "nato"
+        "id": "bond"
       },
       {
-        "id": "neet"
+        "id": "pam bondi"
       },
       {
         "id": "new york"
@@ -271,28 +362,34 @@
         "id": "penn station"
       },
       {
-        "id": "kyiv"
-      },
-      {
-        "id": "russia"
-      },
-      {
-        "id": "new glenn"
-      },
-      {
         "id": "cha"
       },
       {
         "id": "##tgpt"
       },
       {
-        "id": "centre"
+        "id": "kyiv"
       },
       {
-        "id": "delhi"
+        "id": "russia"
       },
       {
-        "id": "ncr"
+        "id": "siddaramaiah"
+      },
+      {
+        "id": "k shivakumar"
+      },
+      {
+        "id": "uk"
+      },
+      {
+        "id": "kenneth law"
+      },
+      {
+        "id": "gujarat"
+      },
+      {
+        "id": "rajasthan"
       },
       {
         "id": "kent"
@@ -301,44 +398,70 @@
         "id": "south east water"
       },
       {
+        "id": "##aibha"
+      },
+      {
+        "id": "rajasthan royals"
+      },
+      {
+        "id": "##ps"
+      },
+      {
+        "id": "house oversight committee"
+      },
+      {
         "id": "##bha"
       },
       {
         "id": "##ai"
       },
       {
-        "id": "green"
+        "id": "latvia"
       },
       {
-        "id": "chinnappa"
+        "id": "estonia"
+      },
+      {
+        "id": "islamic state"
+      },
+      {
+        "id": "syria"
       },
       {
         "id": "upsc"
-      },
-      {
-        "id": "reliance industries"
-      },
-      {
-        "id": "sat"
-      },
-      {
-        "id": "sebi"
       },
       {
         "id": "new york times"
       },
       {
         "id": "nick bilton"
+      },
+      {
+        "id": "bank of england"
+      },
+      {
+        "id": "bailey"
+      },
+      {
+        "id": "andrew bailey"
       }
     ],
     "edges": [
+      {
+        "source": "nato",
+        "target": "romania",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 18.8
+      },
       {
         "source": "nhl",
         "target": "claude lemieux",
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
-        "mean_lag_hours": 13.0
+        "mean_lag_hours": 13.1
       },
       {
         "source": "blair",
@@ -346,23 +469,7 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
-        "mean_lag_hours": 25.3
-      },
-      {
-        "source": "ukraine",
-        "target": "romania",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "strategic_posture",
-        "mean_lag_hours": 29.8
-      },
-      {
-        "source": "ukraine",
-        "target": "nato",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "strategic_posture",
-        "mean_lag_hours": 30.5
+        "mean_lag_hours": 27.9
       },
       {
         "source": "florida",
@@ -370,15 +477,39 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "policy_shock",
-        "mean_lag_hours": 16.5
+        "mean_lag_hours": 17.1
       },
       {
-        "source": "florida",
-        "target": "new glenn",
+        "source": "centre",
+        "target": "neet",
         "weight": 1.0,
         "mechanism": "temporal_precedence",
-        "pattern": "policy_shock",
-        "mean_lag_hours": 14.9
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 23.4
+      },
+      {
+        "source": "ukraine",
+        "target": "romania",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 30.1
+      },
+      {
+        "source": "temu",
+        "target": "european commission",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 25.1
+      },
+      {
+        "source": ". jean carroll",
+        "target": "department of justice",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "preference_driven",
+        "mean_lag_hours": 21.7
       },
       {
         "source": "supreme court",
@@ -394,23 +525,31 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
-        "mean_lag_hours": 33.8
+        "mean_lag_hours": 34.1
       },
       {
         "source": "nta",
         "target": "neet",
-        "weight": 0.925,
+        "weight": 0.938,
         "mechanism": "temporal_precedence",
         "pattern": "general",
-        "mean_lag_hours": 20.8
+        "mean_lag_hours": 21.1
       },
       {
         "source": "nta",
         "target": "upsc",
-        "weight": 0.581,
+        "weight": 0.537,
         "mechanism": "temporal_precedence",
         "pattern": "general",
         "mean_lag_hours": 21.3
+      },
+      {
+        "source": "bond",
+        "target": "pam bondi",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 26.3
       },
       {
         "source": "new york",
@@ -418,15 +557,7 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "general",
-        "mean_lag_hours": 31.8
-      },
-      {
-        "source": "kyiv",
-        "target": "russia",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "strategic_posture",
-        "mean_lag_hours": 41.2
+        "mean_lag_hours": 31.9
       },
       {
         "source": "cha",
@@ -437,20 +568,36 @@
         "mean_lag_hours": 29.1
       },
       {
-        "source": "centre",
-        "target": "neet",
+        "source": "kyiv",
+        "target": "russia",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 42.2
+      },
+      {
+        "source": "siddaramaiah",
+        "target": "k shivakumar",
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
-        "mean_lag_hours": 22.8
+        "mean_lag_hours": 24.8
       },
       {
-        "source": "delhi",
-        "target": "ncr",
+        "source": "uk",
+        "target": "kenneth law",
         "weight": 1.0,
         "mechanism": "temporal_precedence",
-        "pattern": "policy_shock",
-        "mean_lag_hours": 28.0
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 31.5
+      },
+      {
+        "source": "gujarat",
+        "target": "rajasthan",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 27.9
       },
       {
         "source": "kent",
@@ -461,36 +608,44 @@
         "mean_lag_hours": 7.5
       },
       {
+        "source": "##aibha",
+        "target": "rajasthan royals",
+        "weight": 0.894,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 35.0
+      },
+      {
+        "source": "##ps",
+        "target": "house oversight committee",
+        "weight": 0.847,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 51.4
+      },
+      {
         "source": "##bha",
         "target": "##ai",
-        "weight": 0.845,
+        "weight": 0.8,
         "mechanism": "temporal_precedence",
         "pattern": "general",
         "mean_lag_hours": 19.5
       },
       {
-        "source": "green",
-        "target": "chinnappa",
-        "weight": 0.758,
+        "source": "latvia",
+        "target": "estonia",
+        "weight": 0.675,
         "mechanism": "temporal_precedence",
-        "pattern": "general",
-        "mean_lag_hours": 24.7
+        "pattern": "resource_conflict",
+        "mean_lag_hours": 22.6
       },
       {
-        "source": "reliance industries",
-        "target": "sat",
-        "weight": 0.54,
+        "source": "islamic state",
+        "target": "syria",
+        "weight": 0.675,
         "mechanism": "temporal_precedence",
         "pattern": "demand_shock",
-        "mean_lag_hours": 13.6
-      },
-      {
-        "source": "reliance industries",
-        "target": "sebi",
-        "weight": 0.54,
-        "mechanism": "temporal_precedence",
-        "pattern": "demand_shock",
-        "mean_lag_hours": 13.6
+        "mean_lag_hours": 19.6
       },
       {
         "source": "new york times",
@@ -499,14 +654,30 @@
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
         "mean_lag_hours": 320.4
+      },
+      {
+        "source": "bank of england",
+        "target": "bailey",
+        "weight": 0.425,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 8.6
+      },
+      {
+        "source": "bank of england",
+        "target": "andrew bailey",
+        "weight": 0.425,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 8.6
       }
     ]
   },
   "summary": {
-    "total_candidates": 21,
+    "total_candidates": 28,
     "total_causal_chains": 1,
-    "graph_nodes": 34,
-    "graph_edges": 21,
-    "avg_causal_score": 0.886
+    "graph_nodes": 49,
+    "graph_edges": 28,
+    "avg_causal_score": 0.879
   }
 }
