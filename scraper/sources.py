@@ -172,7 +172,7 @@ def fetch_article_body(url: str, detail_selectors: list) -> str:
             text = " ".join(paragraphs[:30])
         return text
     except Exception as e:
-        logger.warning("Detail fetch failed for %s: %s", url[:60], e)
+        logger.debug("Detail fetch failed for %s: %s", url[:60], e)
         return ""
 
 

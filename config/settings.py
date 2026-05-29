@@ -1,6 +1,8 @@
 import os
 import json
 import yaml
+import warnings
+import logging
 import threading
 from typing import Any, Dict
 
@@ -8,7 +10,29 @@ _FILE_LOCK = threading.Lock()
 
 _CONFIG: Dict[str, Any] = {}
 
+
+def _suppress_warnings():
+    warnings.filterwarnings("ignore")
+    for lib in ["transformers", "tokenizers", "huggingface_hub", "urllib3", "PIL"]:
+        try:
+            mod = __import__(lib)
+            if hasattr(mod, "logging"):
+                mod.logging.set_verbosity_error()
+            logger = getattr(mod, "logger", None)
+            if logger is not None:
+                logger.setLevel(logging.ERROR)
+        except (ImportError, AttributeError):
+            pass
+    try:
+        import logging
+        logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
+        logging.getLogger("torch").setLevel(logging.ERROR)
+    except Exception:
+        pass
+
+
 def load_config(path: str = None) -> Dict[str, Any]:
+    _suppress_warnings()
     global _CONFIG
     if _CONFIG:
         return _CONFIG

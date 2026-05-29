@@ -96,6 +96,6 @@ class GPUManager:
         return pipe
 
 
-device = get_device
-is_cuda = is_cuda
-DEVICE = get_device()
+device = get_device()
+is_cuda = is_cuda()
+DEVICE = device

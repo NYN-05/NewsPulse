@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import { useMemo, useEffect } from "react"
 import {
   ReactFlow,
   useNodesState,
@@ -136,9 +136,14 @@ export function FocusedGraph({
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
 
+  useEffect(() => {
+    setNodes(initialNodes)
+    setEdges(initialEdges)
+  }, [initialNodes, initialEdges])
+
   if (!selectedEntity) {
     return (
-      <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[var(--color-border)]">
+      <div className="flex h-full w-full items-center justify-center">
         <div className="text-center">
           <p className="text-xs font-mono text-[var(--color-fg-muted)]">Select an entity to explore</p>
           <p className="text-[9px] font-mono text-[var(--color-fg-muted)] mt-2 opacity-60">Choose from the discovery panel on the left</p>
@@ -149,14 +154,14 @@ export function FocusedGraph({
 
   if (connectedLinks.length === 0) {
     return (
-      <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[var(--color-border)]">
+      <div className="flex h-full w-full items-center justify-center">
         <p className="text-xs font-mono text-[var(--color-fg-muted)]">No connections found for this entity.</p>
       </div>
     )
   }
 
   return (
-    <div className="rounded-lg border border-[var(--color-border)] overflow-hidden" style={{ height: 480 }}>
+    <div className="h-full w-full">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -164,9 +169,9 @@ export function FocusedGraph({
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         fitView
-        fitViewOptions={{ padding: 0.2 }}
-        minZoom={0.3}
-        maxZoom={3}
+        fitViewOptions={{ padding: 0.3 }}
+        minZoom={0.2}
+        maxZoom={4}
         proOptions={{ hideAttribution: true }}
         style={{ background: "var(--color-bg)", width: "100%", height: "100%" }}
         onNodeClick={(_, node) => onNodeClick?.(node.id)}
@@ -175,7 +180,7 @@ export function FocusedGraph({
           if (original) onEdgeClick?.(original)
         }}
       >
-        <Background color="var(--color-border)" gap={20} size={0.5} />
+        <Background color="var(--color-border)" gap={25} size={0.5} />
         <Controls className="[&>button]:bg-[var(--color-card)] [&>button]:border-[var(--color-border)] [&>button]:text-[var(--color-fg-muted)] [&>button:hover]:bg-[var(--color-card-hover)]" />
       </ReactFlow>
     </div>

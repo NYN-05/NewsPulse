@@ -1,28 +1,64 @@
 [
   {
     "chain": [
-      "strait of hormuz",
+      "sid",
+      "siddaramaiah",
       "india",
-      "singapore",
-      "raveendra"
+      "ai"
     ],
     "sectors": [
-      "energy",
       "politics",
+      "technology",
       "finance",
-      "startups"
+      "technology"
     ],
-    "chain_key": "energy -> politics -> finance -> startups",
+    "chain_key": "politics -> technology -> finance -> technology",
     "length": 4,
     "cross_domain_hops": 3,
-    "total_weight": 6
+    "total_weight": 4
   },
   {
     "chain": [
-      "raveendra",
+      "sid",
+      "siddaramaiah",
+      "india",
+      "rf"
+    ],
+    "sectors": [
+      "politics",
+      "technology",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "politics -> technology -> finance -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 4
+  },
+  {
+    "chain": [
       "singapore",
       "india",
-      "amca"
+      "congress",
+      "ku"
+    ],
+    "sectors": [
+      "startups",
+      "finance",
+      "politics",
+      "social"
+    ],
+    "chain_key": "startups -> finance -> politics -> social",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "singapore",
+      "india",
+      "ra",
+      "##ira"
     ],
     "sectors": [
       "startups",
@@ -33,328 +69,94 @@
     "chain_key": "startups -> finance -> politics -> global_events",
     "length": 4,
     "cross_domain_hops": 3,
-    "total_weight": 6
+    "total_weight": 4
   },
   {
     "chain": [
-      "al",
+      "department of justice",
+      "us",
       "india",
-      "singapore",
-      "raveendra"
+      "rf"
     ],
     "sectors": [
-      "finance",
+      "social",
       "politics",
       "finance",
-      "startups"
+      "global_events"
     ],
-    "chain_key": "finance -> politics -> finance -> startups",
+    "chain_key": "social -> politics -> finance -> global_events",
     "length": 4,
     "cross_domain_hops": 3,
-    "total_weight": 5
+    "total_weight": 4
   },
   {
     "chain": [
       "israel",
-      "india",
-      "singapore",
-      "raveendra"
+      "united nations",
+      "hollywood",
+      "north korea"
     ],
     "sectors": [
-      "military",
       "politics",
-      "finance",
-      "startups"
+      "military",
+      "global_events",
+      "energy"
     ],
-    "chain_key": "military -> politics -> finance -> startups",
+    "chain_key": "politics -> military -> global_events -> energy",
     "length": 4,
     "cross_domain_hops": 3,
-    "total_weight": 5
+    "total_weight": 3
   },
   {
     "chain": [
       "sid",
-      "dks",
-      "ra",
-      "singh"
-    ],
-    "sectors": [
-      "politics",
-      "global_events",
-      "politics",
-      "startups"
-    ],
-    "chain_key": "politics -> global_events -> politics -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
+      "siddaramaiah",
       "china",
-      "donald trump",
-      "ap",
-      "amritsar"
+      "quad"
     ],
     "sectors": [
-      "finance",
-      "military",
-      "global_events",
-      "military"
-    ],
-    "chain_key": "finance -> military -> global_events -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "europe",
-      "italy",
-      "jan",
-      "cerun"
-    ],
-    "sectors": [
-      "finance",
       "politics",
       "technology",
-      "startups"
-    ],
-    "chain_key": "finance -> politics -> technology -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "vaibha",
-      "srh",
-      "india",
-      "amca"
-    ],
-    "sectors": [
-      "finance",
-      "global_events",
-      "politics",
-      "global_events"
-    ],
-    "chain_key": "finance -> global_events -> politics -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "newsnvidia",
-      "ai",
-      "india",
-      "strait of hormuz"
-    ],
-    "sectors": [
-      "technology",
-      "global_events",
       "politics",
       "energy"
     ],
-    "chain_key": "technology -> global_events -> politics -> energy",
+    "chain_key": "politics -> technology -> politics -> energy",
     "length": 4,
     "cross_domain_hops": 3,
-    "total_weight": 4
+    "total_weight": 3
   },
   {
     "chain": [
-      "dell technologies",
-      "donald trump",
-      "ap",
-      "amritsar"
-    ],
-    "sectors": [
-      "technology",
-      "military",
-      "global_events",
-      "military"
-    ],
-    "chain_key": "technology -> military -> global_events -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "newsnvidia",
-      "ai",
-      "india",
-      "singh"
-    ],
-    "sectors": [
-      "technology",
-      "global_events",
-      "politics",
-      "startups"
-    ],
-    "chain_key": "technology -> global_events -> politics -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "newsnvidia",
-      "ai",
-      "india",
-      "amca"
-    ],
-    "sectors": [
-      "technology",
-      "global_events",
-      "politics",
-      "global_events"
-    ],
-    "chain_key": "technology -> global_events -> politics -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "saudi arabia",
-      "japan",
-      "india",
-      "u. s. department of homeland security"
-    ],
-    "sectors": [
-      "energy",
-      "global_events",
-      "politics",
-      "military"
-    ],
-    "chain_key": "energy -> global_events -> politics -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "weather",
-      "imd",
-      "india",
-      "amca"
-    ],
-    "sectors": [
-      "energy",
-      "global_events",
-      "politics",
-      "global_events"
-    ],
-    "chain_key": "energy -> global_events -> politics -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "israel",
-      "london",
-      "paris",
-      "cerun"
-    ],
-    "sectors": [
-      "military",
-      "politics",
-      "global_events",
-      "startups"
-    ],
-    "chain_key": "military -> politics -> global_events -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "singh",
-      "india",
-      "srh",
-      "gay"
-    ],
-    "sectors": [
-      "startups",
-      "politics",
-      "global_events",
-      "social"
-    ],
-    "chain_key": "startups -> politics -> global_events -> social",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
-      "chris gayle",
-      "srh",
-      "india",
-      "amca"
-    ],
-    "sectors": [
-      "social",
-      "global_events",
-      "politics",
-      "global_events"
-    ],
-    "chain_key": "social -> global_events -> politics -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 4
-  },
-  {
-    "chain": [
+      "sid",
       "siddaramaiah",
       "dw",
-      "trump",
-      "michael"
+      "pentagon"
     ],
     "sectors": [
       "politics",
-      "global_events",
-      "military",
-      "technology"
+      "technology",
+      "politics",
+      "military"
     ],
-    "chain_key": "politics -> global_events -> military -> technology",
+    "chain_key": "politics -> technology -> politics -> military",
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 3
   },
   {
     "chain": [
-      "siddaramaiah",
-      "china",
-      "donald trump",
-      "dell technologies"
-    ],
-    "sectors": [
-      "politics",
-      "finance",
-      "military",
-      "technology"
-    ],
-    "chain_key": "politics -> finance -> military -> technology",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "us",
-      "court",
+      "israel",
+      "man",
       "delhi",
-      "weather"
+      ". k. shivakumar"
     ],
     "sectors": [
       "politics",
-      "global_events",
+      "energy",
       "politics",
-      "energy"
+      "social"
     ],
-    "chain_key": "politics -> global_events -> politics -> energy",
+    "chain_key": "politics -> energy -> politics -> social",
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 3
@@ -362,530 +164,152 @@
   {
     "chain": [
       "us",
-      "na",
-      "koua",
-      "cerun"
-    ],
-    "sectors": [
-      "politics",
-      "global_events",
-      "social",
-      "startups"
-    ],
-    "chain_key": "politics -> global_events -> social -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "india",
-      "mu",
-      "up",
-      "bar"
-    ],
-    "sectors": [
-      "politics",
-      "technology",
-      "global_events",
-      "social"
-    ],
-    "chain_key": "politics -> technology -> global_events -> social",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "vaibha",
-      "mo",
-      "trump",
-      "michael"
-    ],
-    "sectors": [
-      "finance",
-      "politics",
-      "military",
-      "technology"
-    ],
-    "chain_key": "finance -> politics -> military -> technology",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "al",
-      "india",
-      "ai",
-      "newsnvidia"
-    ],
-    "sectors": [
-      "finance",
-      "politics",
-      "global_events",
-      "technology"
-    ],
-    "chain_key": "finance -> politics -> global_events -> technology",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "europe",
-      "donald trump",
-      "dell",
-      "michael"
-    ],
-    "sectors": [
-      "finance",
-      "military",
-      "global_events",
-      "technology"
-    ],
-    "chain_key": "finance -> military -> global_events -> technology",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "vaibha",
-      "srh",
-      "india",
-      "brazil"
-    ],
-    "sectors": [
-      "finance",
-      "global_events",
-      "politics",
-      "energy"
-    ],
-    "chain_key": "finance -> global_events -> politics -> energy",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "vaibha",
-      "archer",
-      "gujarat",
-      "strait of hormuz"
-    ],
-    "sectors": [
-      "finance",
-      "military",
-      "politics",
-      "energy"
-    ],
-    "chain_key": "finance -> military -> politics -> energy",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "al",
-      "india",
-      "imd",
-      "weather"
-    ],
-    "sectors": [
-      "finance",
-      "politics",
-      "global_events",
-      "energy"
-    ],
-    "chain_key": "finance -> politics -> global_events -> energy",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "vaibha",
-      "srh",
-      "india",
-      "israel"
-    ],
-    "sectors": [
-      "finance",
-      "global_events",
-      "politics",
-      "military"
-    ],
-    "chain_key": "finance -> global_events -> politics -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "china",
-      "israel",
-      "india",
-      "u. s. department of homeland security"
-    ],
-    "sectors": [
-      "finance",
-      "military",
-      "politics",
-      "military"
-    ],
-    "chain_key": "finance -> military -> politics -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "bobby deol",
-      "po",
-      "ra",
-      "trump"
-    ],
-    "sectors": [
-      "finance",
-      "technology",
-      "politics",
-      "military"
-    ],
-    "chain_key": "finance -> technology -> politics -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "vaibha",
-      "cha",
-      "ra",
-      "singh"
-    ],
-    "sectors": [
-      "finance",
-      "global_events",
-      "politics",
-      "startups"
-    ],
-    "chain_key": "finance -> global_events -> politics -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "vaibha",
-      "mo",
-      "koua",
-      "cerun"
-    ],
-    "sectors": [
-      "finance",
-      "politics",
-      "social",
-      "startups"
-    ],
-    "chain_key": "finance -> politics -> social -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "bobby deol",
-      "po",
-      "ra",
-      "singh"
-    ],
-    "sectors": [
-      "finance",
-      "technology",
-      "politics",
-      "startups"
-    ],
-    "chain_key": "finance -> technology -> politics -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "al",
-      "india",
-      "ai",
-      "chris gayle"
-    ],
-    "sectors": [
-      "finance",
-      "politics",
-      "global_events",
-      "social"
-    ],
-    "chain_key": "finance -> politics -> global_events -> social",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "china",
-      "israel",
-      "india",
-      "ai"
-    ],
-    "sectors": [
-      "finance",
-      "military",
-      "politics",
-      "global_events"
-    ],
-    "chain_key": "finance -> military -> politics -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "michael",
-      "trump",
       "un",
-      "brazil"
-    ],
-    "sectors": [
-      "technology",
-      "military",
-      "global_events",
-      "energy"
-    ],
-    "chain_key": "technology -> military -> global_events -> energy",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "michael",
-      "trump",
-      "india",
-      "jamaica"
-    ],
-    "sectors": [
-      "technology",
-      "military",
-      "politics",
-      "energy"
-    ],
-    "chain_key": "technology -> military -> politics -> energy",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "dell technologies",
-      "donald trump",
-      "china",
-      "saudi arabia"
-    ],
-    "sectors": [
-      "technology",
-      "military",
-      "finance",
-      "energy"
-    ],
-    "chain_key": "technology -> military -> finance -> energy",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "newsnvidia",
-      "ai",
-      "india",
-      "israel"
-    ],
-    "sectors": [
-      "technology",
-      "global_events",
-      "politics",
-      "military"
-    ],
-    "chain_key": "technology -> global_events -> politics -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "michael",
-      "trump",
-      "india",
-      "u. s. department of homeland security"
-    ],
-    "sectors": [
-      "technology",
-      "military",
-      "politics",
-      "military"
-    ],
-    "chain_key": "technology -> military -> politics -> military",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "michael",
-      "trump",
-      "ra",
-      "singh"
-    ],
-    "sectors": [
-      "technology",
-      "military",
-      "politics",
-      "startups"
-    ],
-    "chain_key": "technology -> military -> politics -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "michael",
-      "trump",
-      "india",
-      "ai"
-    ],
-    "sectors": [
-      "technology",
-      "military",
-      "politics",
-      "global_events"
-    ],
-    "chain_key": "technology -> military -> politics -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "dell technologies",
-      "white house",
-      "openai",
-      "ai"
-    ],
-    "sectors": [
-      "technology",
-      "politics",
-      "technology",
-      "global_events"
-    ],
-    "chain_key": "technology -> politics -> technology -> global_events",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "dell technologies",
-      "donald trump",
       "china",
       "amca"
     ],
     "sectors": [
-      "technology",
-      "military",
-      "finance",
+      "politics",
+      "energy",
+      "politics",
       "global_events"
     ],
-    "chain_key": "technology -> military -> finance -> global_events",
+    "chain_key": "politics -> energy -> politics -> global_events",
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 3
   },
   {
     "chain": [
-      "weather",
-      "delhi",
-      "court",
-      "trump"
+      "israel",
+      "india",
+      "ra",
+      "##ira"
     ],
     "sectors": [
-      "energy",
       "politics",
-      "global_events",
-      "military"
+      "finance",
+      "politics",
+      "global_events"
     ],
-    "chain_key": "energy -> politics -> global_events -> military",
+    "chain_key": "politics -> finance -> politics -> global_events",
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 3
   },
   {
     "chain": [
-      "saudi arabia",
-      "italy",
-      "jan",
-      "cerun"
+      "sid",
+      "siddaramaiah",
+      "china",
+      "amca"
+    ],
+    "sectors": [
+      "politics",
+      "technology",
+      "politics",
+      "global_events"
+    ],
+    "chain_key": "politics -> technology -> politics -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "ipl",
+      "la",
+      "hollywood",
+      "north korea"
+    ],
+    "sectors": [
+      "technology",
+      "politics",
+      "global_events",
+      "energy"
+    ],
+    "chain_key": "technology -> politics -> global_events -> energy",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "ai",
+      "oracle",
+      "white house",
+      "pentagon"
+    ],
+    "sectors": [
+      "technology",
+      "finance",
+      "politics",
+      "military"
+    ],
+    "chain_key": "technology -> finance -> politics -> military",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "ai",
+      "india",
+      "congress",
+      "ku"
+    ],
+    "sectors": [
+      "technology",
+      "finance",
+      "politics",
+      "social"
+    ],
+    "chain_key": "technology -> finance -> politics -> social",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "ai",
+      "india",
+      "ra",
+      "##ira"
+    ],
+    "sectors": [
+      "technology",
+      "finance",
+      "politics",
+      "global_events"
+    ],
+    "chain_key": "technology -> finance -> politics -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "quad",
+      "china",
+      "siddaramaiah",
+      "ku"
     ],
     "sectors": [
       "energy",
       "politics",
       "technology",
-      "startups"
-    ],
-    "chain_key": "energy -> politics -> technology -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "brazil",
-      "france",
-      "paris",
-      "cerun"
-    ],
-    "sectors": [
-      "energy",
-      "politics",
-      "global_events",
-      "startups"
-    ],
-    "chain_key": "energy -> politics -> global_events -> startups",
-    "length": 4,
-    "cross_domain_hops": 3,
-    "total_weight": 3
-  },
-  {
-    "chain": [
-      "weather",
-      "delhi",
-      "up",
-      "bar"
-    ],
-    "sectors": [
-      "energy",
-      "politics",
-      "global_events",
       "social"
     ],
-    "chain_key": "energy -> politics -> global_events -> social",
+    "chain_key": "energy -> politics -> technology -> social",
     "length": 4,
     "cross_domain_hops": 3,
     "total_weight": 3
   },
   {
     "chain": [
-      "saudi arabia",
-      "china",
-      "siddaramaiah",
+      "gujarat",
+      "india",
+      "congress",
       "ku"
     ],
     "sectors": [
@@ -897,6 +321,570 @@
     "chain_key": "energy -> finance -> politics -> social",
     "length": 4,
     "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "gujarat",
+      "india",
+      "ra",
+      "##ira"
+    ],
+    "sectors": [
+      "energy",
+      "finance",
+      "politics",
+      "global_events"
+    ],
+    "chain_key": "energy -> finance -> politics -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "pentagon",
+      "reuters",
+      "delhi",
+      ". k. shivakumar"
+    ],
+    "sectors": [
+      "military",
+      "global_events",
+      "politics",
+      "social"
+    ],
+    "chain_key": "military -> global_events -> politics -> social",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "pentagon",
+      "dw",
+      "siddaramaiah",
+      "ku"
+    ],
+    "sectors": [
+      "military",
+      "politics",
+      "technology",
+      "social"
+    ],
+    "chain_key": "military -> politics -> technology -> social",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "us department of defense",
+      "trump",
+      "cia",
+      "department of justice"
+    ],
+    "sectors": [
+      "military",
+      "politics",
+      "military",
+      "social"
+    ],
+    "chain_key": "military -> politics -> military -> social",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "pentagon",
+      "dw",
+      "india",
+      "rf"
+    ],
+    "sectors": [
+      "military",
+      "politics",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "military -> politics -> finance -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "ukraine",
+      "ap news",
+      "uganda",
+      "##ira"
+    ],
+    "sectors": [
+      "military",
+      "politics",
+      "technology",
+      "global_events"
+    ],
+    "chain_key": "military -> politics -> technology -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "ku",
+      "siddaramaiah",
+      "china",
+      "amca"
+    ],
+    "sectors": [
+      "social",
+      "technology",
+      "politics",
+      "global_events"
+    ],
+    "chain_key": "social -> technology -> politics -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "department of justice",
+      "us",
+      "uganda",
+      "##ira"
+    ],
+    "sectors": [
+      "social",
+      "politics",
+      "technology",
+      "global_events"
+    ],
+    "chain_key": "social -> politics -> technology -> global_events",
+    "length": 4,
+    "cross_domain_hops": 3,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "ipl",
+      "india",
+      "singapore",
+      "##ju raveendra"
+    ],
+    "sectors": [
+      "technology",
+      "finance",
+      "startups",
+      "startups"
+    ],
+    "chain_key": "technology -> finance -> startups -> startups",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 5
+  },
+  {
+    "chain": [
+      "north korea",
+      "quad",
+      "india",
+      "rf"
+    ],
+    "sectors": [
+      "energy",
+      "energy",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "energy -> energy -> finance -> global_events",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 5
+  },
+  {
+    "chain": [
+      "##ju raveendra",
+      "singapore",
+      "india",
+      "rf"
+    ],
+    "sectors": [
+      "startups",
+      "startups",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "startups -> startups -> finance -> global_events",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 5
+  },
+  {
+    "chain": [
+      "sid",
+      "siddaramaiah",
+      "india",
+      "s dhs"
+    ],
+    "sectors": [
+      "politics",
+      "technology",
+      "finance",
+      "finance"
+    ],
+    "chain_key": "politics -> technology -> finance -> finance",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "s dhs",
+      "india",
+      "us",
+      "department of justice"
+    ],
+    "sectors": [
+      "finance",
+      "finance",
+      "politics",
+      "social"
+    ],
+    "chain_key": "finance -> finance -> politics -> social",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "##endulkar",
+      "##v sooryavanshi",
+      "india",
+      "singapore"
+    ],
+    "sectors": [
+      "technology",
+      "finance",
+      "finance",
+      "startups"
+    ],
+    "chain_key": "technology -> finance -> finance -> startups",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "vaibha",
+      "mo",
+      "congress",
+      "ku"
+    ],
+    "sectors": [
+      "technology",
+      "politics",
+      "politics",
+      "social"
+    ],
+    "chain_key": "technology -> politics -> politics -> social",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "vaibha",
+      "srh",
+      "india",
+      "amca"
+    ],
+    "sectors": [
+      "technology",
+      "technology",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "technology -> technology -> finance -> global_events",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "##endulkar",
+      "##v sooryavanshi",
+      "india",
+      "amca"
+    ],
+    "sectors": [
+      "technology",
+      "finance",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "technology -> finance -> finance -> global_events",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "singapore",
+      "india",
+      "amca"
+    ],
+    "sectors": [
+      "startups",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "startups -> finance -> global_events",
+    "length": 3,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "ku",
+      "congress",
+      "ra",
+      "##ira"
+    ],
+    "sectors": [
+      "social",
+      "politics",
+      "politics",
+      "global_events"
+    ],
+    "chain_key": "social -> politics -> politics -> global_events",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 4
+  },
+  {
+    "chain": [
+      "sid",
+      "siddaramaiah",
+      "india"
+    ],
+    "sectors": [
+      "politics",
+      "technology",
+      "finance"
+    ],
+    "chain_key": "politics -> technology -> finance",
+    "length": 3,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "us",
+      "mo",
+      "##v sooryavanshi",
+      "##endulkar"
+    ],
+    "sectors": [
+      "politics",
+      "politics",
+      "finance",
+      "technology"
+    ],
+    "chain_key": "politics -> politics -> finance -> technology",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "us",
+      "india",
+      "ipl"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "technology"
+    ],
+    "chain_key": "politics -> finance -> technology",
+    "length": 3,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "israel",
+      "india",
+      "srh",
+      "vaibha"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "technology",
+      "technology"
+    ],
+    "chain_key": "politics -> finance -> technology -> technology",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "israel",
+      "india",
+      "##v sooryavanshi",
+      "##endulkar"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "finance",
+      "technology"
+    ],
+    "chain_key": "politics -> finance -> finance -> technology",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "china",
+      "man",
+      "in",
+      "ai"
+    ],
+    "sectors": [
+      "politics",
+      "energy",
+      "technology",
+      "technology"
+    ],
+    "chain_key": "politics -> energy -> technology -> technology",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "us",
+      "india",
+      "quad"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "energy"
+    ],
+    "chain_key": "politics -> finance -> energy",
+    "length": 3,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "rajya sabha",
+      "cm",
+      "india",
+      "gujarat"
+    ],
+    "sectors": [
+      "politics",
+      "politics",
+      "finance",
+      "energy"
+    ],
+    "chain_key": "politics -> politics -> finance -> energy",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "us",
+      "blue origin",
+      "##n",
+      "by"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "startups",
+      "startups"
+    ],
+    "chain_key": "politics -> finance -> startups -> startups",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "israel",
+      "washington dc",
+      "##n",
+      "by"
+    ],
+    "sectors": [
+      "politics",
+      "technology",
+      "startups",
+      "startups"
+    ],
+    "chain_key": "politics -> technology -> startups -> startups",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "israel",
+      "india",
+      "singapore"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "startups"
+    ],
+    "chain_key": "politics -> finance -> startups",
+    "length": 3,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "israel",
+      "china",
+      "siddaramaiah",
+      "ku"
+    ],
+    "sectors": [
+      "politics",
+      "politics",
+      "technology",
+      "social"
+    ],
+    "chain_key": "politics -> politics -> technology -> social",
+    "length": 4,
+    "cross_domain_hops": 2,
+    "total_weight": 3
+  },
+  {
+    "chain": [
+      "us",
+      "india",
+      "rf"
+    ],
+    "sectors": [
+      "politics",
+      "finance",
+      "global_events"
+    ],
+    "chain_key": "politics -> finance -> global_events",
+    "length": 3,
+    "cross_domain_hops": 2,
     "total_weight": 3
   }
 ]
