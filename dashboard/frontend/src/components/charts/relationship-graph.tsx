@@ -61,18 +61,99 @@ function EntityNode({ data }: NodeProps) {
 
 const nodeTypes = { entityNode: EntityNode }
 
+const SECTOR_LABELS_MAP: Record<string, string> = {
+  politics: "Politics", finance: "Finance", technology: "Technology",
+  energy: "Energy", military: "Military", startups: "Startups",
+  social: "Social", global_events: "Global Events",
+}
+
+const SECTOR_COLORS_MAP: Record<string, string> = {
+  politics: "#4a7cf7", finance: "#4fcf8d", technology: "#5bc0eb",
+  energy: "#d4a757", military: "#e06c7a", startups: "#8b7cf7",
+  social: "#f0a5d4", global_events: "#45c4b0",
+}
+
+export function EmptyGraphOverlay({
+  allLinks,
+  stats,
+}: {
+  allLinks: CrossDomainLink[]
+  stats: { entityCount: number; sectorCount: number; topSectors: [string, number][] }
+}) {
+  const top5 = useMemo(() => [...allLinks].sort((a, b) => b.strength - a.strength).slice(0, 5), [allLinks])
+  return (
+    <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+      <div className="max-w-lg w-full mx-8 pointer-events-auto">
+        <div className="space-y-4">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulseGlow" />
+            <span className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Intelligence Canvas</span>
+          </div>
+          <div className="grid grid-cols-3 gap-3 text-[11px] font-mono">
+            <div className="border border-[var(--color-border)] rounded-lg p-3 bg-[var(--color-card)]">
+              <p className="text-[var(--color-fg-muted)] text-[9px] tracking-wider uppercase">Connections</p>
+              <p className="text-[var(--color-accent)] text-lg mt-1 font-medium">{allLinks.length}</p>
+            </div>
+            <div className="border border-[var(--color-border)] rounded-lg p-3 bg-[var(--color-card)]">
+              <p className="text-[var(--color-fg-muted)] text-[9px] tracking-wider uppercase">Entities</p>
+              <p className="text-[var(--color-fg)] text-lg mt-1 font-medium">{stats.entityCount}</p>
+            </div>
+            <div className="border border-[var(--color-border)] rounded-lg p-3 bg-[var(--color-card)]">
+              <p className="text-[var(--color-fg-muted)] text-[9px] tracking-wider uppercase">Domains</p>
+              <p className="text-[var(--color-fg)] text-lg mt-1 font-medium">{stats.sectorCount}</p>
+            </div>
+          </div>
+          {top5.length > 0 && (
+            <div className="border border-[var(--color-border)] rounded-lg bg-[var(--color-card)] p-3">
+              <p className="text-[9px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase mb-2">Top Cross-Domain Relationships</p>
+              <div className="space-y-1.5">
+                {top5.map((l, i) => (
+                  <div key={i} className="flex items-center gap-2 text-[10px] font-mono">
+                    <span className="text-[var(--color-fg-muted)] w-4 shrink-0 text-right">{i + 1}.</span>
+                    <span className="text-[var(--color-fg)] truncate">{l.source_entity}</span>
+                    <span className="text-[var(--color-accent)] shrink-0">&harr;</span>
+                    <span className="text-[var(--color-fg)] truncate">{l.target_entity}</span>
+                    <span className="text-[var(--color-fg-muted)] shrink-0 ml-auto">{l.strength.toFixed(1)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {stats.topSectors.length > 0 && (
+            <div className="flex flex-wrap gap-1.5">
+              {stats.topSectors.map(([s, c]) => (
+                <span key={s} className="text-[9px] font-mono px-2 py-1 rounded border"
+                  style={{ color: SECTOR_COLORS_MAP[s] || "#4a7cf7", borderColor: SECTOR_COLORS_MAP[s] || "#4a7cf7", background: `${SECTOR_COLORS_MAP[s] || "#4a7cf7"}10` }}>
+                  {SECTOR_LABELS_MAP[s] || s} &middot; {c}
+                </span>
+              ))}
+            </div>
+          )}
+          <p className="text-[9px] font-mono text-[var(--color-fg-muted)] leading-relaxed">
+            Select an entity from the discovery panel to explore its cross-domain relationships on this canvas.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function FocusedGraph({
   selectEntity,
   selectedEntity,
   connectedLinks,
   onNodeClick,
   onEdgeClick,
+  allLinks,
+  stats,
 }: {
   selectEntity: (e: string) => void
   selectedEntity: string | null
   connectedLinks: CrossDomainLink[]
   onNodeClick?: (entity: string) => void
   onEdgeClick?: (link: CrossDomainLink) => void
+  allLinks: CrossDomainLink[]
+  stats: { entityCount: number; sectorCount: number; topSectors: [string, number][] }
 }) {
   const { nodes: initialNodes, edges: initialEdges } = useMemo(() => {
     if (!selectedEntity || connectedLinks.length === 0) return { nodes: [], edges: [] }
@@ -86,15 +167,17 @@ export function FocusedGraph({
     const isSmall = allEntities.length <= 15
     const visible = isSmall ? allEntities : [selectedEntity, ...allEntities.filter((e) => e !== selectedEntity).slice(0, 14)]
 
+    const centerX = 350; const centerY = 250
+    const radius = Math.min(220, 80 + visible.length * 18)
+
     const nodes: Node[] = visible.map((entity, i) => {
       let x: number, y: number
       if (entity === selectedEntity) {
-        x = 300; y = 200
+        x = centerX; y = centerY
       } else {
         const angle = (2 * Math.PI * (i - 1)) / Math.max(visible.length - 1, 1) - Math.PI / 2
-        const radius = 160
-        x = 300 + radius * Math.cos(angle)
-        y = 200 + radius * Math.sin(angle)
+        x = centerX + radius * Math.cos(angle)
+        y = centerY + radius * Math.sin(angle)
       }
       const link = connectedLinks.find((l) => l.source_entity === entity || l.target_entity === entity)
       const sector = link ? (link.source_entity === entity ? link.source_sector : link.target_sector) : "politics"
@@ -141,27 +224,14 @@ export function FocusedGraph({
     setEdges(initialEdges)
   }, [initialNodes, initialEdges])
 
-  if (!selectedEntity) {
-    return (
-      <div className="flex h-full w-full items-center justify-center">
-        <div className="text-center">
-          <p className="text-xs font-mono text-[var(--color-fg-muted)]">Select an entity to explore</p>
-          <p className="text-[9px] font-mono text-[var(--color-fg-muted)] mt-2 opacity-60">Choose from the discovery panel on the left</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (connectedLinks.length === 0) {
-    return (
-      <div className="flex h-full w-full items-center justify-center">
-        <p className="text-xs font-mono text-[var(--color-fg-muted)]">No connections found for this entity.</p>
-      </div>
-    )
-  }
-
   return (
-    <div className="h-full w-full">
+    <div className="relative h-full w-full">
+      {!selectedEntity && <EmptyGraphOverlay allLinks={allLinks} stats={stats} />}
+      {selectedEntity && connectedLinks.length === 0 && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+          <p className="text-xs font-mono text-[var(--color-fg-muted)]">No connections found for this entity.</p>
+        </div>
+      )}
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -170,8 +240,8 @@ export function FocusedGraph({
         nodeTypes={nodeTypes}
         fitView
         fitViewOptions={{ padding: 0.3 }}
-        minZoom={0.2}
-        maxZoom={4}
+        minZoom={0.15}
+        maxZoom={5}
         proOptions={{ hideAttribution: true }}
         style={{ background: "var(--color-bg)", width: "100%", height: "100%" }}
         onNodeClick={(_, node) => onNodeClick?.(node.id)}
@@ -180,7 +250,7 @@ export function FocusedGraph({
           if (original) onEdgeClick?.(original)
         }}
       >
-        <Background color="var(--color-border)" gap={25} size={0.5} />
+        <Background color="var(--color-border)" gap={30} size={0.5} />
         <Controls className="[&>button]:bg-[var(--color-card)] [&>button]:border-[var(--color-border)] [&>button]:text-[var(--color-fg-muted)] [&>button:hover]:bg-[var(--color-card-hover)]" />
       </ReactFlow>
     </div>

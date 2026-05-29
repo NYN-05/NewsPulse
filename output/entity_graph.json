@@ -1,184 +1,184 @@
 {
   "nodes": [
     {
-      "id": "trump",
-      "centrality": 0.0147,
-      "count": 284,
-      "sources": 59
-    },
-    {
-      "id": "iran",
-      "centrality": 0.0147,
-      "count": 270,
-      "sources": 56
-    },
-    {
       "id": "us",
-      "centrality": 0.0147,
-      "count": 223,
+      "centrality": 0.0148,
+      "count": 226,
       "sources": 46
     },
     {
+      "id": "iran",
+      "centrality": 0.0133,
+      "count": 280,
+      "sources": 56
+    },
+    {
+      "id": "trump",
+      "centrality": 0.0125,
+      "count": 289,
+      "sources": 59
+    },
+    {
       "id": "india",
-      "centrality": 0.0098,
-      "count": 158,
-      "sources": 34
+      "centrality": 0.0094,
+      "count": 174,
+      "sources": 35
     },
     {
       "id": "siddaramaiah",
-      "centrality": 0.0065,
-      "count": 88,
+      "centrality": 0.0055,
+      "count": 94,
       "sources": 15
     },
     {
       "id": "karnataka",
-      "centrality": 0.0057,
-      "count": 73,
+      "centrality": 0.0055,
+      "count": 79,
       "sources": 12
     },
     {
       "id": "texas",
-      "centrality": 0.0049,
-      "count": 44,
+      "centrality": 0.0047,
+      "count": 45,
       "sources": 15
     },
     {
       "id": "##k shivakumar",
-      "centrality": 0.0049,
-      "count": 36,
-      "sources": 8
+      "centrality": 0.0047,
+      "count": 41,
+      "sources": 9
     },
     {
       "id": "delhi",
-      "centrality": 0.0049,
-      "count": 76,
+      "centrality": 0.0047,
+      "count": 84,
       "sources": 20
     },
     {
       "id": "##guardian",
-      "centrality": 0.0041,
-      "count": 8,
+      "centrality": 0.0039,
+      "count": 9,
       "sources": 1
     },
     {
       "id": "coast guard investigative service",
-      "centrality": 0.0041,
-      "count": 8,
+      "centrality": 0.0039,
+      "count": 9,
       "sources": 1
     },
     {
-      "id": "strait of hormuz",
-      "centrality": 0.0041,
-      "count": 50,
-      "sources": 29
-    },
-    {
       "id": "guardian",
-      "centrality": 0.0041,
-      "count": 19,
+      "centrality": 0.0039,
+      "count": 20,
       "sources": 5
     },
     {
       "id": "\u2019 network",
-      "centrality": 0.0041,
-      "count": 8,
+      "centrality": 0.0039,
+      "count": 9,
       "sources": 1
     },
     {
       "id": "israel",
-      "centrality": 0.0041,
-      "count": 64,
+      "centrality": 0.0039,
+      "count": 67,
       "sources": 30
     },
     {
       "id": "herzegovina",
-      "centrality": 0.0041,
-      "count": 8,
+      "centrality": 0.0039,
+      "count": 9,
       "sources": 1
     },
     {
       "id": "sergej barbarez",
-      "centrality": 0.0041,
-      "count": 8,
+      "centrality": 0.0039,
+      "count": 9,
       "sources": 1
     },
     {
       "id": "senate",
-      "centrality": 0.0041,
-      "count": 45,
+      "centrality": 0.0039,
+      "count": 47,
       "sources": 20
     },
     {
       "id": "com",
-      "centrality": 0.0041,
-      "count": 8,
+      "centrality": 0.0039,
+      "count": 9,
       "sources": 1
     },
     {
       "id": "coast guard",
-      "centrality": 0.0041,
-      "count": 8,
+      "centrality": 0.0039,
+      "count": 9,
       "sources": 1
     },
     {
-      "id": "washington",
-      "centrality": 0.0041,
-      "count": 44,
-      "sources": 22
-    },
-    {
       "id": "u. s",
-      "centrality": 0.0041,
-      "count": 28,
+      "centrality": 0.0039,
+      "count": 31,
       "sources": 16
     },
     {
+      "id": "abc news",
+      "centrality": 0.0039,
+      "count": 46,
+      "sources": 1
+    },
+    {
       "id": "##tte hooker",
-      "centrality": 0.0041,
-      "count": 9,
+      "centrality": 0.0039,
+      "count": 10,
       "sources": 2
     },
     {
       "id": "bahamas",
-      "centrality": 0.0041,
-      "count": 10,
+      "centrality": 0.0039,
+      "count": 11,
       "sources": 3
     },
     {
       "id": "finserv intelligence",
-      "centrality": 0.0033,
-      "count": 9,
+      "centrality": 0.0031,
+      "count": 10,
       "sources": 2
     },
     {
-      "id": "oman",
-      "centrality": 0.0033,
-      "count": 18,
-      "sources": 15
-    },
-    {
-      "id": "tehran",
-      "centrality": 0.0033,
-      "count": 27,
-      "sources": 18
-    },
-    {
       "id": "karg",
-      "centrality": 0.0033,
-      "count": 8,
+      "centrality": 0.0031,
+      "count": 9,
       "sources": 1
     },
     {
+      "id": "natgeo",
+      "centrality": 0.0031,
+      "count": 9,
+      "sources": 1
+    },
+    {
+      "id": "strait of hormuz",
+      "centrality": 0.0031,
+      "count": 53,
+      "sources": 30
+    },
+    {
       "id": "meg",
-      "centrality": 0.0033,
-      "count": 8,
+      "centrality": 0.0031,
+      "count": 9,
       "sources": 1
     },
     {
       "id": "r & am",
-      "centrality": 0.0033,
-      "count": 8,
+      "centrality": 0.0031,
+      "count": 9,
       "sources": 1
+    },
+    {
+      "id": "harry",
+      "centrality": 0.0031,
+      "count": 10,
+      "sources": 2
     }
   ],
   "edges": [
@@ -195,7 +195,7 @@
     {
       "source": "siddaramaiah",
       "target": "karnataka",
-      "weight": 59
+      "weight": 63
     },
     {
       "source": "trump",
@@ -205,7 +205,7 @@
     {
       "source": "u. s.",
       "target": "iran",
-      "weight": 43
+      "weight": 45
     },
     {
       "source": "donald trump",
@@ -213,24 +213,24 @@
       "weight": 39
     },
     {
-      "source": "trump",
-      "target": "u. s.",
-      "weight": 38
-    },
-    {
       "source": "strait of hormuz",
       "target": "iran",
-      "weight": 36
+      "weight": 39
+    },
+    {
+      "source": "trump",
+      "target": "u. s.",
+      "weight": 39
     },
     {
       "source": "##k shivakumar",
       "target": "siddaramaiah",
-      "weight": 32
+      "weight": 36
     },
     {
       "source": "##k shivakumar",
       "target": "karnataka",
-      "weight": 30
+      "weight": 33
     },
     {
       "source": "donald trump",
@@ -240,6 +240,11 @@
     {
       "source": "texas",
       "target": "senate",
+      "weight": 28
+    },
+    {
+      "source": "israel",
+      "target": "iran",
       "weight": 27
     },
     {
@@ -248,13 +253,23 @@
       "weight": 26
     },
     {
-      "source": "israel",
-      "target": "iran",
-      "weight": 26
-    },
-    {
       "source": "white house",
       "target": "trump",
+      "weight": 25
+    },
+    {
+      "source": "siddaramaiah",
+      "target": "delhi",
+      "weight": 25
+    },
+    {
+      "source": "iran",
+      "target": "washington",
+      "weight": 24
+    },
+    {
+      "source": "##nik sinner",
+      "target": "jan",
       "weight": 24
     },
     {
@@ -263,34 +278,29 @@
       "weight": 23
     },
     {
-      "source": "iran",
-      "target": "washington",
-      "weight": 23
-    },
-    {
-      "source": "siddaramaiah",
-      "target": "delhi",
-      "weight": 22
-    },
-    {
-      "source": "##nik sinner",
-      "target": "jan",
-      "weight": 22
-    },
-    {
       "source": "karnataka",
       "target": "congress",
-      "weight": 20
-    },
-    {
-      "source": "siddaramaiah",
-      "target": "congress",
-      "weight": 19
+      "weight": 22
     },
     {
       "source": "trump",
       "target": "senate",
+      "weight": 21
+    },
+    {
+      "source": "siddaramaiah",
+      "target": "congress",
       "weight": 19
+    },
+    {
+      "source": "danny new",
+      "target": "abc news",
+      "weight": 18
+    },
+    {
+      "source": "karnataka",
+      "target": "delhi",
+      "weight": 18
     },
     {
       "source": "strait of hormuz",
@@ -313,18 +323,23 @@
       "weight": 16
     },
     {
-      "source": "danny new",
-      "target": "abc news",
-      "weight": 16
-    },
-    {
-      "source": "karnataka",
-      "target": "delhi",
-      "weight": 16
+      "source": "paxton",
+      "target": "texas",
+      "weight": 15
     },
     {
       "source": "israel",
       "target": "lebanon",
+      "weight": 15
+    },
+    {
+      "source": "middle east",
+      "target": "iran",
+      "weight": 15
+    },
+    {
+      "source": "philips",
+      "target": "disney",
       "weight": 15
     },
     {
@@ -333,13 +348,33 @@
       "weight": 14
     },
     {
-      "source": "paxton",
-      "target": "texas",
+      "source": "sin",
+      "target": "jan",
       "weight": 14
     },
     {
-      "source": "middle east",
-      "target": "iran",
+      "source": "texas",
+      "target": "trump",
+      "weight": 14
+    },
+    {
+      "source": "ukraine",
+      "target": "russia",
+      "weight": 14
+    },
+    {
+      "source": "future coupons",
+      "target": "amazon",
+      "weight": 14
+    },
+    {
+      "source": "amazon",
+      "target": "cci",
+      "weight": 14
+    },
+    {
+      "source": "amazon",
+      "target": "future",
       "weight": 14
     },
     {
@@ -353,13 +388,13 @@
       "weight": 13
     },
     {
-      "source": "texas",
-      "target": "trump",
+      "source": "sin",
+      "target": "##nik sinner",
       "weight": 13
     },
     {
-      "source": "future coupons",
-      "target": "amazon",
+      "source": "india",
+      "target": "china",
       "weight": 13
     },
     {
@@ -368,28 +403,23 @@
       "weight": 13
     },
     {
-      "source": "amazon",
-      "target": "cci",
-      "weight": 13
-    },
-    {
-      "source": "amazon",
-      "target": "future",
-      "weight": 13
-    },
-    {
       "source": "ken paxton",
       "target": "senate",
       "weight": 13
     },
     {
-      "source": "philips",
-      "target": "disney",
+      "source": "iran",
+      "target": "pakistan",
       "weight": 13
     },
     {
-      "source": "sin",
-      "target": "jan",
+      "source": "##di",
+      "target": "mo",
+      "weight": 12
+    },
+    {
+      "source": "paxton",
+      "target": "senate",
       "weight": 12
     },
     {
@@ -398,34 +428,24 @@
       "weight": 12
     },
     {
-      "source": "ukraine",
-      "target": "russia",
+      "source": "strait of hormuz",
+      "target": "u. s.",
       "weight": 12
     },
     {
-      "source": "india",
-      "target": "china",
+      "source": "##k shivakumar",
+      "target": "delhi",
       "weight": 12
     },
     {
-      "source": "iran",
-      "target": "pakistan",
+      "source": "siddaramaiah",
+      "target": "k shivakumar",
       "weight": 12
     },
     {
-      "source": "##di",
-      "target": "mo",
-      "weight": 11
-    },
-    {
-      "source": "paxton",
-      "target": "senate",
-      "weight": 11
-    },
-    {
-      "source": "sin",
-      "target": "##nik sinner",
-      "weight": 11
+      "source": "claude lemieux",
+      "target": "nhl",
+      "weight": 12
     },
     {
       "source": "tehran",
@@ -433,18 +453,28 @@
       "weight": 11
     },
     {
-      "source": "strait of hormuz",
-      "target": "u. s.",
+      "source": "texas",
+      "target": "talarico",
       "weight": 11
     },
     {
-      "source": "siddaramaiah",
-      "target": "k shivakumar",
+      "source": "paris",
+      "target": "juan manuel cerundolo",
       "weight": 11
     },
     {
-      "source": "claude lemieux",
-      "target": "nhl",
+      "source": "department of justice",
+      "target": ". jean carroll",
+      "weight": 11
+    },
+    {
+      "source": "##hul gandhi",
+      "target": "ra",
+      "weight": 11
+    },
+    {
+      "source": "juan manuel cerundolo",
+      "target": "jannik sinner",
       "weight": 11
     },
     {
@@ -453,28 +483,53 @@
       "weight": 11
     },
     {
+      "source": "finserv intelligence",
+      "target": "finserv",
+      "weight": 10
+    },
+    {
+      "source": "##ok leyland",
+      "target": "ash",
+      "weight": 10
+    },
+    {
+      "source": "paxton",
+      "target": "trump",
+      "weight": 10
+    },
+    {
       "source": "texas",
       "target": "james talarico",
       "weight": 10
     },
     {
-      "source": "texas",
-      "target": "talarico",
-      "weight": 10
-    },
-    {
-      "source": "paris",
-      "target": "juan manuel cerundolo",
-      "weight": 10
-    },
-    {
       "source": "##k shivakumar",
-      "target": "delhi",
+      "target": "k shivakumar",
       "weight": 10
     },
     {
-      "source": "department of justice",
-      "target": ". jean carroll",
+      "source": "talarico",
+      "target": "senate",
+      "weight": 10
+    },
+    {
+      "source": "##ubi",
+      "target": "##o",
+      "weight": 10
+    },
+    {
+      "source": "##ubi",
+      "target": "pakistan",
+      "weight": 10
+    },
+    {
+      "source": "israel",
+      "target": "mojtaba",
+      "weight": 10
+    },
+    {
+      "source": "mojtaba",
+      "target": "iran",
       "weight": 10
     },
     {
@@ -483,8 +538,18 @@
       "weight": 10
     },
     {
-      "source": "##hul gandhi",
-      "target": "ra",
+      "source": "k shivakumar",
+      "target": "karnataka",
+      "weight": 10
+    },
+    {
+      "source": "pakistan",
+      "target": "##o",
+      "weight": 10
+    },
+    {
+      "source": "pakistan",
+      "target": "washington",
       "weight": 10
     },
     {
@@ -493,9 +558,24 @@
       "weight": 10
     },
     {
-      "source": "juan manuel cerundolo",
-      "target": "jannik sinner",
+      "source": "u. s",
+      "target": "us",
       "weight": 10
+    },
+    {
+      "source": "##tte hooker",
+      "target": "bahamas",
+      "weight": 10
+    },
+    {
+      "source": "gamble hygiene and health care",
+      "target": "hygiene",
+      "weight": 9
+    },
+    {
+      "source": "gamble hygiene and health care",
+      "target": "procter & amp",
+      "weight": 9
     },
     {
       "source": "united states",
@@ -504,228 +584,148 @@
     },
     {
       "source": "finserv intelligence",
-      "target": "finserv",
+      "target": "r &",
+      "weight": 9
+    },
+    {
+      "source": "finserv intelligence",
+      "target": "r & am",
+      "weight": 9
+    },
+    {
+      "source": "finserv intelligence",
+      "target": "india",
+      "weight": 9
+    },
+    {
+      "source": "##guardian",
+      "target": "sergej barbarez",
+      "weight": 9
+    },
+    {
+      "source": "##guardian",
+      "target": "guardian",
+      "weight": 9
+    },
+    {
+      "source": "##guardian",
+      "target": "\u2019 network",
+      "weight": 9
+    },
+    {
+      "source": "##guardian",
+      "target": "com",
+      "weight": 9
+    },
+    {
+      "source": "##guardian",
+      "target": "herzegovina",
+      "weight": 9
+    },
+    {
+      "source": "coast guard investigative service",
+      "target": "##tte hooker",
+      "weight": 9
+    },
+    {
+      "source": "coast guard investigative service",
+      "target": "coast guard",
+      "weight": 9
+    },
+    {
+      "source": "coast guard investigative service",
+      "target": "us",
+      "weight": 9
+    },
+    {
+      "source": "coast guard investigative service",
+      "target": "bahamas",
+      "weight": 9
+    },
+    {
+      "source": "coast guard investigative service",
+      "target": "u. s",
+      "weight": 9
+    },
+    {
+      "source": "siddarmaiah",
+      "target": "d k shivakumar",
+      "weight": 9
+    },
+    {
+      "source": "siddarmaiah",
+      "target": "delhi",
       "weight": 9
     },
     {
       "source": "##ok leyland",
-      "target": "ash",
+      "target": "leyland",
       "weight": 9
     },
     {
-      "source": "paxton",
-      "target": "trump",
+      "source": "##ok leyland",
+      "target": "board of directors",
+      "weight": 9
+    },
+    {
+      "source": "leyland",
+      "target": "board of directors",
+      "weight": 9
+    },
+    {
+      "source": "leyland",
+      "target": "ash",
       "weight": 9
     },
     {
       "source": "justice department",
       "target": "trump",
       "weight": 9
-    },
-    {
-      "source": "##tein",
-      "target": "##ps",
-      "weight": 9
-    },
-    {
-      "source": "##k shivakumar",
-      "target": "k shivakumar",
-      "weight": 9
-    },
-    {
-      "source": "talarico",
-      "target": "senate",
-      "weight": 9
-    },
-    {
-      "source": ". jean carroll",
-      "target": "trump",
-      "weight": 9
-    },
-    {
-      "source": "##ubi",
-      "target": "##o",
-      "weight": 9
-    },
-    {
-      "source": "##ubi",
-      "target": "pakistan",
-      "weight": 9
-    },
-    {
-      "source": "israel",
-      "target": "mojtaba",
-      "weight": 9
-    },
-    {
-      "source": "mojtaba",
-      "target": "iran",
-      "weight": 9
-    },
-    {
-      "source": "k shivakumar",
-      "target": "karnataka",
-      "weight": 9
-    },
-    {
-      "source": "trump",
-      "target": "hormuz",
-      "weight": 9
-    },
-    {
-      "source": "trump",
-      "target": "cbs news",
-      "weight": 9
-    },
-    {
-      "source": "ken paxton",
-      "target": "james talarico",
-      "weight": 9
-    },
-    {
-      "source": "china",
-      "target": "beijing",
-      "weight": 9
-    },
-    {
-      "source": "pakistan",
-      "target": "##o",
-      "weight": 9
-    },
-    {
-      "source": "pakistan",
-      "target": "washington",
-      "weight": 9
-    },
-    {
-      "source": "u. s",
-      "target": "us",
-      "weight": 9
-    },
-    {
-      "source": "##tte hooker",
-      "target": "bahamas",
-      "weight": 9
-    },
-    {
-      "source": "gamble hygiene and health care",
-      "target": "hygiene",
-      "weight": 8
-    },
-    {
-      "source": "gamble hygiene and health care",
-      "target": "procter & amp",
-      "weight": 8
-    },
-    {
-      "source": "united states",
-      "target": "us",
-      "weight": 8
-    },
-    {
-      "source": "finserv intelligence",
-      "target": "r &",
-      "weight": 8
-    },
-    {
-      "source": "finserv intelligence",
-      "target": "r & am",
-      "weight": 8
-    },
-    {
-      "source": "finserv intelligence",
-      "target": "india",
-      "weight": 8
-    },
-    {
-      "source": "##guardian",
-      "target": "sergej barbarez",
-      "weight": 8
-    },
-    {
-      "source": "##guardian",
-      "target": "guardian",
-      "weight": 8
-    },
-    {
-      "source": "##guardian",
-      "target": "\u2019 network",
-      "weight": 8
-    },
-    {
-      "source": "##guardian",
-      "target": "com",
-      "weight": 8
-    },
-    {
-      "source": "##guardian",
-      "target": "herzegovina",
-      "weight": 8
-    },
-    {
-      "source": "coast guard investigative service",
-      "target": "##tte hooker",
-      "weight": 8
-    },
-    {
-      "source": "coast guard investigative service",
-      "target": "coast guard",
-      "weight": 8
-    },
-    {
-      "source": "coast guard investigative service",
-      "target": "us",
-      "weight": 8
-    },
-    {
-      "source": "coast guard investigative service",
-      "target": "bahamas",
-      "weight": 8
     }
   ],
   "stats": {
-    "total_nodes": 1229,
+    "total_nodes": 1281,
     "total_edges": 200,
     "top_entities": [
       {
-        "entity": "trump",
-        "centrality": 0.0147
+        "entity": "us",
+        "centrality": 0.0148
       },
       {
         "entity": "iran",
-        "centrality": 0.0147
+        "centrality": 0.0133
       },
       {
-        "entity": "us",
-        "centrality": 0.0147
+        "entity": "trump",
+        "centrality": 0.0125
       },
       {
         "entity": "india",
-        "centrality": 0.0098
+        "centrality": 0.0094
       },
       {
         "entity": "siddaramaiah",
-        "centrality": 0.0065
+        "centrality": 0.0055
       },
       {
         "entity": "karnataka",
-        "centrality": 0.0057
+        "centrality": 0.0055
       },
       {
         "entity": "texas",
-        "centrality": 0.0049
+        "centrality": 0.0047
       },
       {
         "entity": "##k shivakumar",
-        "centrality": 0.0049
+        "centrality": 0.0047
       },
       {
         "entity": "delhi",
-        "centrality": 0.0049
+        "centrality": 0.0047
       },
       {
         "entity": "##guardian",
-        "centrality": 0.0041
+        "centrality": 0.0039
       }
     ]
   }
