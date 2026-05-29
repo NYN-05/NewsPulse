@@ -30,11 +30,18 @@ try:
             _LLM_SESSION = requests.Session()
             _LLM_SESSION.headers.update({"Content-Type": "application/json"})
         return _LLM_SESSION
+    def close_llm_session():
+        global _LLM_SESSION
+        if _LLM_SESSION is not None:
+            _LLM_SESSION.close()
+            _LLM_SESSION = None
 except ImportError:
     _HAS_REQUESTS = False
     _LLM_SESSION = None
     def _get_llm_session():
         return None
+    def close_llm_session():
+        pass
 
 logger = logging.getLogger(__name__)
 
@@ -208,33 +215,19 @@ def _llm_verify_relationship(source: str, target: str, src_sec: str, tgt_sec: st
 
 def _calibrate_confidence(link: Dict, llm_result: Optional[Dict] = None) -> Dict:
     """
-    Calibrate relationship confidence using multiple signals:
-    - Statistical strength (co-occurrence, source diversity)
-    - Semantic similarity
-    - LLM verification (if available)
-    - Temporal density
+    Set LLM-verified fields on the link.
+    Final confidence calibration is delegated to calibrate_relationship_confidence
+    in intelligence/confidence.py (called later in apply_confidence_calibration),
+    which uses the full 6-signal weighted formula and picks up _llm_result.
     """
-    stat_score = min(link["cooccurrence_count"] * 0.3 + link["source_diversity"] * 0.2, 5.0) / 5.0
-    sem_score = link.get("semantic_similarity", 0.0)
-
-    base_confidence = stat_score * 0.5 + sem_score * 0.5
-    link["confidence"] = round(base_confidence, 3)
-
     if llm_result:
-        llm_conf = llm_result.get("confidence", 0.5)
-        link["confidence"] = round(base_confidence * 0.4 + llm_conf * 0.6, 3)
         link["verified"] = llm_result.get("verified", True)
         link["causal_direction"] = llm_result.get("causal_direction", "bidirectional")
         link["causal_mechanism"] = llm_result.get("causal_mechanism", "")
         link["impact_prediction"] = llm_result.get("impact_prediction", "")
         if llm_result.get("explanation"):
             link["explanation"] = llm_result["explanation"]
-
-    link["confidence_label"] = (
-        "high" if link["confidence"] >= 0.7 else
-        "medium" if link["confidence"] >= 0.4 else
-        "low"
-    )
+        link["_llm_result"] = llm_result
     return link
 
 

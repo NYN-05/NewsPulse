@@ -37,31 +37,41 @@ def build_entity_graph(df: pd.DataFrame, max_age_days: int = 90) -> Dict:
     entity_count = Counter()
     cooccurrence = Counter()
 
+    # Pass 1: count entity frequency and source diversity
     for row in df.itertuples(index=False):
         entities = get_entity_dict(row)
         source = str(getattr(row, "source", ""))
-        all_ents = []
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):
                 normalized = ent.strip().lower()
                 if normalized and len(normalized) > 1:
-                    all_ents.append(normalized)
                     entity_count[normalized] += 1
                     entity_sources[normalized].add(source)
+
+    min_mentions = 2
+    important = {e for e, c in entity_count.items() if c >= min_mentions and len(entity_sources[e]) >= 1}
+
+    # Pass 2: generate co-occurrence pairs only for important entities
+    # This reduces O(E²) to O(I²) where I << E (important entities)
+    for row in df.itertuples(index=False):
+        entities = get_entity_dict(row)
+        all_ents = []
+        for key in ("persons", "orgs", "locations"):
+            for ent in entities.get(key, []):
+                normalized = ent.strip().lower()
+                if normalized and len(normalized) > 1 and normalized in important:
+                    all_ents.append(normalized)
 
         for i in range(len(all_ents)):
             for j in range(i + 1, len(all_ents)):
                 pair = tuple(sorted([all_ents[i], all_ents[j]]))
                 cooccurrence[pair] += 1
 
-    min_mentions = 2
-    important = {e for e, c in entity_count.items() if c >= min_mentions and len(entity_sources[e]) >= 1}
-
     for entity in important:
         G.add_node(entity, count=entity_count[entity], sources=len(entity_sources[entity]))
 
     for (e1, e2), weight in cooccurrence.most_common(200):
-        if e1 in important and e2 in important and weight >= 2:
+        if weight >= 2:
             G.add_edge(e1, e2, weight=weight)
 
     if G.number_of_nodes() == 0:

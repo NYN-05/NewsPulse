@@ -20,6 +20,12 @@ logger = logging.getLogger(__name__)
 
 _OLLAMA_SESSION = None
 
+def close_ollama_session():
+    global _OLLAMA_SESSION
+    if _OLLAMA_SESSION is not None:
+        _OLLAMA_SESSION.close()
+        _OLLAMA_SESSION = None
+
 def _ollama_generate(prompt: str, system: str = "", model: str = None) -> Optional[str]:
     global _OLLAMA_SESSION
     try:

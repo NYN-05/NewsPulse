@@ -121,9 +121,7 @@ def compute_narrative_mutation(df: pd.DataFrame, window_days: int = 7) -> List[D
     if time_col is None:
         return []
 
-    df = df.copy()
-    df["_date"] = pd.to_datetime(df[time_col], errors="coerce")
-    df = df.dropna(subset=["_date"]).sort_values("_date")
+    df = df.assign(_date=pd.to_datetime(df[time_col], errors="coerce")).dropna(subset=["_date"]).sort_values("_date")
     if df.empty:
         return []
 
@@ -188,20 +186,22 @@ def compute_narrative_mutation(df: pd.DataFrame, window_days: int = 7) -> List[D
 
 def compute_cluster_narratives(df: pd.DataFrame, cluster_data: Dict = None) -> List[Dict]:
     """Build narrative evolution for topic clusters, optionally using BERTopic data."""
-    if cluster_data and "article_topics" in cluster_data:
-        df = df.copy()
-        df["_cluster"] = cluster_data["article_topics"]
-    elif "cluster" not in df.columns:
-        return []
-    else:
-        df = df.copy()
-        df["_cluster"] = df["cluster"]
-
     time_col = _resolve_time_col(df)
     if time_col is None:
         return []
-    df["_date"] = pd.to_datetime(df[time_col], errors="coerce")
-    df = df.dropna(subset=["_date"])
+
+    if cluster_data and "article_topics" in cluster_data:
+        df = df.assign(
+            _cluster=cluster_data["article_topics"],
+            _date=pd.to_datetime(df[time_col], errors="coerce"),
+        ).dropna(subset=["_date"])
+    elif "cluster" not in df.columns:
+        return []
+    else:
+        df = df.assign(
+            _cluster=df["cluster"],
+            _date=pd.to_datetime(df[time_col], errors="coerce"),
+        ).dropna(subset=["_date"])
 
     cluster_daily = defaultdict(lambda: defaultdict(int))
     for row in df.itertuples(index=False):
@@ -249,9 +249,7 @@ def compute_entity_narratives(df: pd.DataFrame) -> List[Dict]:
     time_col = _resolve_time_col(df)
     if time_col is None:
         return []
-    df = df.copy()
-    df["_date"] = pd.to_datetime(df[time_col], errors="coerce")
-    df = df.dropna(subset=["_date"])
+    df = df.assign(_date=pd.to_datetime(df[time_col], errors="coerce")).dropna(subset=["_date"])
 
     entity_daily = defaultdict(lambda: defaultdict(int))
     for row in df.itertuples(index=False):

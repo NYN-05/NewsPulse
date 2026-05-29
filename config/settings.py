@@ -10,6 +10,7 @@ from typing import Any, Dict, Optional
 _FILE_LOCK = threading.Lock()
 
 _CONFIG: Dict[str, Any] = {}
+_SETTINGS: Optional["Settings"] = None
 
 _ENV_PREFIX = "NEWSPULSE_"
 
@@ -145,7 +146,7 @@ def _suppress_warnings():
 
 def load_config(path: str = None, as_settings: bool = False) -> Any:
     _suppress_warnings()
-    global _CONFIG
+    global _CONFIG, _SETTINGS
     if _CONFIG and not as_settings:
         return _CONFIG
     if path is None:
@@ -155,7 +156,9 @@ def load_config(path: str = None, as_settings: bool = False) -> Any:
         _CONFIG = yaml.safe_load(f)
     _resolve_paths()
     if as_settings:
-        return Settings.from_env(base=Settings.from_yaml(path))
+        _SETTINGS = Settings.from_env(base=Settings.from_yaml(path))
+        _CONFIG.update(_SETTINGS.as_dict())
+        return _SETTINGS
     return _CONFIG
 
 def _resolve_paths():
@@ -177,9 +180,34 @@ def get_config() -> Dict[str, Any]:
     return _CONFIG
 
 def get(key: str, default=None) -> Any:
-    parts = key.split(".")
+    global _SETTINGS
+    # 1. Try env var override first (highest priority)
+    env_key = _ENV_PREFIX + key.replace(".", "_").upper()
+    env_val = os.environ.get(env_key)
+    if env_val is not None:
+        cfg = get_config()
+        parts = key.split(".")
+        dft = default
+        for p in parts:
+            if isinstance(cfg, dict):
+                dft = cfg.get(p, dft)
+            else:
+                break
+        return _coerce_env(env_val, dft)
+
+    # 2. Try Settings dataclass (if loaded via load_config(as_settings=True))
+    if _SETTINGS is not None:
+        parts = key.split(".")
+        if len(parts) == 2:
+            section, setting = parts
+            if hasattr(_SETTINGS, section):
+                sec = getattr(_SETTINGS, section)
+                if isinstance(sec, dict) and setting in sec:
+                    return sec[setting]
+
+    # 3. Fall back to dict config
     val = get_config()
-    for p in parts:
+    for p in key.split("."):
         if isinstance(val, dict):
             val = val.get(p)
         else:

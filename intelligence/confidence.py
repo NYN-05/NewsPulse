@@ -29,6 +29,7 @@ SOURCE_RELIABILITY = {
 
 
 def calibrate_relationship_confidence(link: Dict, llm_result: Optional[Dict] = None) -> Dict:
+    llm_result = llm_result or link.pop("_llm_result", None)
     signals = []
 
     # 1. Statistical co-occurrence strength
