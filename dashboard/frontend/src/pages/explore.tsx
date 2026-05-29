@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { api } from "@/services/api"
 import type { CrossDomainLink } from "@/types"
-import { RelationshipGraph } from "@/components/charts/relationship-graph"
+import { RelationshipGraph, RelationshipExplanation } from "@/components/charts/relationship-graph"
 
 const SECTOR_LABELS: Record<string, string> = {
   politics: "Politics", finance: "Finance", technology: "Technology",
@@ -13,8 +13,8 @@ export function ExplorePage() {
   const [links, setLinks] = useState<CrossDomainLink[]>([])
   const [search, setSearch] = useState("")
   const [sectorFilter, setSectorFilter] = useState("")
-  const [selected, setSelected] = useState<CrossDomainLink | null>(null)
   const [selectedEntity, setSelectedEntity] = useState<string | null>(null)
+  const [selectedLink, setSelectedLink] = useState<CrossDomainLink | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -41,7 +41,11 @@ export function ExplorePage() {
 
   const handleNodeClick = (entity: string) => {
     setSelectedEntity(entity === selectedEntity ? null : entity)
-    setSelected(null)
+    setSelectedLink(null)
+  }
+
+  const handleLinkSelect = (link: CrossDomainLink) => {
+    setSelectedLink(link === selectedLink ? null : link)
   }
 
   if (loading) {
@@ -49,7 +53,7 @@ export function ExplorePage() {
       <div className="space-y-5">
         <p className="text-xs font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Loading relationship graph...</p>
         <div className="rounded-lg border border-[var(--color-border)] p-5 animate-pulse">
-          <div className="h-[500px] bg-[var(--color-card)] rounded" />
+          <div className="h-[520px] bg-[var(--color-card)] rounded" />
         </div>
       </div>
     )
@@ -59,8 +63,8 @@ export function ExplorePage() {
     <div className="space-y-6 animate-fadeIn">
       <div className="border-b border-[var(--color-border)] pb-5">
         <h1 className="text-xl font-serif text-[var(--color-fg)]" style={{ fontStyle: "italic" }}>Relationship Explorer</h1>
-        <p className="text-xs font-mono text-[var(--color-fg-muted)] mt-1 tracking-wider uppercase">
-          {filtered.length} cross-domain connections
+        <p className="text-[10px] font-mono text-[var(--color-fg-muted)] mt-1 tracking-wider uppercase">
+          {filtered.length} cross-domain connections — {new Set(filtered.flatMap((l) => [l.source_entity, l.target_entity])).size} entities
         </p>
       </div>
 
@@ -83,8 +87,7 @@ export function ExplorePage() {
           ))}
         </select>
         {selectedEntity && (
-          <button
-            onClick={() => setSelectedEntity(null)}
+          <button onClick={() => { setSelectedEntity(null); setSelectedLink(null) }}
             className="text-[10px] font-mono text-[var(--color-accent)] hover:underline ml-auto"
           >
             Clear selection
@@ -92,45 +95,53 @@ export function ExplorePage() {
         )}
       </div>
 
-      <RelationshipGraph links={filtered} onNodeClick={handleNodeClick} />
+      <div className="grid grid-cols-1 gap-6" style={{ gridTemplateColumns: selectedLink ? "1fr 380px" : "1fr" }}>
+        <div className="space-y-4">
+          <RelationshipGraph links={filtered} onNodeClick={handleNodeClick} selectedEntity={selectedEntity} />
 
-      {selectedEntity && entityLinks.length > 0 && (
-        <div className="space-y-2 animate-slideUp">
-          <p className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">
-            Connections for <span className="text-[var(--color-accent)]">{selectedEntity}</span>
-          </p>
-          {entityLinks.map((link, i) => {
-            const isSelected = selected === link
-            return (
-              <button
-                key={`detail-${i}`}
-                onClick={() => setSelected(isSelected ? null : link)}
-                className={`w-full text-left rounded-lg border transition-all p-3 ${
-                  isSelected
-                    ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
-                    : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)]"
-                }`}
-              >
-                <div className="flex items-center gap-3 text-xs font-mono">
-                  <span className="text-[var(--color-fg)] truncate">
-                    {link.source_entity === selectedEntity ? link.target_entity : link.source_entity}
-                  </span>
-                  <span className="text-[var(--color-fg-muted)] shrink-0">→</span>
-                  <span className="text-[var(--color-fg-muted)] text-[10px]">
-                    {SECTOR_LABELS[link.source_sector]}/{SECTOR_LABELS[link.target_sector]}
-                  </span>
-                  <span className="ml-auto text-[var(--color-accent)]">{link.strength.toFixed(1)}</span>
-                </div>
-                {isSelected && (
-                  <div className="mt-2 pt-2 border-t border-[var(--color-border)] text-[10px] font-mono text-[var(--color-fg-muted)] space-y-0.5">
-                    <div>Co-occurrences: {link.cooccurrence_count}</div>
-                    <div>Source diversity: {link.source_diversity.toFixed(2)}</div>
-                    <div>Sentiment variance: {link.sentiment_variance.toFixed(2)}</div>
-                  </div>
-                )}
-              </button>
-            )
-          })}
+          {selectedEntity && entityLinks.length > 0 && (
+            <div className="space-y-1.5 animate-slideUp">
+              <p className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">
+                Connections for <span className="text-[var(--color-accent)]">{selectedEntity}</span>
+              </p>
+              {entityLinks.map((link, i) => {
+                const isSelected = selectedLink === link
+                const connected = link.source_entity === selectedEntity ? link.target_entity : link.source_entity
+                return (
+                  <button
+                    key={i}
+                    onClick={() => handleLinkSelect(link)}
+                    className={`w-full text-left rounded-lg border transition-all p-3 ${
+                      isSelected
+                        ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
+                        : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)]"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 text-xs font-mono">
+                      <span className="text-[var(--color-fg)] truncate">{connected}</span>
+                      <span className="text-[var(--color-fg-muted)] shrink-0">→</span>
+                      <span className="text-[var(--color-fg-muted)] text-[10px]">
+                        {SECTOR_LABELS[link.source_sector]}/{SECTOR_LABELS[link.target_sector]}
+                      </span>
+                      <span className="ml-auto text-[var(--color-accent)]">{link.strength.toFixed(1)}</span>
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          )}
+        </div>
+
+        {selectedLink && (
+          <div className="animate-slideUp">
+            <RelationshipExplanation link={selectedLink} />
+          </div>
+        )}
+      </div>
+
+      {filtered.length === 0 && (
+        <div className="flex h-48 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
+          <p className="text-xs font-mono text-[var(--color-fg-muted)]">No relationships match the current filters.</p>
         </div>
       )}
     </div>

@@ -2,27 +2,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #08070c;
-  --color-card: #0e0d14;
-  --color-card-hover: #14121e;
-  --color-border: #1c1930;
-  --color-border-hover: #2a2648;
-  --color-fg: #ece8f0;
-  --color-fg-secondary: #a6a0b8;
-  --color-fg-muted: #5f5878;
-  --color-accent: #8b7cf7;
-  --color-accent-subtle: rgba(139, 124, 247, 0.08);
-  --color-accent-hover: #a399fa;
-  --color-green: #6fcf8d;
+  --color-bg: #080c14;
+  --color-bg-elevated: #0c1222;
+  --color-card: #0e1525;
+  --color-card-hover: #121a2e;
+  --color-border: #1a2540;
+  --color-border-hover: #25355a;
+  --color-fg: #e8edf5;
+  --color-fg-secondary: #8899b4;
+  --color-fg-muted: #4a5a7a;
+  --color-accent: #4a7cf7;
+  --color-accent-subtle: rgba(74, 124, 247, 0.08);
+  --color-accent-hover: #6b96fa;
+  --color-cyan: #5bc0eb;
+  --color-purple: #8b7cf7;
+  --color-green: #4fcf8d;
   --color-red: #e06c7a;
   --color-amber: #d4a757;
+  --color-teal: #45c4b0;
 
   --font-serif: "DM Serif Display", Georgia, serif;
   --font-sans: "Outfit", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", monospace;
 }
 
-html { font-size: 15px; }
+html { font-size: 14px; }
 
 body {
   margin: 0;
@@ -41,14 +45,13 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-border-hover); }
 
-/* Subtle noise texture overlay */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
@@ -62,5 +65,38 @@ body::after {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
 .animate-fadeIn { animation: fadeIn 0.35s ease-out both; }
 .animate-slideUp { animation: slideUp 0.3s ease-out both; }
+.animate-pulseGlow { animation: pulseGlow 2s ease-in-out infinite; }
+
+.leaflet-container {
+  background: var(--color-bg) !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--color-card) !important;
+  color: var(--color-fg-secondary) !important;
+  border-color: var(--color-border) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--color-card-hover) !important;
+}
+
+.leaflet-tooltip {
+  background: var(--color-card) !important;
+  color: var(--color-fg) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+}
+
+.leaflet-tooltip::before {
+  border-top-color: var(--color-border) !important;
+}

@@ -22,15 +22,15 @@ interface ChainEntry {
 }
 
 const PHASE_COLORS: Record<string, string> = {
-  emerging: "#6fcf8d",
-  accelerating: "#8b7cf7",
-  growing: "#6fcf8d",
+  emerging: "#4fcf8d",
+  accelerating: "#4a7cf7",
+  growing: "#4fcf8d",
   peaked: "#d4a757",
-  stable: "#a6a0b8",
+  stable: "#8899b4",
   declining: "#e06c7a",
-  fading: "#5f5878",
+  fading: "#4a5a7a",
   resurging: "#8b7cf7",
-  dormant: "#5f5878",
+  dormant: "#4a5a7a",
 }
 
 const SECTOR_LABELS: Record<string, string> = {
@@ -77,8 +77,7 @@ export function TimelinePage() {
         })
       }
       items.sort((a, b) => Math.abs(b.acceleration) - Math.abs(a.acceleration))
-      setEntries(items.slice(0, 30))
-
+      setEntries(items.slice(0, 25))
       const rawChains = (cd as any).chains || []
       const parsed: ChainEntry[] = rawChains
         .filter((c: any) => c.chain && c.chain.length >= 2)
@@ -114,7 +113,7 @@ export function TimelinePage() {
     <div className="space-y-6 animate-fadeIn">
       <div className="border-b border-[var(--color-border)] pb-5">
         <h1 className="text-xl font-serif text-[var(--color-fg)]" style={{ fontStyle: "italic" }}>Narrative Evolution</h1>
-        <p className="text-xs font-mono text-[var(--color-fg-muted)] mt-1 tracking-wider uppercase">
+        <p className="text-[10px] font-mono text-[var(--color-fg-muted)] mt-1 tracking-wider uppercase">
           Tracking how narratives emerge, propagate, and mutate across domains
         </p>
       </div>
@@ -138,14 +137,14 @@ export function TimelinePage() {
               : "border-[var(--color-border)] text-[var(--color-fg-muted)]"
           }`}
         >
-          Impact Chains
+          Propagation Chains
         </button>
       </div>
 
       {view === "narratives" && (
         <div className="space-y-1">
           {entries.map((e) => {
-            const color = PHASE_COLORS[e.phase] || "#a6a0b8"
+            const color = PHASE_COLORS[e.phase] || "#8899b4"
             const isExpanded = expanded === e.id
             return (
               <button
@@ -154,7 +153,7 @@ export function TimelinePage() {
                 className={`w-full text-left rounded-lg border transition-all p-4 ${
                   isExpanded
                     ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
-                    : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)] hover:border-[var(--color-border-hover)]"
+                    : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)]"
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -163,9 +162,7 @@ export function TimelinePage() {
                   <span className="text-sm text-[var(--color-fg)] truncate font-serif">{e.label}</span>
                   <span className="ml-auto shrink-0 flex items-center gap-3">
                     <span className="text-[10px] font-mono text-[var(--color-fg-muted)]">{e.count} art.</span>
-                    <span className={`text-xs font-mono w-12 text-right ${
-                      e.acceleration > 0 ? "text-[var(--color-green)]" : "text-[var(--color-red)]"
-                    }`}>
+                    <span className={`text-xs font-mono w-12 text-right ${e.acceleration > 0 ? "text-[var(--color-green)]" : "text-[var(--color-red)]"}`}>
                       {e.acceleration > 0 ? "+" : ""}{e.acceleration.toFixed(1)}
                     </span>
                   </span>
@@ -179,9 +176,7 @@ export function TimelinePage() {
                     {e.keywords.length > 0 && (
                       <div className="col-span-2 flex flex-wrap gap-1 mt-1">
                         {e.keywords.slice(0, 8).map((kw) => (
-                          <span key={kw} className="text-[9px] font-mono text-[var(--color-fg-muted)] bg-[var(--color-card)] border border-[var(--color-border)] rounded px-1.5 py-0.5">
-                            {kw}
-                          </span>
+                          <span key={kw} className="text-[9px] font-mono text-[var(--color-fg-muted)] bg-[var(--color-card)] border border-[var(--color-border)] rounded px-1.5 py-0.5">{kw}</span>
                         ))}
                       </div>
                     )}
@@ -199,30 +194,32 @@ export function TimelinePage() {
       )}
 
       {view === "chains" && (
-        <div className="space-y-1">
+        <div className="space-y-3">
+          {chains.length === 0 && (
+            <div className="flex h-48 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
+              <p className="text-xs font-mono text-[var(--color-fg-muted)]">No propagation chains detected yet.</p>
+            </div>
+          )}
           {chains.map((c) => (
-            <div
-              key={c.id}
-              className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] shrink-0" />
-                <span className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">
-                  Impact chain · {c.hops} domain hops
-                </span>
-                <span className="ml-auto text-[10px] font-mono text-[var(--color-accent)]">
-                  weight {c.weight.toFixed(1)}
+            <div key={c.id} className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-5 hover:border-[var(--color-border-hover)] transition-all">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-2 h-2 rounded-full bg-[var(--color-cyan)] shrink-0" />
+                <span className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Propagation Chain</span>
+                <span className="ml-auto flex items-center gap-2 text-[10px] font-mono">
+                  <span className="text-[var(--color-cyan)]">{c.hops} domain hops</span>
+                  <span className="text-[var(--color-fg-muted)]">·</span>
+                  <span className="text-[var(--color-fg-muted)]">weight {c.weight.toFixed(1)}</span>
                 </span>
               </div>
 
-              <div className="flex flex-wrap items-center gap-1.5">
+              <div className="relative flex flex-wrap items-center gap-0">
                 {c.chain.map((step, i) => (
-                  <span key={i} className="flex items-center gap-1.5">
-                    <span className="text-xs font-mono text-[var(--color-fg)] px-2 py-1 rounded bg-[var(--color-card-hover)] border border-[var(--color-border)]">
+                  <span key={i} className="flex items-center gap-0">
+                    <span className="text-xs font-mono text-[var(--color-fg)] px-2.5 py-1.5 rounded border border-[var(--color-border)] bg-[var(--color-bg)]">
                       {step}
                     </span>
                     {i < c.chain.length - 1 && (
-                      <span className="text-[var(--color-accent)] text-xs">→</span>
+                      <span className="text-[var(--color-accent)] text-xs px-1" style={{ fontFamily: "monospace" }}>→</span>
                     )}
                   </span>
                 ))}
@@ -231,7 +228,7 @@ export function TimelinePage() {
               {c.sectors.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {c.sectors.map((s) => (
-                    <span key={s} className="text-[9px] font-mono text-[var(--color-fg-muted)] bg-[var(--color-accent-subtle)] rounded px-1.5 py-0.5">
+                    <span key={s} className="text-[9px] font-mono text-[var(--color-cyan)] bg-[var(--color-accent-subtle)] rounded px-1.5 py-0.5">
                       {SECTOR_LABELS[s] || s}
                     </span>
                   ))}
@@ -239,15 +236,10 @@ export function TimelinePage() {
               )}
 
               <p className="mt-3 text-[10px] font-mono text-[var(--color-fg-muted)] italic">
-                Disruption propagates across {c.hops} domains in {c.length} hops
+                Disruption propagates across {c.hops} domains in {c.length} hops — revealing how an initial event creates downstream effects
               </p>
             </div>
           ))}
-          {chains.length === 0 && (
-            <div className="flex h-48 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
-              <p className="text-xs font-mono text-[var(--color-fg-muted)]">No impact chains detected yet.</p>
-            </div>
-          )}
         </div>
       )}
     </div>

@@ -15,8 +15,8 @@ export function MainLayout({ activeTab, onTabChange, onSearchClick, children }: 
       <Sidebar activeTab={activeTab} onTabChange={onTabChange} />
       <div className={`min-h-screen transition-all duration-200 ${open ? "sm:ml-52" : "ml-0"}`}>
         <Header onSearchClick={onSearchClick} />
-        <main className="min-h-[calc(100vh-56px)] px-6 py-10">
-          <div className="mx-auto max-w-4xl">{children}</div>
+        <main className="min-h-[calc(100vh-48px)] px-6 py-8">
+          <div className="mx-auto max-w-6xl">{children}</div>
         </main>
       </div>
     </div>

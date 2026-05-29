@@ -2,6 +2,14 @@ import { useState, useRef, useEffect } from "react"
 import { api } from "@/services/api"
 import type { SearchResult } from "@/types"
 
+const EXAMPLE_QUERIES = [
+  "Show relationships between AI funding and geopolitics",
+  "Analyze the impact of Middle East instability on semiconductor manufacturing",
+  "Find emerging narratives connecting energy and artificial intelligence",
+  "How does military conflict affect technology supply chains",
+  "What are the cross-domain effects of climate policy on financial markets",
+]
+
 export function SearchPage() {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[]>([])
@@ -24,10 +32,10 @@ export function SearchPage() {
 
   return (
     <div className="animate-fadeIn">
-      <div className="flex flex-col items-center justify-center min-h-[55vh]">
-        <div className="w-full max-w-xl">
-          <div className="text-center mb-10">
-            <h1 className="text-2xl font-serif text-[var(--color-fg)]" style={{ fontStyle: "italic" }}>Semantic Discovery</h1>
+      <div className="flex flex-col items-center justify-center min-h-[45vh]">
+        <div className="w-full max-w-2xl">
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-serif text-[var(--color-fg)]" style={{ fontStyle: "italic" }}>Intelligence Search</h1>
             <p className="text-xs font-mono text-[var(--color-fg-muted)] mt-2 tracking-wider uppercase">
               Ask natural language questions about cross-domain intelligence
             </p>
@@ -51,17 +59,27 @@ export function SearchPage() {
               {loading ? (
                 <span className="flex items-center gap-2">
                   <span className="inline-block w-3 h-3 border border-white/30 border-t-white rounded-full animate-spin" />
-                  <span>Ask</span>
+                  <span>Analyze</span>
                 </span>
-              ) : (
-                "Ask"
-              )}
+              ) : "Analyze"}
             </button>
           </div>
 
-          <p className="mt-4 text-[10px] font-mono text-[var(--color-fg-muted)] text-center tracking-wider">
-            Powered by semantic vector search · understands concepts, not keywords
-          </p>
+          {!hasSearched && (
+            <div className="mt-6 space-y-2">
+              <p className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase mb-3">Explore intelligence queries</p>
+              {EXAMPLE_QUERIES.map((q, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setQuery(q); setTimeout(() => inputRef.current?.focus(), 0) }}
+                  className="w-full text-left text-xs font-mono text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] px-3 py-2 rounded border border-transparent hover:border-[var(--color-border)] hover:bg-[var(--color-card)] transition-all"
+                >
+                  <span className="text-[var(--color-accent)] mr-2">↳</span>
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -76,9 +94,11 @@ export function SearchPage() {
             ))
           ) : results.length > 0 ? (
             <>
-              <p className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase mb-4">
-                {results.length} result{results.length !== 1 ? "s" : ""} for "{query}"
-              </p>
+              <div className="flex items-center gap-2 text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase mb-4">
+                <span>{results.length} intelligence result{results.length !== 1 ? "s" : ""}</span>
+                <span className="text-[var(--color-border)]">·</span>
+                <span className="text-[var(--color-accent)]">"{query}"</span>
+              </div>
               {results.map((r, i) => (
                 <div key={i} className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)] hover:border-[var(--color-border-hover)] transition-all p-4">
                   <div className="flex items-start justify-between gap-3">
@@ -88,16 +108,12 @@ export function SearchPage() {
                         {r.source}{r.category ? ` · ${r.category}` : ""}
                       </p>
                     </div>
-                    <span className="shrink-0 font-mono text-xs text-[var(--color-accent)]">
-                      {(r.score * 100).toFixed(0)}%
-                    </span>
+                    <span className="shrink-0 font-mono text-xs text-[var(--color-accent)]">{(r.score * 100).toFixed(0)}%</span>
                   </div>
-                  {r.snippet && (
-                    <p className="mt-2 text-xs text-[var(--color-fg-secondary)] leading-relaxed">{r.snippet}</p>
-                  )}
+                  {r.snippet && <p className="mt-2 text-xs text-[var(--color-fg-secondary)] leading-relaxed">{r.snippet}</p>}
                   {r.link && (
                     <a href={r.link} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-[10px] font-mono text-[var(--color-accent)] hover:underline">
-                      Read →
+                      Read source →
                     </a>
                   )}
                 </div>
