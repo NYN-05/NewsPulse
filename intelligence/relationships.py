@@ -23,8 +23,18 @@ from nlp.entities import get_entity_dict
 try:
     import requests
     _HAS_REQUESTS = True
+    _LLM_SESSION = None
+    def _get_llm_session():
+        global _LLM_SESSION
+        if _LLM_SESSION is None:
+            _LLM_SESSION = requests.Session()
+            _LLM_SESSION.headers.update({"Content-Type": "application/json"})
+        return _LLM_SESSION
 except ImportError:
     _HAS_REQUESTS = False
+    _LLM_SESSION = None
+    def _get_llm_session():
+        return None
 
 logger = logging.getLogger(__name__)
 
@@ -171,7 +181,10 @@ def _llm_verify_relationship(source: str, target: str, src_sec: str, tgt_sec: st
 
     model = get("intelligence.llm_model", "qwen3:14b")
     try:
-        resp = requests.post(
+        sess = _get_llm_session()
+        if sess is None:
+            return None
+        resp = sess.post(
             "http://localhost:11434/api/generate",
             json={"model": model, "prompt": prompt, "stream": False, "options": {"num_predict": 384}},
             timeout=45,

@@ -9,7 +9,7 @@ JWT-based RBAC with three roles:
 
 import os
 import json
-import hashlib
+import bcrypt
 import logging
 from datetime import datetime, timedelta
 from typing import Dict, Optional
@@ -31,7 +31,7 @@ def _ensure_users_file():
     if not os.path.exists(USERS_FILE):
         default_users = {
             "admin": {
-                "password_hash": hashlib.sha256("admin".encode()).hexdigest(),
+                "password_hash": bcrypt.hashpw(b"admin", bcrypt.gensalt()).decode(),
                 "role": "admin",
                 "created_at": datetime.now().isoformat(),
             }
@@ -49,7 +49,7 @@ def _save_users(users: Dict):
 
 
 def hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode()).hexdigest()
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
 
 
 def authenticate(username: str, password: str) -> Optional[Dict]:
@@ -57,7 +57,7 @@ def authenticate(username: str, password: str) -> Optional[Dict]:
     user = users.get(username)
     if not user:
         return None
-    if user["password_hash"] != hash_password(password):
+    if not bcrypt.checkpw(password.encode(), user["password_hash"].encode()):
         return None
     return {"username": username, "role": user["role"]}
 

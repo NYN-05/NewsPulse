@@ -18,6 +18,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Query, WebSocket, WebSocketDisconnect, Depends
 from fastapi.middleware.cors import CORSMiddleware
 
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.interval import IntervalTrigger
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 from config.settings import load_config, get, path_for, atomic_write_json, atomic_read_json
 
@@ -131,42 +134,57 @@ def _broadcast_pipeline_complete():
 
 
 # ---------------------------------------------------------------------------
-# Scheduler
+# Scheduler (APScheduler)
 # ---------------------------------------------------------------------------
 
-_PIPELINE_THREAD: Optional[threading.Thread] = None
-_SCHEDULER_STOP = threading.Event()
+_SCHEDULER: Optional[BackgroundScheduler] = None
 
 
-def _scheduler_loop():
-    interval = get("scheduler.interval_minutes", 15)
-    initial_delay = get("scheduler.initial_delay_seconds", 10)
-    logger.info("Scheduler: initial pipeline in %ds, then every %d min", initial_delay, interval)
-    time.sleep(initial_delay)
-    while not _SCHEDULER_STOP.is_set():
-        _run_pipeline()
-        next_run = datetime.now() + timedelta(minutes=interval)
-        _update_state(next_run_at=next_run.isoformat())
-        logger.info("Scheduler: next run at %s", next_run.isoformat())
-        _SCHEDULER_STOP.wait(interval * 60)
+def _update_next_run_state():
+    if _SCHEDULER is None:
+        return
+    job = _SCHEDULER.get_job("pipeline_run")
+    if job and job.next_run_time:
+        _update_state(next_run_at=job.next_run_time.isoformat())
 
 
 def start_scheduler():
-    global _PIPELINE_THREAD
+    global _SCHEDULER
     if not get("scheduler.enabled", True):
         logger.info("Scheduler disabled in config")
         return
-    if _PIPELINE_THREAD and _PIPELINE_THREAD.is_alive():
+    if _SCHEDULER and _SCHEDULER.running:
         return
-    _SCHEDULER_STOP.clear()
-    _PIPELINE_THREAD = threading.Thread(target=_scheduler_loop, daemon=True, name="pipeline-scheduler")
-    _PIPELINE_THREAD.start()
-    logger.info("Background pipeline scheduler started")
+
+    interval = get("scheduler.interval_minutes", 15)
+    initial_delay = get("scheduler.initial_delay_seconds", 10)
+
+    _SCHEDULER = BackgroundScheduler(daemon=True)
+    _SCHEDULER.add_job(
+        _run_pipeline,
+        trigger=IntervalTrigger(
+            minutes=interval,
+            start_at=datetime.now() + timedelta(seconds=initial_delay),
+        ),
+        id="pipeline_run",
+        replace_existing=True,
+        misfire_grace_time=120,
+        name="newspluse_pipeline",
+    )
+    _update_next_run_state()
+    _SCHEDULER.start()
+    logger.info(
+        "APScheduler started: every %d min (initial delay %ds, misfire_grace=%ds)",
+        interval, initial_delay, 120,
+    )
 
 
 def stop_scheduler():
-    _SCHEDULER_STOP.set()
-    logger.info("Scheduler stop signal sent")
+    global _SCHEDULER
+    if _SCHEDULER:
+        _SCHEDULER.shutdown(wait=False)
+        _SCHEDULER = None
+        logger.info("APScheduler shut down")
 
 
 # ---------------------------------------------------------------------------

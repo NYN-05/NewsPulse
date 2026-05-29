@@ -84,13 +84,13 @@ def index_articles(df: pd.DataFrame) -> int:
     metadatas = []
     ids = []
 
-    for _, row in df.iterrows():
-        title = str(row.get("title", "") or "")
-        desc = str(row.get("description", "") or "")
+    for row in df.itertuples():
+        title = str(getattr(row, "title", "") or "")
+        desc = str(getattr(row, "description", "") or "")
         text = f"{title}. {desc}".strip()
         if len(text) < 30:
             continue
-        link = str(row.get("link", "") or "")
+        link = str(getattr(row, "link", "") or "")
         doc_id = f"article_{hash(link) % 10**12}" if link else f"article_{_id_generator()}"
 
         texts.append(text)

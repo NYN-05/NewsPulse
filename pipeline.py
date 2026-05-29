@@ -39,6 +39,34 @@ from multilingual.detect import detect_language
 logger = logging.getLogger("pipeline")
 
 
+def pipeline_cleanup():
+    """Release GPU memory and caches after a pipeline run."""
+    try:
+        from compute.gpu_manager import GPUManager
+        GPUManager().clear_pipelines()
+    except Exception:
+        pass
+    try:
+        from compute.embeddings import clear_cache
+        clear_cache()
+    except Exception:
+        pass
+    try:
+        from nlp.entities import _gliner as gliner_model
+        if gliner_model is not None:
+            logger.info("GLiNER model remains loaded for next run")
+    except Exception:
+        pass
+    import gc
+    gc.collect()
+    try:
+        import torch
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+    except Exception:
+        pass
+
+
 def setup_logging():
     load_config()
     level = getattr(logging, get("logging.level", "INFO").upper(), logging.INFO)
@@ -107,8 +135,9 @@ def step_fetch_details(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
             if col in df.columns:
                 full_raw[col] = full_raw[col].fillna("")
         update_map = df.set_index("link")[["full_text", "full_text_fetched_at"]].to_dict("index")
-        for idx, row in full_raw.iterrows():
-            link = row.get("link", "")
+        for row in full_raw.itertuples():
+            idx = row.Index
+            link = getattr(row, "link", "")
             if link in update_map:
                 full_raw.at[idx, "full_text"] = update_map[link]["full_text"]
                 full_raw.at[idx, "full_text_fetched_at"] = update_map[link]["full_text_fetched_at"]
@@ -123,7 +152,7 @@ def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
     old_analyzed = data_mgr.load_analyzed()
     existing_keys = data_mgr.get_existing_keys(old_analyzed) if not old_analyzed.empty else set()
 
-    df_all = df.drop_duplicates(subset=["title"]).reset_index(drop=True).copy()
+    df_all = df.drop_duplicates(subset=["title"]).reset_index(drop=True)
     titles = df_all["title"].fillna("").astype(str).str.strip().str.lower()
     links = df_all["link"].fillna("").astype(str).str.strip()
     srcs = df_all["source"].fillna("").astype(str).str.strip() if "source" in df_all.columns else ""
@@ -148,12 +177,14 @@ def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
 
     logger.info("Extracting entities with GLiNER...")
     to_analyze["entities"] = extract_entities_batch(to_analyze["text"].tolist())
-    to_analyze["_parsed_entities"] = to_analyze["entities"].apply(json.loads)
+    to_analyze["_parsed_entities"] = [json.loads(e) for e in to_analyze["entities"]]
 
     logger.info("Detecting languages...")
-    to_analyze["language"] = to_analyze["text"].apply(
-        lambda t: detect_language(t) if isinstance(t, str) and t.strip() else "unknown"
-    )
+    def _detect_lang(t):
+        if isinstance(t, str) and t.strip():
+            return detect_language(t)
+        return "unknown"
+    to_analyze["language"] = [_detect_lang(t) for t in to_analyze["text"]]
     non_english = (to_analyze["language"] != "en").sum()
     if non_english > 0:
         logger.info("Non-English articles: %d", non_english)
@@ -440,6 +471,7 @@ def run_pipeline(steps: list = None):
     if "vector_index" in steps and not df.empty:
         step_vector_index(df)
 
+    pipeline_cleanup()
     logger.info("=== Pipeline complete ===")
     return cross_domain_result, narrative_result, temporal_result, agent_result, briefing_result, causal_result
 

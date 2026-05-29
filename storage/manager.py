@@ -82,16 +82,17 @@ class DataManager:
             links = df_old["link"].fillna("").astype(str).str.strip()
             existing_keys = set(zip(titles, sources, links))
 
+        cols = df_new.columns.tolist()
         rows = []
-        for _, a in df_new.iterrows():
+        for a in df_new.itertuples():
             key = (
-                str(a.get("title", "")).strip().lower(),
-                str(a.get("source", "")).strip(),
-                str(a.get("link", "")).strip(),
+                str(getattr(a, "title", "")).strip().lower(),
+                str(getattr(a, "source", "")).strip(),
+                str(getattr(a, "link", "")).strip(),
             )
             if key not in existing_keys:
                 existing_keys.add(key)
-                rows.append(a.to_dict())
+                rows.append({col: getattr(a, col, None) for col in cols})
 
         if not rows:
             logger.info("No new articles to add")

@@ -18,14 +18,20 @@ from config.settings import get
 logger = logging.getLogger(__name__)
 
 
+_OLLAMA_SESSION = None
+
 def _ollama_generate(prompt: str, system: str = "", model: str = None) -> Optional[str]:
+    global _OLLAMA_SESSION
     try:
         import requests
     except ImportError:
         return None
+    if _OLLAMA_SESSION is None:
+        _OLLAMA_SESSION = requests.Session()
+        _OLLAMA_SESSION.headers.update({"Content-Type": "application/json"})
     model = model or get("intelligence.llm_model", "qwen3:14b")
     try:
-        resp = requests.post(
+        resp = _OLLAMA_SESSION.post(
             "http://localhost:11434/api/generate",
             json={
                 "model": model,

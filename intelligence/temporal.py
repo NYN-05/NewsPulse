@@ -103,8 +103,8 @@ def detect_velocity_anomalies(velocities: List[Dict], std_threshold: float = 2.0
 def detect_bursts(entity_daily: Dict, df) -> List[Dict]:
     logger.info("Detecting citation bursts...")
     all_days = set()
-    for _, row in df.iterrows():
-        date_str = row.get("published", "") or row.get("date", "") or ""
+    for row in df.itertuples():
+        date_str = getattr(row, "published", "") or getattr(row, "date", "") or ""
         if date_str:
             try:
                 all_days.add(datetime.fromisoformat(date_str.replace("Z", "+00:00")).strftime("%Y-%m-%d"))

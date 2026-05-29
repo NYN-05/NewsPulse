@@ -66,7 +66,7 @@ class GPUManager:
             return
         self._initialized = True
         self.device = get_device()
-        self.cuda = is_cuda()
+        self.cuda = is_cuda() if callable(is_cuda) else bool(is_cuda)
         self._pipelines = {}
 
     @property
@@ -95,7 +95,22 @@ class GPUManager:
         self._pipelines[cache_key] = pipe
         return pipe
 
+    def clear_pipelines(self):
+        cached = list(self._pipelines.keys())
+        self._pipelines.clear()
+        import gc
+        gc.collect()
+        if self.cuda:
+            try:
+                import torch
+                torch.cuda.empty_cache()
+                logger.info("GPU cache emptied after clearing %d pipelines", len(cached))
+            except Exception:
+                pass
+        if cached:
+            logger.info("Cleared %d cached pipelines from GPUManager", len(cached))
+
 
 device = get_device()
-is_cuda = is_cuda()
+_IS_CUDA = is_cuda()  # cache result, use callable check in __init__
 DEVICE = device
