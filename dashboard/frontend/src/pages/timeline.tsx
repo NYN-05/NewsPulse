@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import { api } from "@/services/api"
 
-interface TimelineEntry {
+interface Entry {
   id: string
-  type: "narrative" | "entity" | "cluster"
   label: string
   phase: string
   momentum: number
@@ -14,34 +13,28 @@ interface TimelineEntry {
 }
 
 const PHASE_COLORS: Record<string, string> = {
-  emerging: "var(--color-cyan)",
-  accelerating: "var(--color-accent)",
-  growing: "var(--color-green)",
-  peaked: "var(--color-amber)",
-  stable: "var(--color-fg-secondary)",
-  declining: "var(--color-red)",
-  fading: "var(--color-fg-muted)",
-  resurging: "var(--color-accent)",
-  dormant: "var(--color-fg-muted)",
+  emerging: "#6fcf8d",
+  accelerating: "#8b7cf7",
+  growing: "#6fcf8d",
+  peaked: "#d4a757",
+  stable: "#a6a0b8",
+  declining: "#e06c7a",
+  fading: "#5f5878",
+  resurging: "#8b7cf7",
+  dormant: "#5f5878",
 }
 
 export function TimelinePage() {
-  const [entries, setEntries] = useState<TimelineEntry[]>([])
+  const [entries, setEntries] = useState<Entry[]>([])
   const [loading, setLoading] = useState(true)
   const [expanded, setExpanded] = useState<string | null>(null)
 
   useEffect(() => {
-    Promise.all([
-      api.narratives().catch(() => ({}) as any),
-    ]).then(([narratives]) => {
-      const n = narratives as any
-      const items: TimelineEntry[] = []
-
-      const emerging = n.emerging_topics || []
-      for (const t of emerging.slice(0, 20)) {
+    api.narratives().then((n) => {
+      const items: Entry[] = []
+      for (const t of (n as any).emerging_topics || []) {
         items.push({
           id: `em-${t.cluster || Math.random()}`,
-          type: "narrative",
           label: t.topic || `Cluster ${t.cluster}`,
           phase: t.phase || "emerging",
           momentum: t.momentum || 0,
@@ -51,13 +44,10 @@ export function TimelinePage() {
           keywords: t.keywords || [],
         })
       }
-
-      const entities = n.entity_narratives || []
-      for (const e of entities.slice(0, 20)) {
+      for (const e of (n as any).entity_narratives || []) {
         items.push({
           id: `ent-${e.entity || Math.random()}`,
-          type: "entity",
-          label: e.entity || "unknown",
+          label: e.entity || "Unknown",
           phase: e.phase || "stable",
           momentum: e.momentum || 0,
           acceleration: e.acceleration || 0,
@@ -66,7 +56,6 @@ export function TimelinePage() {
           keywords: [],
         })
       }
-
       items.sort((a, b) => Math.abs(b.acceleration) - Math.abs(a.acceleration))
       setEntries(items.slice(0, 40))
       setLoading(false)
@@ -75,12 +64,12 @@ export function TimelinePage() {
 
   if (loading) {
     return (
-      <div className="space-y-4">
-        <p className="text-sm text-[var(--color-fg-muted)] font-mono">Loading timeline...</p>
+      <div className="space-y-5">
+        <p className="text-xs font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Loading timeline...</p>
         {[1, 2, 3].map((i) => (
           <div key={i} className="rounded-lg border border-[var(--color-border)] p-5 animate-pulse">
             <div className="h-4 w-40 bg-[var(--color-border)] rounded mb-3" />
-            <div className="h-3 w-72 bg-[var(--color-border)] rounded" />
+            <div className="h-3 w-3/4 bg-[var(--color-border)] rounded" />
           </div>
         ))}
       </div>
@@ -89,46 +78,42 @@ export function TimelinePage() {
 
   return (
     <div className="space-y-6 animate-fadeIn">
-      <div className="border-b border-[var(--color-border)] pb-4">
-        <h1 className="text-lg font-medium text-[var(--color-fg)]">Narrative Timeline</h1>
-        <p className="text-xs text-[var(--color-fg-muted)] mt-0.5">
-          How narratives evolve across phases · sorted by acceleration
+      <div className="border-b border-[var(--color-border)] pb-5">
+        <h1 className="text-xl font-serif text-[var(--color-fg)]" style={{ fontStyle: "italic" }}>Narrative Timeline</h1>
+        <p className="text-xs font-mono text-[var(--color-fg-muted)] mt-1 tracking-wider uppercase">
+          {entries.length} narratives · sorted by acceleration
         </p>
       </div>
 
       <div className="space-y-1">
         {entries.map((e, i) => {
-          const phaseColor = PHASE_COLORS[e.phase] || "var(--color-fg-secondary)"
+          const color = PHASE_COLORS[e.phase] || "#a6a0b8"
           const isExpanded = expanded === e.id
-
           return (
             <button
               key={e.id}
               onClick={() => setExpanded(isExpanded ? null : e.id)}
-              className={`w-full text-left rounded-lg border transition-colors p-4 ${
+              className={`w-full text-left rounded-lg border transition-all p-4 ${
                 isExpanded
                   ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
-                  : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)]"
+                  : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)] hover:border-[var(--color-border-hover)]"
               }`}
             >
               <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2 min-w-0 flex-1">
-                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: phaseColor }} />
-                  <span className="text-xs font-mono text-[var(--color-fg-muted)] w-16 shrink-0">{e.phase}</span>
-                  <span className="text-sm text-[var(--color-fg)] truncate">{e.label}</span>
-                </div>
-                <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-[10px] font-mono text-[var(--color-fg-muted)]">{e.count} articles</span>
+                <span className="w-2 h-2 rounded-full shrink-0" style={{ background: color }} />
+                <span className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase w-20 shrink-0">{e.phase}</span>
+                <span className="text-sm text-[var(--color-fg)] truncate font-serif">{e.label}</span>
+                <span className="ml-auto shrink-0 flex items-center gap-3">
+                  <span className="text-[10px] font-mono text-[var(--color-fg-muted)]">{e.count} art.</span>
                   <span className={`text-xs font-mono w-12 text-right ${
                     e.acceleration > 0 ? "text-[var(--color-green)]" : "text-[var(--color-red)]"
                   }`}>
                     {e.acceleration > 0 ? "+" : ""}{e.acceleration.toFixed(1)}
                   </span>
-                </div>
+                </span>
               </div>
-
               {isExpanded && (
-                <div className="mt-3 pt-3 border-t border-[var(--color-border)] grid grid-cols-2 gap-3 text-[10px] font-mono text-[var(--color-fg-secondary)]">
+                <div className="mt-3 pt-3 border-t border-[var(--color-border)] grid grid-cols-2 gap-2 text-[10px] font-mono text-[var(--color-fg-muted)]">
                   <div>Momentum: {e.momentum.toFixed(2)}</div>
                   <div>Acceleration: {e.acceleration.toFixed(2)}</div>
                   <div>Sentiment: {e.sentiment.toFixed(3)}</div>
@@ -136,7 +121,7 @@ export function TimelinePage() {
                   {e.keywords.length > 0 && (
                     <div className="col-span-2 flex flex-wrap gap-1 mt-1">
                       {e.keywords.slice(0, 8).map((kw) => (
-                        <span key={kw} className="text-[10px] text-[var(--color-fg-muted)] bg-[var(--color-card)] border border-[var(--color-border)] rounded px-1.5 py-0.5">
+                        <span key={kw} className="text-[9px] font-mono text-[var(--color-fg-muted)] bg-[var(--color-card)] border border-[var(--color-border)] rounded px-1.5 py-0.5">
                           {kw}
                         </span>
                       ))}
@@ -150,8 +135,8 @@ export function TimelinePage() {
       </div>
 
       {entries.length === 0 && (
-        <div className="flex h-40 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
-          <p className="text-xs text-[var(--color-fg-muted)] font-mono">No timeline data available.</p>
+        <div className="flex h-48 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
+          <p className="text-xs font-mono text-[var(--color-fg-muted)]">No timeline data available.</p>
         </div>
       )}
     </div>

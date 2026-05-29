@@ -42,20 +42,3 @@ export interface SearchResult {
   snippet?: string
   link?: string
 }
-
-export interface NarrativeData {
-  emerging_topics?: any[]
-  cluster_narratives?: any[]
-  entity_narratives?: any[]
-}
-
-export interface InfluenceData {
-  entity_influence?: any[]
-  source_amplification?: any[]
-  propagation?: any[]
-}
-
-export interface SourceCount {
-  name: string
-  count: number
-}

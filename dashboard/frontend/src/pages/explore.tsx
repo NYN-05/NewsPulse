@@ -11,13 +11,13 @@ const SECTOR_LABELS: Record<string, string> = {
 export function ExplorePage() {
   const [links, setLinks] = useState<CrossDomainLink[]>([])
   const [search, setSearch] = useState("")
+  const [sectorFilter, setSectorFilter] = useState("")
   const [selected, setSelected] = useState<CrossDomainLink | null>(null)
   const [loading, setLoading] = useState(true)
-  const [sectorFilter, setSectorFilter] = useState("")
 
   useEffect(() => {
     api.crossDomain().then((d) => {
-      setLinks((d.links || []).sort((a, b) => b.strength - a.strength))
+      setLinks((d.links || []).sort((a: CrossDomainLink, b: CrossDomainLink) => b.strength - a.strength))
       setLoading(false)
     })
   }, [])
@@ -35,8 +35,8 @@ export function ExplorePage() {
 
   if (loading) {
     return (
-      <div className="space-y-4">
-        <p className="text-sm text-[var(--color-fg-muted)] font-mono">Loading relationships...</p>
+      <div className="space-y-5">
+        <p className="text-xs font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Loading relationships...</p>
         {[1, 2, 3].map((i) => (
           <div key={i} className="rounded-lg border border-[var(--color-border)] p-5 animate-pulse">
             <div className="h-4 w-64 bg-[var(--color-border)] rounded mb-3" />
@@ -49,10 +49,10 @@ export function ExplorePage() {
 
   return (
     <div className="space-y-6 animate-fadeIn">
-      <div className="border-b border-[var(--color-border)] pb-4">
-        <h1 className="text-lg font-medium text-[var(--color-fg)]">Relationship Explorer</h1>
-        <p className="text-xs text-[var(--color-fg-muted)] mt-0.5">
-          Cross-domain entity connections · {filtered.length} relationships
+      <div className="border-b border-[var(--color-border)] pb-5">
+        <h1 className="text-xl font-serif text-[var(--color-fg)]" style={{ fontStyle: "italic" }}>Relationship Explorer</h1>
+        <p className="text-xs font-mono text-[var(--color-fg-muted)] mt-1 tracking-wider uppercase">
+          {filtered.length} cross-domain connections
         </p>
       </div>
 
@@ -62,12 +62,12 @@ export function ExplorePage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Filter entities..."
-          className="flex-1 min-w-[160px] max-w-xs bg-[var(--color-card)] border border-[var(--color-border)] rounded px-3 py-1.5 text-xs text-[var(--color-fg)] placeholder-[var(--color-fg-muted)] outline-none focus:border-[var(--color-accent)] transition-colors"
+          className="flex-1 min-w-[160px] max-w-xs bg-[var(--color-card)] border border-[var(--color-border)] rounded px-3 py-1.5 text-xs text-[var(--color-fg)] placeholder-[var(--color-fg-muted)] outline-none focus:border-[var(--color-accent)] transition-colors font-mono"
         />
         <select
           value={sectorFilter}
           onChange={(e) => setSectorFilter(e.target.value)}
-          className="bg-[var(--color-card)] border border-[var(--color-border)] rounded px-2.5 py-1.5 text-xs text-[var(--color-fg)] outline-none"
+          className="bg-[var(--color-card)] border border-[var(--color-border)] rounded px-2.5 py-1.5 text-xs text-[var(--color-fg)] outline-none font-mono"
         >
           <option value="">All sectors</option>
           {sectors.map((s) => (
@@ -76,48 +76,45 @@ export function ExplorePage() {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 gap-1.5">
-        {filtered.slice(0, 100).map((link, i) => (
-          <button
-            key={`${link.source_entity}-${link.target_entity}-${i}`}
-            onClick={() => setSelected(selected === link ? null : link)}
-            className={`w-full text-left rounded-lg border transition-colors p-3 ${
-              selected === link
-                ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
-                : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)]"
-            }`}
-          >
-            <div className="flex items-center gap-3 text-xs">
-              <span className="font-mono text-[var(--color-fg)] min-w-0 truncate">{link.source_entity}</span>
-              <span className="text-[var(--color-fg-muted)] shrink-0">→</span>
-              <span className="font-mono text-[var(--color-fg)] min-w-0 truncate">{link.target_entity}</span>
-              <span className="ml-auto shrink-0 flex items-center gap-2">
-                <span className="text-[10px] text-[var(--color-fg-muted)] font-mono">
-                  {SECTOR_LABELS[link.source_sector] || link.source_sector}
+      <div className="space-y-1">
+        {filtered.slice(0, 100).map((link, i) => {
+          const isSelected = selected === link
+          return (
+            <button
+              key={`${link.source_entity}-${link.target_entity}-${i}`}
+              onClick={() => setSelected(isSelected ? null : link)}
+              className={`w-full text-left rounded-lg border transition-all p-3.5 ${
+                isSelected
+                  ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
+                  : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)] hover:border-[var(--color-border-hover)]"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-sm text-[var(--color-fg)] min-w-0 truncate">{link.source_entity}</span>
+                <span className="text-[var(--color-fg-muted)] shrink-0 font-mono text-xs">→</span>
+                <span className="font-mono text-sm text-[var(--color-fg)] min-w-0 truncate">{link.target_entity}</span>
+                <span className="ml-auto shrink-0 flex items-center gap-2 text-[10px] font-mono">
+                  <span className="text-[var(--color-fg-muted)]">{SECTOR_LABELS[link.source_sector] || link.source_sector}</span>
+                  <span className="text-[var(--color-fg-muted)]">/</span>
+                  <span className="text-[var(--color-fg-muted)]">{SECTOR_LABELS[link.target_sector] || link.target_sector}</span>
+                  <span className="text-[var(--color-accent)] w-10 text-right">{link.strength.toFixed(1)}</span>
                 </span>
-                <span className="text-[10px] text-[var(--color-fg-muted)]">x</span>
-                <span className="text-[10px] text-[var(--color-fg-muted)] font-mono">
-                  {SECTOR_LABELS[link.target_sector] || link.target_sector}
-                </span>
-                <span className="text-xs font-mono text-[var(--color-accent)] w-8 text-right">
-                  {link.strength.toFixed(1)}
-                </span>
-              </span>
-            </div>
-            {selected === link && (
-              <div className="mt-2 pt-2 border-t border-[var(--color-border)] text-[10px] text-[var(--color-fg-secondary)] font-mono leading-relaxed space-y-0.5">
-                <div>Co-occurrences: {link.cooccurrence_count}</div>
-                <div>Source diversity: {link.source_diversity.toFixed(2)}</div>
-                <div>Sentiment variance: {link.sentiment_variance.toFixed(2)}</div>
               </div>
-            )}
-          </button>
-        ))}
+              {isSelected && (
+                <div className="mt-3 pt-3 border-t border-[var(--color-border)] text-[10px] font-mono text-[var(--color-fg-muted)] space-y-0.5">
+                  <div>Co-occurrences: {link.cooccurrence_count}</div>
+                  <div>Source diversity: {link.source_diversity.toFixed(2)}</div>
+                  <div>Sentiment variance: {link.sentiment_variance.toFixed(2)}</div>
+                </div>
+              )}
+            </button>
+          )
+        })}
       </div>
 
       {filtered.length === 0 && (
-        <div className="flex h-40 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
-          <p className="text-xs text-[var(--color-fg-muted)] font-mono">No relationships match the current filters.</p>
+        <div className="flex h-48 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
+          <p className="text-xs font-mono text-[var(--color-fg-muted)]">No relationships match the current filters.</p>
         </div>
       )}
     </div>
