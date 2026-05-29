@@ -9,13 +9,13 @@ Builds a clean NetworkX entity co-occurrence graph storing only:
 Removed: entity_trends (covered by narrative engine), community detection (overkill)
 """
 
-import json
 import logging
 import numpy as np
 import pandas as pd
 from collections import Counter, defaultdict
 from typing import List, Dict
 from config.settings import atomic_write_json
+from nlp.entities import get_entity_dict
 
 logger = logging.getLogger(__name__)
 
@@ -37,15 +37,9 @@ def build_entity_graph(df: pd.DataFrame, max_age_days: int = 90) -> Dict:
     entity_count = Counter()
     cooccurrence = Counter()
 
-    for _, row in df.iterrows():
-        ents_str = row.get("entities", "{}")
-        if not isinstance(ents_str, str):
-            continue
-        try:
-            entities = json.loads(ents_str)
-        except (json.JSONDecodeError, TypeError):
-            continue
-        source = str(row.get("source", ""))
+    for row in df.itertuples(index=False):
+        entities = get_entity_dict(row)
+        source = str(getattr(row, "source", ""))
         all_ents = []
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):

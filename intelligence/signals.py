@@ -16,7 +16,8 @@ import pandas as pd
 from collections import Counter, defaultdict
 from typing import List, Dict
 from datetime import datetime, timedelta
-from config.settings import atomic_write_json
+from nlp.entities import get_entity_dict
+
 
 logger = logging.getLogger(__name__)
 
@@ -50,14 +51,8 @@ def signal_new_relationships(df: pd.DataFrame, prev_links: List[Dict] = None) ->
         prev_pairs.add((l.get("source_entity", ""), l.get("target_entity", "")))
 
     signals = []
-    for _, row in df.iterrows():
-        ents_str = row.get("entities", "{}")
-        if not isinstance(ents_str, str):
-            continue
-        try:
-            entities = json.loads(ents_str)
-        except (json.JSONDecodeError, TypeError):
-            continue
+    for row in df.itertuples(index=False):
+        entities = get_entity_dict(row)
         all_ents = []
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):
@@ -99,13 +94,13 @@ def detect_cross_domain_spillover(df: pd.DataFrame) -> List[Dict]:
 
     recent_words = Counter()
     older_words = Counter()
-    for _, row in recent.iterrows():
-        for w in str(row.get("text", "")).lower().split():
+    for row in recent.itertuples(index=False):
+        for w in str(getattr(row, "text", "")).lower().split():
             wc = w.strip(".,!?\"'():;[]{}")
             if not _is_noise(wc):
                 recent_words[wc] += 1
-    for _, row in older.iterrows():
-        for w in str(row.get("text", "")).lower().split():
+    for row in older.itertuples(index=False):
+        for w in str(getattr(row, "text", "")).lower().split():
             wc = w.strip(".,!?\"'():;[]{}")
             if not _is_noise(wc):
                 older_words[wc] += 1
@@ -140,14 +135,8 @@ def _detect_entity_spikes(recent: pd.DataFrame, older: pd.DataFrame) -> List[Dic
     recent_entities = defaultdict(int)
     older_entities = defaultdict(int)
     for df, counter in [(recent, recent_entities), (older, older_entities)]:
-        for _, row in df.iterrows():
-            ents_str = row.get("entities", "{}")
-            if not isinstance(ents_str, str):
-                continue
-            try:
-                ents = json.loads(ents_str)
-            except (json.JSONDecodeError, TypeError):
-                continue
+        for row in df.itertuples(index=False):
+            ents = get_entity_dict(row)
             for key in ("persons", "orgs", "locations"):
                 for ent in ents.get(key, []):
                     e = ent.strip(" .,!?\"'():;[]{}").lower()
@@ -222,9 +211,5 @@ def signals_pipeline(df: pd.DataFrame) -> Dict:
         },
     }
 
-    base = path_for("output_dir")
-    atomic_write_json(os.path.join(base, "breaking_events.json"), result)
-
-    logger.info("Saved breaking_events.json")
     logger.info("=" * 60)
     return result

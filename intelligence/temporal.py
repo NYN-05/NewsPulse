@@ -8,39 +8,35 @@ Discovers temporal intelligence patterns:
 - Burst detection across sectors
 """
 
+import json
 import logging
 import numpy as np
 import pandas as pd
 from collections import defaultdict, Counter
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
-from config.settings import get, atomic_write_json, path_for
+from config.settings import get
+from nlp.entities import get_entity_dict
 
 logger = logging.getLogger(__name__)
 
 
 def _extract_daily_entity_counts(df) -> Dict[str, List[Tuple[str, int]]]:
     entity_daily = defaultdict(lambda: defaultdict(int))
-    for _, row in df.iterrows():
-        date_str = row.get("published", "") or row.get("date", "") or ""
+    for row in df.itertuples(index=False):
+        date_str = getattr(row, "published", "") or getattr(row, "date", "") or ""
         if not date_str:
             continue
         try:
             day = datetime.fromisoformat(date_str.replace("Z", "+00:00")).strftime("%Y-%m-%d")
         except (ValueError, TypeError):
             continue
-        raw_entities = row.get("entities", "{}")
-        if isinstance(raw_entities, str):
-            try:
-                import json
-                parsed = json.loads(raw_entities)
-                for key in ("persons", "orgs", "locations"):
-                    for ent in parsed.get(key, []):
-                        e = ent.strip().lower()
-                        if e and len(e) > 1:
-                            entity_daily[e][day] += 1
-            except (json.JSONDecodeError, TypeError):
-                pass
+        parsed = get_entity_dict(row)
+        for key in ("persons", "orgs", "locations"):
+            for ent in parsed.get(key, []):
+                e = ent.strip().lower()
+                if e and len(e) > 1:
+                    entity_daily[e][day] += 1
     return entity_daily
 
 
@@ -218,9 +214,6 @@ def temporal_pipeline(df, current_phase_map: Dict[str, str] = None) -> Dict:
         },
     }
 
-    import os
-    atomic_write_json(os.path.join(path_for("output_dir"), "temporal_patterns.json"), result)
-    logger.info("Saved: temporal_patterns.json")
     logger.info("Velocities: %d | Anomalies: %d | Bursts: %d | Transitions: %d",
                 len(velocities), len(anomalies), len(bursts), len(transitions))
     return result

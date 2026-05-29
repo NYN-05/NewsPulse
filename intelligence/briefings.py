@@ -14,7 +14,7 @@ import numpy as np
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
-from config.settings import get, atomic_write_json, path_for
+from config.settings import get
 
 logger = logging.getLogger(__name__)
 
@@ -199,7 +199,4 @@ def generate_briefing(
         "agent_assessment": agent_result.get("critic", {}).get("overall_quality", "unknown"),
     }
 
-    import os
-    atomic_write_json(os.path.join(path_for("output_dir"), "intelligence_briefing.json"), briefing)
-    logger.info("Saved: intelligence_briefing.json")
     return briefing

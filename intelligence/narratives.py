@@ -15,7 +15,8 @@ import pandas as pd
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
-from config.settings import atomic_write_json
+from nlp.entities import get_entity_dict
+
 
 logger = logging.getLogger(__name__)
 
@@ -203,9 +204,9 @@ def compute_cluster_narratives(df: pd.DataFrame, cluster_data: Dict = None) -> L
     df = df.dropna(subset=["_date"])
 
     cluster_daily = defaultdict(lambda: defaultdict(int))
-    for _, row in df.iterrows():
-        cluster = row["_cluster"]
-        date = row["_date"].date()
+    for row in df.itertuples(index=False):
+        cluster = row._cluster
+        date = row._date.date()
         cluster_daily[cluster][date] += 1
 
     narratives = []
@@ -253,15 +254,9 @@ def compute_entity_narratives(df: pd.DataFrame) -> List[Dict]:
     df = df.dropna(subset=["_date"])
 
     entity_daily = defaultdict(lambda: defaultdict(int))
-    for _, row in df.iterrows():
-        ents_str = row.get("entities", "{}")
-        if not isinstance(ents_str, str):
-            continue
-        try:
-            entities = json.loads(ents_str)
-        except (json.JSONDecodeError, TypeError):
-            continue
-        date = row["_date"].date()
+    for row in df.itertuples(index=False):
+        entities = get_entity_dict(row)
+        date = row._date.date()
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):
                 ek = ent.strip().lower()
@@ -383,10 +378,5 @@ def narrative_pipeline(df: pd.DataFrame) -> Dict:
         },
     }
 
-    from config.settings import path_for
-    import os
-    base = path_for("output_dir")
-    atomic_write_json(os.path.join(base, "narrative_evolution.json"), result)
-    logger.info("Saved narrative_evolution.json")
     logger.info("=" * 60)
     return result

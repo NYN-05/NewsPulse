@@ -13,7 +13,7 @@ import numpy as np
 from collections import Counter
 from typing import Dict, List, Optional
 from datetime import datetime
-from config.settings import get, atomic_write_json, path_for
+from config.settings import get
 
 logger = logging.getLogger(__name__)
 
@@ -207,7 +207,4 @@ def multi_agent_pipeline(cross_domain_links: List[Dict], impact_chains: List[Dic
         "model": get("intelligence.llm_model", "qwen3:14b"),
     }
 
-    import os
-    atomic_write_json(os.path.join(path_for("output_dir"), "multi_agent_analysis.json"), result)
-    logger.info("Saved: multi_agent_analysis.json")
     return result

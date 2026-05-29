@@ -15,7 +15,7 @@ import numpy as np
 from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Callable
-from config.settings import get, atomic_write_json, atomic_read_json, path_for
+from config.settings import get, atomic_read_json
 
 logger = logging.getLogger(__name__)
 
@@ -169,7 +169,4 @@ def alerting_pipeline(
         },
     }
 
-    import os
-    atomic_write_json(os.path.join(path_for("output_dir"), "alerts.json"), result)
-    logger.info("Saved: alerts.json (%d alerts)", len(alerts))
     return result

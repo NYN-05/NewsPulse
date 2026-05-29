@@ -3,12 +3,18 @@ import logging
 import hashlib
 import numpy as np
 import pandas as pd
-from typing import List, Tuple
+from typing import List, Tuple, Set
 from functools import lru_cache
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 logger = logging.getLogger(__name__)
+
+try:
+    from datasketch import MinHash, MinHashLSH
+    HAS_DATASKETCH = True
+except ImportError:
+    HAS_DATASKETCH = False
 
 
 def canonicalize_url(url: str) -> str:
@@ -129,3 +135,86 @@ def deduplicate_by_fuzzy_hash(df: pd.DataFrame, text_col: str = "text") -> pd.Da
     if n_removed > 0:
         logger.info("Fuzzy hash dedup removed %d", n_removed)
     return df
+
+
+# ---------------------------------------------------------------------------
+# MinHash LSH — O(n) semantic dedup, replaces O(n²) TF-IDF at scale
+# ---------------------------------------------------------------------------
+
+def _shingle_text(text: str, k: int = 5) -> Set[str]:
+    if not isinstance(text, str) or len(text) < k:
+        return set()
+    return {text[i:i + k] for i in range(len(text) - k + 1)}
+
+
+def _text_to_minhash(text: str, num_perm: int = 128) -> "MinHash":
+    m = MinHash(num_perm=num_perm)
+    for shingle in _shingle_text(text):
+        m.update(shingle.encode("utf-8"))
+    return m
+
+
+def deduplicate_semantic_lsh(
+    df: pd.DataFrame,
+    text_col: str = "text",
+    title_col: str = "title",
+    threshold: float = 0.85,
+    num_perm: int = 128,
+) -> pd.DataFrame:
+    """MinHash LSH-based dedup — scales O(n) instead of O(n²).
+
+    Falls back to TF-IDF deduplicate_semantic() if datasketch not installed.
+    """
+    if not HAS_DATASKETCH:
+        logger.info("datasketch not available — using TF-IDF dedup fallback")
+        return deduplicate_semantic(df, title_col, text_col, threshold)
+
+    if df.empty:
+        return df
+
+    texts = df[text_col].fillna("").tolist() if text_col in df.columns else df[title_col].fillna("").tolist()
+    titles = df[title_col].fillna("").tolist()
+    n = len(texts)
+    if n < 2:
+        return df
+
+    logger.info("MinHash LSH dedup: %d articles, threshold=%.2f, num_perm=%d", n, threshold, num_perm)
+
+    lsh = MinHashLSH(threshold=threshold, num_perm=num_perm)
+    minhashes = {}
+
+    for i, text in enumerate(texts):
+        m = _text_to_minhash(text, num_perm)
+        minhashes[i] = m
+        lsh.insert(str(i), m)
+
+    keep = [True] * n
+    dup_groups = []
+    processed = set()
+
+    for i in range(n):
+        if not keep[i] or i in processed:
+            continue
+        result = lsh.query(minhashes[i])
+        candidates = sorted(int(r) for r in result if r != str(i))
+        group = [i]
+        for j in candidates:
+            if keep[j] and j not in processed:
+                jaccard = minhashes[i].jaccard(minhashes[j])
+                if jaccard >= threshold:
+                    keep[j] = False
+                    group.append(j)
+                    processed.add(j)
+        if len(group) > 1:
+            dup_groups.append(group)
+
+    if dup_groups:
+        logger.info("LSH found %d duplicate groups (%d articles total)", len(dup_groups), sum(len(g) for g in dup_groups))
+        for g in dup_groups:
+            kept_title = titles[g[0]]
+            for dup_idx in g[1:]:
+                logger.debug("  Duplicate: '%s' ~ '%s'", titles[dup_idx][:60], kept_title[:60])
+
+    result = df[keep].reset_index(drop=True).copy()
+    logger.info("MinHash dedup: %d -> %d (removed %d)", n, len(result), n - len(result))
+    return result

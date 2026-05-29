@@ -93,9 +93,8 @@ def atomic_write_json(path: str, data):
 
 
 def atomic_read_json(path: str):
-    """Thread-safe atomic JSON read."""
-    with _FILE_LOCK:
-        if not os.path.exists(path):
-            return None
-        with open(path) as f:
-            return json.load(f)
+    """Atomic JSON read — no lock needed because os.replace in atomic_write_json provides atomicity."""
+    if not os.path.exists(path):
+        return None
+    with open(path) as f:
+        return json.load(f)

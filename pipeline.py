@@ -23,7 +23,7 @@ from scraper.sources import scrape_all_sources, fetch_all_details
 from scraper.rss_scraper import scrape_all_rss
 from nlp.preprocess import clean_text, extract_category
 from nlp.entities import extract_entities_batch
-from quality.dedup import deduplicate_semantic, deduplicate_exact
+from quality.dedup import deduplicate_semantic_lsh, deduplicate_exact
 from quality.boilerplate import remove_boilerplate, extract_clean_title
 from intelligence.entity_graph import build_entity_graph
 from intelligence.relationships import cross_domain_pipeline
@@ -81,7 +81,7 @@ def step_dedup(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
     n_before = len(df)
     df = deduplicate_exact(df)
     if get("quality.enable_semantic_dedup", True) and len(df) > 10:
-        df = deduplicate_semantic(df, threshold=get("quality.dedup_threshold", 0.85))
+        df = deduplicate_semantic_lsh(df, threshold=get("quality.dedup_threshold", 0.85))
     data_mgr.save_raw(df)
     logger.info("Dedup: %d -> %d (removed %d)", n_before, len(df), n_before - len(df))
     return df
@@ -148,6 +148,7 @@ def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
 
     logger.info("Extracting entities with GLiNER...")
     to_analyze["entities"] = extract_entities_batch(to_analyze["text"].tolist())
+    to_analyze["_parsed_entities"] = to_analyze["entities"].apply(json.loads)
 
     logger.info("Detecting languages...")
     to_analyze["language"] = to_analyze["text"].apply(
@@ -178,6 +179,13 @@ def step_cross_domain(df: pd.DataFrame):
     logger.info("=== Intelligence Step 7: Cross-Domain Relationship Discovery ===")
     result = cross_domain_pipeline(df)
     s = result.get("summary", {})
+    sector_map = result.get("sector_map", {})
+    links = result.get("cross_domain_links", [])
+    chains = result.get("impact_chains", [])
+    base = path_for("output_dir")
+    atomic_write_json(os.path.join(base, "sector_map.json"), sector_map)
+    atomic_write_json(os.path.join(base, "cross_domain_links.json"), links)
+    atomic_write_json(os.path.join(base, "impact_chains.json"), chains)
     logger.info("Cross-domain: %d links, %d chains across %d entities (LLM=%d, causal=%d)",
                 s.get("total_cross_domain_links", 0), s.get("total_impact_chains", 0),
                 s.get("total_entities_mapped", 0),
@@ -191,6 +199,7 @@ def step_causal(df: pd.DataFrame, sector_map: dict, entity_pairs: list):
         return {}
     logger.info("=== Phase 3 Step: Causal Reasoning ===")
     result = causal_pipeline(df, sector_map, entity_pairs)
+    atomic_write_json(os.path.join(path_for("output_dir"), "causal_analysis.json"), result)
     logger.info("Causal: %d candidates, %d chains",
                 result.get("summary", {}).get("total_candidates", 0),
                 result.get("summary", {}).get("total_causal_chains", 0))
@@ -201,6 +210,7 @@ def step_narratives(df: pd.DataFrame):
     logger.info("=== Intelligence Step 8: Narrative Evolution Tracking ===")
     result = narrative_pipeline(df)
     s = result.get("summary", {})
+    atomic_write_json(os.path.join(path_for("output_dir"), "narrative_evolution.json"), result)
     logger.info("Narratives: %d emerging, %d disappearing, %d mutations",
                 s.get("emerging_count", 0), s.get("disappearing_count", 0), s.get("total_mutations", 0))
     return result
@@ -210,6 +220,20 @@ def step_signals(df: pd.DataFrame):
     logger.info("=== Intelligence Step 9: Signal Detection ===")
     result = signals_pipeline(df)
     s = result.get("summary", {})
+    atomic_write_json(os.path.join(path_for("output_dir"), "breaking_events.json"), result)
+    signals = result.get("signals", [])
+    # WebSocket broadcast for signals
+    if signals:
+        try:
+            import asyncio
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            from dashboard.backend.ws import broadcast_signal
+            for sig in signals[:5]:
+                loop.run_until_complete(broadcast_signal(sig))
+            loop.close()
+        except Exception:
+            pass
     logger.info("Signals: %d total (highest score: %.1f)", s.get("total_signals", 0), s.get("highest_score", 0))
     return result
 
@@ -220,6 +244,7 @@ def step_multi_agent(cross_domain_links: list, impact_chains: list):
         return {}
     logger.info("=== Phase 4 Step: Multi-Agent Intelligence Analysis ===")
     result = multi_agent_pipeline(cross_domain_links, impact_chains)
+    atomic_write_json(os.path.join(path_for("output_dir"), "multi_agent_analysis.json"), result)
     findings = result.get("analyst", {}).get("findings", [])
     logger.info("Multi-agent: %d findings, quality=%s",
                 len(findings), result.get("critic", {}).get("overall_quality", "unknown"))
@@ -237,6 +262,7 @@ def step_temporal(df: pd.DataFrame, narrative_data: dict):
         if n.get("entity"):
             phase_map[n["entity"]] = n.get("phase", "stable")
     result = temporal_pipeline(df, phase_map)
+    atomic_write_json(os.path.join(path_for("output_dir"), "temporal_patterns.json"), result)
     logger.info("Temporal: %d velocities, %d anomalies, %d bursts, %d transitions",
                 result.get("summary", {}).get("total_entities_tracked", 0),
                 result.get("summary", {}).get("total_anomalies", 0),
@@ -258,6 +284,7 @@ def step_briefings(cross_domain_links: list, sector_map: dict, impact_chains: li
         cross_domain_links, sector_map, impact_chains,
         agent_result, anomalies, transitions, narrative_summary,
     )
+    atomic_write_json(os.path.join(path_for("output_dir"), "intelligence_briefing.json"), result)
     logger.info("Briefing: %d sectors, %d watch items, %d predictions",
                 len(result.get("sector_situations", [])),
                 len(result.get("watch_items", [])),
@@ -274,6 +301,20 @@ def step_alerts(cross_domain_links: list, temporal_result: dict):
     bursts = temporal_result.get("bursts", []) if isinstance(temporal_result, dict) else []
     transitions = temporal_result.get("phase_transitions", []) if isinstance(temporal_result, dict) else []
     result = alerting_pipeline(cross_domain_links, velocities, bursts, transitions)
+    atomic_write_json(os.path.join(path_for("output_dir"), "alerts.json"), result)
+    alerts = result.get("alerts", [])
+    # WebSocket broadcast for alerts
+    if alerts:
+        try:
+            import asyncio
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            from dashboard.backend.ws import broadcast_alert
+            for alert in alerts[:5]:
+                loop.run_until_complete(broadcast_alert(alert))
+            loop.close()
+        except Exception:
+            pass
     logger.info("Alerts: %d total (%d high severity)",
                 result.get("summary", {}).get("total_alerts", 0),
                 result.get("summary", {}).get("high_severity", 0))

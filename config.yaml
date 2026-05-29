@@ -33,6 +33,7 @@ intelligence:
   max_cross_domain_links: 200
   max_impact_chains: 50
   llm_verification: true
+  llm_max_links: 20
   llm_model: "qwen3:14b"
   multi_agent:
     enabled: true

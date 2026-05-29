@@ -7,6 +7,7 @@ Analyzes temporal entity sequences to discover cause-effect patterns:
 - Impact propagation modeling
 """
 
+import json
 import logging
 import networkx as nx
 import numpy as np
@@ -14,6 +15,7 @@ from collections import defaultdict, Counter
 from datetime import datetime, timedelta
 from typing import Dict, List, Tuple, Optional
 from config.settings import get
+from nlp.entities import get_entity_dict
 
 logger = logging.getLogger(__name__)
 
@@ -40,27 +42,21 @@ def detect_causal_candidates(
 ) -> List[Dict]:
     logger.info("Detecting causal candidates with temporal analysis...")
     articles = []
-    for _, row in df.iterrows():
-        date_str = row.get("published", "") or row.get("date", "") or ""
-        text = str(row.get("text", "") or "")
+    for row in df.itertuples(index=False):
+        date_str = getattr(row, "published", "") or getattr(row, "date", "") or ""
+        text = str(getattr(row, "text", "") or "")
         if date_str and text:
             try:
                 dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
             except (ValueError, TypeError):
                 continue
             entities = set()
-            raw_entities = row.get("entities", "{}")
-            if isinstance(raw_entities, str):
-                try:
-                    import json
-                    parsed = json.loads(raw_entities)
-                    for key in ("persons", "orgs", "locations"):
-                        for ent in parsed.get(key, []):
-                            e = ent.strip().lower()
-                            if e and len(e) > 1:
-                                entities.add(e)
-                except (json.JSONDecodeError, TypeError):
-                    pass
+            parsed = get_entity_dict(row)
+            for key in ("persons", "orgs", "locations"):
+                for ent in parsed.get(key, []):
+                    e = ent.strip().lower()
+                    if e and len(e) > 1:
+                        entities.add(e)
             articles.append({"date": dt, "entities": entities, "text": text})
 
     articles.sort(key=lambda x: x["date"])
@@ -209,10 +205,6 @@ def causal_pipeline(df, sector_map: Dict, entity_pairs: List[Tuple[str, str, Dic
         "summary": summary,
     }
 
-    from config.settings import path_for, atomic_write_json
-    import os
-    atomic_write_json(os.path.join(path_for("output_dir"), "causal_analysis.json"), result)
-    logger.info("Saved: causal_analysis.json")
     logger.info("Candidates: %d | Chains: %d | Graph: %d nodes, %d edges",
                 len(candidates), len(chains), G.number_of_nodes(), G.number_of_edges())
     return result

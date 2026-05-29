@@ -40,6 +40,7 @@ _PIPELINE_STATE = {
     "articles_analyzed": 0,
 }
 _STATE_LOCK = threading.Lock()
+_PIPELINE_RUN_LOCK = threading.Lock()
 
 
 def _update_state(**kw):
@@ -58,6 +59,10 @@ def _get_state():
 
 def _run_pipeline():
     """Execute all Phases 1-5 and atomically write outputs."""
+    if not _PIPELINE_RUN_LOCK.acquire(blocking=False):
+        logger.warning("Pipeline already running — skipping concurrent trigger")
+        return
+
     from pipeline import (
         step_scrape, step_scrape_rss, step_dedup, step_fetch_details,
         step_analyze, step_entity_graph, step_cross_domain, step_causal,
@@ -92,6 +97,9 @@ def _run_pipeline():
         )
         logger.info("Pipeline completed in %.1f s — %d articles", duration, article_count)
 
+        # Clear API cache so next poll sees fresh data
+        _INTEL_CACHE.clear()
+
         # WebSocket broadcast
         _broadcast_pipeline_complete()
 
@@ -106,6 +114,8 @@ def _run_pipeline():
             last_run_success=False,
             last_error=error,
         )
+    finally:
+        _PIPELINE_RUN_LOCK.release()
 
 
 def _broadcast_pipeline_complete():
@@ -194,6 +204,10 @@ async def websocket_endpoint(ws: WebSocket):
 # Helpers
 # ---------------------------------------------------------------------------
 
+_INTEL_CACHE: dict = {}
+_INTEL_CACHE_TTL = 5.0  # seconds
+
+
 def _clean(obj):
     if isinstance(obj, dict):
         return {k: _clean(v) for k, v in obj.items()}
@@ -205,12 +219,17 @@ def _clean(obj):
     return obj
 
 
-def _load_intel(name):
+def _load_intel(name: str):
+    now = time.time()
+    if name in _INTEL_CACHE and now - _INTEL_CACHE[name][1] < _INTEL_CACHE_TTL:
+        return _INTEL_CACHE[name][0]
     p = os.path.join(path_for("output_dir"), name)
     data = atomic_read_json(p)
     if data is None:
-        return {}
-    return _clean(data)
+        data = {}
+    data = _clean(data)
+    _INTEL_CACHE[name] = (data, now)
+    return data
 
 
 # ---------------------------------------------------------------------------
@@ -235,6 +254,8 @@ def pipeline_status():
 
 @app.post("/api/trigger-pipeline")
 def trigger_pipeline():
+    if _PIPELINE_RUN_LOCK.locked():
+        return {"status": "already_running", "message": "Pipeline is already running"}
     t = threading.Thread(target=_run_pipeline, daemon=True)
     t.start()
     return {"status": "triggered", "message": "Pipeline started in background"}

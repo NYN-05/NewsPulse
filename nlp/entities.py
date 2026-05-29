@@ -140,6 +140,24 @@ def extract_entities(text: str, threshold: float = 0.5) -> Dict[str, List[str]]:
     return _extract_hf(text)
 
 
+def get_entity_dict(row) -> Dict[str, List[str]]:
+    """Get parsed entities from a DataFrame row (itertuples or dict-like).
+
+    Checks _parsed_entities column first (pre-parsed), falls back to parsing
+    the entities JSON string.
+    """
+    entities = getattr(row, "_parsed_entities", None)
+    if isinstance(entities, dict):
+        return entities
+    raw = getattr(row, "entities", "{}")
+    if isinstance(raw, str) and raw:
+        try:
+            return json.loads(raw)
+        except (json.JSONDecodeError, TypeError):
+            pass
+    return {"persons": [], "orgs": [], "locations": []}
+
+
 def extract_entities_batch(texts: List[str]) -> List[str]:
     results = []
     for text in texts:

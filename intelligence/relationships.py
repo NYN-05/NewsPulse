@@ -10,12 +10,21 @@ LLM-verified relationship discovery with:
 
 import json
 import logging
+import math
 import numpy as np
 import pandas as pd
 from collections import Counter, defaultdict
 from typing import Dict, List, Tuple, Optional
 from datetime import datetime, timedelta
-from config.settings import atomic_write_json, get
+from config.settings import get
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from nlp.entities import get_entity_dict
+
+try:
+    import requests
+    _HAS_REQUESTS = True
+except ImportError:
+    _HAS_REQUESTS = False
 
 logger = logging.getLogger(__name__)
 
@@ -108,15 +117,9 @@ def build_sector_map(df: pd.DataFrame) -> Dict[str, Dict]:
     entity_contexts = defaultdict(list)
     entity_types = {}
 
-    for _, row in df.iterrows():
-        entities_str = row.get("entities", "{}")
-        if not isinstance(entities_str, str):
-            continue
-        try:
-            entities = json.loads(entities_str)
-        except (json.JSONDecodeError, TypeError):
-            continue
-        text = str(row.get("text", "") or row.get("title", "") or "")
+    for row in df.itertuples(index=False):
+        entities = get_entity_dict(row)
+        text = str(getattr(row, "text", "") or getattr(row, "title", "") or "")
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):
                 ek = ent.strip().lower()
@@ -146,9 +149,7 @@ def build_sector_map(df: pd.DataFrame) -> Dict[str, Dict]:
 
 def _llm_verify_relationship(source: str, target: str, src_sec: str, tgt_sec: str, contexts: List[str]) -> Optional[Dict]:
     """Verify a candidate relationship using Ollama, returning causal + confidence data."""
-    try:
-        import requests
-    except ImportError:
+    if not _HAS_REQUESTS:
         return None
 
     context = "\n".join(contexts[:5]) if contexts else "No direct article context available."
@@ -274,14 +275,8 @@ def predict_cross_domain_impact(links: List[Dict], sector_map: Dict[str, Dict]) 
 def find_cross_domain_links(df: pd.DataFrame, sector_map: Dict[str, Dict]) -> List[Dict]:
     logger.info("Finding cross-domain relationships...")
     article_entities = []
-    for _, row in df.iterrows():
-        entities_str = row.get("entities", "{}")
-        if not isinstance(entities_str, str):
-            continue
-        try:
-            entities = json.loads(entities_str)
-        except (json.JSONDecodeError, TypeError):
-            continue
+    for row in df.itertuples(index=False):
+        entities = get_entity_dict(row)
         all_ents = set()
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):
@@ -291,13 +286,16 @@ def find_cross_domain_links(df: pd.DataFrame, sector_map: Dict[str, Dict]) -> Li
         if len(all_ents) >= 2:
             article_entities.append({
                 "entities": all_ents,
-                "text": str(row.get("text", "") or ""),
-                "source": str(row.get("source", "") or ""),
-                "date": str(row.get("published", "") or ""),
+                "text": str(getattr(row, "text", "") or ""),
+                "source": str(getattr(row, "source", "") or ""),
+                "date": str(getattr(row, "published", "") or ""),
             })
 
     pair_data = defaultdict(lambda: {"count": 0, "sources": set(), "texts": [], "dates": []})
+    entity_freq = Counter()
     for art in article_entities:
+        for e in art["entities"]:
+            entity_freq[e] += 1
         ents = list(art["entities"])
         for i in range(len(ents)):
             for j in range(i + 1, len(ents)):
@@ -312,6 +310,7 @@ def find_cross_domain_links(df: pd.DataFrame, sector_map: Dict[str, Dict]) -> Li
                     pair_data[pair]["dates"].append(art["date"])
 
     links = []
+    N = max(len(article_entities), 1)
     for (e1, e2), data in pair_data.items():
         if data["count"] < 2:
             continue
@@ -327,9 +326,15 @@ def find_cross_domain_links(df: pd.DataFrame, sector_map: Dict[str, Dict]) -> Li
                     for j in range(i + 1, len(date_embeds))]
             semantic_similarity = float(np.mean(sims)) if sims else 0.0
 
-        strength = round(data["count"] * 0.35 + source_diversity * 0.25 + semantic_similarity * 0.40, 3)
-        if np.isnan(strength):
-            strength = round(data["count"] * 0.4 + source_diversity * 0.3, 3)
+        # PMI-based strength: statistically grounded co-occurrence significance
+        p_ab = data["count"] / N
+        p_a = entity_freq.get(e1, 1) / N
+        p_b = entity_freq.get(e2, 1) / N
+        pmi_raw = math.log(max(p_ab / (p_a * p_b), 1e-10))
+        npmi = pmi_raw / (-math.log(max(p_ab, 1e-10)))
+        pmi_score = max(0.0, npmi)
+        diversity_norm = min(source_diversity / 5.0, 1.0)
+        strength = round(pmi_score * 0.6 + diversity_norm * 0.4, 3)
 
         links.append({
             "source_entity": e1,
@@ -363,22 +368,40 @@ def apply_llm_verification(links: List[Dict], pair_texts: Dict[str, List[str]]) 
             link = _calibrate_confidence(link, None)
         return links
 
-    logger.info("Applying LLM verification with causal reasoning...")
+    max_llm_links = get("intelligence.llm_max_links", 20)
+    candidates = [(i, link) for i, link in enumerate(links) if link["strength"] >= 2.0]
+    candidates.sort(key=lambda x: -x[1]["strength"])
+    candidates = candidates[:max_llm_links]
+
+    logger.info("Applying LLM verification to %d/%d relationships (max_llm_links=%d)...",
+                len(candidates), len(links), max_llm_links)
+
     verified_count = 0
-    for link in links:
-        key = f"{link['source_entity']}__{link['target_entity']}"
-        contexts = pair_texts.get(key, [])
-        if link["strength"] >= 2.0:
-            llm_result = _llm_verify_relationship(
+
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        future_to_idx = {}
+        for idx, link in candidates:
+            key = f"{link['source_entity']}__{link['target_entity']}"
+            contexts = pair_texts.get(key, [])
+            future = executor.submit(
+                _llm_verify_relationship,
                 link["source_entity"], link["target_entity"],
                 link["source_sector"], link["target_sector"],
                 contexts,
             )
+            future_to_idx[future] = idx
+
+        for future in as_completed(future_to_idx):
+            idx = future_to_idx[future]
+            llm_result = future.result()
             if llm_result:
                 verified_count += 1
-        else:
-            llm_result = None
-        link = _calibrate_confidence(link, llm_result)
+            _calibrate_confidence(links[idx], llm_result)
+
+    candidate_indices = {idx for idx, _ in candidates}
+    for i, link in enumerate(links):
+        if i not in candidate_indices:
+            _calibrate_confidence(link, None)
 
     logger.info("LLM verified %d/%d relationships", verified_count, len(links))
     return links
@@ -393,14 +416,8 @@ def build_impact_chains(df: pd.DataFrame, sector_map: Dict[str, Dict], max_depth
         return []
 
     G = nx.Graph()
-    for _, row in df.iterrows():
-        entities_str = row.get("entities", "{}")
-        if not isinstance(entities_str, str):
-            continue
-        try:
-            entities = json.loads(entities_str)
-        except (json.JSONDecodeError, TypeError):
-            continue
+    for row in df.itertuples(index=False):
+        entities = get_entity_dict(row)
         all_ents = set()
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):
@@ -491,9 +508,9 @@ def cross_domain_pipeline(df: pd.DataFrame) -> Dict:
 
     # Phase 3: LLM verification with causal reasoning
     pair_texts = defaultdict(list)
-    for _, row in df.iterrows():
-        text = str(row.get("text", "") or "")
-        entities = json.loads(row.get("entities", "{}")) if isinstance(row.get("entities"), str) else {}
+    for row in df.itertuples(index=False):
+        text = str(getattr(row, "text", "") or "")
+        entities = get_entity_dict(row)
         all_ents = set()
         for key in ("persons", "orgs", "locations"):
             for ent in entities.get(key, []):
@@ -534,14 +551,6 @@ def cross_domain_pipeline(df: pd.DataFrame) -> Dict:
         "summary": summary,
     }
 
-    from config.settings import path_for
-    import os
-    base = path_for("output_dir")
-    atomic_write_json(os.path.join(base, "sector_map.json"), sector_map)
-    atomic_write_json(os.path.join(base, "cross_domain_links.json"), cross_links)
-    atomic_write_json(os.path.join(base, "impact_chains.json"), impact_chains)
-
-    logger.info("Saved: sector_map cross_domain_links impact_chains")
     logger.info("Confidence distribution: %s", dict(confidence_dist.most_common()))
     logger.info("LLM verified: %d | Causal explanations: %d", verified_count, causal_count)
     logger.info("=" * 60)
