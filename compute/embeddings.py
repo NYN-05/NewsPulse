@@ -5,31 +5,41 @@ from typing import List, Optional
 logger = logging.getLogger(__name__)
 
 _encoder = None
+_MODEL_NAME = "BAAI/bge-m3"
 
 
 def _get_encoder():
     global _encoder
-    if _encoder is not None:
-        return _encoder
-    from compute.gpu_manager import is_cuda, has_sentence_transformers
-    if not has_sentence_transformers():
-        logger.info("sentence-transformers not available, using TF-IDF fallback")
-        return None
-    from sentence_transformers import SentenceTransformer
-    device = "cuda" if is_cuda() else "cpu"
-    logger.info("Loading sentence-transformer model on %s...", device)
-    _encoder = SentenceTransformer("all-MiniLM-L6-v2", device=device)
+    if _encoder is None:
+        try:
+            from sentence_transformers import SentenceTransformer
+            from compute.gpu_manager import device
+            logger.info("Loading embedding model: %s (device=%s)", _MODEL_NAME, device)
+            _encoder = SentenceTransformer(_MODEL_NAME, device=device)
+        except Exception as e:
+            logger.error("Failed to load BGE embedding model: %s", e)
     return _encoder
 
 
-def encode_texts(texts: List[str]) -> Optional[np.ndarray]:
+def encode_texts(texts: List[str], normalize: bool = True) -> Optional[np.ndarray]:
     encoder = _get_encoder()
     if encoder is None:
         return None
     try:
-        embeddings = encoder.encode(texts, batch_size=64, show_progress_bar=False, convert_to_numpy=True)
-        logger.info("Generated %d embeddings with shape %s", len(texts), embeddings.shape)
-        return embeddings
+        emb = encoder.encode(texts, show_progress_bar=False, normalize_embeddings=normalize)
+        return np.array(emb, dtype=np.float32)
     except Exception as e:
-        logger.warning("GPU embedding failed: %s", e)
+        logger.error("Embedding error: %s", e)
+        return None
+
+
+def encode_query(query: str) -> Optional[np.ndarray]:
+    encoder = _get_encoder()
+    if encoder is None:
+        return None
+    try:
+        emb = encoder.encode([query], show_progress_bar=False, normalize_embeddings=True)
+        return np.array(emb[0], dtype=np.float32)
+    except Exception as e:
+        logger.error("Query embedding error: %s", e)
         return None

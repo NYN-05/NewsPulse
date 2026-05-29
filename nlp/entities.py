@@ -1,171 +1,53 @@
 import json
 import logging
-from functools import lru_cache
-from typing import List
+from typing import List, Dict
 
 logger = logging.getLogger(__name__)
 
-_gpu_pipeline = None
-HAS_SPACY = False
+_gliner = None
+
+LABELS = ["person", "organization", "location", "political entity", "technology", "financial entity", "energy company", "military"]
 
 
-def _try_load_spacy():
-    global HAS_SPACY
-    try:
-        import spacy
-        global _nlp
-        _nlp = spacy.load("en_core_web_sm", disable=["parser", "lemmatizer"])
-        HAS_SPACY = True
-        logger.info("Using spaCy for NER")
-    except Exception:
-        HAS_SPACY = False
-        logger.info("spaCy not available, falling back to NLTK for NER")
-
-
-def _get_gpu_ner():
-    global _gpu_pipeline
-    if _gpu_pipeline is not None:
-        return _gpu_pipeline
-    from compute.gpu_manager import GPUManager, is_cuda
-    if is_cuda():
+def _get_gliner():
+    global _gliner
+    if _gliner is None:
         try:
-            mgr = GPUManager()
-            _gpu_pipeline = mgr.get_pipeline("ner")
+            from gliner import GLiNER
+            logger.info("Loading GLiNER model: urchade/gliner_large-v2")
+            _gliner = GLiNER.from_pretrained("urchade/gliner_large-v2")
         except Exception as e:
-            logger.warning("GPU NER init failed: %s", e)
-    return _gpu_pipeline
+            logger.error("Failed to load GLiNER: %s", e)
+    return _gliner
 
 
-@lru_cache(maxsize=1024)
-def _extract_entities_gpu(text: str) -> str:
-    pipe = _get_gpu_ner()
-    if pipe is None:
-        return json.dumps({"persons": [], "orgs": [], "locations": []})
-    try:
-        results = pipe(text[:10000], aggregation_strategy="simple")
-        persons, orgs, locs = [], [], []
-        seen = set()
-        for r in results:
-            ent = r["word"]
-            key = (r["entity_group"], ent.lower())
-            if key in seen:
-                continue
-            seen.add(key)
-            if r["entity_group"] == "PER":
-                persons.append(ent)
-            elif r["entity_group"] == "ORG":
-                orgs.append(ent)
-            elif r["entity_group"] == "LOC":
-                locs.append(ent)
-        return json.dumps({
-            "persons": persons[:5],
-            "orgs": orgs[:5],
-            "locations": locs[:5],
-        })
-    except Exception as e:
-        logger.warning("GPU NER failed (%s), will use CPU fallback next call", e)
-        return json.dumps({"persons": [], "orgs": [], "locations": []})
-
-
-_nlp = None
-
-
-@lru_cache(maxsize=1024)
-def _extract_entities_spacy(text: str) -> str:
-    global _nlp
-    if _nlp is None:
-        import spacy
-        _nlp = spacy.load("en_core_web_sm", disable=["parser", "lemmatizer"])
-    doc = _nlp(text[:10000])
-    persons, orgs, locs = [], [], []
+def extract_entities(text: str, threshold: float = 0.5) -> Dict[str, List[str]]:
+    model = _get_gliner()
+    if model is None:
+        return {"persons": [], "orgs": [], "locations": []}
+    entities = model.predict_entities(text, LABELS, threshold=threshold)
+    result = {"persons": [], "orgs": [], "locations": []}
     seen = set()
-    for ent in doc.ents:
-        key = (ent.label_, ent.text.lower())
-        if key in seen:
+    for e in entities:
+        label = e.get("label", "")
+        text_val = e.get("text", "").strip()
+        if not text_val or text_val.lower() in seen:
             continue
-        seen.add(key)
-        if ent.label_ == "PERSON":
-            persons.append(ent.text)
-        elif ent.label_ in ("ORG", "GPE"):
-            orgs.append(ent.text)
-        elif ent.label_ in ("LOC", "GPE"):
-            locs.append(ent.text)
-    return json.dumps({
-        "persons": list(dict.fromkeys(persons))[:5],
-        "orgs": list(dict.fromkeys(orgs))[:5],
-        "locations": list(dict.fromkeys(locs))[:5],
-    })
-
-
-@lru_cache(maxsize=1024)
-def _extract_entities_nltk(text: str) -> str:
-    from nltk import pos_tag, ne_chunk, word_tokenize
-    if not isinstance(text, str) or len(text) < 20:
-        return json.dumps({"persons": [], "orgs": [], "locations": []})
-    tokens = word_tokenize(text)
-    tagged = pos_tag(tokens[:200])
-    ne_tree = ne_chunk(tagged)
-    persons, orgs, locs = set(), set(), set()
-    for subtree in ne_tree:
-        if hasattr(subtree, "label"):
-            entity = " ".join(word for word, tag in subtree.leaves())
-            if subtree.label() == "PERSON":
-                persons.add(entity)
-            elif subtree.label() == "ORGANIZATION":
-                orgs.add(entity)
-            elif subtree.label() in ("GPE", "LOC"):
-                locs.add(entity)
-    return json.dumps({
-        "persons": list(persons)[:5],
-        "orgs": list(orgs)[:5],
-        "locations": list(locs)[:5],
-    })
-
-
-def extract_entities(text: str) -> str:
-    if not isinstance(text, str) or len(text) < 20:
-        return json.dumps({"persons": [], "orgs": [], "locations": []})
-    if _get_gpu_ner() is not None:
-        result = _extract_entities_gpu(text)
-        if result != json.dumps({"persons": [], "orgs": [], "locations": []}):
-            return result
-    global HAS_SPACY
-    if not HAS_SPACY:
-        _try_load_spacy()
-    if HAS_SPACY:
-        return _extract_entities_spacy(text)
-    return _extract_entities_nltk(text)
+        seen.add(text_val.lower())
+        if label in ("person",):
+            result["persons"].append(text_val)
+        elif label in ("organization", "political entity"):
+            result["orgs"].append(text_val)
+        elif label in ("location",):
+            result["locations"].append(text_val)
+        elif label in ("technology", "financial entity", "energy company"):
+            result["orgs"].append(text_val)
+    return result
 
 
 def extract_entities_batch(texts: List[str]) -> List[str]:
-    pipe = _get_gpu_ner()
-    if pipe is None:
-        return [extract_entities(t) for t in texts]
-    valid_indices = [i for i, t in enumerate(texts) if isinstance(t, str) and len(t) >= 20]
-    if not valid_indices:
-        return [extract_entities(t) for t in texts]
-    valid_texts = [texts[i] for i in valid_indices]
-    try:
-        all_results = pipe(valid_texts, batch_size=32, aggregation_strategy="simple")
-        results = [json.dumps({"persons": [], "orgs": [], "locations": []})] * len(texts)
-        for batch_idx, idx in enumerate(valid_indices):
-            entities = all_results[batch_idx] if batch_idx < len(all_results) else []
-            persons, orgs, locs = [], [], []
-            seen = set()
-            for r in entities:
-                ent = r["word"]
-                key = (r["entity_group"], ent.lower())
-                if key in seen:
-                    continue
-                seen.add(key)
-                if r["entity_group"] == "PER":
-                    persons.append(ent)
-                elif r["entity_group"] == "ORG":
-                    orgs.append(ent)
-                elif r["entity_group"] == "LOC":
-                    locs.append(ent)
-            results[idx] = json.dumps({"persons": persons[:5], "orgs": orgs[:5], "locations": locs[:5]})
-        return results
-    except Exception as e:
-        logger.warning("GPU batch NER failed (%s), falling back to CPU", e)
-        return [extract_entities(t) for t in texts]
+    results = []
+    for text in texts:
+        entities = extract_entities(str(text)[:2000])
+        results.append(json.dumps(entities))
+    return results

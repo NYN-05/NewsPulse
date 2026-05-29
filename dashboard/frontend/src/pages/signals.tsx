@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { api } from "@/services/api"
-import type { BreakingEvent } from "@/types"
+import type { Signal } from "@/types"
 
 function severityLevel(score: number, burst?: number): { label: string; color: string } {
   if (burst && burst > 50) return { label: "Critical", color: "#e06c7a" }
@@ -10,12 +10,13 @@ function severityLevel(score: number, burst?: number): { label: string; color: s
 }
 
 export function SignalsPage() {
-  const [signals, setSignals] = useState<BreakingEvent[]>([])
+  const [signals, setSignals] = useState<Signal[]>([])
+  const [summary, setSummary] = useState<any>({})
   const [loading, setLoading] = useState(true)
   const [expanded, setExpanded] = useState<number | null>(null)
 
   useEffect(() => {
-    api.breaking().then((d) => { setSignals(d || []); setLoading(false) })
+    api.signals().then((d) => { setSignals(d.signals || []); setSummary(d.summary || {}); setLoading(false) })
   }, [])
 
   if (loading) {
@@ -44,17 +45,15 @@ export function SignalsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
           <div className="text-[10px] font-mono text-[var(--color-fg-muted)]">Total Signals</div>
-          <div className="text-xl font-serif text-[var(--color-fg)] mt-1">{signals.length}</div>
+          <div className="text-xl font-serif text-[var(--color-fg)] mt-1">{summary.total_signals || signals.length}</div>
         </div>
         <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-          <div className="text-[10px] font-mono text-[var(--color-fg-muted)]">Critical</div>
-          <div className="text-xl font-serif text-[var(--color-red)] mt-1">{signals.filter((s) => (s.burst_factor || 1) > 50).length}</div>
+          <div className="text-[10px] font-mono text-[var(--color-fg-muted)]">Top Score</div>
+          <div className="text-xl font-serif text-[var(--color-red)] mt-1">{summary.highest_score ? summary.highest_score.toFixed(1) : "—"}</div>
         </div>
         <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
-          <div className="text-[10px] font-mono text-[var(--color-fg-muted)]">Avg Burst Factor</div>
-          <div className="text-xl font-serif text-[var(--color-cyan)] mt-1">
-            {signals.length > 0 ? (signals.reduce((a, s) => a + (s.burst_factor || 1), 0) / signals.length).toFixed(1) : "—"}×
-          </div>
+          <div className="text-[10px] font-mono text-[var(--color-fg-muted)]">Top Signal</div>
+          <div className="text-sm font-mono text-[var(--color-cyan)] mt-1 truncate">{summary.top_signal || "—"}</div>
         </div>
       </div>
 
@@ -62,6 +61,7 @@ export function SignalsPage() {
         {signals.map((s, i) => {
           const severity = severityLevel(s.score, s.burst_factor)
           const isExpanded = expanded === i
+          const displayName = s.entity || s.keyword || s.signal?.split(":")[0]?.trim() || "Unknown"
           return (
             <button
               key={i}
@@ -77,7 +77,7 @@ export function SignalsPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-[9px] font-mono text-[var(--color-fg-muted)] tracking-widest uppercase">
-                      {(s.signal || "").replace("_", " ")}
+                      {(s.type || "").replace(/_/g, " ")}
                     </span>
                     <span
                       className="text-[9px] font-mono tracking-wider uppercase px-1.5 py-0.5 rounded"
@@ -90,7 +90,8 @@ export function SignalsPage() {
                       {severity.label}
                     </span>
                   </div>
-                  <p className="text-sm font-serif text-[var(--color-fg)]">{s.keyword || s.entity || "Unknown"}</p>
+                  <p className="text-sm font-serif text-[var(--color-fg)]">{displayName}</p>
+                  <p className="text-[10px] font-mono text-[var(--color-fg-secondary)] mt-1">{s.signal}</p>
                   <div className="flex gap-3 mt-2 text-[10px] font-mono text-[var(--color-fg-muted)]">
                     <span>Score: <span className="text-[var(--color-accent)]">{s.score.toFixed(1)}</span></span>
                     {s.recent_count !== undefined && <span>Articles: {s.recent_count}</span>}
@@ -101,7 +102,7 @@ export function SignalsPage() {
                   {isExpanded && s.burst_factor && (
                     <div className="mt-3 pt-3 border-t border-[var(--color-border)] text-[10px] font-mono text-[var(--color-fg-secondary)]">
                       <p>
-                        Detected anomaly: <strong className="text-[var(--color-fg)]">{s.keyword || s.entity}</strong> is being mentioned at{" "}
+                        Detected anomaly: <strong className="text-[var(--color-fg)]">{displayName}</strong> is appearing at{" "}
                         <strong className="text-[var(--color-red)]">{s.burst_factor.toFixed(1)}×</strong> the normal rate.
                         {s.burst_factor > 20
                           ? " This represents a significant intelligence signal requiring attention."

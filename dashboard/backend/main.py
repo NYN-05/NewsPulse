@@ -1,6 +1,5 @@
 import os, sys, json, logging, math
 from datetime import datetime
-from typing import Optional
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -10,7 +9,7 @@ from config.settings import load_config, get, path_for
 load_config()
 logger = logging.getLogger("api")
 
-app = FastAPI(title="NewsPulse Intelligence API", version="1.0")
+app = FastAPI(title="NewsPulse Intelligence API", version="2.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
@@ -35,7 +34,7 @@ def _load_json(name):
 
 @app.get("/api/health")
 def health():
-    return {"status": "ok", "timestamp": datetime.now().isoformat()}
+    return {"status": "ok", "timestamp": datetime.now().isoformat(), "version": "2.0"}
 
 
 @app.get("/api/cross-domain")
@@ -55,19 +54,17 @@ def entity_graph():
     return _load_json("entity_graph.json")
 
 
-@app.get("/api/influence")
-def influence():
-    return _load_json("influence_map.json")
-
-
 @app.get("/api/narratives")
 def narratives():
     return _load_json("narrative_evolution.json")
 
 
-@app.get("/api/breaking")
-def breaking():
-    return _load_json("breaking_events.json")
+@app.get("/api/signals")
+def signals():
+    data = _load_json("breaking_events.json")
+    if isinstance(data, dict):
+        return data
+    return {"signals": data if isinstance(data, list) else [], "summary": {}}
 
 
 @app.get("/api/search")
@@ -76,6 +73,31 @@ def search(q: str = Query("", min_length=1), n: int = 10):
         from vector_store.chroma_store import semantic_search
         results = semantic_search(q, n_results=n)
         return {"results": results, "query": q}
+    except Exception as e:
+        return {"error": str(e), "results": []}
+
+
+@app.get("/api/explain")
+def explain_relationship(source: str = Query(""), target: str = Query("")):
+    if not source or not target:
+        return {"error": "source and target required"}
+    try:
+        links = _load_json("cross_domain_links.json")
+        if isinstance(links, list):
+            for l in links:
+                if l.get("source_entity") == source and l.get("target_entity") == target:
+                    from intelligence.explanation import explain_relationship as explain
+                    explanation = explain(
+                        source_entity=l["source_entity"],
+                        target_entity=l["target_entity"],
+                        source_sector=l.get("source_sector", "unknown"),
+                        target_sector=l.get("target_sector", "unknown"),
+                        cooccurrence_count=l.get("cooccurrence_count", 0),
+                        source_diversity=l.get("source_diversity", 0),
+                        strength=l.get("strength", 0),
+                    )
+                    return {"link": l, "explanation": explanation}
+        return {"error": "relationship not found"}
     except Exception as e:
         return {"error": str(e)}
 

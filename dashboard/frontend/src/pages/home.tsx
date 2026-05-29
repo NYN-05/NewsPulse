@@ -2,11 +2,11 @@ import { useEffect, useState, useRef } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { api } from "@/services/api"
-import type { CrossDomainLink, BreakingEvent } from "@/types"
+import type { CrossDomainLink, Signal } from "@/types"
 
 interface Discovery {
   id: string
-  type: "cross_domain" | "narrative" | "influence" | "signal" | "chain"
+  type: "cross_domain" | "narrative" | "signal" | "chain"
   title: string
   body: string
   explanation: string
@@ -40,7 +40,6 @@ const SECTOR_EXPLANATIONS: Record<string, string> = {
 const TYPE_META: Record<string, { label: string; dot: string }> = {
   cross_domain: { label: "Cross-Domain Link", dot: "#4a7cf7" },
   narrative: { label: "Narrative Shift", dot: "#4fcf8d" },
-  influence: { label: "Influence Update", dot: "#d4a757" },
   signal: { label: "Signal Spike", dot: "#e06c7a" },
   chain: { label: "Impact Chain", dot: "#5bc0eb" },
 }
@@ -73,69 +72,55 @@ function explainRelationship(src: string, tgt: string, srcSec: string, tgtSec: s
   return `Relationship between ${src} (${sl}) and ${tgt} (${tl}) - changes in one directly affect the other through cross-domain dependencies.`
 }
 
-function buildFeed(links: CrossDomainLink[], breaking: BreakingEvent[], narratives: any, influence: any): Discovery[] {
+function buildFeed(links: CrossDomainLink[], signals: Signal[], narratives: any): Discovery[] {
   const items: Discovery[] = []
 
   for (const link of (links || []).slice(0, 20)) {
     if (link.strength < 3) continue
     const sl = SECTOR_LABELS[link.source_sector] || link.source_sector
     const tl = SECTOR_LABELS[link.target_sector] || link.target_sector
+    const explanation = link.explanation || explainRelationship(link.source_entity, link.target_entity, link.source_sector, link.target_sector)
     items.push({
       id: `cd-${link.source_entity}-${link.target_entity}`,
       type: "cross_domain",
-      title: `${link.source_entity} <-> ${link.target_entity}`,
+      title: `${link.source_entity} ↔ ${link.target_entity}`,
       body: `Connection bridging ${sl} and ${tl}. Co-occurring in ${link.cooccurrence_count} articles across ${Math.round(link.source_diversity)} sources.`,
-      explanation: explainRelationship(link.source_entity, link.target_entity, link.source_sector, link.target_sector),
+      explanation,
       entities: [link.source_entity, link.target_entity],
       sectors: [link.source_sector, link.target_sector],
       confidence: Math.min(link.strength / 30, 0.99),
-      meta: `${link.cooccurrence_count} co-occurrences - diversity ${link.source_diversity.toFixed(2)}`,
+      meta: `${link.cooccurrence_count} co-occurrences · diversity ${link.source_diversity.toFixed(2)}`,
     })
   }
 
-  for (const sig of (breaking || []).slice(0, 8)) {
+  for (const sig of (signals || []).slice(0, 8)) {
+    const displayName = sig.entity || sig.keyword || "Unknown"
     items.push({
-      id: `sig-${sig.keyword || sig.entity || Math.random()}`,
+      id: `sig-${displayName}-${Math.random()}`,
       type: "signal",
-      title: sig.keyword || sig.entity || "Unknown",
-      body: `${(sig.signal || "").replace("_", " ")} - burst factor ${(sig.burst_factor || 1).toFixed(1)}x above normal.`,
-      explanation: `Unusual activity detected: "${sig.keyword || sig.entity}" at ${(sig.burst_factor || 1).toFixed(1)}x expected rate. May indicate an emerging event.`,
+      title: displayName,
+      body: `${(sig.type || "").replace(/_/g, " ")} — ${sig.signal}`,
+      explanation: `Unusual activity detected: "${displayName}" at ${(sig.burst_factor || 1).toFixed(1)}x expected rate. May indicate an emerging event.`,
       entities: sig.entity ? [sig.entity] : [],
       sectors: [],
       confidence: Math.min(sig.score / 100, 0.99),
-      meta: `score ${sig.score.toFixed(1)} - ${sig.recent_count || 0} articles`,
+      meta: `score ${sig.score.toFixed(1)} · ${sig.recent_count || 0} articles`,
     })
   }
 
   if (narratives) {
     for (const t of (narratives.emerging_topics || []).slice(0, 6)) {
+      const name = t.name || (t.type === "cluster" ? (t.keywords || []).slice(0, 3).join(", ") : `Cluster ${t.cluster}`) || "Emerging trend"
       items.push({
-        id: `narr-${t.cluster || Math.random()}`,
+        id: `narr-${name}-${Math.random()}`,
         type: "narrative",
-        title: t.topic || "Emerging trend",
-        body: `Entering ${t.phase || "emerging"} phase with acceleration ${(t.acceleration || 0).toFixed(1)}.`,
+        title: name,
+        body: `${t.phase || "emerging"} phase · acceleration ${(t.acceleration || 0).toFixed(1)} · ${t.total_mentions || t.total_articles || 0} mentions`,
         explanation: `Gaining momentum (acceleration: ${(t.acceleration || 0).toFixed(2)}). If sustained, signals a major narrative shift.`,
         entities: (t.keywords || []).slice(0, 5),
-        sectors: t.sectors || [],
-        confidence: Math.min(Math.abs(t.acceleration || 0) / 10, 0.99) || 0.5,
-        meta: `${t.count || 0} articles - momentum ${(t.momentum || 0).toFixed(1)}`,
-      })
-    }
-  }
-
-  if (influence) {
-    for (const e of (influence.entity_influence || []).slice(0, 6)) {
-      const reach = e.cross_domain_reach || e.cross_domain_links || 0
-      items.push({
-        id: `inf-${e.entity || Math.random()}`,
-        type: "influence",
-        title: e.entity || "Unknown",
-        body: `Influence score ${(e.influence_score || 0).toFixed(2)} - cross-domain reach across ${reach} sectors.`,
-        explanation: `"${e.entity}" is increasingly central. Score ${(e.influence_score || 0).toFixed(2)} suggests growing cross-domain significance.`,
-        entities: [e.entity].filter(Boolean),
         sectors: [],
-        confidence: Math.min((e.influence_score || 0) / 6, 0.99),
-        meta: `score ${(e.influence_score || 0).toFixed(2)} - ${e.source_diversity || 0} sources`,
+        confidence: Math.min(Math.abs(t.acceleration || 0) / 10, 0.99) || 0.5,
+        meta: `${t.recent_7_days || 0} in last 7 days · first seen ${t.first_seen || "unknown"}`,
       })
     }
   }
@@ -194,7 +179,7 @@ function DiscoveriesList({ discoveries, expanded, setExpanded }: {
   )
 }
 
-function IntelligenceMap({ links, breaking }: { links: CrossDomainLink[]; breaking: BreakingEvent[] }) {
+function IntelligenceMap({ links, signals }: { links: CrossDomainLink[]; signals: Signal[] }) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstance = useRef<L.Map | null>(null)
 
@@ -246,9 +231,9 @@ function IntelligenceMap({ links, breaking }: { links: CrossDomainLink[]; breaki
       ;(line as any)._isNewsLayer = true
     }
 
-    for (const sig of (breaking || []).slice(0, 5)) {
+    for (const sig of (signals || []).slice(0, 5)) {
       const ents = sig.entity ? [sig.entity] : (sig.keyword ? [sig.keyword] : [])
-      for (const ent of ents) {
+      for (const ent of [ents].flat()) {
         const coords = getCountryCoords(ent)
         if (!coords) continue
         const burst = Math.min((sig.burst_factor || 1) / 100, 1)
@@ -262,7 +247,7 @@ function IntelligenceMap({ links, breaking }: { links: CrossDomainLink[]; breaki
         ;(sigMarker as any)._isNewsLayer = true
       }
     }
-  }, [links, breaking])
+  }, [links, signals])
 
   return (
     <div className="rounded-lg border border-[var(--color-border)] overflow-hidden" style={{ height: 320 }}>
@@ -274,34 +259,34 @@ function IntelligenceMap({ links, breaking }: { links: CrossDomainLink[]; breaki
 export function HomePage() {
   const [discoveries, setDiscoveries] = useState<Discovery[]>([])
   const [links, setLinks] = useState<CrossDomainLink[]>([])
-  const [breaking, setBreaking] = useState<BreakingEvent[]>([])
+  const [signals, setSignals] = useState<Signal[]>([])
   const [loading, setLoading] = useState(true)
   const [expanded, setExpanded] = useState<string | null>(null)
 
   useEffect(() => {
     Promise.all([
       api.crossDomain().catch(() => ({ links: [], chains: [], sector_map: {} })),
-      api.breaking().catch(() => []),
+      api.signals().catch(() => ({ signals: [], summary: {} })),
       api.narratives().catch(() => ({})),
-      api.influence().catch(() => ({})),
-    ]).then(([cd, breakingData, narratives, influence]) => {
+    ]).then(([cd, signalsData, narratives]) => {
       const rawLinks = (cd as any).links || []
+      const rawSignals = (signalsData as any).signals || []
       setLinks(rawLinks)
-      setBreaking(breakingData)
-      const feed = buildFeed(rawLinks, breakingData, narratives, influence)
+      setSignals(rawSignals)
+      const feed = buildFeed(rawLinks, rawSignals, narratives)
       const chains = ((cd as any).chains || []) as ImpactChain[]
       for (const c of chains.slice(0, 4)) {
         if (c.chain && c.chain.length >= 2) {
           feed.push({
             id: `chain-${c.chain_key || Math.random()}`,
             type: "chain",
-            title: c.chain.join(" -> "),
+            title: c.chain.join(" → "),
             body: `Impact chain spanning ${c.length} steps across ${c.cross_domain_hops} domains.`,
-            explanation: `Narrative propagation: ${c.chain.join(" => ")}. Crosses ${c.sectors.length} domains.`,
+            explanation: `Narrative propagation: ${c.chain.join(" ⇒ ")}. Crosses ${c.sectors.length} domains.`,
             entities: c.chain,
             sectors: c.sectors,
             confidence: Math.min(c.total_weight / 50, 0.99),
-            meta: `${c.length} hops - ${c.cross_domain_hops} domains crossed`,
+            meta: `${c.length} hops · ${c.cross_domain_hops} domains crossed`,
           })
         }
       }
@@ -346,7 +331,7 @@ export function HomePage() {
         </div>
       </div>
 
-      <IntelligenceMap links={links} breaking={breaking} />
+      <IntelligenceMap links={links} signals={signals} />
 
       <div className="flex items-center gap-2 text-[10px] font-mono text-[var(--color-fg-muted)]">
         <span className="text-[var(--color-fg)]">Top Discoveries</span>

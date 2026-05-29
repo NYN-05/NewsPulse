@@ -3,10 +3,6 @@
 paths:
   data_dir: "."
   output_dir: "output"
-  data_dir_output: "output/data"
-  plots_dir: "output/plots"
-  models_dir: "output/models"
-  logs_dir: "output/logs"
   news_csv: "output/data/news_data.csv"
   analyzed_parquet: "output/data/news_analyzed.parquet"
   analyzed_csv: "output/data/news_analyzed.csv"
@@ -24,24 +20,33 @@ scraper:
 nlp:
   batch_size: 64
   cache_size: 2048
-  sentiment_threshold_positive: 0.35
-  sentiment_threshold_negative: -0.35
+  entity_threshold: 0.5
 
 quality:
   dedup_threshold: 0.85
   enable_semantic_dedup: true
   enable_boilerplate_removal: true
 
+intelligence:
+  min_entity_mentions: 2
+  min_link_cooccurrence: 2
+  max_cross_domain_links: 200
+  max_impact_chains: 50
+  llm_verification: false
+  llm_model: "qwen3:14b"
+
 vector_store:
   collection_name: "newspulse"
-  embedding_model: "all-MiniLM-L6-v2"
+  embedding_model: "BAAI/bge-m3"
+  reranker_model: "BAAI/bge-reranker-v2-m3"
+  use_hybrid_search: true
+  use_reranker: false
 
-alerts:
-  breaking_threshold: 20
-  webhooks:
-    telegram: ""
-    slack: ""
-    discord: ""
+scheduler:
+  enabled: true
+  interval_minutes: 15
+  initial_delay_seconds: 10
+  fail_safe: true
 
 logging:
   level: "INFO"
