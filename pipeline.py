@@ -57,6 +57,16 @@ def pipeline_cleanup():
             logger.info("GLiNER model remains loaded for next run")
     except Exception:
         pass
+    try:
+        from intelligence.relationships import close_llm_session
+        close_llm_session()
+    except Exception:
+        pass
+    try:
+        from intelligence.agents import close_ollama_session
+        close_ollama_session()
+    except Exception:
+        pass
     import gc
     gc.collect()
     try:

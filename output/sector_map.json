@@ -4,14 +4,14 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.66,
-    "mention_count": 243
+    "mention_count": 255
   },
   "israel": {
     "entity": "israel",
     "type": "locations",
     "sector": "military",
     "confidence": 0.42,
-    "mention_count": 75
+    "mention_count": 79
   },
   "vaibha": {
     "entity": "vaibha",
@@ -39,7 +39,7 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "newsnvidia": {
     "entity": "newsnvidia",
@@ -81,7 +81,7 @@
     "type": "locations",
     "sector": "finance",
     "confidence": 0.6,
-    "mention_count": 221
+    "mention_count": 234
   },
   "quad": {
     "entity": "quad",
@@ -102,7 +102,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.48,
-    "mention_count": 64
+    "mention_count": 67
   },
   "##ira": {
     "entity": "##ira",
@@ -130,7 +130,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 11
+    "mention_count": 12
   },
   "omc": {
     "entity": "omc",
@@ -176,17 +176,17 @@
   },
   "sidda": {
     "entity": "sidda",
-    "type": "persons",
+    "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "siddaramaiah": {
     "entity": "siddaramaiah",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 110
+    "mention_count": 112
   },
   ". k. shivakumar": {
     "entity": ". k. shivakumar",
@@ -200,28 +200,28 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.78,
-    "mention_count": 59
+    "mention_count": 62
   },
   "karnataka": {
     "entity": "karnataka",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 94
+    "mention_count": 98
   },
   "delhi": {
     "entity": "delhi",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 101
+    "mention_count": 107
   },
   "ra": {
     "entity": "ra",
     "type": "persons",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 33
+    "mention_count": 36
   },
   "##nve": {
     "entity": "##nve",
@@ -249,7 +249,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "sooryavanshi": {
     "entity": "sooryavanshi",
@@ -277,7 +277,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "jai pal singh bau": {
     "entity": "jai pal singh bau",
@@ -291,7 +291,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 12
+    "mention_count": 13
   },
   "aam aadmi party": {
     "entity": "aam aadmi party",
@@ -389,7 +389,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 12
+    "mention_count": 14
   },
   "japan": {
     "entity": "japan",
@@ -403,7 +403,7 @@
     "type": "locations",
     "sector": "energy",
     "confidence": 0.18,
-    "mention_count": 15
+    "mention_count": 17
   },
   "michael": {
     "entity": "michael",
@@ -424,7 +424,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.72,
-    "mention_count": 311
+    "mention_count": 328
   },
   "dell": {
     "entity": "dell",
@@ -480,7 +480,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 5
+    "mention_count": 6
   },
   "##oja bhat": {
     "entity": "##oja bhat",
@@ -501,7 +501,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 6
   },
   "trump no": {
     "entity": "trump no",
@@ -522,14 +522,14 @@
     "type": "locations",
     "sector": "military",
     "confidence": 0.36,
-    "mention_count": 34
+    "mention_count": 35
   },
   "putin": {
     "entity": "putin",
     "type": "persons",
     "sector": "military",
     "confidence": 0.3,
-    "mention_count": 16
+    "mention_count": 19
   },
   "presidential aircraft": {
     "entity": "presidential aircraft",
@@ -599,7 +599,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 24
+    "mention_count": 26
   },
   "##ck meghan markle": {
     "entity": "##ck meghan markle",
@@ -627,7 +627,7 @@
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "kim": {
     "entity": "kim",
@@ -641,7 +641,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.66,
-    "mention_count": 99
+    "mention_count": 105
   },
   "don jr": {
     "entity": "don jr",
@@ -676,7 +676,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.36,
-    "mention_count": 38
+    "mention_count": 39
   },
   "vfs": {
     "entity": "vfs",
@@ -690,7 +690,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.36,
-    "mention_count": 42
+    "mention_count": 47
   },
   "durgadi fort": {
     "entity": "durgadi fort",
@@ -711,7 +711,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 13
+    "mention_count": 15
   },
   "##hul gandhi": {
     "entity": "##hul gandhi",
@@ -739,35 +739,35 @@
     "type": "locations",
     "sector": "military",
     "confidence": 0.42,
-    "mention_count": 41
+    "mention_count": 47
   },
   "singapore": {
     "entity": "singapore",
     "type": "locations",
     "sector": "startups",
     "confidence": 0.18,
-    "mention_count": 7
+    "mention_count": 8
   },
   "sharma": {
     "entity": "sharma",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 14
   },
   "##iribala singh": {
     "entity": "##iribala singh",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 10
+    "mention_count": 13
   },
   "cbi": {
     "entity": "cbi",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 16
+    "mention_count": 18
   },
   "aap": {
     "entity": "aap",
@@ -830,14 +830,14 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 10
+    "mention_count": 11
   },
   "rajasthan": {
     "entity": "rajasthan",
-    "type": "orgs",
+    "type": "locations",
     "sector": "military",
     "confidence": 0.12,
-    "mention_count": 9
+    "mention_count": 11
   },
   "##id": {
     "entity": "##id",
@@ -848,17 +848,17 @@
   },
   "##hi": {
     "entity": "##hi",
-    "type": "locations",
+    "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "canada": {
     "entity": "canada",
     "type": "locations",
     "sector": "finance",
     "confidence": 0.24,
-    "mention_count": 27
+    "mention_count": 29
   },
   "niagara": {
     "entity": "niagara",
@@ -907,7 +907,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 3
+    "mention_count": 4
   },
   "zuckerberg": {
     "entity": "zuckerberg",
@@ -921,14 +921,14 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.66,
-    "mention_count": 23
+    "mention_count": 26
   },
   "amazon": {
     "entity": "amazon",
-    "type": "orgs",
+    "type": "locations",
     "sector": "energy",
     "confidence": 0.3,
-    "mention_count": 30
+    "mention_count": 31
   },
   "microsoft": {
     "entity": "microsoft",
@@ -942,7 +942,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 6
+    "mention_count": 7
   },
   "ncrb": {
     "entity": "ncrb",
@@ -970,7 +970,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 11
+    "mention_count": 13
   },
   "arch": {
     "entity": "arch",
@@ -1012,7 +1012,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 50
+    "mention_count": 52
   },
   "##rabhu shankar": {
     "entity": "##rabhu shankar",
@@ -1089,14 +1089,14 @@
     "type": "locations",
     "sector": "military",
     "confidence": 0.66,
-    "mention_count": 306
+    "mention_count": 326
   },
   "washington": {
     "entity": "washington",
     "type": "locations",
     "sector": "military",
     "confidence": 0.48,
-    "mention_count": 53
+    "mention_count": 54
   },
   "vinesh": {
     "entity": "vinesh",
@@ -1128,10 +1128,10 @@
   },
   "sc": {
     "entity": "sc",
-    "type": "orgs",
+    "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 10
+    "mention_count": 11
   },
   "delhi hc": {
     "entity": "delhi hc",
@@ -1152,7 +1152,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 48
+    "mention_count": 54
   },
   "revolutionary guards": {
     "entity": "revolutionary guards",
@@ -1256,8 +1256,8 @@
     "entity": "khamene",
     "type": "persons",
     "sector": "politics",
-    "confidence": 0.12,
-    "mention_count": 2
+    "confidence": 0.18,
+    "mention_count": 3
   },
   "khamenei": {
     "entity": "khamenei",
@@ -1271,7 +1271,7 @@
     "type": "locations",
     "sector": "military",
     "confidence": 0.48,
-    "mention_count": 31
+    "mention_count": 32
   },
   "pakistan": {
     "entity": "pakistan",
@@ -1341,7 +1341,7 @@
     "type": "orgs",
     "sector": "social",
     "confidence": 0.12,
-    "mention_count": 13
+    "mention_count": 14
   },
   "ku": {
     "entity": "ku",
@@ -1390,14 +1390,14 @@
     "type": "locations",
     "sector": "finance",
     "confidence": 0.24,
-    "mention_count": 14
+    "mention_count": 16
   },
   "u. s.": {
     "entity": "u. s.",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.54,
-    "mention_count": 130
+    "mention_count": 139
   },
   "central": {
     "entity": "central",
@@ -1516,7 +1516,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 20
+    "mention_count": 21
   },
   "perambalur": {
     "entity": "perambalur",
@@ -1565,14 +1565,14 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 13
+    "mention_count": 14
   },
   "##sha sharma": {
     "entity": "##sha sharma",
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 10
+    "mention_count": 11
   },
   "##iribal": {
     "entity": "##iribal",
@@ -1607,14 +1607,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 3
+    "mention_count": 4
   },
   "##bha": {
     "entity": "##bha",
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "ncr": {
     "entity": "ncr",
@@ -1719,7 +1719,7 @@
     "type": "persons",
     "sector": "military",
     "confidence": 0.18,
-    "mention_count": 12
+    "mention_count": 13
   },
   "##varkar": {
     "entity": "##varkar",
@@ -1789,7 +1789,7 @@
     "type": "orgs",
     "sector": "military",
     "confidence": 0.24,
-    "mention_count": 8
+    "mention_count": 9
   },
   "tefen": {
     "entity": "tefen",
@@ -1822,9 +1822,9 @@
   "say": {
     "entity": "say",
     "type": "persons",
-    "sector": "politics",
-    "confidence": 0.06,
-    "mention_count": 1
+    "sector": "energy",
+    "confidence": 0.12,
+    "mention_count": 3
   },
   "##s siddaramaiah": {
     "entity": "##s siddaramaiah",
@@ -1838,7 +1838,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 10
+    "mention_count": 11
   },
   "middle east": {
     "entity": "middle east",
@@ -1863,10 +1863,10 @@
   },
   "na": {
     "entity": "na",
-    "type": "locations",
+    "type": "persons",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 12
+    "mention_count": 14
   },
   "##b singh saini": {
     "entity": "##b singh saini",
@@ -1891,10 +1891,10 @@
   },
   "cha": {
     "entity": "cha",
-    "type": "persons",
+    "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 17
+    "mention_count": 19
   },
   "##ran": {
     "entity": "##ran",
@@ -1908,7 +1908,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "south": {
     "entity": "south",
@@ -1929,7 +1929,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 16
+    "mention_count": 17
   },
   "im indore": {
     "entity": "im indore",
@@ -1985,7 +1985,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 12
+    "mention_count": 14
   },
   "wall street journal": {
     "entity": "wall street journal",
@@ -1999,7 +1999,7 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.18,
-    "mention_count": 19
+    "mention_count": 20
   },
   "##laniswami": {
     "entity": "##laniswami",
@@ -2034,7 +2034,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 7
+    "mention_count": 9
   },
   "happyland amusement park": {
     "entity": "happyland amusement park",
@@ -2097,7 +2097,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.36,
-    "mention_count": 9
+    "mention_count": 10
   },
   "ram": {
     "entity": "ram",
@@ -2153,21 +2153,21 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 19
+    "mention_count": 20
   },
   "ferrari": {
     "entity": "ferrari",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 12
+    "mention_count": 13
   },
   "manipur": {
     "entity": "manipur",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "patna": {
     "entity": "patna",
@@ -2230,7 +2230,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 28
+    "mention_count": 29
   },
   "saudi arabia": {
     "entity": "saudi arabia",
@@ -2272,7 +2272,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "pradesh hc": {
     "entity": "pradesh hc",
@@ -2314,7 +2314,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 5
+    "mention_count": 6
   },
   "neu": {
     "entity": "neu",
@@ -2391,7 +2391,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 6
+    "mention_count": 7
   },
   "##yl": {
     "entity": "##yl",
@@ -2412,21 +2412,21 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.48,
-    "mention_count": 25
+    "mention_count": 26
   },
   "brazil": {
     "entity": "brazil",
     "type": "locations",
     "sector": "energy",
     "confidence": 0.24,
-    "mention_count": 9
+    "mention_count": 11
   },
   "west germany": {
     "entity": "west germany",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "singh": {
     "entity": "singh",
@@ -2468,7 +2468,7 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 6
   },
   "r praggnanandha": {
     "entity": "r praggnanandha",
@@ -2489,7 +2489,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 10
+    "mention_count": 11
   },
   "sports ministry": {
     "entity": "sports ministry",
@@ -2524,7 +2524,7 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "jamaica": {
     "entity": "jamaica",
@@ -2573,7 +2573,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 10
+    "mention_count": 11
   },
   "parsons": {
     "entity": "parsons",
@@ -2615,14 +2615,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "##kovic": {
     "entity": "##kovic",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "elena rybakin": {
     "entity": "elena rybakin",
@@ -2664,7 +2664,7 @@
     "type": "locations",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 27
+    "mention_count": 30
   },
   "marc johnson": {
     "entity": "marc johnson",
@@ -2720,7 +2720,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 20
+    "mention_count": 22
   },
   "pacific": {
     "entity": "pacific",
@@ -2734,7 +2734,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 20
+    "mention_count": 21
   },
   "bandar abbas airport": {
     "entity": "bandar abbas airport",
@@ -2746,16 +2746,16 @@
   "bangladesh": {
     "entity": "bangladesh",
     "type": "locations",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 7
+    "sector": "finance",
+    "confidence": 0.06,
+    "mention_count": 8
   },
   "lebanon": {
     "entity": "lebanon",
     "type": "locations",
     "sector": "military",
     "confidence": 0.24,
-    "mention_count": 31
+    "mention_count": 33
   },
   "perry": {
     "entity": "perry",
@@ -2769,7 +2769,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 58
+    "mention_count": 64
   },
   "netanyahu": {
     "entity": "netanyahu",
@@ -2844,9 +2844,9 @@
   "##ris": {
     "entity": "##ris",
     "type": "persons",
-    "sector": "global_events",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "sitharaman": {
     "entity": "sitharaman",
@@ -2857,10 +2857,10 @@
   },
   "moon": {
     "entity": "moon",
-    "type": "orgs",
+    "type": "locations",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 10
+    "mention_count": 12
   },
   "artemis": {
     "entity": "artemis",
@@ -2909,7 +2909,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "whatsapp": {
     "entity": "whatsapp",
@@ -2923,7 +2923,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 6
+    "mention_count": 7
   },
   "app": {
     "entity": "app",
@@ -2958,14 +2958,14 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 8
+    "mention_count": 9
   },
   "philips": {
     "entity": "philips",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 22
+    "mention_count": 23
   },
   "ert": {
     "entity": "ert",
@@ -3007,7 +3007,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.86,
-    "mention_count": 17
+    "mention_count": 21
   },
   "inside underground health camp": {
     "entity": "inside underground health camp",
@@ -3025,10 +3025,10 @@
   },
   "russia": {
     "entity": "russia",
-    "type": "orgs",
+    "type": "locations",
     "sector": "military",
     "confidence": 0.36,
-    "mention_count": 43
+    "mention_count": 45
   },
   "cia": {
     "entity": "cia",
@@ -3140,7 +3140,7 @@
     "type": "orgs",
     "sector": "social",
     "confidence": 0.26,
-    "mention_count": 11
+    "mention_count": 13
   },
   "s sanctions iran": {
     "entity": "s sanctions iran",
@@ -3159,9 +3159,9 @@
   "hormuz": {
     "entity": "hormuz",
     "type": "locations",
-    "sector": "military",
-    "confidence": 0.24,
-    "mention_count": 22
+    "sector": "energy",
+    "confidence": 0.3,
+    "mention_count": 25
   },
   "maya": {
     "entity": "maya",
@@ -3210,7 +3210,7 @@
     "type": "orgs",
     "sector": "military",
     "confidence": 0.26,
-    "mention_count": 25
+    "mention_count": 26
   },
   "tiger hill": {
     "entity": "tiger hill",
@@ -3329,7 +3329,7 @@
     "type": "locations",
     "sector": "military",
     "confidence": 0.06,
-    "mention_count": 14
+    "mention_count": 15
   },
   "pak": {
     "entity": "pak",
@@ -3343,21 +3343,21 @@
     "type": "orgs",
     "sector": "military",
     "confidence": 0.12,
-    "mention_count": 14
+    "mention_count": 15
   },
   "karg": {
     "entity": "karg",
     "type": "locations",
     "sector": "military",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "##il": {
     "entity": "##il",
     "type": "locations",
     "sector": "military",
     "confidence": 0.12,
-    "mention_count": 14
+    "mention_count": 15
   },
   "##rra": {
     "entity": "##rra",
@@ -3385,7 +3385,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 9
+    "mention_count": 10
   },
   "##zaffarnagar": {
     "entity": "##zaffarnagar",
@@ -3480,10 +3480,10 @@
   },
   "##b": {
     "entity": "##b",
-    "type": "orgs",
-    "sector": "global_events",
+    "type": "persons",
+    "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 7
+    "mention_count": 8
   },
   "##his": {
     "entity": "##his",
@@ -3581,7 +3581,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 20
+    "mention_count": 21
   },
   "tan": {
     "entity": "tan",
@@ -3697,10 +3697,10 @@
   },
   "jam": {
     "entity": "jam",
-    "type": "orgs",
+    "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "ind": {
     "entity": "ind",
@@ -3833,7 +3833,7 @@
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 14
+    "mention_count": 15
   },
   "##tin rakesh": {
     "entity": "##tin rakesh",
@@ -3973,7 +3973,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 13
+    "mention_count": 14
   },
   "future coupons": {
     "entity": "future coupons",
@@ -4029,7 +4029,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 14
+    "mention_count": 15
   },
   "choudhary": {
     "entity": "choudhary",
@@ -4204,7 +4204,7 @@
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "adr": {
     "entity": "adr",
@@ -4316,7 +4316,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 6
+    "mention_count": 7
   },
   "mr airport": {
     "entity": "mr airport",
@@ -4351,7 +4351,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.32,
-    "mention_count": 4
+    "mention_count": 5
   },
   "c jeweller": {
     "entity": "c jeweller",
@@ -4729,7 +4729,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 7
+    "mention_count": 8
   },
   "cut": {
     "entity": "cut",
@@ -4792,7 +4792,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "bytedance": {
     "entity": "bytedance",
@@ -4841,28 +4841,28 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 13
+    "mention_count": 14
   },
   "jbl": {
     "entity": "jbl",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 12
+    "mention_count": 13
   },
   "sennheiser": {
     "entity": "sennheiser",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 12
+    "mention_count": 13
   },
   "nothing": {
     "entity": "nothing",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 13
+    "mention_count": 14
   },
   "fi": {
     "entity": "fi",
@@ -4988,7 +4988,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "##haw": {
     "entity": "##haw",
@@ -5044,7 +5044,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 7
+    "mention_count": 8
   },
   "gehlot": {
     "entity": "gehlot",
@@ -5072,7 +5072,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.24,
-    "mention_count": 14
+    "mention_count": 15
   },
   "united nations": {
     "entity": "united nations",
@@ -5107,7 +5107,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 6
+    "mention_count": 7
   },
   "##ko": {
     "entity": "##ko",
@@ -5135,7 +5135,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 6
+    "mention_count": 7
   },
   "indo - pacific": {
     "entity": "indo - pacific",
@@ -5191,7 +5191,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 1
+    "mention_count": 2
   },
   "sergei lavrov": {
     "entity": "sergei lavrov",
@@ -5205,14 +5205,14 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.36,
-    "mention_count": 5
+    "mention_count": 6
   },
   "foreign ministry": {
     "entity": "foreign ministry",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.48,
-    "mention_count": 2
+    "mention_count": 3
   },
   "kyiv": {
     "entity": "kyiv",
@@ -5247,21 +5247,21 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 12
+    "mention_count": 13
   },
   "brent": {
     "entity": "brent",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.18,
-    "mention_count": 3
+    "mention_count": 4
   },
   "s & am": {
     "entity": "s & am",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.18,
-    "mention_count": 5
+    "mention_count": 6
   },
   "pce": {
     "entity": "pce",
@@ -5296,7 +5296,7 @@
     "type": "locations",
     "sector": "finance",
     "confidence": 0.36,
-    "mention_count": 17
+    "mention_count": 18
   },
   "suzlon energy": {
     "entity": "suzlon energy",
@@ -5506,14 +5506,14 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 12
+    "mention_count": 13
   },
   "asci": {
     "entity": "asci",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 13
+    "mention_count": 14
   },
   "jansuraksha": {
     "entity": "jansuraksha",
@@ -5744,7 +5744,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 9
+    "mention_count": 10
   },
   "d & am": {
     "entity": "d & am",
@@ -5758,7 +5758,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.12,
-    "mention_count": 7
+    "mention_count": 8
   },
   "commonwealth foundation": {
     "entity": "commonwealth foundation",
@@ -5961,7 +5961,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 4
   },
   "##h mander": {
     "entity": "##h mander",
@@ -6106,9 +6106,9 @@
   "greece": {
     "entity": "greece",
     "type": "locations",
-    "sector": "military",
+    "sector": "energy",
     "confidence": 0.12,
-    "mention_count": 2
+    "mention_count": 3
   },
   "cyprus": {
     "entity": "cyprus",
@@ -6157,7 +6157,7 @@
     "type": "locations",
     "sector": "energy",
     "confidence": 0.3,
-    "mention_count": 24
+    "mention_count": 25
   },
   "huang": {
     "entity": "huang",
@@ -6192,7 +6192,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.42,
-    "mention_count": 24
+    "mention_count": 26
   },
   "of": {
     "entity": "of",
@@ -6205,8 +6205,8 @@
     "entity": "america",
     "type": "locations",
     "sector": "politics",
-    "confidence": 0.36,
-    "mention_count": 50
+    "confidence": 0.42,
+    "mention_count": 54
   },
   "lula": {
     "entity": "lula",
@@ -6290,7 +6290,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 6
+    "mention_count": 7
   },
   "trump signal": {
     "entity": "trump signal",
@@ -6402,14 +6402,14 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "syria": {
     "entity": "syria",
     "type": "locations",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "temu": {
     "entity": "temu",
@@ -6430,7 +6430,7 @@
     "type": "locations",
     "sector": "social",
     "confidence": 0.18,
-    "mention_count": 33
+    "mention_count": 38
   },
   "kenneth iwamasa": {
     "entity": "kenneth iwamasa",
@@ -6451,21 +6451,21 @@
     "type": "orgs",
     "sector": "social",
     "confidence": 0.3,
-    "mention_count": 7
+    "mention_count": 8
   },
   "dr congo": {
     "entity": "dr congo",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 5
+    "mention_count": 6
   },
   "hamas": {
     "entity": "hamas",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 9
+    "mention_count": 11
   },
   "gaza city": {
     "entity": "gaza city",
@@ -6500,63 +6500,63 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 50
+    "mention_count": 52
   },
   "married": {
     "entity": "married",
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "first sight uk": {
     "entity": "first sight uk",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "bbc": {
     "entity": "bbc",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 12
+    "mention_count": 16
   },
   "channel 4": {
     "entity": "channel 4",
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "uk": {
     "entity": "uk",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.42,
-    "mention_count": 70
+    "mention_count": 83
   },
   "fais": {
     "entity": "fais",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##al islam": {
     "entity": "##al islam",
     "type": "persons",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 1
+    "mention_count": 2
   },
   "kent": {
     "entity": "kent",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 18
+    "mention_count": 19
   },
   "river thames": {
     "entity": "river thames",
@@ -6577,14 +6577,14 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "henry nowak": {
     "entity": "henry nowak",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 6
   },
   "southampton": {
     "entity": "southampton",
@@ -6598,14 +6598,14 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "myanmar": {
     "entity": "myanmar",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 5
+    "mention_count": 6
   },
   "andrew tate": {
     "entity": "andrew tate",
@@ -6626,7 +6626,7 @@
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.12,
-    "mention_count": 5
+    "mention_count": 6
   },
   "al faye": {
     "entity": "al faye",
@@ -6647,21 +6647,21 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "bbc verify": {
     "entity": "bbc verify",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "williams": {
     "entity": "williams",
-    "type": "persons",
+    "type": "orgs",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 5
+    "mention_count": 6
   },
   "serena williams": {
     "entity": "serena williams",
@@ -6715,9 +6715,9 @@
   "pmla": {
     "entity": "pmla",
     "type": "orgs",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 1
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 2
   },
   "bahadur mathur": {
     "entity": "bahadur mathur",
@@ -6808,7 +6808,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 7
+    "mention_count": 8
   },
   "burnham": {
     "entity": "burnham",
@@ -6829,14 +6829,14 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 19
+    "mention_count": 20
   },
   "tony blair": {
     "entity": "tony blair",
     "type": "persons",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 14
+    "mention_count": 17
   },
   "home office": {
     "entity": "home office",
@@ -6857,7 +6857,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "stanislav carpiuc": {
     "entity": "stanislav carpiuc",
@@ -6892,7 +6892,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "##hun": {
     "entity": "##hun",
@@ -6927,7 +6927,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "st": {
     "entity": "st",
@@ -6955,21 +6955,21 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "jeffrey donaldson": {
     "entity": "jeffrey donaldson",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "dup": {
     "entity": "dup",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 6
   },
   "court of appeal": {
     "entity": "court of appeal",
@@ -7095,7 +7095,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.24,
-    "mention_count": 7
+    "mention_count": 8
   },
   "starship": {
     "entity": "starship",
@@ -7130,7 +7130,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.48,
-    "mention_count": 11
+    "mention_count": 12
   },
   "fifa": {
     "entity": "fifa",
@@ -7319,7 +7319,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 17
+    "mention_count": 18
   },
   "environment agency": {
     "entity": "environment agency",
@@ -7452,14 +7452,14 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "south east water": {
     "entity": "south east water",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 2
+    "mention_count": 3
   },
   "shan": {
     "entity": "shan",
@@ -7529,7 +7529,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 13
+    "mention_count": 14
   },
   "vancouver island": {
     "entity": "vancouver island",
@@ -7645,10 +7645,10 @@
   },
   "golden": {
     "entity": "golden",
-    "type": "persons",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 1
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 2
   },
   "sabrina carpenter": {
     "entity": "sabrina carpenter",
@@ -7669,7 +7669,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 8
+    "mention_count": 10
   },
   "eyed peas": {
     "entity": "eyed peas",
@@ -7872,7 +7872,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 15
+    "mention_count": 18
   },
   "air national guards": {
     "entity": "air national guards",
@@ -7928,7 +7928,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 12
+    "mention_count": 14
   },
   "chuck schumer": {
     "entity": "chuck schumer",
@@ -8026,7 +8026,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.42,
-    "mention_count": 10
+    "mention_count": 11
   },
   "mar - a - lago": {
     "entity": "mar - a - lago",
@@ -8103,7 +8103,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.42,
-    "mention_count": 26
+    "mention_count": 29
   },
   "##ku": {
     "entity": "##ku",
@@ -8131,7 +8131,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 17
+    "mention_count": 18
   },
   "mar": {
     "entity": "mar",
@@ -8243,7 +8243,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 12
+    "mention_count": 14
   },
   "haley stevens": {
     "entity": "haley stevens",
@@ -8264,7 +8264,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 11
+    "mention_count": 13
   },
   "detroit regional chamber": {
     "entity": "detroit regional chamber",
@@ -8355,7 +8355,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 25
+    "mention_count": 27
   },
   "alabama": {
     "entity": "alabama",
@@ -8369,7 +8369,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 5
+    "mention_count": 7
   },
   "##d vance": {
     "entity": "##d vance",
@@ -8390,7 +8390,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 8
+    "mention_count": 12
   },
   "##j": {
     "entity": "##j",
@@ -8404,7 +8404,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 9
   },
   "dhs": {
     "entity": "dhs",
@@ -8523,7 +8523,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 21
+    "mention_count": 26
   },
   "jamie raskin": {
     "entity": "jamie raskin",
@@ -8626,16 +8626,16 @@
   "utum": {
     "entity": "utum",
     "type": "locations",
-    "sector": "technology",
-    "confidence": 0.06,
-    "mention_count": 1
+    "sector": "politics",
+    "confidence": 0.12,
+    "mention_count": 2
   },
   "gilgil": {
     "entity": "gilgil",
     "type": "locations",
     "sector": "politics",
-    "confidence": 0.06,
-    "mention_count": 2
+    "confidence": 0.12,
+    "mention_count": 3
   },
   "nakuru": {
     "entity": "nakuru",
@@ -8656,28 +8656,28 @@
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.12,
-    "mention_count": 10
+    "mention_count": 12
   },
   "drc": {
     "entity": "drc",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.12,
-    "mention_count": 14
+    "mention_count": 17
   },
   "ted": {
     "entity": "ted",
     "type": "persons",
-    "sector": "military",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##ros adhanom ghebreyes": {
     "entity": "##ros adhanom ghebreyes",
     "type": "persons",
-    "sector": "military",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##ros adhanom ghebreyesus": {
     "entity": "##ros adhanom ghebreyesus",
@@ -8691,7 +8691,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 8
   },
   "uganda": {
     "entity": "uganda",
@@ -8894,14 +8894,14 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 11
+    "mention_count": 12
   },
   "tijuana": {
     "entity": "tijuana",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##eu": {
     "entity": "##eu",
@@ -8978,7 +8978,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 1
+    "mention_count": 2
   },
   "geoffrey dalton": {
     "entity": "geoffrey dalton",
@@ -9027,7 +9027,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "alba": {
     "entity": "alba",
@@ -9223,7 +9223,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 5
+    "mention_count": 6
   },
   "##mb": {
     "entity": "##mb",
@@ -9356,28 +9356,28 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "alex albon": {
     "entity": "alex albon",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "carlos sainz": {
     "entity": "carlos sainz",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "james vowles": {
     "entity": "james vowles",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##oh": {
     "entity": "##oh",
@@ -9440,7 +9440,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.18,
-    "mention_count": 15
+    "mention_count": 16
   },
   "twitter": {
     "entity": "twitter",
@@ -9461,7 +9461,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 22
+    "mention_count": 23
   },
   "alexis petridis": {
     "entity": "alexis petridis",
@@ -9489,14 +9489,14 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 14
+    "mention_count": 16
   },
   "mi": {
     "entity": "mi",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.24,
-    "mention_count": 7
+    "mention_count": 8
   },
   "##burn": {
     "entity": "##burn",
@@ -9516,15 +9516,15 @@
     "entity": "he",
     "type": "orgs",
     "sector": "military",
-    "confidence": 0.3,
-    "mention_count": 5
+    "confidence": 0.36,
+    "mention_count": 6
   },
   "##zbollah": {
     "entity": "##zbollah",
     "type": "orgs",
     "sector": "military",
-    "confidence": 0.24,
-    "mention_count": 3
+    "confidence": 0.3,
+    "mention_count": 4
   },
   "east": {
     "entity": "east",
@@ -9664,14 +9664,14 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "onlyf": {
     "entity": "onlyf",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "feastwhil": {
     "entity": "feastwhil",
@@ -9685,7 +9685,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 19
+    "mention_count": 21
   },
   "joel de mowbray": {
     "entity": "joel de mowbray",
@@ -9734,7 +9734,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 24
+    "mention_count": 28
   },
   "##ipping point east": {
     "entity": "##ipping point east",
@@ -9769,7 +9769,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 3
+    "mention_count": 4
   },
   "manifold": {
     "entity": "manifold",
@@ -9804,7 +9804,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##ark": {
     "entity": "##ark",
@@ -9825,14 +9825,14 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.32,
-    "mention_count": 7
+    "mention_count": 9
   },
   "##a": {
     "entity": "##a",
-    "type": "persons",
+    "type": "orgs",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 6
+    "mention_count": 7
   },
   "##lan milburn": {
     "entity": "##lan milburn",
@@ -9853,7 +9853,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.24,
-    "mention_count": 7
+    "mention_count": 8
   },
   "wes street": {
     "entity": "wes street",
@@ -9916,7 +9916,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 9
+    "mention_count": 10
   },
   "polanski": {
     "entity": "polanski",
@@ -9972,7 +9972,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 6
+    "mention_count": 7
   },
   "##imo": {
     "entity": "##imo",
@@ -10048,8 +10048,8 @@
     "entity": ". jean carroll",
     "type": "persons",
     "sector": "politics",
-    "confidence": 0.18,
-    "mention_count": 24
+    "confidence": 0.24,
+    "mention_count": 28
   },
   "trump justice dept": {
     "entity": "trump justice dept",
@@ -10158,24 +10158,24 @@
   },
   "bronx zoo": {
     "entity": "bronx zoo",
-    "type": "locations",
+    "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "center of animal rights": {
     "entity": "center of animal rights",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "case": {
     "entity": "case",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "cheap gas": {
     "entity": "cheap gas",
@@ -10214,10 +10214,10 @@
   },
   "##de": {
     "entity": "##de",
-    "type": "persons",
+    "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "david rush": {
     "entity": "david rush",
@@ -10385,7 +10385,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 7
   },
   "##har": {
     "entity": "##har",
@@ -10420,14 +10420,14 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##bot": {
     "entity": "##bot",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "chip": {
     "entity": "chip",
@@ -10931,7 +10931,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "##guardian": {
     "entity": "##guardian",
@@ -11278,10 +11278,10 @@
   },
   "##ub": {
     "entity": "##ub",
-    "type": "orgs",
+    "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##evabritain": {
     "entity": "##evabritain",
@@ -11358,14 +11358,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   ". s.": {
     "entity": ". s.",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "least 16": {
     "entity": "least 16",
@@ -11393,7 +11393,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 8
+    "mention_count": 9
   },
   "news": {
     "entity": "news",
@@ -11512,7 +11512,7 @@
     "type": "locations",
     "sector": "energy",
     "confidence": 0.12,
-    "mention_count": 10
+    "mention_count": 12
   },
   "lightning": {
     "entity": "lightning",
@@ -11545,9 +11545,9 @@
   "jeff bezos": {
     "entity": "jeff bezos",
     "type": "persons",
-    "sector": "technology",
+    "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 6
   },
   "jared isaacman": {
     "entity": "jared isaacman",
@@ -11561,7 +11561,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 6
+    "mention_count": 14
   },
   "##asa": {
     "entity": "##asa",
@@ -11726,10 +11726,10 @@
   },
   "##m": {
     "entity": "##m",
-    "type": "persons",
+    "type": "orgs",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 13
+    "mention_count": 14
   },
   "##dani": {
     "entity": "##dani",
@@ -11769,9 +11769,9 @@
   "##ijuana": {
     "entity": "##ijuana",
     "type": "locations",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 1
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 2
   },
   "eid": {
     "entity": "eid",
@@ -11911,7 +11911,7 @@
     "type": "locations",
     "sector": "military",
     "confidence": 0.12,
-    "mention_count": 15
+    "mention_count": 17
   },
   "safe - haven city": {
     "entity": "safe - haven city",
@@ -11932,7 +11932,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 16
+    "mention_count": 17
   },
   "meloni say": {
     "entity": "meloni say",
@@ -12100,7 +12100,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "so": {
     "entity": "so",
@@ -12317,28 +12317,28 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 5
   },
   "washington, d. c.": {
     "entity": "washington, d. c.",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "ohio": {
     "entity": "ohio",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "npr": {
     "entity": "npr",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 3
+    "mention_count": 4
   },
   "deeps": {
     "entity": "deeps",
@@ -12520,7 +12520,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "bank of america": {
     "entity": "bank of america",
@@ -12625,7 +12625,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 2
+    "mention_count": 3
   },
   "partnership for public service": {
     "entity": "partnership for public service",
@@ -12646,28 +12646,28 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "vladimir putin": {
     "entity": "vladimir putin",
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "cannes": {
     "entity": "cannes",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 4
   },
   "benjamin netanyahu": {
     "entity": "benjamin netanyahu",
     "type": "persons",
     "sector": "military",
     "confidence": 0.12,
-    "mention_count": 4
+    "mention_count": 6
   },
   "mongbwalu": {
     "entity": "mongbwalu",
@@ -12681,7 +12681,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 9
+    "mention_count": 10
   },
   "cape verde": {
     "entity": "cape verde",
@@ -12695,7 +12695,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 6
+    "mention_count": 7
   },
   "scott detrow": {
     "entity": "scott detrow",
@@ -12951,10 +12951,10 @@
   },
   "lu": {
     "entity": "lu",
-    "type": "locations",
+    "type": "persons",
     "sector": "energy",
     "confidence": 0.3,
-    "mention_count": 6
+    "mention_count": 7
   },
   "##uni": {
     "entity": "##uni",
@@ -12989,7 +12989,7 @@
     "type": "orgs",
     "sector": "military",
     "confidence": 0.36,
-    "mention_count": 16
+    "mention_count": 19
   },
   "##is\u00e8": {
     "entity": "##is\u00e8",
@@ -13219,8 +13219,8 @@
     "entity": "department",
     "type": "orgs",
     "sector": "politics",
-    "confidence": 0.06,
-    "mention_count": 4
+    "confidence": 0.12,
+    "mention_count": 6
   },
   "morgan chesky": {
     "entity": "morgan chesky",
@@ -13563,7 +13563,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 8
+    "mention_count": 9
   },
   "nebius": {
     "entity": "nebius",
@@ -13577,14 +13577,14 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.24,
-    "mention_count": 1
+    "mention_count": 2
   },
   "anthropic": {
     "entity": "anthropic",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.24,
-    "mention_count": 7
+    "mention_count": 10
   },
   "warren": {
     "entity": "warren",
@@ -13626,7 +13626,7 @@
     "type": "persons",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 10
+    "mention_count": 11
   },
   "##olsbee": {
     "entity": "##olsbee",
@@ -13682,21 +13682,21 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.48,
-    "mention_count": 72
+    "mention_count": 75
   },
   "south carolina": {
     "entity": "south carolina",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 4
+    "mention_count": 5
   },
   "tennessee": {
     "entity": "tennessee",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 2
+    "mention_count": 3
   },
   "60 minutes": {
     "entity": "60 minutes",
@@ -13899,7 +13899,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.42,
-    "mention_count": 10
+    "mention_count": 11
   },
   "talar": {
     "entity": "talar",
@@ -13996,8 +13996,8 @@
     "entity": "new york city",
     "type": "locations",
     "sector": "energy",
-    "confidence": 0.06,
-    "mention_count": 3
+    "confidence": 0.12,
+    "mention_count": 4
   },
   "& p": {
     "entity": "& p",
@@ -14326,7 +14326,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "navy": {
     "entity": "navy",
@@ -14445,7 +14445,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "deborah b": {
     "entity": "deborah b",
@@ -14590,9 +14590,9 @@
   "##hm": {
     "entity": "##hm",
     "type": "persons",
-    "sector": "technology",
+    "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##et oz": {
     "entity": "##et oz",
@@ -14659,10 +14659,10 @@
   },
   "ben": {
     "entity": "ben",
-    "type": "orgs",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 1
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 2
   },
   "london records": {
     "entity": "london records",
@@ -14704,7 +14704,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 35
+    "mention_count": 36
   },
   "t - mobile": {
     "entity": "t - mobile",
@@ -14977,7 +14977,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "colossus ai": {
     "entity": "colossus ai",
@@ -14998,98 +14998,98 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "danny new": {
     "entity": "danny new",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 24
+    "mention_count": 25
   },
   "abc news": {
     "entity": "abc news",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 64
+    "mention_count": 69
   },
   "glacier national park": {
     "entity": "glacier national park",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 12
+    "mention_count": 13
   },
   "##tte hooker": {
     "entity": "##tte hooker",
     "type": "persons",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 13
+    "mention_count": 14
   },
   "coast guard": {
     "entity": "coast guard",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 12
+    "mention_count": 13
   },
   "coast guard investigative service": {
     "entity": "coast guard investigative service",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 12
+    "mention_count": 13
   },
   "bahamas": {
     "entity": "bahamas",
     "type": "locations",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 14
+    "mention_count": 15
   },
   "hakeem olusey": {
     "entity": "hakeem olusey",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 12
+    "mention_count": 13
   },
   "brian buckmir": {
     "entity": "brian buckmir",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "natgeo": {
     "entity": "natgeo",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "ep": {
     "entity": "ep",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "##co": {
     "entity": "##co",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "disneyland": {
     "entity": "disneyland",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "buzz": {
     "entity": "buzz",
@@ -15642,21 +15642,21 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 4
   },
   "statista": {
     "entity": "statista",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 3
   },
   "pingingz": {
     "entity": "pingingz",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "underwater forests": {
     "entity": "underwater forests",
@@ -15691,14 +15691,14 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "memphis": {
     "entity": "memphis",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "omar lateef": {
     "entity": "omar lateef",
@@ -15992,7 +15992,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 6
+    "mention_count": 8
   },
   "eric poulin": {
     "entity": "eric poulin",
@@ -16381,10 +16381,10 @@
   },
   "bc": {
     "entity": "bc",
-    "type": "orgs",
+    "type": "locations",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "madeleine ogilvie": {
     "entity": "madeleine ogilvie",
@@ -17070,7 +17070,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 15
+    "mention_count": 18
   },
   "viola davis": {
     "entity": "viola davis",
@@ -17096,9 +17096,9 @@
   "chicago": {
     "entity": "chicago",
     "type": "locations",
-    "sector": "technology",
+    "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##hara": {
     "entity": "##hara",
@@ -17166,9 +17166,9 @@
   "mea": {
     "entity": "mea",
     "type": "orgs",
-    "sector": "technology",
+    "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "amber": {
     "entity": "amber",
@@ -17222,9 +17222,9 @@
   "cockroach janta party": {
     "entity": "cockroach janta party",
     "type": "orgs",
-    "sector": "technology",
-    "confidence": 0.06,
-    "mention_count": 2
+    "sector": "social",
+    "confidence": 0.12,
+    "mention_count": 3
   },
   "indonesia": {
     "entity": "indonesia",
@@ -17441,7 +17441,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##\u00fan": {
     "entity": "##\u00fan",
@@ -17586,16 +17586,16 @@
   "douglas herbert": {
     "entity": "douglas herbert",
     "type": "persons",
-    "sector": "politics",
-    "confidence": 0.06,
-    "mention_count": 1
+    "sector": "military",
+    "confidence": 0.12,
+    "mention_count": 2
   },
   "##nce 24": {
     "entity": "##nce 24",
     "type": "orgs",
     "sector": "military",
-    "confidence": 0.12,
-    "mention_count": 3
+    "confidence": 0.18,
+    "mention_count": 4
   },
   "##smaeil baqaei": {
     "entity": "##smaeil baqaei",
@@ -18428,7 +18428,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 8
+    "mention_count": 9
   },
   "jipm": {
     "entity": "jipm",
@@ -18477,7 +18477,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "##nya panday": {
     "entity": "##nya panday",
@@ -18824,10 +18824,10 @@
   },
   "hara": {
     "entity": "hara",
-    "type": "persons",
+    "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##mbe": {
     "entity": "##mbe",
@@ -19401,7 +19401,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 5
+    "mention_count": 7
   },
   "tesla": {
     "entity": "tesla",
@@ -19485,7 +19485,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 14
+    "mention_count": 15
   },
   "vellingiri hills": {
     "entity": "vellingiri hills",
@@ -19772,7 +19772,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "tokyo": {
     "entity": "tokyo",
@@ -19954,7 +19954,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "mohammad ishaq dar": {
     "entity": "mohammad ishaq dar",
@@ -20493,7 +20493,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##it shah": {
     "entity": "##it shah",
@@ -20934,7 +20934,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 12
+    "mention_count": 13
   },
   "##khana club": {
     "entity": "##khana club",
@@ -21025,28 +21025,28 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.26,
-    "mention_count": 9
+    "mention_count": 10
   },
   "##b fintech": {
     "entity": "##b fintech",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 9
+    "mention_count": 10
   },
   "ipo": {
     "entity": "ipo",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.26,
-    "mention_count": 17
+    "mention_count": 18
   },
   "jio": {
     "entity": "jio",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 10
+    "mention_count": 11
   },
   "marcus aurel": {
     "entity": "marcus aurel",
@@ -21095,7 +21095,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 10
+    "mention_count": 11
   },
   "iranian airlines": {
     "entity": "iranian airlines",
@@ -21381,8 +21381,8 @@
     "entity": "terry pitchford",
     "type": "persons",
     "sector": "politics",
-    "confidence": 0.06,
-    "mention_count": 2
+    "confidence": 0.12,
+    "mention_count": 4
   },
   "pitchford": {
     "entity": "pitchford",
@@ -21473,7 +21473,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "anthony gordon": {
     "entity": "anthony gordon",
@@ -21529,14 +21529,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "nick bilton": {
     "entity": "nick bilton",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "bilton": {
     "entity": "bilton",
@@ -21550,7 +21550,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "tele": {
     "entity": "tele",
@@ -21942,7 +21942,7 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.26,
-    "mention_count": 3
+    "mention_count": 4
   },
   "tyler": {
     "entity": "tyler",
@@ -21963,14 +21963,14 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.18,
-    "mention_count": 4
+    "mention_count": 5
   },
   "commodity futures trading commission": {
     "entity": "commodity futures trading commission",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 2
+    "mention_count": 3
   },
   "cftc": {
     "entity": "cftc",
@@ -22187,7 +22187,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "investing club": {
     "entity": "investing club",
@@ -22292,7 +22292,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "advisor": {
     "entity": "advisor",
@@ -22551,7 +22551,7 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 9
+    "mention_count": 10
   },
   "jackson war": {
     "entity": "jackson war",
@@ -22768,7 +22768,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "rafael nadal": {
     "entity": "rafael nadal",
@@ -22985,7 +22985,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 30
+    "mention_count": 32
   },
   "##netaka murakami": {
     "entity": "##netaka murakami",
@@ -23186,30 +23186,30 @@
   "jacob wenske": {
     "entity": "jacob wenske",
     "type": "persons",
-    "sector": "energy",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "erik": {
     "entity": "erik",
     "type": "persons",
-    "sector": "energy",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##a kirk": {
     "entity": "##a kirk",
     "type": "persons",
-    "sector": "energy",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "tpusa": {
     "entity": "tpusa",
     "type": "orgs",
-    "sector": "energy",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "turning": {
     "entity": "turning",
@@ -23416,10 +23416,10 @@
   },
   "##h": {
     "entity": "##h",
-    "type": "persons",
+    "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 7
   },
   "rev": {
     "entity": "rev",
@@ -23461,7 +23461,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 11
+    "mention_count": 12
   },
   "leb": {
     "entity": "leb",
@@ -23517,7 +23517,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 11
+    "mention_count": 13
   },
   "deborah lemieux": {
     "entity": "deborah lemieux",
@@ -23671,7 +23671,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "opena": {
     "entity": "opena",
@@ -23713,7 +23713,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 3
   },
   "##h ambani": {
     "entity": "##h ambani",
@@ -23748,7 +23748,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.3,
-    "mention_count": 9
+    "mention_count": 10
   },
   "jio platforms": {
     "entity": "jio platforms",
@@ -24119,7 +24119,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "##rya": {
     "entity": "##rya",
@@ -24413,7 +24413,7 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "murrell": {
     "entity": "murrell",
@@ -24427,14 +24427,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 4
   },
   "vienna": {
     "entity": "vienna",
     "type": "locations",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 1
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 3
   },
   "mary berry": {
     "entity": "mary berry",
@@ -24462,49 +24462,49 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##hitstable": {
     "entity": "##hitstable",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "tankerton": {
     "entity": "tankerton",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "ashford": {
     "entity": "ashford",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "polly toynbee": {
     "entity": "polly toynbee",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "be": {
     "entity": "be",
     "type": "persons",
     "sector": "politics",
     "confidence": 0.12,
-    "mention_count": 3
+    "mention_count": 4
   },
   "##idge": {
     "entity": "##idge",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##our": {
     "entity": "##our",
@@ -24616,21 +24616,21 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "pitch": {
     "entity": "pitch",
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "cain": {
     "entity": "cain",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "golden dome": {
     "entity": "golden dome",
@@ -24644,7 +24644,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 2
+    "mention_count": 3
   },
   "american civil liberties union": {
     "entity": "american civil liberties union",
@@ -24847,56 +24847,56 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "agency": {
     "entity": "agency",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "winklevoss twins": {
     "entity": "winklevoss twins",
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "will duel": {
     "entity": "will duel",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "\u2018 star": {
     "entity": "\u2018 star",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "the star": {
     "entity": "the star",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "the washington star": {
     "entity": "the washington star",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "i. start": {
     "entity": "i. start",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "kathy hochul": {
     "entity": "kathy hochul",
@@ -24952,14 +24952,14 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 3
   },
   "north dakota": {
     "entity": "north dakota",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "new york speech": {
     "entity": "new york speech",
@@ -25183,7 +25183,7 @@
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 9
+    "mention_count": 10
   },
   "arm holdings": {
     "entity": "arm holdings",
@@ -25273,8 +25273,8 @@
     "entity": "bessent",
     "type": "persons",
     "sector": "politics",
-    "confidence": 0.06,
-    "mention_count": 3
+    "confidence": 0.12,
+    "mention_count": 4
   },
   "bob fenton": {
     "entity": "bob fenton",
@@ -25316,7 +25316,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "kimmel": {
     "entity": "kimmel",
@@ -25379,14 +25379,14 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "pam bondi": {
     "entity": "pam bondi",
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 5
   },
   "house oversight and government reform committee": {
     "entity": "house oversight and government reform committee",
@@ -25442,14 +25442,14 @@
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "dallas fire - rescue": {
     "entity": "dallas fire - rescue",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "natalie brand": {
     "entity": "natalie brand",
@@ -25631,7 +25631,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##ggio c": {
     "entity": "##ggio c",
@@ -25785,7 +25785,7 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "newark international airport": {
     "entity": "newark international airport",
@@ -25950,10 +25950,10 @@
   },
   "##ian": {
     "entity": "##ian",
-    "type": "persons",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 8
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 10
   },
   "##nis antetokou": {
     "entity": "##nis antetokou",
@@ -26205,7 +26205,7 @@
     "type": "persons",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "johnny galvatron": {
     "entity": "johnny galvatron",
@@ -26499,7 +26499,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "mourinho": {
     "entity": "mourinho",
@@ -26548,91 +26548,91 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 8
+    "mention_count": 9
   },
   "alan kay": {
     "entity": "alan kay",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.12,
-    "mention_count": 7
+    "mention_count": 8
   },
   "andy bernard": {
     "entity": "andy bernard",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 7
+    "mention_count": 8
   },
   "office": {
     "entity": "office",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 7
+    "mention_count": 8
   },
   "the office": {
     "entity": "the office",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 7
+    "mention_count": 8
   },
   "sebi": {
     "entity": "sebi",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 8
+    "mention_count": 9
   },
   "reliance petroleum": {
     "entity": "reliance petroleum",
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.3,
-    "mention_count": 7
+    "mention_count": 8
   },
   "sat": {
     "entity": "sat",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 8
+    "mention_count": 9
   },
   "anderson diagnostics": {
     "entity": "anderson diagnostics",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "irdai": {
     "entity": "irdai",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 7
+    "mention_count": 8
   },
   "asian paints": {
     "entity": "asian paints",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 7
+    "mention_count": 8
   },
   "golden legand leasing and finance": {
     "entity": "golden legand leasing and finance",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "dalal street": {
     "entity": "dalal street",
     "type": "locations",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "mr green technologies": {
     "entity": "mr green technologies",
@@ -26681,21 +26681,21 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 12
+    "mention_count": 13
   },
   "dash": {
     "entity": "dash",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 7
+    "mention_count": 8
   },
   "##a burns": {
     "entity": "##a burns",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 7
+    "mention_count": 8
   },
   "justice amy coney barrett": {
     "entity": "justice amy coney barrett",
@@ -26772,21 +26772,21 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "##har khan": {
     "entity": "##har khan",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "mit": {
     "entity": "mit",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "hindutva": {
     "entity": "hindutva",
@@ -27031,7 +27031,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##h singh": {
     "entity": "##h singh",
@@ -27066,7 +27066,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##de mata": {
     "entity": "##de mata",
@@ -27213,7 +27213,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "hard": {
     "entity": "hard",
@@ -27360,14 +27360,14 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 7
+    "mention_count": 8
   },
   "jharkhand": {
     "entity": "jharkhand",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "giant anthrop": {
     "entity": "giant anthrop",
@@ -27402,7 +27402,7 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##gesh wankhede": {
     "entity": "##gesh wankhede",
@@ -27444,7 +27444,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 7
   },
   "manoj jaran": {
     "entity": "manoj jaran",
@@ -27479,28 +27479,28 @@
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##der singh": {
     "entity": "##der singh",
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "royal canin": {
     "entity": "royal canin",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "sensex": {
     "entity": "sensex",
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.18,
-    "mention_count": 7
+    "mention_count": 8
   },
   "jewellers ipo": {
     "entity": "jewellers ipo",
@@ -27549,7 +27549,7 @@
     "type": "orgs",
     "sector": "social",
     "confidence": 0.26,
-    "mention_count": 2
+    "mention_count": 3
   },
   "america inc": {
     "entity": "america inc",
@@ -27584,35 +27584,35 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "christina walters": {
     "entity": "christina walters",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "rebecca walters": {
     "entity": "rebecca walters",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "brighton": {
     "entity": "brighton",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "##pe": {
     "entity": "##pe",
     "type": "orgs",
-    "sector": "global_events",
-    "confidence": 0.1,
-    "mention_count": 1
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 2
   },
   "kew gardens": {
     "entity": "kew gardens",
@@ -27640,7 +27640,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "manchester city": {
     "entity": "manchester city",
@@ -27668,14 +27668,14 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 5
   },
   "penn station": {
     "entity": "penn station",
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 6
   },
   "oromia": {
     "entity": "oromia",
@@ -27687,16 +27687,16 @@
   "curry barker": {
     "entity": "curry barker",
     "type": "persons",
-    "sector": "energy",
+    "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "romania": {
     "entity": "romania",
     "type": "locations",
     "sector": "politics",
     "confidence": 0.3,
-    "mention_count": 22
+    "mention_count": 26
   },
   "galati": {
     "entity": "galati",
@@ -27710,35 +27710,35 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "martina mcbride": {
     "entity": "martina mcbride",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "lin": {
     "entity": "lin",
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "##sey davis": {
     "entity": "##sey davis",
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "##j quinn": {
     "entity": "##j quinn",
     "type": "persons",
     "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 7
+    "mention_count": 8
   },
   "ai agents": {
     "entity": "ai agents",
@@ -27857,14 +27857,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##ke brailey": {
     "entity": "##ke brailey",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 2
+    "mention_count": 3
   },
   "sharks": {
     "entity": "sharks",
@@ -27876,37 +27876,37 @@
   "origin": {
     "entity": "origin",
     "type": "orgs",
-    "sector": "technology",
+    "sector": "finance",
     "confidence": 0.06,
-    "mention_count": 3
+    "mention_count": 7
   },
   "manly": {
     "entity": "manly",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "cronulla": {
     "entity": "cronulla",
-    "type": "persons",
+    "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "##hr": {
     "entity": "##hr",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 2
+    "mention_count": 5
   },
   "##ey parikh": {
     "entity": "##ey parikh",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 2
+    "mention_count": 4
   },
   "indiacakes": {
     "entity": "indiacakes",
@@ -27931,10 +27931,10 @@
   },
   "mata": {
     "entity": "mata",
-    "type": "locations",
+    "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "lawrence bishnoi": {
     "entity": "lawrence bishnoi",
@@ -27988,16 +27988,16 @@
   "mark rutte": {
     "entity": "mark rutte",
     "type": "persons",
-    "sector": "technology",
+    "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 4
   },
   "ato": {
     "entity": "ato",
     "type": "orgs",
-    "sector": "technology",
+    "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##shupa": {
     "entity": "##shupa",
@@ -28018,21 +28018,21 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 2
+    "mention_count": 3
   },
   "us drone": {
     "entity": "us drone",
     "type": "orgs",
     "sector": "military",
     "confidence": 0.32,
-    "mention_count": 1
+    "mention_count": 2
   },
   "vanak square": {
     "entity": "vanak square",
     "type": "locations",
     "sector": "military",
     "confidence": 0.12,
-    "mention_count": 1
+    "mention_count": 2
   },
   "has": {
     "entity": "has",
@@ -28081,14 +28081,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##art": {
     "entity": "##art",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "lv stoles": {
     "entity": "lv stoles",
@@ -28207,7 +28207,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "tim": {
     "entity": "tim",
@@ -28228,28 +28228,28 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "house oversight committee": {
     "entity": "house oversight committee",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 3
   },
   "sue tilley": {
     "entity": "sue tilley",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "lucian freud": {
     "entity": "lucian freud",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "monty don": {
     "entity": "monty don",
@@ -28361,7 +28361,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.12,
-    "mention_count": 6
+    "mention_count": 7
   },
   "grok": {
     "entity": "grok",
@@ -28403,21 +28403,21 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "lam": {
     "entity": "lam",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##ine yamal": {
     "entity": "##ine yamal",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "basirhat": {
     "entity": "basirhat",
@@ -28585,7 +28585,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.12,
-    "mention_count": 6
+    "mention_count": 7
   },
   "##empt": {
     "entity": "##empt",
@@ -28837,7 +28837,7 @@
     "type": "persons",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 5
+    "mention_count": 6
   },
   "mail": {
     "entity": "mail",
@@ -29033,7 +29033,7 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "hear": {
     "entity": "hear",
@@ -29103,7 +29103,7 @@
     "type": "orgs",
     "sector": "finance",
     "confidence": 0.18,
-    "mention_count": 4
+    "mention_count": 5
   },
   "##an": {
     "entity": "##an",
@@ -29271,7 +29271,7 @@
     "type": "locations",
     "sector": "social",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "niw": {
     "entity": "niw",
@@ -29418,28 +29418,28 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 4
   },
   "stan kroenke": {
     "entity": "stan kroenke",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "stan": {
     "entity": "stan",
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "los angeles rams": {
     "entity": "los angeles rams",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##ratapgarh": {
     "entity": "##ratapgarh",
@@ -29698,7 +29698,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "rajya": {
     "entity": "rajya",
@@ -29712,7 +29712,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 4
+    "mention_count": 5
   },
   "congress legislative party": {
     "entity": "congress legislative party",
@@ -29880,35 +29880,35 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##tam ottolenghi": {
     "entity": "##tam ottolenghi",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##nee": {
     "entity": "##nee",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##t gill": {
     "entity": "##t gill",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "simon rogan": {
     "entity": "simon rogan",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "imbruglia": {
     "entity": "imbruglia",
@@ -29964,14 +29964,14 @@
     "type": "persons",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 5
   },
   "ippr": {
     "entity": "ippr",
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 2
+    "mention_count": 3
   },
   "tuc": {
     "entity": "tuc",
@@ -29985,7 +29985,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.26,
-    "mention_count": 2
+    "mention_count": 3
   },
   "paul mccartney": {
     "entity": "paul mccartney",
@@ -30034,21 +30034,21 @@
     "type": "locations",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "providence": {
     "entity": "providence",
     "type": "locations",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "r. i": {
     "entity": "r. i",
     "type": "locations",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "iran edge": {
     "entity": "iran edge",
@@ -30713,7 +30713,7 @@
     "type": "orgs",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 6
+    "mention_count": 7
   },
   "securities and exchange board of india": {
     "entity": "securities and exchange board of india",
@@ -30944,7 +30944,7 @@
     "type": "locations",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "mecca": {
     "entity": "mecca",
@@ -31105,7 +31105,7 @@
     "type": "orgs",
     "sector": "energy",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "anil ambani": {
     "entity": "anil ambani",
@@ -31350,7 +31350,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.26,
-    "mention_count": 1
+    "mention_count": 2
   },
   "front": {
     "entity": "front",
@@ -31567,7 +31567,7 @@
     "type": "locations",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##ardy": {
     "entity": "##ardy",
@@ -31616,21 +31616,21 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 3
+    "mention_count": 4
   },
   "lisa kudrow": {
     "entity": "lisa kudrow",
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 3
+    "mention_count": 4
   },
   "comeback": {
     "entity": "comeback",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 3
+    "mention_count": 4
   },
   "nws": {
     "entity": "nws",
@@ -31861,7 +31861,7 @@
     "type": "locations",
     "sector": "politics",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "imphal": {
     "entity": "imphal",
@@ -32106,7 +32106,7 @@
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "spursi": {
     "entity": "spursi",
@@ -32323,14 +32323,14 @@
     "type": "persons",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 2
+    "mention_count": 3
   },
   "republican party": {
     "entity": "republican party",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 2
+    "mention_count": 3
   },
   "michaels": {
     "entity": "michaels",
@@ -32407,7 +32407,7 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "d gukesh": {
     "entity": "d gukesh",
@@ -32470,14 +32470,14 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "plfi": {
     "entity": "plfi",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "varghese": {
     "entity": "varghese",
@@ -32785,14 +32785,14 @@
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "delhi liquor stores": {
     "entity": "delhi liquor stores",
     "type": "orgs",
     "sector": "technology",
     "confidence": 0.06,
-    "mention_count": 1
+    "mention_count": 2
   },
   "board": {
     "entity": "board",
@@ -32988,28 +32988,28 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "##pelling": {
     "entity": "##pelling",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 3
   },
   "gma \u2019": {
     "entity": "gma \u2019",
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 2
   },
   "rancho cucamonga": {
     "entity": "rancho cucamonga",
     "type": "locations",
     "sector": "global_events",
     "confidence": 0.1,
-    "mention_count": 1
+    "mention_count": 3
   },
   "##almart": {
     "entity": "##almart",
@@ -33184,6 +33184,1098 @@
     "type": "orgs",
     "sector": "global_events",
     "confidence": 0.1,
+    "mention_count": 1
+  },
+  "toi home & decor": {
+    "entity": "toi home & decor",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "masterchef india": {
+    "entity": "masterchef india",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "cobra": {
+    "entity": "cobra",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "bed": {
+    "entity": "bed",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##eel jamal": {
+    "entity": "##eel jamal",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##h bedi": {
+    "entity": "##h bedi",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##itya dhar": {
+    "entity": "##itya dhar",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "bedi": {
+    "entity": "bedi",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##eel jamali": {
+    "entity": "##eel jamali",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "dhurandhar": {
+    "entity": "dhurandhar",
+    "type": "locations",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##uz khas": {
+    "entity": "##uz khas",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "bfc": {
+    "entity": "bfc",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "cbfc": {
+    "entity": "cbfc",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "rufus": {
+    "entity": "rufus",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "amazon fashion": {
+    "entity": "amazon fashion",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "kapoor": {
+    "entity": "kapoor",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##nbir kapoor": {
+    "entity": "##nbir kapoor",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "manipur police": {
+    "entity": "manipur police",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##rm": {
+    "entity": "##rm",
+    "type": "locations",
+    "sector": "finance",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "hurst": {
+    "entity": "hurst",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "geoff hurst": {
+    "entity": "geoff hurst",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "wembley stadium": {
+    "entity": "wembley stadium",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "turning point usa": {
+    "entity": "turning point usa",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "sarang sathaye": {
+    "entity": "sarang sathaye",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "jala": {
+    "entity": "jala",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##un": {
+    "entity": "##un",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "vizag": {
+    "entity": "vizag",
+    "type": "locations",
+    "sector": "energy",
+    "confidence": 0.12,
+    "mention_count": 1
+  },
+  "dmk": {
+    "entity": "dmk",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "guatemala": {
+    "entity": "guatemala",
+    "type": "locations",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "sarfaraz": {
+    "entity": "sarfaraz",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "seattle": {
+    "entity": "seattle",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "an se young": {
+    "entity": "an se young",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "sindh": {
+    "entity": "sindh",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##u": {
+    "entity": "##u",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "congress legislature party": {
+    "entity": "congress legislature party",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.3,
+    "mention_count": 1
+  },
+  "karnataka congress legislature party": {
+    "entity": "karnataka congress legislature party",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.3,
+    "mention_count": 1
+  },
+  "##oja": {
+    "entity": "##oja",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "new chandigarh": {
+    "entity": "new chandigarh",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "emirates": {
+    "entity": "emirates",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "lowe": {
+    "entity": "lowe",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "airlines": {
+    "entity": "airlines",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "ex": {
+    "entity": "ex",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "wti": {
+    "entity": "wti",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.12,
+    "mention_count": 1
+  },
+  "asian paint": {
+    "entity": "asian paint",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "decorative business": {
+    "entity": "decorative business",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "sip": {
+    "entity": "sip",
+    "type": "orgs",
+    "sector": "finance",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "mekedatu": {
+    "entity": "mekedatu",
+    "type": "locations",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##rope": {
+    "entity": "##rope",
+    "type": "locations",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "dow": {
+    "entity": "dow",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "neet ug": {
+    "entity": "neet ug",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "kerala cm satheesan": {
+    "entity": "kerala cm satheesan",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "iata": {
+    "entity": "iata",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "el temach": {
+    "entity": "el temach",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "king ' s college hospital": {
+    "entity": "king ' s college hospital",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##h kolot": {
+    "entity": "##h kolot",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "kolot": {
+    "entity": "kolot",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "skoden martial arts": {
+    "entity": "skoden martial arts",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "penticton": {
+    "entity": "penticton",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##\u00ef": {
+    "entity": "##\u00ef",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##s legand": {
+    "entity": "##s legand",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##iz in\u00e1cio lula da silva": {
+    "entity": "##iz in\u00e1cio lula da silva",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "first capital command": {
+    "entity": "first capital command",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "pcc": {
+    "entity": "pcc",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "red command": {
+    "entity": "red command",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "revolutionary armed forces of colombia": {
+    "entity": "revolutionary armed forces of colombia",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "farc": {
+    "entity": "farc",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "guavia": {
+    "entity": "guavia",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "campaign against antisemitism": {
+    "entity": "campaign against antisemitism",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "con": {
+    "entity": "con",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "gala\u021bi": {
+    "entity": "gala\u021bi",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "henry mcmaster": {
+    "entity": "henry mcmaster",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "ian hughes": {
+    "entity": "ian hughes",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "hughes": {
+    "entity": "hughes",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "ian": {
+    "entity": "ian",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "llyn tegi": {
+    "entity": "llyn tegi",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "bala lake": {
+    "entity": "bala lake",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "english \u2013": {
+    "entity": "english \u2013",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "cape canaveral": {
+    "entity": "cape canaveral",
+    "type": "locations",
+    "sector": "finance",
+    "confidence": 0.06,
+    "mention_count": 3
+  },
+  "##sa": {
+    "entity": "##sa",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##llab ghos": {
+    "entity": "##llab ghos",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "dome": {
+    "entity": "dome",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "cook": {
+    "entity": "cook",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##ford": {
+    "entity": "##ford",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "sunbed association": {
+    "entity": "sunbed association",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "full fact": {
+    "entity": "full fact",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##ymarket": {
+    "entity": "##ymarket",
+    "type": "orgs",
+    "sector": "finance",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "##lev": {
+    "entity": "##lev",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "swi": {
+    "entity": "swi",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "much": {
+    "entity": "much",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##s \u2019 network": {
+    "entity": "##s \u2019 network",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##w": {
+    "entity": "##w",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##em": {
+    "entity": "##em",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##ban": {
+    "entity": "##ban",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##yama": {
+    "entity": "##yama",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "wembanyama": {
+    "entity": "wembanyama",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "spurs": {
+    "entity": "spurs",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "thunder": {
+    "entity": "thunder",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "okc": {
+    "entity": "okc",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "oklahoma city thunder": {
+    "entity": "oklahoma city thunder",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "new york knicks": {
+    "entity": "new york knicks",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "oklahoma city": {
+    "entity": "oklahoma city",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "gran": {
+    "entity": "gran",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##it xhaka": {
+    "entity": "##it xhaka",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "strait of hormuz standoff": {
+    "entity": "strait of hormuz standoff",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "doris matsui": {
+    "entity": "doris matsui",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##ey parik": {
+    "entity": "##ey parik",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "schneider electric": {
+    "entity": "schneider electric",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##hijee": {
+    "entity": "##hijee",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##t dipke": {
+    "entity": "##t dipke",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "the cockroach": {
+    "entity": "the cockroach",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "gen - z movement": {
+    "entity": "gen - z movement",
+    "type": "orgs",
+    "sector": "social",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "american federation of teachers": {
+    "entity": "american federation of teachers",
+    "type": "orgs",
+    "sector": "finance",
+    "confidence": 0.3,
+    "mention_count": 1
+  },
+  "kinshasa": {
+    "entity": "kinshasa",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "chevron": {
+    "entity": "chevron",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.38,
+    "mention_count": 3
+  },
+  "ionian sea": {
+    "entity": "ionian sea",
+    "type": "locations",
+    "sector": "energy",
+    "confidence": 0.12,
+    "mention_count": 1
+  },
+  "##ristian mungiu": {
+    "entity": "##ristian mungiu",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "\u201c marvel": {
+    "entity": "\u201c marvel",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "sebastian stan": {
+    "entity": "sebastian stan",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "ren": {
+    "entity": "ren",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##ate reinsve": {
+    "entity": "##ate reinsve",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "eve jackson": {
+    "entity": "eve jackson",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "mungiu": {
+    "entity": "mungiu",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "laurence cu": {
+    "entity": "laurence cu",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##lier": {
+    "entity": "##lier",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "matthi": {
+    "entity": "matthi",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##eu comin": {
+    "entity": "##eu comin",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "julius migos": {
+    "entity": "julius migos",
+    "type": "persons",
+    "sector": "politics",
+    "confidence": 0.12,
+    "mention_count": 1
+  },
+  "##ishi girls ' academy": {
+    "entity": "##ishi girls ' academy",
+    "type": "orgs",
+    "sector": "politics",
+    "confidence": 0.12,
+    "mention_count": 1
+  },
+  "##ift valley": {
+    "entity": "##ift valley",
+    "type": "locations",
+    "sector": "politics",
+    "confidence": 0.12,
+    "mention_count": 1
+  },
+  "##thevane gorjestani": {
+    "entity": "##thevane gorjestani",
+    "type": "persons",
+    "sector": "energy",
+    "confidence": 0.2,
+    "mention_count": 1
+  },
+  "fk airport": {
+    "entity": "fk airport",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "john f. kennedy international airport": {
+    "entity": "john f. kennedy international airport",
+    "type": "locations",
+    "sector": "technology",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "rep": {
+    "entity": "rep",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "stockholm": {
+    "entity": "stockholm",
+    "type": "locations",
+    "sector": "finance",
+    "confidence": 0.26,
+    "mention_count": 1
+  },
+  "##rmee": {
+    "entity": "##rmee",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "##t dhillon": {
+    "entity": "##t dhillon",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "civil rights division": {
+    "entity": "civil rights division",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "new glenn rocket": {
+    "entity": "new glenn rocket",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "washington d. c.": {
+    "entity": "washington d. c.",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "hudson river": {
+    "entity": "hudson river",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "ibrahima konate": {
+    "entity": "ibrahima konate",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "konate": {
+    "entity": "konate",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "virgil van dijk": {
+    "entity": "virgil van dijk",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "liverpool": {
+    "entity": "liverpool",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "john healey": {
+    "entity": "john healey",
+    "type": "persons",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##racklinn falls": {
+    "entity": "##racklinn falls",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "scripps national spelling bee": {
+    "entity": "scripps national spelling bee",
+    "type": "orgs",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "mahmood": {
+    "entity": "mahmood",
+    "type": "persons",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "channel": {
+    "entity": "channel",
+    "type": "locations",
+    "sector": "global_events",
+    "confidence": 0.1,
+    "mention_count": 1
+  },
+  "get": {
+    "entity": "get",
+    "type": "orgs",
+    "sector": "finance",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##ty imagestime": {
+    "entity": "##ty imagestime",
+    "type": "orgs",
+    "sector": "finance",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "oil in": {
+    "entity": "oil in",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.32,
+    "mention_count": 1
+  },
+  "##ories": {
+    "entity": "##ories",
+    "type": "orgs",
+    "sector": "energy",
+    "confidence": 0.12,
+    "mention_count": 1
+  },
+  "##id say": {
+    "entity": "##id say",
+    "type": "persons",
+    "sector": "finance",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "##ron": {
+    "entity": "##ron",
+    "type": "orgs",
+    "sector": "technology",
+    "confidence": 0.06,
+    "mention_count": 1
+  },
+  "glenn": {
+    "entity": "glenn",
+    "type": "orgs",
+    "sector": "finance",
+    "confidence": 0.06,
     "mention_count": 1
   }
 }

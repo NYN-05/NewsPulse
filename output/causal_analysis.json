@@ -1,0 +1,557 @@
+{
+  "causal_candidates": [
+    {
+      "source": "nato",
+      "target": "romania",
+      "direction": "nato->romania",
+      "mean_lag_hours": 19.0,
+      "lag_samples": 98,
+      "causal_score": 1.0,
+      "evidence_strength": 43,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "nhl",
+      "target": "claude lemieux",
+      "direction": "nhl->claude lemieux",
+      "mean_lag_hours": 13.0,
+      "lag_samples": 144,
+      "causal_score": 1.0,
+      "evidence_strength": 47,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "blair",
+      "target": "labour",
+      "direction": "blair->labour",
+      "mean_lag_hours": 24.1,
+      "lag_samples": 65,
+      "causal_score": 1.0,
+      "evidence_strength": 28,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "ukraine",
+      "target": "romania",
+      "direction": "ukraine->romania",
+      "mean_lag_hours": 30.5,
+      "lag_samples": 660,
+      "causal_score": 1.0,
+      "evidence_strength": 68,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "florida",
+      "target": "blue origin",
+      "direction": "florida->blue origin",
+      "mean_lag_hours": 17.1,
+      "lag_samples": 107,
+      "causal_score": 1.0,
+      "evidence_strength": 32,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "supreme court",
+      "target": "nta",
+      "direction": "supreme court->nta",
+      "mean_lag_hours": 36.0,
+      "lag_samples": 297,
+      "causal_score": 1.0,
+      "evidence_strength": 62,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "kyiv",
+      "target": "russia",
+      "direction": "kyiv->russia",
+      "mean_lag_hours": 40.9,
+      "lag_samples": 177,
+      "causal_score": 1.0,
+      "evidence_strength": 52,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "supreme court",
+      "target": "neet",
+      "direction": "supreme court->neet",
+      "mean_lag_hours": 33.8,
+      "lag_samples": 317,
+      "causal_score": 1.0,
+      "evidence_strength": 61,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "centre",
+      "target": "neet",
+      "direction": "centre->neet",
+      "mean_lag_hours": 22.8,
+      "lag_samples": 63,
+      "causal_score": 1.0,
+      "evidence_strength": 23,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "cha",
+      "target": "##tgpt",
+      "direction": "cha->##tgpt",
+      "mean_lag_hours": 29.0,
+      "lag_samples": 60,
+      "causal_score": 1.0,
+      "evidence_strength": 24,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "##rnyn",
+      "target": "co",
+      "direction": "##rnyn->co",
+      "mean_lag_hours": 76.1,
+      "lag_samples": 36,
+      "causal_score": 1.0,
+      "evidence_strength": 17,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "delhi",
+      "target": "ncr",
+      "direction": "delhi->ncr",
+      "mean_lag_hours": 28.6,
+      "lag_samples": 298,
+      "causal_score": 1.0,
+      "evidence_strength": 103,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "russia",
+      "target": "romania",
+      "direction": "russia->romania",
+      "mean_lag_hours": 29.8,
+      "lag_samples": 675,
+      "causal_score": 1.0,
+      "evidence_strength": 69,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "blair",
+      "target": "tony blair",
+      "direction": "blair->tony blair",
+      "mean_lag_hours": 25.7,
+      "lag_samples": 89,
+      "causal_score": 1.0,
+      "evidence_strength": 25,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "ferrari",
+      "target": "benedetto vigna",
+      "direction": "ferrari->benedetto vigna",
+      "mean_lag_hours": 39.5,
+      "lag_samples": 44,
+      "causal_score": 1.0,
+      "evidence_strength": 22,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "nta",
+      "target": "neet",
+      "direction": "nta->neet",
+      "mean_lag_hours": 20.8,
+      "lag_samples": 30,
+      "causal_score": 0.952,
+      "evidence_strength": 23,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "kent",
+      "target": "south east water",
+      "direction": "kent->south east water",
+      "mean_lag_hours": 7.5,
+      "lag_samples": 28,
+      "causal_score": 0.936,
+      "evidence_strength": 22,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "##bha",
+      "target": "##ai",
+      "direction": "##bha->##ai",
+      "mean_lag_hours": 19.5,
+      "lag_samples": 12,
+      "causal_score": 0.845,
+      "evidence_strength": 11,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "green",
+      "target": "chinnappa",
+      "direction": "green->chinnappa",
+      "mean_lag_hours": 24.7,
+      "lag_samples": 16,
+      "causal_score": 0.744,
+      "evidence_strength": 18,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "reliance industries",
+      "target": "sat",
+      "direction": "reliance industries->sat",
+      "mean_lag_hours": 13.7,
+      "lag_samples": 9,
+      "causal_score": 0.537,
+      "evidence_strength": 19,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "reliance industries",
+      "target": "sebi",
+      "direction": "reliance industries->sebi",
+      "mean_lag_hours": 13.7,
+      "lag_samples": 9,
+      "causal_score": 0.537,
+      "evidence_strength": 19,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "new york times",
+      "target": "nick bilton",
+      "direction": "new york times->nick bilton",
+      "mean_lag_hours": 320.4,
+      "lag_samples": 4,
+      "causal_score": 0.5,
+      "evidence_strength": 10,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "european commission",
+      "target": "temu",
+      "direction": "european commission->temu",
+      "mean_lag_hours": 8.4,
+      "lag_samples": 4,
+      "causal_score": 0.482,
+      "evidence_strength": 11,
+      "mechanism": "temporal_precedence"
+    }
+  ],
+  "causal_chains": [
+    {
+      "chain": [
+        "kyiv",
+        "russia",
+        "romania"
+      ],
+      "length": 3,
+      "avg_causal_score": 1.0,
+      "mechanisms": [
+        "strategic_posture",
+        "strategic_posture"
+      ]
+    }
+  ],
+  "causal_graph": {
+    "nodes": [
+      {
+        "id": "nato"
+      },
+      {
+        "id": "romania"
+      },
+      {
+        "id": "nhl"
+      },
+      {
+        "id": "claude lemieux"
+      },
+      {
+        "id": "blair"
+      },
+      {
+        "id": "labour"
+      },
+      {
+        "id": "ukraine"
+      },
+      {
+        "id": "florida"
+      },
+      {
+        "id": "blue origin"
+      },
+      {
+        "id": "supreme court"
+      },
+      {
+        "id": "nta"
+      },
+      {
+        "id": "kyiv"
+      },
+      {
+        "id": "russia"
+      },
+      {
+        "id": "neet"
+      },
+      {
+        "id": "centre"
+      },
+      {
+        "id": "cha"
+      },
+      {
+        "id": "##tgpt"
+      },
+      {
+        "id": "##rnyn"
+      },
+      {
+        "id": "co"
+      },
+      {
+        "id": "delhi"
+      },
+      {
+        "id": "ncr"
+      },
+      {
+        "id": "tony blair"
+      },
+      {
+        "id": "ferrari"
+      },
+      {
+        "id": "benedetto vigna"
+      },
+      {
+        "id": "kent"
+      },
+      {
+        "id": "south east water"
+      },
+      {
+        "id": "##bha"
+      },
+      {
+        "id": "##ai"
+      },
+      {
+        "id": "green"
+      },
+      {
+        "id": "chinnappa"
+      },
+      {
+        "id": "reliance industries"
+      },
+      {
+        "id": "sat"
+      },
+      {
+        "id": "sebi"
+      },
+      {
+        "id": "new york times"
+      },
+      {
+        "id": "nick bilton"
+      },
+      {
+        "id": "european commission"
+      },
+      {
+        "id": "temu"
+      }
+    ],
+    "edges": [
+      {
+        "source": "nato",
+        "target": "romania",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 19.0
+      },
+      {
+        "source": "nhl",
+        "target": "claude lemieux",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 13.0
+      },
+      {
+        "source": "blair",
+        "target": "labour",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 24.1
+      },
+      {
+        "source": "blair",
+        "target": "tony blair",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 25.7
+      },
+      {
+        "source": "ukraine",
+        "target": "romania",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 30.5
+      },
+      {
+        "source": "florida",
+        "target": "blue origin",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "policy_shock",
+        "mean_lag_hours": 17.1
+      },
+      {
+        "source": "supreme court",
+        "target": "nta",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "preference_driven",
+        "mean_lag_hours": 36.0
+      },
+      {
+        "source": "supreme court",
+        "target": "neet",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 33.8
+      },
+      {
+        "source": "nta",
+        "target": "neet",
+        "weight": 0.952,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 20.8
+      },
+      {
+        "source": "kyiv",
+        "target": "russia",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 40.9
+      },
+      {
+        "source": "russia",
+        "target": "romania",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 29.8
+      },
+      {
+        "source": "centre",
+        "target": "neet",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 22.8
+      },
+      {
+        "source": "cha",
+        "target": "##tgpt",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "demand_shock",
+        "mean_lag_hours": 29.0
+      },
+      {
+        "source": "##rnyn",
+        "target": "co",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 76.1
+      },
+      {
+        "source": "delhi",
+        "target": "ncr",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "policy_shock",
+        "mean_lag_hours": 28.6
+      },
+      {
+        "source": "ferrari",
+        "target": "benedetto vigna",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "policy_shock",
+        "mean_lag_hours": 39.5
+      },
+      {
+        "source": "kent",
+        "target": "south east water",
+        "weight": 0.936,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 7.5
+      },
+      {
+        "source": "##bha",
+        "target": "##ai",
+        "weight": 0.845,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 19.5
+      },
+      {
+        "source": "green",
+        "target": "chinnappa",
+        "weight": 0.744,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 24.7
+      },
+      {
+        "source": "reliance industries",
+        "target": "sat",
+        "weight": 0.537,
+        "mechanism": "temporal_precedence",
+        "pattern": "demand_shock",
+        "mean_lag_hours": 13.7
+      },
+      {
+        "source": "reliance industries",
+        "target": "sebi",
+        "weight": 0.537,
+        "mechanism": "temporal_precedence",
+        "pattern": "demand_shock",
+        "mean_lag_hours": 13.7
+      },
+      {
+        "source": "new york times",
+        "target": "nick bilton",
+        "weight": 0.5,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 320.4
+      },
+      {
+        "source": "european commission",
+        "target": "temu",
+        "weight": 0.482,
+        "mechanism": "temporal_precedence",
+        "pattern": "regulatory_drag",
+        "mean_lag_hours": 8.4
+      }
+    ]
+  },
+  "summary": {
+    "total_candidates": 23,
+    "total_causal_chains": 1,
+    "graph_nodes": 37,
+    "graph_edges": 23,
+    "avg_causal_score": 0.893
+  }
+}

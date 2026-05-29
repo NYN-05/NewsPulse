@@ -157,7 +157,6 @@ def load_config(path: str = None, as_settings: bool = False) -> Any:
     _resolve_paths()
     if as_settings:
         _SETTINGS = Settings.from_env(base=Settings.from_yaml(path))
-        _CONFIG.update(_SETTINGS.as_dict())
         return _SETTINGS
     return _CONFIG
 
@@ -179,6 +178,17 @@ def get_config() -> Dict[str, Any]:
         load_config()
     return _CONFIG
 
+def _get_nested(cfg: Dict[str, Any], key: str, default=None) -> Any:
+    parts = key.split(".")
+    val = cfg
+    for p in parts:
+        if isinstance(val, dict):
+            val = val.get(p)
+        else:
+            return default
+    return val if val is not None else default
+
+
 def get(key: str, default=None) -> Any:
     global _SETTINGS
     # 1. Try env var override first (highest priority)
@@ -186,13 +196,7 @@ def get(key: str, default=None) -> Any:
     env_val = os.environ.get(env_key)
     if env_val is not None:
         cfg = get_config()
-        parts = key.split(".")
-        dft = default
-        for p in parts:
-            if isinstance(cfg, dict):
-                dft = cfg.get(p, dft)
-            else:
-                break
+        dft = _get_nested(cfg, key, default)
         return _coerce_env(env_val, dft)
 
     # 2. Try Settings dataclass (if loaded via load_config(as_settings=True))
@@ -206,15 +210,7 @@ def get(key: str, default=None) -> Any:
                     return sec[setting]
 
     # 3. Fall back to dict config
-    val = get_config()
-    for p in key.split("."):
-        if isinstance(val, dict):
-            val = val.get(p)
-        else:
-            return default
-    if val is None:
-        return default
-    return val
+    return _get_nested(get_config(), key, default)
 
 def path_for(key: str) -> str:
     raw = get(f"paths.{key}", "")
