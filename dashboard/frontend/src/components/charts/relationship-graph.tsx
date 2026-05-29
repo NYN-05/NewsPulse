@@ -1,11 +1,10 @@
-import { useMemo, useCallback } from "react"
+import { useMemo } from "react"
 import {
   ReactFlow,
   useNodesState,
   useEdgesState,
   Controls,
   Background,
-  MiniMap,
   type Node,
   type Edge,
   type NodeProps,
@@ -16,14 +15,9 @@ import "@xyflow/react/dist/style.css"
 import type { CrossDomainLink } from "@/types"
 
 const SECTOR_COLORS: Record<string, string> = {
-  politics: "#4a7cf7",
-  finance: "#4fcf8d",
-  technology: "#5bc0eb",
-  energy: "#d4a757",
-  military: "#e06c7a",
-  startups: "#8b7cf7",
-  social: "#f0a5d4",
-  global_events: "#45c4b0",
+  politics: "#4a7cf7", finance: "#4fcf8d", technology: "#5bc0eb",
+  energy: "#d4a757", military: "#e06c7a", startups: "#8b7cf7",
+  social: "#f0a5d4", global_events: "#45c4b0",
 }
 
 const SECTOR_LABELS: Record<string, string> = {
@@ -32,38 +26,32 @@ const SECTOR_LABELS: Record<string, string> = {
   social: "Social", global_events: "Global Events",
 }
 
-const SECTOR_EXPLANATIONS: Record<string, string> = {
-  politics: "political dynamics", finance: "financial markets", technology: "tech sector",
-  energy: "energy markets", military: "military affairs", startups: "startup ecosystem",
-  social: "social trends", global_events: "global events",
-}
-
 function EntityNode({ data }: NodeProps) {
   const sector = data.sector as string
   const color = SECTOR_COLORS[sector] || "#4a7cf7"
   const isSelected = data.selected as boolean
+  const isCenter = data.isCenter as boolean
   return (
     <div
-      className="relative px-4 py-2.5 rounded-lg border shadow-lg cursor-pointer transition-all hover:shadow-xl"
+      className="relative px-3 py-2 rounded-lg border cursor-pointer transition-all hover:shadow-xl"
       style={{
-        background: isSelected ? "var(--color-accent-subtle)" : "var(--color-card)",
-        borderColor: isSelected ? "var(--color-accent)" : color,
-        borderWidth: isSelected ? 2 : 1.5,
-        minWidth: 120,
-        boxShadow: isSelected ? `0 0 20px rgba(74, 124, 247, 0.15)` : undefined,
+        background: isCenter ? "var(--color-accent-subtle)" : "var(--color-card)",
+        borderColor: isCenter ? "var(--color-accent)" : color,
+        borderWidth: isCenter ? 2 : 1,
+        minWidth: 100,
+        boxShadow: isCenter ? "0 0 24px rgba(74, 124, 247, 0.2)" : undefined,
       }}
     >
-      <Handle type="target" position={Position.Left} style={{ background: color, width: 8, height: 8 }} />
+      <Handle type="target" position={Position.Left} style={{ background: color, width: 6, height: 6 }} />
       <div className="flex flex-col gap-0.5">
-        <span className="text-xs font-mono font-medium leading-tight truncate max-w-[140px]" style={{ color: "var(--color-fg)" }}>
+        <span className="text-[11px] font-mono font-medium leading-tight truncate max-w-[120px]" style={{ color: "var(--color-fg)" }}>
           {data.label as string}
         </span>
-        <span className="text-[9px] font-mono uppercase tracking-wider" style={{ color }}>{SECTOR_LABELS[sector] || sector}</span>
+        <span className="text-[8px] font-mono uppercase tracking-wider" style={{ color }}>{SECTOR_LABELS[sector] || sector}</span>
       </div>
-      <div className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full border-2" style={{ background: color, borderColor: "var(--color-bg)" }} />
-      <Handle type="source" position={Position.Right} style={{ background: color, width: 8, height: 8 }} />
+      <Handle type="source" position={Position.Right} style={{ background: color, width: 6, height: 6 }} />
       {data.strength !== undefined && (
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-mono px-1.5 rounded" style={{ background: "var(--color-bg)", color: "var(--color-fg-muted)" }}>
+        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 text-[7px] font-mono px-1 rounded" style={{ background: "var(--color-bg)", color: "var(--color-fg-muted)" }}>
           {(data.strength as number).toFixed(1)}
         </div>
       )}
@@ -73,101 +61,102 @@ function EntityNode({ data }: NodeProps) {
 
 const nodeTypes = { entityNode: EntityNode }
 
-function buildPositions(count: number) {
-  const positions: { x: number; y: number }[] = []
-  const cx = 400
-  const cy = 250
-  const radius = Math.min(400, 250) * 0.4
-  for (let i = 0; i < count; i++) {
-    const angle = (2 * Math.PI * i) / count - Math.PI / 2
-    positions.push({ x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) })
-  }
-  return positions
-}
-
-function explainRelationship(src: string, tgt: string, srcSec: string, tgtSec: string): string {
-  const sl = SECTOR_EXPLANATIONS[srcSec] || srcSec
-  const tl = SECTOR_EXPLANATIONS[tgtSec] || tgtSec
-  return `Changes in ${src} (${sl}) directly affect ${tgt} (${tl}) through cross-domain dependencies.`
-}
-
-export function RelationshipGraph({
-  links,
-  onNodeClick,
+export function FocusedGraph({
+  selectEntity,
   selectedEntity,
+  connectedLinks,
+  onNodeClick,
+  onEdgeClick,
 }: {
-  links: CrossDomainLink[]
+  selectEntity: (e: string) => void
+  selectedEntity: string | null
+  connectedLinks: CrossDomainLink[]
   onNodeClick?: (entity: string) => void
-  selectedEntity?: string | null
+  onEdgeClick?: (link: CrossDomainLink) => void
 }) {
   const { nodes: initialNodes, edges: initialEdges } = useMemo(() => {
-    const entityMap = new Map<string, { sectors: Set<string>; strength: number; linkCount: number }>()
-    for (const link of links) {
-      for (const ent of [link.source_entity, link.target_entity]) {
-        if (!entityMap.has(ent)) entityMap.set(ent, { sectors: new Set(), strength: 0, linkCount: 0 })
-        const record = entityMap.get(ent)!
-        record.sectors.add(link.source_entity === ent ? link.source_sector : link.target_sector)
-        record.strength += link.strength
-        record.linkCount++
+    if (!selectedEntity || connectedLinks.length === 0) return { nodes: [], edges: [] }
+
+    const connected = new Set<string>()
+    connectedLinks.forEach((l) => {
+      connected.add(l.source_entity)
+      connected.add(l.target_entity)
+    })
+    const allEntities = Array.from(connected)
+    const isSmall = allEntities.length <= 15
+    const visible = isSmall ? allEntities : [selectedEntity, ...allEntities.filter((e) => e !== selectedEntity).slice(0, 14)]
+
+    const nodes: Node[] = visible.map((entity, i) => {
+      let x: number, y: number
+      if (entity === selectedEntity) {
+        x = 300; y = 200
+      } else {
+        const angle = (2 * Math.PI * (i - 1)) / Math.max(visible.length - 1, 1) - Math.PI / 2
+        const radius = 160
+        x = 300 + radius * Math.cos(angle)
+        y = 200 + radius * Math.sin(angle)
       }
-    }
-    const entities = Array.from(entityMap.keys())
-    const positions = buildPositions(entities.length)
-    const nodes: Node[] = entities.map((entity, i) => {
-      const record = entityMap.get(entity)!
+      const link = connectedLinks.find((l) => l.source_entity === entity || l.target_entity === entity)
+      const sector = link ? (link.source_entity === entity ? link.source_sector : link.target_sector) : "politics"
+      const strength = link?.strength || 0
       return {
         id: entity,
         type: "entityNode",
-        position: positions[i],
-        data: {
-          label: entity,
-          sector: Array.from(record.sectors)[0] || "politics",
-          strength: record.strength / record.linkCount,
-          linkCount: record.linkCount,
-          selected: entity === selectedEntity,
-        },
+        position: { x, y },
+        data: { label: entity, sector, strength, isCenter: entity === selectedEntity, selected: entity === selectedEntity },
         draggable: true,
       }
     })
-    const maxStrength = Math.max(...links.map((l) => l.strength), 1)
-    const edges: Edge[] = links.map((link, i) => {
-      const thickness = Math.max(1, (link.strength / maxStrength) * 5)
-      const opacity = Math.max(0.2, link.strength / maxStrength)
-      const isConnected = selectedEntity && (link.source_entity === selectedEntity || link.target_entity === selectedEntity)
-      return {
-        id: `e-${i}`,
-        source: link.source_entity,
-        target: link.target_entity,
-        animated: link.strength > 15,
-        style: {
-          stroke: isConnected ? "var(--color-accent)" : "var(--color-border)",
-          strokeWidth: isConnected ? thickness : 0.5,
-          opacity: isConnected ? opacity : 0.15,
-        },
-        label: isConnected ? link.strength.toFixed(1) : "",
-        labelStyle: { fontSize: 9, fontFamily: "JetBrains Mono, monospace", fill: "var(--color-fg-muted)" },
-        labelBgStyle: { fill: "var(--color-bg)" },
-        labelBgPadding: [4, 2] as [number, number],
-        labelBgBorderRadius: 2,
-        data: { strength: link.strength, sourceSector: link.source_sector, targetSector: link.target_sector, cooccurrenceCount: link.cooccurrence_count },
-      }
-    })
+
+    const maxStrength = Math.max(...connectedLinks.map((l) => l.strength), 1)
+    const edges: Edge[] = connectedLinks
+      .filter((l) => visible.includes(l.source_entity) && visible.includes(l.target_entity))
+      .map((link, i) => {
+        const thickness = Math.max(1, (link.strength / maxStrength) * 4)
+        const opacity = Math.max(0.3, link.strength / maxStrength)
+        return {
+          id: `e-${i}`,
+          source: link.source_entity,
+          target: link.target_entity,
+          animated: false,
+          style: { stroke: "var(--color-accent)", strokeWidth: thickness, opacity },
+          label: link.strength.toFixed(1),
+          labelStyle: { fontSize: 8, fontFamily: "JetBrains Mono, monospace", fill: "var(--color-fg-muted)" },
+          labelBgStyle: { fill: "var(--color-bg)" },
+          labelBgPadding: [3, 1] as [number, number],
+          labelBgBorderRadius: 2,
+          data: { originalLink: link },
+          interactionWidth: 20,
+        }
+      })
+
     return { nodes, edges }
-  }, [links, selectedEntity])
+  }, [selectedEntity, connectedLinks])
 
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
 
-  if (!links || links.length === 0) {
+  if (!selectedEntity) {
     return (
-      <div className="flex h-[500px] items-center justify-center rounded-lg border border-dashed border-[var(--color-border)]">
-        <p className="text-xs font-mono text-[var(--color-fg-muted)]">No relationships to display.</p>
+      <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[var(--color-border)]">
+        <div className="text-center">
+          <p className="text-xs font-mono text-[var(--color-fg-muted)]">Select an entity to explore</p>
+          <p className="text-[9px] font-mono text-[var(--color-fg-muted)] mt-2 opacity-60">Choose from the discovery panel on the left</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (connectedLinks.length === 0) {
+    return (
+      <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[var(--color-border)]">
+        <p className="text-xs font-mono text-[var(--color-fg-muted)]">No connections found for this entity.</p>
       </div>
     )
   }
 
   return (
-    <div className="rounded-lg border border-[var(--color-border)] overflow-hidden" style={{ height: 520 }}>
+    <div className="rounded-lg border border-[var(--color-border)] overflow-hidden" style={{ height: 480 }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -175,62 +164,126 @@ export function RelationshipGraph({
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         fitView
-        fitViewOptions={{ padding: 0.3 }}
-        minZoom={0.2}
+        fitViewOptions={{ padding: 0.2 }}
+        minZoom={0.3}
         maxZoom={3}
         proOptions={{ hideAttribution: true }}
         style={{ background: "var(--color-bg)", width: "100%", height: "100%" }}
         onNodeClick={(_, node) => onNodeClick?.(node.id)}
+        onEdgeClick={(_, edge) => {
+          const original = (edge.data as any)?.originalLink as CrossDomainLink | undefined
+          if (original) onEdgeClick?.(original)
+        }}
       >
-        <Background color="var(--color-border)" gap={24} size={1} />
+        <Background color="var(--color-border)" gap={20} size={0.5} />
         <Controls className="[&>button]:bg-[var(--color-card)] [&>button]:border-[var(--color-border)] [&>button]:text-[var(--color-fg-muted)] [&>button:hover]:bg-[var(--color-card-hover)]" />
-        <MiniMap
-          nodeColor={(node) => { const d = node.data as { sector?: string }; return SECTOR_COLORS[d.sector || ""] || "#4a7cf7" }}
-          maskColor="rgba(8, 12, 20, 0.7)"
-          style={{ background: "var(--color-card)", border: "1px solid var(--color-border)" }}
-        />
       </ReactFlow>
     </div>
   )
 }
 
-export function RelationshipExplanation({ link }: { link: CrossDomainLink }) {
+function explainRelationship(src: string, tgt: string, srcSec: string, tgtSec: string): string {
+  const m: Record<string, string> = {
+    politics: "political dynamics", finance: "financial markets", technology: "tech sector",
+    energy: "energy markets", military: "military affairs", startups: "startup ecosystem",
+    social: "social trends", global_events: "global events",
+  }
+  return `${src} (${m[srcSec] || srcSec}) and ${tgt} (${m[tgtSec] || tgtSec}) are connected through cross-domain dependencies. Changes in one directly create measurable effects in the other.`
+}
+
+export function IntelligencePanel({
+  link,
+  totalLinks,
+}: {
+  link: CrossDomainLink
+  totalLinks: number
+}) {
+  const relPct = Math.min((link.strength / 50) * 100, 100)
+  const impact = relPct > 70 ? "High" : relPct > 40 ? "Medium" : "Low"
+  const impactColor = impact === "High" ? "var(--color-red)" : impact === "Medium" ? "var(--color-amber)" : "var(--color-fg-muted)"
+
   return (
-    <div className="rounded-lg border border-[var(--color-accent)] bg-[var(--color-accent-subtle)] p-4 space-y-3">
-      <div className="flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" />
-        <span className="text-[10px] font-mono text-[var(--color-accent)] tracking-wider uppercase">Intelligence Assessment</span>
-      </div>
-      <div className="flex items-center gap-2 text-sm font-serif text-[var(--color-fg)]">
-        <span>{link.source_entity}</span>
-        <span className="text-[var(--color-accent)] font-mono text-xs">↔</span>
-        <span>{link.target_entity}</span>
-      </div>
-      <p className="text-xs text-[var(--color-fg-secondary)] leading-relaxed">
-        {explainRelationship(link.source_entity, link.target_entity, link.source_sector, link.target_sector)}
-      </p>
-      <div className="grid grid-cols-3 gap-3 text-[10px] font-mono">
-        <div className="rounded border border-[var(--color-border)] bg-[var(--color-card)] p-2">
-          <div className="text-[var(--color-fg-muted)]">Strength</div>
-          <div className="text-[var(--color-accent)] mt-0.5">{link.strength.toFixed(1)}</div>
+    <div className="space-y-4 animate-slideUp">
+      <div className="rounded-lg border border-[var(--color-accent)] bg-[var(--color-accent-subtle)] p-4 space-y-3">
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" />
+          <span className="text-[10px] font-mono text-[var(--color-accent)] tracking-wider uppercase">Intelligence Assessment</span>
         </div>
-        <div className="rounded border border-[var(--color-border)] bg-[var(--color-card)] p-2">
-          <div className="text-[var(--color-fg-muted)]">Co-occurrences</div>
-          <div className="text-[var(--color-fg)] mt-0.5">{link.cooccurrence_count}</div>
+        <div className="flex items-center gap-2 text-sm font-serif text-[var(--color-fg)]">
+          <span>{link.source_entity}</span>
+          <span className="text-[var(--color-accent)] font-mono text-xs">↔</span>
+          <span>{link.target_entity}</span>
         </div>
-        <div className="rounded border border-[var(--color-border)] bg-[var(--color-card)] p-2">
-          <div className="text-[var(--color-fg-muted)]">Source Diversity</div>
-          <div className="text-[var(--color-fg)] mt-0.5">{link.source_diversity.toFixed(1)}</div>
+        <p className="text-xs text-[var(--color-fg-secondary)] leading-relaxed">
+          {explainRelationship(link.source_entity, link.target_entity, link.source_sector, link.target_sector)}
+        </p>
+        <div className="grid grid-cols-2 gap-2 text-[10px] font-mono">
+          <div className="rounded border border-[var(--color-border)] bg-[var(--color-card)] p-2">
+            <div className="text-[var(--color-fg-muted)]">Relationship Strength</div>
+            <div className="text-[var(--color-accent)] mt-0.5 text-sm">{relPct.toFixed(0)}%</div>
+          </div>
+          <div className="rounded border border-[var(--color-border)] bg-[var(--color-card)] p-2">
+            <div className="text-[var(--color-fg-muted)]">Impact Assessment</div>
+            <div className="mt-0.5 text-sm" style={{ color: impactColor }}>{impact}</div>
+          </div>
+          <div className="rounded border border-[var(--color-border)] bg-[var(--color-card)] p-2">
+            <div className="text-[var(--color-fg-muted)]">Co-occurrences</div>
+            <div className="text-[var(--color-fg)] mt-0.5 text-sm">{link.cooccurrence_count}</div>
+          </div>
+          <div className="rounded border border-[var(--color-border)] bg-[var(--color-card)] p-2">
+            <div className="text-[var(--color-fg-muted)]">Source Diversity</div>
+            <div className="text-[var(--color-fg)] mt-0.5 text-sm">{link.source_diversity.toFixed(1)}</div>
+          </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 text-[10px] font-mono text-[var(--color-fg-muted)]">
-        <span className="rounded px-1.5 py-0.5 bg-[var(--color-card)] border border-[var(--color-border)]" style={{ color: SECTOR_COLORS[link.source_sector] }}>
-          {SECTOR_LABELS[link.source_sector] || link.source_sector}
-        </span>
-        <span>→</span>
-        <span className="rounded px-1.5 py-0.5 bg-[var(--color-card)] border border-[var(--color-border)]" style={{ color: SECTOR_COLORS[link.target_sector] }}>
-          {SECTOR_LABELS[link.target_sector] || link.target_sector}
-        </span>
+
+      <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+        <div className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase mb-2">Domains</div>
+        <div className="flex items-center gap-2 text-[10px] font-mono">
+          <span className="rounded px-1.5 py-0.5 border" style={{ color: SECTOR_COLORS[link.source_sector], borderColor: SECTOR_COLORS[link.source_sector], background: `${SECTOR_COLORS[link.source_sector]}10` }}>
+            {SECTOR_LABELS[link.source_sector] || link.source_sector}
+          </span>
+          <span className="text-[var(--color-fg-muted)]">→</span>
+          <span className="rounded px-1.5 py-0.5 border" style={{ color: SECTOR_COLORS[link.target_sector], borderColor: SECTOR_COLORS[link.target_sector], background: `${SECTOR_COLORS[link.target_sector]}10` }}>
+            {SECTOR_LABELS[link.target_sector] || link.target_sector}
+          </span>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+        <div className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase mb-2">Evidence</div>
+        <div className="grid grid-cols-3 gap-2 text-[10px] font-mono">
+          <div><span className="text-[var(--color-accent)]">{link.cooccurrence_count}</span> <span className="text-[var(--color-fg-muted)]">articles</span></div>
+          <div><span className="text-[var(--color-accent)]">{Math.round(link.source_diversity)}</span> <span className="text-[var(--color-fg-muted)]">sources</span></div>
+          <div><span className="text-[var(--color-accent)]">{totalLinks}</span> <span className="text-[var(--color-fg-muted)]">connections</span></div>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+        <div className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase mb-2">Potential Downstream Effects</div>
+        <p className="text-[10px] font-mono text-[var(--color-fg-secondary)] leading-relaxed">
+          This cross-domain relationship may affect supply chains, policy decisions, and market dynamics across connected sectors.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+export function RelationshipSummary({ selectedEntity, connectedLinks }: { selectedEntity: string | null; connectedLinks: CrossDomainLink[] }) {
+  if (!selectedEntity) return null
+  const domains = new Set(connectedLinks.flatMap((l) => [l.source_sector, l.target_sector]))
+  const strongest = connectedLinks.reduce((a, b) => (a.strength > b.strength ? a : b), connectedLinks[0])
+  const avgStrength = connectedLinks.length > 0 ? connectedLinks.reduce((a, l) => a + l.strength, 0) / connectedLinks.length : 0
+
+  return (
+    <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-3 space-y-2">
+      <div className="text-[9px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Relationship Summary</div>
+      <div className="space-y-1.5 text-[10px] font-mono">
+        <div className="flex justify-between"><span className="text-[var(--color-fg-muted)]">Selected Entity</span><span className="text-[var(--color-fg)]">{selectedEntity}</span></div>
+        <div className="flex justify-between"><span className="text-[var(--color-fg-muted)]">Connected Domains</span><span className="text-[var(--color-accent)]">{domains.size}</span></div>
+        {strongest && <div className="flex justify-between"><span className="text-[var(--color-fg-muted)]">Strongest Relationship</span><span className="text-[var(--color-fg)]">{strongest.source_entity === selectedEntity ? strongest.target_entity : strongest.source_entity}</span></div>}
+        <div className="flex justify-between"><span className="text-[var(--color-fg-muted)]">Avg Relationship Score</span><span className="text-[var(--color-accent)]">{avgStrength.toFixed(1)}</span></div>
+        <div className="flex justify-between"><span className="text-[var(--color-fg-muted)]">Total Connections</span><span className="text-[var(--color-cyan)]">{connectedLinks.length}</span></div>
       </div>
     </div>
   )
