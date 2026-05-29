@@ -91,15 +91,16 @@ def index_articles(df: pd.DataFrame) -> int:
         if len(text) < 30:
             continue
         link = str(getattr(row, "link", "") or "")
-        doc_id = f"article_{hash(link) % 10**12}" if link else f"article_{_id_generator()}"
+        import hashlib
+        doc_id = f"article_{hashlib.md5(link.encode()).hexdigest()[:12]}" if link else f"article_{_id_generator()}"
 
         texts.append(text)
         metadatas.append({
             "title": title,
-            "source": str(row.get("source", "") or ""),
-            "published": str(row.get("published", "") or ""),
-            "category": str(row.get("category", "") or ""),
-            "sentiment": str(row.get("sentiment", "") or ""),
+            "source": str(getattr(row, "source", "") or ""),
+            "published": str(getattr(row, "published", "") or ""),
+            "category": str(getattr(row, "category", "") or ""),
+            "sentiment": str(getattr(row, "sentiment", "") or ""),
         })
         ids.append(doc_id)
 

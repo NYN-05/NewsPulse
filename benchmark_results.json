@@ -1,0 +1,407 @@
+[
+  {
+    "module": "",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "=== 1. STATIC ANALYSIS \u2014 Compile & Import Verification ===",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "All files",
+    "change": "COMPILE",
+    "value": "OK (20 files)"
+  },
+  {
+    "module": "Import settings core",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import relationships",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import agents",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import entity_graph",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import narratives",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import confidence",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import signals",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import causal",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import temporal",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import storage",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import gpu_manager",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import embeddings",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import entities",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import dedup",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import pydantic models",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "Import pipeline",
+    "change": "IMPORT",
+    "value": "OK"
+  },
+  {
+    "module": "",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "=== 2. FUNCTIONAL VERIFICATION \u2014 Correctness ===",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "Settings DI",
+    "change": "get() + env override",
+    "value": "OK"
+  },
+  {
+    "module": "Consolidated confidence",
+    "change": "LLM fields set, confidence deferred",
+    "value": "OK"
+  },
+  {
+    "module": "Consolidated confidence",
+    "change": "confidence.py picks up _llm_result",
+    "value": "OK"
+  },
+  {
+    "module": "Consolidated confidence",
+    "change": "no-LLM fallback",
+    "value": "OK"
+  },
+  {
+    "module": "Entity graph",
+    "change": "two-pass filtering",
+    "value": "OK (28 nodes)"
+  },
+  {
+    "module": "Storage manager",
+    "change": "itertuples merge",
+    "value": "OK"
+  },
+  {
+    "module": "pipeline_cleanup",
+    "change": "all cleanup steps wired",
+    "value": "OK"
+  },
+  {
+    "module": "GPUManager",
+    "change": "clear_pipelines() on CPU",
+    "value": "OK"
+  },
+  {
+    "module": "Session lifecycle",
+    "change": "close + recreate",
+    "value": "OK"
+  },
+  {
+    "module": "Pydantic models",
+    "change": "construction + serialization",
+    "value": "OK"
+  },
+  {
+    "module": "APScheduler",
+    "change": "imports OK",
+    "value": "OK"
+  },
+  {
+    "module": "bcrypt auth",
+    "change": "hash + authenticate",
+    "value": "OK"
+  },
+  {
+    "module": "Narratives df.copy()",
+    "change": "all 4 removed",
+    "value": "OK"
+  },
+  {
+    "module": "Pipeline step_analyze",
+    "change": "list comprehensions",
+    "value": "OK"
+  },
+  {
+    "module": "",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "=== 3. PERFORMANCE MICRO-BENCHMARKS ===",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "iterrows (N=5000)",
+    "change": "time",
+    "value": "0.3011s"
+  },
+  {
+    "module": "itertuples (N=5000)",
+    "change": "time",
+    "value": "0.0071s"
+  },
+  {
+    "module": "Speedup",
+    "change": "itertuples vs iterrows",
+    "value": "42.30x"
+  },
+  {
+    "module": "df.copy()+mutate (50000x20)",
+    "change": "time",
+    "value": "0.0025s"
+  },
+  {
+    "module": "df.assign (50000x20)",
+    "change": "time",
+    "value": "0.0031s"
+  },
+  {
+    "module": "Speedup",
+    "change": "assign vs copy+mutate",
+    "value": "0.79x"
+  },
+  {
+    "module": "list comprehension json.loads (N=5000)",
+    "change": "time",
+    "value": "0.0134s"
+  },
+  {
+    "module": ".apply(json.loads) (N=5000)",
+    "change": "time",
+    "value": "0.0194s"
+  },
+  {
+    "module": "Speedup",
+    "change": "list comp vs .apply",
+    "value": "1.45x"
+  },
+  {
+    "module": "Old O(n\u00b2) pairs (1K articles)",
+    "change": "time",
+    "value": "0.0922s"
+  },
+  {
+    "module": "New two-pass (1K articles)",
+    "change": "time",
+    "value": "0.0991s"
+  },
+  {
+    "module": "Speedup",
+    "change": "two-pass vs O(n\u00b2)",
+    "value": "0.93x"
+  },
+  {
+    "module": "Pairs (old)",
+    "change": "count",
+    "value": "19849"
+  },
+  {
+    "module": "Pairs (new)",
+    "change": "count",
+    "value": "19849"
+  },
+  {
+    "module": "Reduction",
+    "change": "pairs generated",
+    "value": "-0%"
+  },
+  {
+    "module": "pipeline_cleanup()",
+    "change": "execution time",
+    "value": "0.2336s"
+  },
+  {
+    "module": "",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "=== 4. RESOURCE CONSUMPTION ANALYSIS ===",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "Config dict",
+    "change": "pickle size",
+    "value": "113 bytes"
+  },
+  {
+    "module": "Settings dataclass",
+    "change": "pickle size",
+    "value": "1895 bytes"
+  },
+  {
+    "module": "df.copy()+mutate",
+    "change": "time/size",
+    "value": "0.0020s / 6903 KB"
+  },
+  {
+    "module": "df.assign()",
+    "change": "time/size",
+    "value": "0.0019s / 6903 KB"
+  },
+  {
+    "module": "",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "=== 5. CODE QUALITY METRICS ===",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "_calibrate_confidence",
+    "change": "lines (simplified)",
+    "value": "16"
+  },
+  {
+    "module": "get_entity_dict()",
+    "change": "lines (utility)",
+    "value": "22"
+  },
+  {
+    "module": "",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "=== 6. REGRESSION \u2014 FORBIDDEN PATTERNS CHECK ===",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "REGRESSION",
+    "change": ".iterrows()",
+    "value": "0 remaining in 4 checked files"
+  },
+  {
+    "module": "REGRESSION",
+    "change": ".apply(json.loads)",
+    "value": "removed OK"
+  },
+  {
+    "module": "REGRESSION",
+    "change": "df.copy() in narratives",
+    "value": "removed OK"
+  },
+  {
+    "module": "REGRESSION",
+    "change": "SHA-256 in auth",
+    "value": "replaced OK"
+  },
+  {
+    "module": "",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "=== 7. PERFORMANCE SUMMARY TABLE ===",
+    "change": "",
+    "value": ""
+  },
+  {
+    "module": "Optimization",
+    "change": "Before",
+    "value": "After | Gain"
+  },
+  {
+    "module": "---",
+    "change": "---",
+    "value": "--- | ---"
+  },
+  {
+    "module": "Entity pairs (1K articles)",
+    "change": "0.092s",
+    "value": "0.099s | 0.9x"
+  },
+  {
+    "module": "DataFrame iteration (5K rows)",
+    "change": "0.301s",
+    "value": "0.007s | 42.3x"
+  },
+  {
+    "module": "JSON parse (5K rows)",
+    "change": "0.019s",
+    "value": "0.013s | 1.5x"
+  },
+  {
+    "module": "DataFrame copy+mutate (50K)",
+    "change": "0.002s",
+    "value": "0.002s | 1.0x"
+  },
+  {
+    "module": "Ollama connections (20 calls)",
+    "change": "20 TCP handshakes",
+    "value": "1 pooled | ~2-5x (projected)"
+  },
+  {
+    "module": "Confidence calibration",
+    "change": "2x redundant compute",
+    "value": "1x with LLM signal | 2x CPU + bugfix"
+  },
+  {
+    "module": "GPU memory (per run)",
+    "change": "no cleanup \u2192 OOM",
+    "value": "clear_pipelines() | prevents OOM"
+  },
+  {
+    "module": "Auth hashing",
+    "change": "SHA-256 (weak)",
+    "value": "bcrypt (strong) | security upgrade"
+  }
+]

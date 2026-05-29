@@ -66,7 +66,7 @@ class GPUManager:
             return
         self._initialized = True
         self.device = get_device()
-        self.cuda = is_cuda() if callable(is_cuda) else bool(is_cuda)
+        self.cuda = is_cuda()
         self._pipelines = {}
 
     @property
@@ -112,5 +112,3 @@ class GPUManager:
 
 
 device = get_device()
-_IS_CUDA = is_cuda()  # cache result, use callable check in __init__
-DEVICE = device

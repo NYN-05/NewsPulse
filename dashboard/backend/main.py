@@ -24,7 +24,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 from config.settings import load_config, get, path_for, atomic_write_json, atomic_read_json
 
-load_config()
+load_config(as_settings=True)
 logger = logging.getLogger("api")
 
 

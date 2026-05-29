@@ -138,8 +138,9 @@ def alerting_pipeline(
     logger.info("PHASE 5 — INTELLIGENCE ALERT ENGINE")
     logger.info("=" * 60)
 
-    previous_links = atomic_read_json(path_for("cross_domain_links_history") or
-                                      path_for("cross_domain_links"))
+    import os
+    links_path = os.path.join(path_for("output_dir"), "cross_domain_links.json")
+    previous_links = atomic_read_json(links_path)
     if not isinstance(previous_links, list):
         previous_links = []
 

@@ -80,9 +80,7 @@ def detect_cross_domain_spillover(df: pd.DataFrame) -> List[Dict]:
         return []
 
     time_col = "published" if "published" in df.columns else "scraped_at"
-    df = df.copy()
-    df["_date"] = pd.to_datetime(df[time_col], errors="coerce")
-    df = df.dropna(subset=["_date"]).sort_values("_date")
+    df = df.assign(_date=pd.to_datetime(df[time_col], errors="coerce")).dropna(subset=["_date"]).sort_values("_date")
     if len(df) < 20:
         return []
 

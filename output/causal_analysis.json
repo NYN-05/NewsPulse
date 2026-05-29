@@ -4,10 +4,10 @@
       "source": "nato",
       "target": "romania",
       "direction": "nato->romania",
-      "mean_lag_hours": 19.0,
-      "lag_samples": 98,
+      "mean_lag_hours": 19.1,
+      "lag_samples": 110,
       "causal_score": 1.0,
-      "evidence_strength": 43,
+      "evidence_strength": 47,
       "mechanism": "temporal_precedence"
     },
     {
@@ -15,19 +15,19 @@
       "target": "claude lemieux",
       "direction": "nhl->claude lemieux",
       "mean_lag_hours": 13.0,
-      "lag_samples": 144,
+      "lag_samples": 160,
       "causal_score": 1.0,
-      "evidence_strength": 47,
+      "evidence_strength": 48,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "blair",
       "target": "labour",
       "direction": "blair->labour",
-      "mean_lag_hours": 24.1,
-      "lag_samples": 65,
+      "mean_lag_hours": 24.7,
+      "lag_samples": 73,
       "causal_score": 1.0,
-      "evidence_strength": 28,
+      "evidence_strength": 29,
       "mechanism": "temporal_precedence"
     },
     {
@@ -35,19 +35,19 @@
       "target": "romania",
       "direction": "ukraine->romania",
       "mean_lag_hours": 30.5,
-      "lag_samples": 660,
+      "lag_samples": 742,
       "causal_score": 1.0,
-      "evidence_strength": 68,
+      "evidence_strength": 75,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "florida",
       "target": "blue origin",
       "direction": "florida->blue origin",
-      "mean_lag_hours": 17.1,
-      "lag_samples": 107,
+      "mean_lag_hours": 16.4,
+      "lag_samples": 143,
       "causal_score": 1.0,
-      "evidence_strength": 32,
+      "evidence_strength": 36,
       "mechanism": "temporal_precedence"
     },
     {
@@ -64,10 +64,10 @@
       "source": "kyiv",
       "target": "russia",
       "direction": "kyiv->russia",
-      "mean_lag_hours": 40.9,
-      "lag_samples": 177,
+      "mean_lag_hours": 41.0,
+      "lag_samples": 184,
       "causal_score": 1.0,
-      "evidence_strength": 52,
+      "evidence_strength": 53,
       "mechanism": "temporal_precedence"
     },
     {
@@ -78,6 +78,16 @@
       "lag_samples": 317,
       "causal_score": 1.0,
       "evidence_strength": 61,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "florida",
+      "target": "new glenn",
+      "direction": "florida->new glenn",
+      "mean_lag_hours": 14.9,
+      "lag_samples": 41,
+      "causal_score": 1.0,
+      "evidence_strength": 24,
       "mechanism": "temporal_precedence"
     },
     {
@@ -95,59 +105,29 @@
       "target": "##tgpt",
       "direction": "cha->##tgpt",
       "mean_lag_hours": 29.0,
-      "lag_samples": 60,
+      "lag_samples": 70,
       "causal_score": 1.0,
-      "evidence_strength": 24,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "##rnyn",
-      "target": "co",
-      "direction": "##rnyn->co",
-      "mean_lag_hours": 76.1,
-      "lag_samples": 36,
-      "causal_score": 1.0,
-      "evidence_strength": 17,
+      "evidence_strength": 26,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "delhi",
       "target": "ncr",
       "direction": "delhi->ncr",
-      "mean_lag_hours": 28.6,
-      "lag_samples": 298,
+      "mean_lag_hours": 28.3,
+      "lag_samples": 304,
       "causal_score": 1.0,
-      "evidence_strength": 103,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "russia",
-      "target": "romania",
-      "direction": "russia->romania",
-      "mean_lag_hours": 29.8,
-      "lag_samples": 675,
-      "causal_score": 1.0,
-      "evidence_strength": 69,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "blair",
-      "target": "tony blair",
-      "direction": "blair->tony blair",
-      "mean_lag_hours": 25.7,
-      "lag_samples": 89,
-      "causal_score": 1.0,
-      "evidence_strength": 25,
+      "evidence_strength": 107,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "ferrari",
       "target": "benedetto vigna",
       "direction": "ferrari->benedetto vigna",
-      "mean_lag_hours": 39.5,
-      "lag_samples": 44,
+      "mean_lag_hours": 39.6,
+      "lag_samples": 49,
       "causal_score": 1.0,
-      "evidence_strength": 22,
+      "evidence_strength": 24,
       "mechanism": "temporal_precedence"
     },
     {
@@ -166,8 +146,8 @@
       "direction": "kent->south east water",
       "mean_lag_hours": 7.5,
       "lag_samples": 28,
-      "causal_score": 0.936,
-      "evidence_strength": 22,
+      "causal_score": 0.909,
+      "evidence_strength": 23,
       "mechanism": "temporal_precedence"
     },
     {
@@ -185,9 +165,9 @@
       "target": "chinnappa",
       "direction": "green->chinnappa",
       "mean_lag_hours": 24.7,
-      "lag_samples": 16,
-      "causal_score": 0.744,
-      "evidence_strength": 18,
+      "lag_samples": 18,
+      "causal_score": 0.75,
+      "evidence_strength": 20,
       "mechanism": "temporal_precedence"
     },
     {
@@ -195,9 +175,9 @@
       "target": "sat",
       "direction": "reliance industries->sat",
       "mean_lag_hours": 13.7,
-      "lag_samples": 9,
-      "causal_score": 0.537,
-      "evidence_strength": 19,
+      "lag_samples": 10,
+      "causal_score": 0.538,
+      "evidence_strength": 21,
       "mechanism": "temporal_precedence"
     },
     {
@@ -205,9 +185,9 @@
       "target": "sebi",
       "direction": "reliance industries->sebi",
       "mean_lag_hours": 13.7,
-      "lag_samples": 9,
-      "causal_score": 0.537,
-      "evidence_strength": 19,
+      "lag_samples": 10,
+      "causal_score": 0.538,
+      "evidence_strength": 21,
       "mechanism": "temporal_precedence"
     },
     {
@@ -231,21 +211,7 @@
       "mechanism": "temporal_precedence"
     }
   ],
-  "causal_chains": [
-    {
-      "chain": [
-        "kyiv",
-        "russia",
-        "romania"
-      ],
-      "length": 3,
-      "avg_causal_score": 1.0,
-      "mechanisms": [
-        "strategic_posture",
-        "strategic_posture"
-      ]
-    }
-  ],
+  "causal_chains": [],
   "causal_graph": {
     "nodes": [
       {
@@ -291,6 +257,9 @@
         "id": "neet"
       },
       {
+        "id": "new glenn"
+      },
+      {
         "id": "centre"
       },
       {
@@ -300,19 +269,10 @@
         "id": "##tgpt"
       },
       {
-        "id": "##rnyn"
-      },
-      {
-        "id": "co"
-      },
-      {
         "id": "delhi"
       },
       {
         "id": "ncr"
-      },
-      {
-        "id": "tony blair"
       },
       {
         "id": "ferrari"
@@ -367,7 +327,7 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "strategic_posture",
-        "mean_lag_hours": 19.0
+        "mean_lag_hours": 19.1
       },
       {
         "source": "nhl",
@@ -383,15 +343,7 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
-        "mean_lag_hours": 24.1
-      },
-      {
-        "source": "blair",
-        "target": "tony blair",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "regulatory_drag",
-        "mean_lag_hours": 25.7
+        "mean_lag_hours": 24.7
       },
       {
         "source": "ukraine",
@@ -407,7 +359,15 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "policy_shock",
-        "mean_lag_hours": 17.1
+        "mean_lag_hours": 16.4
+      },
+      {
+        "source": "florida",
+        "target": "new glenn",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "policy_shock",
+        "mean_lag_hours": 14.9
       },
       {
         "source": "supreme court",
@@ -439,15 +399,7 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "strategic_posture",
-        "mean_lag_hours": 40.9
-      },
-      {
-        "source": "russia",
-        "target": "romania",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "strategic_posture",
-        "mean_lag_hours": 29.8
+        "mean_lag_hours": 41.0
       },
       {
         "source": "centre",
@@ -466,20 +418,12 @@
         "mean_lag_hours": 29.0
       },
       {
-        "source": "##rnyn",
-        "target": "co",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "regulatory_drag",
-        "mean_lag_hours": 76.1
-      },
-      {
         "source": "delhi",
         "target": "ncr",
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "policy_shock",
-        "mean_lag_hours": 28.6
+        "mean_lag_hours": 28.3
       },
       {
         "source": "ferrari",
@@ -487,12 +431,12 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "policy_shock",
-        "mean_lag_hours": 39.5
+        "mean_lag_hours": 39.6
       },
       {
         "source": "kent",
         "target": "south east water",
-        "weight": 0.936,
+        "weight": 0.909,
         "mechanism": "temporal_precedence",
         "pattern": "general",
         "mean_lag_hours": 7.5
@@ -508,7 +452,7 @@
       {
         "source": "green",
         "target": "chinnappa",
-        "weight": 0.744,
+        "weight": 0.75,
         "mechanism": "temporal_precedence",
         "pattern": "general",
         "mean_lag_hours": 24.7
@@ -516,7 +460,7 @@
       {
         "source": "reliance industries",
         "target": "sat",
-        "weight": 0.537,
+        "weight": 0.538,
         "mechanism": "temporal_precedence",
         "pattern": "demand_shock",
         "mean_lag_hours": 13.7
@@ -524,7 +468,7 @@
       {
         "source": "reliance industries",
         "target": "sebi",
-        "weight": 0.537,
+        "weight": 0.538,
         "mechanism": "temporal_precedence",
         "pattern": "demand_shock",
         "mean_lag_hours": 13.7
@@ -548,10 +492,10 @@
     ]
   },
   "summary": {
-    "total_candidates": 23,
-    "total_causal_chains": 1,
-    "graph_nodes": 37,
-    "graph_edges": 23,
-    "avg_causal_score": 0.893
+    "total_candidates": 21,
+    "total_causal_chains": 0,
+    "graph_nodes": 35,
+    "graph_edges": 21,
+    "avg_causal_score": 0.882
   }
 }

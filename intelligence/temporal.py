@@ -8,7 +8,6 @@ Discovers temporal intelligence patterns:
 - Burst detection across sectors
 """
 
-import json
 import logging
 import numpy as np
 import pandas as pd

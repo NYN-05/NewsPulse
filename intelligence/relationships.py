@@ -214,12 +214,7 @@ def _llm_verify_relationship(source: str, target: str, src_sec: str, tgt_sec: st
 
 
 def _calibrate_confidence(link: Dict, llm_result: Optional[Dict] = None) -> Dict:
-    """
-    Set LLM-verified fields on the link.
-    Final confidence calibration is delegated to calibrate_relationship_confidence
-    in intelligence/confidence.py (called later in apply_confidence_calibration),
-    which uses the full 6-signal weighted formula and picks up _llm_result.
-    """
+    """Set LLM-verified fields and _llm_result on the link."""
     if llm_result:
         link["verified"] = llm_result.get("verified", True)
         link["causal_direction"] = llm_result.get("causal_direction", "bidirectional")
@@ -527,6 +522,11 @@ def cross_domain_pipeline(df: pd.DataFrame) -> Dict:
                 pair_texts[key].append(text[:1000])
 
     cross_links = apply_llm_verification(cross_links, dict(pair_texts))
+
+    # Phase 3: Confidence calibration (6-signal weighted formula)
+    from intelligence.confidence import calibrate_relationship_confidence
+    for link in cross_links:
+        calibrate_relationship_confidence(link)
 
     # Phase 3: Cross-domain impact prediction
     cross_links = predict_cross_domain_impact(cross_links, sector_map)

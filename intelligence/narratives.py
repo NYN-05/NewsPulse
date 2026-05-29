@@ -8,7 +8,6 @@ Upgrades the old narrative_tracker.py with:
 4. Narrative coherence scoring for signal quality
 """
 
-import json
 import logging
 import numpy as np
 import pandas as pd
