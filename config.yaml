@@ -32,8 +32,30 @@ intelligence:
   min_link_cooccurrence: 2
   max_cross_domain_links: 200
   max_impact_chains: 50
-  llm_verification: false
+  llm_verification: true
   llm_model: "qwen3:14b"
+  multi_agent:
+    enabled: true
+    analyst_model: "qwen3:14b"
+    critic_model: "qwen3:14b"
+    summarizer_model: "qwen3:14b"
+  temporal:
+    enabled: true
+    anomaly_std_threshold: 2.0
+    burst_z_threshold: 2.5
+    min_burst_count: 2
+  briefings:
+    enabled: true
+    include_predictions: true
+    max_watch_items: 20
+
+causal:
+  enabled: true
+  min_lag_hours: 6
+  max_lag_days: 14
+  lookback_days: 30
+  max_candidates: 100
+  max_chains: 30
 
 vector_store:
   collection_name: "newspulse"
@@ -41,6 +63,30 @@ vector_store:
   reranker_model: "BAAI/bge-reranker-v2-m3"
   use_hybrid_search: true
   use_reranker: false
+
+neo4j:
+  enabled: false
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: "password"
+
+alerts:
+  enabled: true
+  velocity_acceleration_threshold: 3.0
+  velocity_magnitude_threshold: 2.0
+  burst_threshold: 3.0
+  phase_transition_threshold: 0.7
+  relationship_confidence_threshold: 0.8
+
+auth:
+  enabled: false
+  jwt_secret: "change-me-in-production"
+  jwt_expiry_hours: 24
+
+export:
+  json_dir: "output/exports"
+  csv_dir: "output/exports"
+  markdown_dir: "output/exports"
 
 scheduler:
   enabled: true

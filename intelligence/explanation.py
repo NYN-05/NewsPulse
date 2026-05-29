@@ -1,17 +1,17 @@
 """
-Intelligence Explanation Engine.
+Intelligence Explanation Engine — Phase 3 (upgraded).
 
-Generates human-readable, evidence-based explanations for every intelligence discovery:
-- Why are two entities connected?
+Generates human-readable, evidence-based explanations with confidence calibration:
+- Why are two entities connected? (with calibrated confidence)
 - What evidence supports this connection?
 - What is the impact across domains?
 - What downstream effects should be monitored?
-
-This is the key differentiator: every discovery must be explainable.
 """
 
 import logging
+import numpy as np
 from typing import Dict, List, Optional
+from intelligence.confidence import calibrate_relationship_confidence
 
 logger = logging.getLogger(__name__)
 
@@ -25,8 +25,11 @@ def explain_relationship(
     source_diversity: int,
     strength: float,
     example_articles: List[str] = None,
+    confidence: float = None,
+    causal_direction: str = None,
+    causal_mechanism: str = None,
+    impact_prediction: str = None,
 ) -> Dict:
-    """Generate a structured intelligence explanation for a cross-domain relationship."""
     impact_level = _assess_impact(strength, cooccurrence_count, source_diversity)
     downstream = _suggest_downstream_effects(source_sector, target_sector)
 
@@ -42,12 +45,36 @@ def explain_relationship(
             "cooccurrence_count": cooccurrence_count,
             "source_diversity": source_diversity,
             "relationship_strength": round(strength, 2),
+            "confidence": round(confidence, 3) if confidence else None,
             "example_articles": (example_articles or [])[:3],
         },
         "impact_assessment": impact_level,
         "downstream_effects": downstream,
         "domains_involved": [source_sector, target_sector],
     }
+
+    if causal_direction:
+        explanation["causal"] = {
+            "direction": causal_direction,
+            "mechanism": causal_mechanism or "",
+        }
+    if impact_prediction:
+        explanation["impact_prediction"] = impact_prediction
+
+    calibrated = calibrate_relationship_confidence({
+        "source_entity": source_entity,
+        "target_entity": target_entity,
+        "source_sector": source_sector,
+        "target_sector": target_sector,
+        "cooccurrence_count": cooccurrence_count,
+        "source_diversity": source_diversity,
+        "semantic_similarity": 0.0,
+        "confidence": confidence or 0.5,
+    })
+    explanation["calibrated_confidence"] = calibrated.get("confidence", confidence or 0.5)
+    explanation["confidence_label"] = calibrated.get("confidence_label", "medium")
+    explanation["confidence_signals"] = calibrated.get("confidence_signals", {})
+
     return explanation
 
 

@@ -3,16 +3,17 @@
 NewsPulse — AI-Powered Cross-Domain Intelligence Discovery Engine
 
 Core pipeline: scrape → analyze → entity graph → cross-domain relationships →
-narrative evolution → signal detection → semantic intelligence search indexing
-
-Every step is focused on intelligence quality over feature quantity.
+causal reasoning → narrative evolution → signal detection → multi-agent analysis →
+temporal patterns → briefings → alerts → export → semantic search indexing
 """
 
 import os
 import sys
 import json
 import logging
+import numpy as np
 from datetime import datetime
+from collections import defaultdict
 import pandas as pd
 
 from config.settings import load_config, get, path_for, atomic_write_json
@@ -28,6 +29,11 @@ from intelligence.entity_graph import build_entity_graph
 from intelligence.relationships import cross_domain_pipeline
 from intelligence.narratives import narrative_pipeline
 from intelligence.signals import signals_pipeline
+from intelligence.causal import causal_pipeline
+from intelligence.agents import multi_agent_pipeline
+from intelligence.temporal import temporal_pipeline
+from intelligence.briefings import generate_briefing
+from intelligence.alerting import alerting_pipeline
 from multilingual.detect import detect_language
 
 logger = logging.getLogger("pipeline")
@@ -170,11 +176,25 @@ def step_entity_graph(df: pd.DataFrame):
 
 def step_cross_domain(df: pd.DataFrame):
     logger.info("=== Intelligence Step 7: Cross-Domain Relationship Discovery ===")
-    result = cross_domain_pipeline(df, verify_llm=False)
+    result = cross_domain_pipeline(df)
     s = result.get("summary", {})
-    logger.info("Cross-domain: %d links, %d chains across %d entities",
+    logger.info("Cross-domain: %d links, %d chains across %d entities (LLM=%d, causal=%d)",
                 s.get("total_cross_domain_links", 0), s.get("total_impact_chains", 0),
-                s.get("total_entities_mapped", 0))
+                s.get("total_entities_mapped", 0),
+                s.get("llm_verified", 0), s.get("causal_explanations", 0))
+    return result
+
+
+def step_causal(df: pd.DataFrame, sector_map: dict, entity_pairs: list):
+    if not get("causal.enabled", True):
+        logger.info("Causal reasoning disabled in config")
+        return {}
+    logger.info("=== Phase 3 Step: Causal Reasoning ===")
+    result = causal_pipeline(df, sector_map, entity_pairs)
+    logger.info("Causal: %d candidates, %d chains",
+                result.get("summary", {}).get("total_candidates", 0),
+                result.get("summary", {}).get("total_causal_chains", 0))
+    return result
 
 
 def step_narratives(df: pd.DataFrame):
@@ -183,6 +203,7 @@ def step_narratives(df: pd.DataFrame):
     s = result.get("summary", {})
     logger.info("Narratives: %d emerging, %d disappearing, %d mutations",
                 s.get("emerging_count", 0), s.get("disappearing_count", 0), s.get("total_mutations", 0))
+    return result
 
 
 def step_signals(df: pd.DataFrame):
@@ -190,6 +211,111 @@ def step_signals(df: pd.DataFrame):
     result = signals_pipeline(df)
     s = result.get("summary", {})
     logger.info("Signals: %d total (highest score: %.1f)", s.get("total_signals", 0), s.get("highest_score", 0))
+    return result
+
+
+def step_multi_agent(cross_domain_links: list, impact_chains: list):
+    if not get("intelligence.multi_agent.enabled", True):
+        logger.info("Multi-agent analysis disabled in config")
+        return {}
+    logger.info("=== Phase 4 Step: Multi-Agent Intelligence Analysis ===")
+    result = multi_agent_pipeline(cross_domain_links, impact_chains)
+    findings = result.get("analyst", {}).get("findings", [])
+    logger.info("Multi-agent: %d findings, quality=%s",
+                len(findings), result.get("critic", {}).get("overall_quality", "unknown"))
+    return result
+
+
+def step_temporal(df: pd.DataFrame, narrative_data: dict):
+    if not get("intelligence.temporal.enabled", True):
+        logger.info("Temporal analysis disabled in config")
+        return {}
+    logger.info("=== Phase 4 Step: Temporal Pattern Mining ===")
+    phase_map = {}
+    cluster_narratives = narrative_data.get("cluster_narratives", []) if isinstance(narrative_data, dict) else []
+    for n in (narrative_data.get("entity_narratives", []) if isinstance(narrative_data, dict) else []):
+        if n.get("entity"):
+            phase_map[n["entity"]] = n.get("phase", "stable")
+    result = temporal_pipeline(df, phase_map)
+    logger.info("Temporal: %d velocities, %d anomalies, %d bursts, %d transitions",
+                result.get("summary", {}).get("total_entities_tracked", 0),
+                result.get("summary", {}).get("total_anomalies", 0),
+                result.get("summary", {}).get("total_bursts", 0),
+                result.get("summary", {}).get("total_phase_transitions", 0))
+    return result
+
+
+def step_briefings(cross_domain_links: list, sector_map: dict, impact_chains: list,
+                   agent_result: dict, temporal_result: dict, narrative_data: dict):
+    if not get("intelligence.briefings.enabled", True):
+        logger.info("Briefings disabled in config")
+        return {}
+    logger.info("=== Phase 4 Step: Intelligence Briefing Generation ===")
+    anomalies = temporal_result.get("anomalies", []) if isinstance(temporal_result, dict) else []
+    transitions = temporal_result.get("phase_transitions", []) if isinstance(temporal_result, dict) else []
+    narrative_summary = narrative_data.get("summary", {}) if isinstance(narrative_data, dict) else {}
+    result = generate_briefing(
+        cross_domain_links, sector_map, impact_chains,
+        agent_result, anomalies, transitions, narrative_summary,
+    )
+    logger.info("Briefing: %d sectors, %d watch items, %d predictions",
+                len(result.get("sector_situations", [])),
+                len(result.get("watch_items", [])),
+                len(result.get("predictions", [])))
+    return result
+
+
+def step_alerts(cross_domain_links: list, temporal_result: dict):
+    if not get("alerts.enabled", True):
+        logger.info("Alerts disabled in config")
+        return {}
+    logger.info("=== Phase 5 Step: Intelligence Alerting ===")
+    velocities = temporal_result.get("velocities", []) if isinstance(temporal_result, dict) else []
+    bursts = temporal_result.get("bursts", []) if isinstance(temporal_result, dict) else []
+    transitions = temporal_result.get("phase_transitions", []) if isinstance(temporal_result, dict) else []
+    result = alerting_pipeline(cross_domain_links, velocities, bursts, transitions)
+    logger.info("Alerts: %d total (%d high severity)",
+                result.get("summary", {}).get("total_alerts", 0),
+                result.get("summary", {}).get("high_severity", 0))
+    return result
+
+
+def step_export():
+    logger.info("=== Phase 5 Step: Export ===")
+    try:
+        from dashboard.backend.exporter import export_json, export_csv, export_markdown
+        export_dir = path_for("export.json_dir") or os.path.join(path_for("output_dir"), "exports")
+        os.makedirs(export_dir, exist_ok=True)
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        export_json(os.path.join(export_dir, f"intelligence_export_{ts}.json"))
+        export_csv(os.path.join(export_dir, f"relationships_{ts}.csv"))
+        export_markdown(os.path.join(export_dir, f"briefing_{ts}.md"))
+        logger.info("Exports written to %s", export_dir)
+    except Exception as e:
+        logger.warning("Export step failed: %s", e)
+
+
+def step_neo4j(sector_map: dict, cross_domain_links: list, impact_chains: list):
+    if not get("neo4j.enabled", False):
+        logger.info("Neo4j disabled in config")
+        return
+    logger.info("=== Phase 5 Step: Neo4j Graph Sync ===")
+    try:
+        from vector_store.neo4j_store import Neo4jStore
+        store = Neo4jStore(
+            uri=get("neo4j.uri", "bolt://localhost:7687"),
+            user=get("neo4j.user", "neo4j"),
+            password=get("neo4j.password", "password"),
+        )
+        if store.enabled:
+            store.store_sector_map(sector_map)
+            store.store_cross_domain_links(cross_domain_links)
+            store.store_impact_chains(impact_chains)
+            stats = store.get_statistics()
+            logger.info("Neo4j sync complete: %d entities, %d rels", stats["entities"], stats["relationships"])
+        store.close()
+    except Exception as e:
+        logger.warning("Neo4j sync failed: %s", e)
 
 
 def step_vector_index(df: pd.DataFrame):
@@ -206,10 +332,19 @@ def step_vector_index(df: pd.DataFrame):
 def run_pipeline(steps: list = None):
     data_mgr = DataManager()
     if steps is None:
-        steps = ["scrape", "rss", "dedup", "fetch", "analyze",
-                 "entity_graph", "cross_domain", "narratives", "signals", "vector_index"]
+        steps = [
+            "scrape", "rss", "dedup", "fetch", "analyze",
+            "entity_graph", "cross_domain", "causal", "narratives", "signals",
+            "multi_agent", "temporal", "briefings", "alerts", "export", "neo4j", "vector_index",
+        ]
 
     df = pd.DataFrame()
+    cross_domain_result = {}
+    narrative_result = {}
+    temporal_result = {}
+    agent_result = {}
+    briefing_result = {}
+    causal_result = {}
 
     if "scrape" in steps:
         df = step_scrape(data_mgr)
@@ -230,15 +365,42 @@ def run_pipeline(steps: list = None):
     if "entity_graph" in steps and not df.empty:
         step_entity_graph(df)
     if "cross_domain" in steps and not df.empty:
-        step_cross_domain(df)
+        cross_domain_result = step_cross_domain(df) or {}
+    if "causal" in steps and not df.empty:
+        sector_map = cross_domain_result.get("sector_map", {})
+        links = cross_domain_result.get("cross_domain_links", [])
+        entity_pairs = [(l["source_entity"], l["target_entity"], l) for l in links[:50]]
+        causal_result = step_causal(df, sector_map, entity_pairs)
     if "narratives" in steps and not df.empty:
-        step_narratives(df)
+        narrative_result = step_narratives(df) or {}
     if "signals" in steps and not df.empty:
         step_signals(df)
+    if "multi_agent" in steps:
+        links = cross_domain_result.get("cross_domain_links", [])
+        chains = cross_domain_result.get("impact_chains", [])
+        agent_result = step_multi_agent(links, chains)
+    if "temporal" in steps and not df.empty:
+        temporal_result = step_temporal(df, narrative_result)
+    if "briefings" in steps:
+        links = cross_domain_result.get("cross_domain_links", [])
+        sector_map = cross_domain_result.get("sector_map", {})
+        chains = cross_domain_result.get("impact_chains", [])
+        briefing_result = step_briefings(links, sector_map, chains, agent_result, temporal_result, narrative_result)
+    if "alerts" in steps:
+        links = cross_domain_result.get("cross_domain_links", [])
+        step_alerts(links, temporal_result)
+    if "export" in steps:
+        step_export()
+    if "neo4j" in steps:
+        sector_map = cross_domain_result.get("sector_map", {})
+        links = cross_domain_result.get("cross_domain_links", [])
+        chains = cross_domain_result.get("impact_chains", [])
+        step_neo4j(sector_map, links, chains)
     if "vector_index" in steps and not df.empty:
         step_vector_index(df)
 
     logger.info("=== Pipeline complete ===")
+    return cross_domain_result, narrative_result, temporal_result, agent_result, briefing_result, causal_result
 
 
 if __name__ == "__main__":

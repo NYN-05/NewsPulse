@@ -6,14 +6,18 @@ const NAV_ICONS: Record<string, string> = {
   timeline: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 4h12M2 8h8M2 12h10"/><circle cx="12" cy="4" r="1.5"/><circle cx="10" cy="8" r="1.5"/><circle cx="12" cy="12" r="1.5"/></svg>`,
   search: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>`,
   signals: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v4M8 10v4"/><circle cx="8" cy="8" r="1" fill="currentColor"/></svg>`,
+  briefing: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M5 6h6M5 9h4"/></svg>`,
+  alerts: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2a5 5 0 00-5 5v2l-1 2h12l-1-2V7a5 5 0 00-5-5z"/><path d="M6 12a2 2 0 004 0"/></svg>`,
 }
 
 const items = [
   { id: "home", label: "Discoveries" },
   { id: "explore", label: "Relationships" },
   { id: "timeline", label: "Narratives" },
-  { id: "search", label: "Search" },
+  { id: "briefing", label: "Briefing" },
   { id: "signals", label: "Signals" },
+  { id: "alerts", label: "Alerts" },
+  { id: "search", label: "Search" },
 ]
 
 export function Sidebar({ activeTab, onTabChange }: { activeTab: string; onTabChange: (t: string) => void }) {

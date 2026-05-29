@@ -5,6 +5,8 @@ import { ExplorePage } from "@/pages/explore"
 import { TimelinePage } from "@/pages/timeline"
 import { SearchPage } from "@/pages/search"
 import { SignalsPage } from "@/pages/signals"
+import { BriefingPage } from "@/pages/briefing"
+import { AlertsPage } from "@/pages/alerts"
 import { api } from "@/services/api"
 import { useStore } from "@/store/dashboard"
 
@@ -14,6 +16,8 @@ const pages: Record<string, React.ReactNode> = {
   timeline: <TimelinePage />,
   search: <SearchPage />,
   signals: <SignalsPage />,
+  briefing: <BriefingPage />,
+  alerts: <AlertsPage />,
 }
 
 const POLL_INTERVAL = 30000
