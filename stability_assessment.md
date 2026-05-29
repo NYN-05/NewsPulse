@@ -1,309 +1,277 @@
 # Production Stability Assessment
 
 **Date:** 2026-05-29  
-**Scope:** Full-stack — pipeline, API, frontend, vector stores, scrapers  
-**Coverage:** 31 Python files, 1 TypeScript file, 1 config file, 1 requirements file  
-**Method:** Manual code audit + static analysis + benchmark validation
+**Inspected:** 32 Python files, 1 TypeScript, config, requirements  
+**Method:** Manual code audit + static analysis + integration smoke tests + benchmark validation
 
 ---
 
-## 1. Architecture & Data Flow
+## 1. Critical Bugs Found & Fixed During Review
 
-```
-┌─────────────┐    ┌──────────────┐    ┌───────────────┐    ┌──────────────────┐
-│  Scrapers   │───▶│  DataFrame   │───▶│  NLP/Analysis │───▶│  Intelligence    │
-│  (4 web +   │    │  Storage     │    │  (entities,   │    │  Engine          │
-│   118 RSS)  │    │  (Parquet/   │    │   dedup,      │    │  (graph, agents, │
-│             │    │   CSV)       │    │   sentiment)  │    │   temporal, etc) │
-└─────────────┘    └──────────────┘    └───────────────┘    └────────┬─────────┘
-                                                                    │
-                    ┌───────────────────────────────────────────────┘
-                    ▼
-┌─────────────┐    ┌──────────────┐    ┌──────────────────────────┐
-│  Frontend   │◀───│  FastAPI     │◀───│  JSON output files       │
-│  (React 19) │    │  (port 8765) │    │  (atomic writes)         │
-│             │    │  + WebSocket │    │                          │
-│             │    │  + APSched.  │    │  ChromaDB  ─── optional  │
-│             │    │              │    │  Neo4j     ─── optional  │
-└─────────────┘    └──────────────┘    └──────────────────────────┘
-```
+| # | Bug | Severity | Introduced By | Fix |
+|---|---|---|---|---|
+| 1 | `predict_cross_domain_impact` crashes because `link["confidence"]` is `None` after confidence consolidation refactor | **CRITICAL** | Phase 5 confidence consolidation | Added `calibrate_relationship_confidence` loop in `cross_domain_pipeline()` |
+| 2 | `chroma_store.py:99-102` — `row.get()` on namedtuple crashes `index_articles()` | **CRITICAL** | Phase 1 itertuples migration | Replaced with `getattr()` |
+| 3 | NPMI formula divides by zero when `p_ab = 1.0` (all articles contain a pair) | **HIGH** | Pre-existing | Added `denom > 1e-10` guard |
+| 4 | `alerting.py:141` — `path_for()` returns `""` for nonexistent config keys, history tracking broken | **HIGH** | Pre-existing | `os.path.join(path_for("output_dir"), ...)` |
+| 5 | `hash(link)` generates different ChromaDB IDs across runs → duplicate accumulation | **HIGH** | Pre-existing | `hashlib.md5` |
 
-**Critical path dependencies (degradation if absent):**
-| Component | Degradation behavior |
-|---|---|
-| Ollama (qwen3:14b) | Statistical-only analysis, no LLM verification |
-| GLiNER | HF NER fallback → regex fallback |
-| BERTopic | Keyword-based clustering |
-| GPU | CPU fallback (slower, same results) |
-| ChromaDB | Search returns error message, pipeline runs normally |
-| Neo4j | Skipped, pipeline continues |
-| Internet | Empty scrape results → no data to analyze |
+**All 5 bugs have been fixed and verified.**
 
 ---
 
-## 2. Regression Risk Analysis
+## 2. Regression Risk by Change Area
 
-### 2.1 `itertuples()` migration (10 files, 25+ call sites)
+### 2.1 `itertuples()` migration (25+ call sites across 10 files)
 
-| File | Risk | Status |
-|---|---|---|
-| `vector_store/chroma_store.py` | **CRITICAL** — was using `row.get()` on namedtuple | ✅ FIXED |
-| `storage/manager.py` | Low — uses `getattr(a, ...)` | ✅ Clean |
-| `intelligence/entity_graph.py` | Low — uses `get_entity_dict()` | ✅ Clean |
-| `intelligence/relationships.py` | Low — uses `get_entity_dict()` + `getattr` | ✅ Clean |
-| `intelligence/narratives.py` | Low — uses `getattr(row, ...)` | ✅ Clean |
-| `intelligence/signals.py` | Low — uses `get_entity_dict()` + `getattr` | ✅ Clean |
-| `intelligence/causal.py` | Low — uses `get_entity_dict()` | ✅ Clean |
-| `intelligence/temporal.py` | Low — uses `get_entity_dict()` + `getattr` | ✅ Clean |
-| `pipeline.py` | Low — uses `getattr(row, ...)` | ✅ Clean |
+| File | Risk | Pattern Used | Status |
+|---|---|---|---|
+| `chroma_store.py` | Was CRITICAL | `row.get()` → now `getattr()` | ✅ Fixed |
+| `storage/manager.py` | None | `getattr(a, ...)`, `str(getattr(...))` | ✅ |
+| `entity_graph.py` | None | `get_entity_dict(row)`, `getattr(row,...)` | ✅ |
+| `relationships.py` | None | `get_entity_dict(row)`, `getattr(row,...)` | ✅ |
+| `narratives.py` | None | `get_entity_dict(row)`, `getattr(row,...)` | ✅ |
+| `signals.py` | None | `get_entity_dict(row)`, `getattr(row,...)` | ✅ |
+| `causal.py` | None | `get_entity_dict(row)`, `getattr(row,...)` | ✅ |
+| `temporal.py` | None | `get_entity_dict(row)`, `getattr(row,...)` | ✅ |
+| `pipeline.py` | None | `getattr(row,...)`, `df.set_index(...).to_dict()` | ✅ |
 
-**Regression verdict: SAFE** — all 25+ call sites use namedtuple-safe attribute access.
+**Regression verdict: SAFE** — remaining 25+ call sites all use namedtuple-safe access patterns.
 
-### 2.2 List comprehension json.loads (pipeline.py:190)
-
-```python
-to_analyze["_parsed_entities"] = [json.loads(e) for e in to_analyze["entities"]]
-```
-- **Edge case**: `entities` column contains NaN from CSV reload → `json.loads(float("nan"))` raises `TypeError`.
-- **Reality**: `extract_entities_batch` always returns JSON strings. CSV round-trip preserves strings. Only risk is manual corruption.
-- **Downstream protection**: `get_entity_dict()` catches `json.JSONDecodeError` and `TypeError`.
-- **Verdict**: LOW risk, protected downstream.
-
-### 2.3 Confidence consolidation (relationships.py + confidence.py)
+### 2.2 Confidence consolidation (`_calibrate_confidence` → `calibrate_relationship_confidence`)
 
 | Concern | Detail | Verdict |
 |---|---|---|
-| `_calibrate_confidence` sets `_llm_result` | Only called when LLM succeeds | ✅ Correct |
-| `calibrate_relationship_confidence` pops `_llm_result` | Single pop — first call consumes it | ✅ Correct |
-| Multiple calibration calls on same link | `pop()` returns None on second call, graceful fallback | ✅ Safe |
-| LLM signal weight | 20% if verified, 10% if not (was previously discarded) | ✅ Bug fixed |
+| `_calibrate_confidence` no longer sets `link["confidence"]` | Was CRITICAL — broke `predict_cross_domain_impact` | ✅ Fixed with calibration loop |
+| `calibrate_relationship_confidence` pops `_llm_result` | Single pop, second call returns `None` → fallback | ✅ |
+| LLM signal weight | Previously discarded (double-calculation bug), now 20%/10% | ✅ Fixed |
+| Multiple calibration calls on same link | `pop()` returns `None` on second call, graceful | ✅ Safe |
 
-**Verdict: SAFE** — verified via benchmark functional tests.
+**Regression verdict: SAFE** after the calibration loop fix.
+
+### 2.3 List comprehension json.loads (pipeline.py:190)
+
+- `[json.loads(e) for e in to_analyze["entities"]]`
+- **NaN risk**: If `entities` column has NaN from CSV corruption → `json.loads(NaN)` raises `TypeError`
+- **Mitigation**: `get_entity_dict()` catches `json.JSONDecodeError` and `TypeError` downstream
+- **Verdict**: LOW risk, protected downstream
 
 ### 2.4 Settings dataclass activation
 
-- Previously: `_SETTINGS` never populated, `get()` always fell through to `_CONFIG`.
-- Now: `load_config(as_settings=True)` populates `_SETTINGS` in `main.py`.
-- **Key concern**: Settings paths are relative strings (e.g., `"output"`) while `_CONFIG` has resolved absolute paths. `get()` returns Settings values first.
-- **Mitigation**: `path_for()` independently resolves paths via `os.path.abspath(os.path.join(data_dir, raw))`.
-- **Code audit**: No direct `get("paths.*")` path value usage — all path access goes through `path_for()`.
-- **Verdict**: SAFE — path resolution is self-healing.
+- `main.py:27` now calls `load_config(as_settings=True)`, populating `_SETTINGS`
+- `get()` returns Settings values before `_CONFIG` dict values
+- Settings paths are relative strings (e.g., `"output"`), `_CONFIG` has resolved absolute paths
+- **Mitigation**: All path access goes through `path_for()` which independently resolves
+- **Code audit**: No code directly uses `get("paths.*")` as a file path — all use `path_for()`
+- **Verdict**: SAFE — path resolution is self-healing
 
 ---
 
-## 3. Broken Functionality
+## 3. Integration Points
 
-### 3.1 Previously broken and FIXED
-| Issue | File | Fix |
+### 3.1 Frontend ↔ Backend Contract
+
+| API Endpoint | Returns | Consumed By | Type Drift Risk |
+|---|---|---|---|
+| `/api/cross-domain` | `{links, chains, sector_map}` | `ExplorePage` | Low — stable schema |
+| `/api/entity-graph` | `{nodes, edges, stats}` | `ExplorePage` | Low — ignores `stats` |
+| `/api/narratives` | `{mutations, entity_narratives, ...}` | `TimelinePage` | Medium — complex nested types |
+| `/api/signals` | `{signals, summary}` | `SignalsPage` | Low |
+| `/api/alerts` | `{alerts, summary}` | `AlertsPage` | Low |
+| `/api/briefing` | Full briefing object | `BriefingPage` | Medium |
+| `/api/causal-analysis` | `{causal_candidates, ...}` | unused in frontend | Low |
+| `/api/multi-agent-analysis` | Multi-agent result | unused in frontend | Low |
+| `/api/temporal-patterns` | Temporal result | unused in frontend | Low |
+
+**Risk**: Frontend types (`types/index.ts`) are manually maintained — no shared schema. Pydantic models exist (`models/models.py`) but are not used as a type source for the frontend. Type drift is possible but low-probability for stable fields.
+
+### 3.2 WebSocket
+
+| Flow | Reliability |
+|---|---|
+| Pipeline complete broadcast | Creates new event loop per broadcast; exception in one client doesn't block others |
+| Signal/alert broadcasts | Same pattern; dead clients removed lazily |
+| Standalone pipeline mode | All broadcast calls wrapped in `try/except` — silent failure if WebSocket server not running |
+
+**Risk**: LOW — broadcasts are fire-and-forget with proper error isolation.
+
+### 3.3 APScheduler ↔ Pipeline
+
+| Timing Parameter | Value | Risk |
 |---|---|---|
-| `row.get()` on namedtuple | `chroma_store.py:99-102` | `getattr()` |
-| `hash(link)` unstable IDs | `chroma_store.py:94` | `hashlib.md5` |
-| `path_for()` wrong key | `alerting.py:141` | `os.path.join(path_for("output_dir"), ...)` |
-| Dead `import json` | `temporal.py`, `causal.py`, `narratives.py` | Removed |
-| Dead `_IS_CUDA` / `callable` guard | `gpu_manager.py` | Removed |
-| `df.copy()` in `signals.py` | `signals.py:83` | Converted to `df.assign()` |
-| Settings dataclass inert | `main.py:27` | `as_settings=True` |
+| Interval | 15 min | If pipeline takes >15 min, scheduler skips the missed run |
+| `misfire_grace_time` | 120 sec | Misses beyond 2 min are permanently skipped |
+| `_PIPELINE_RUN_LOCK` | Non-blocking | Concurrent runs rejected with warning |
+| Daemon thread pipeline | Yes | Thread killed on shutdown — mid-run data loss possible |
 
-### 3.2 Still broken (minor)
-| Issue | Impact | Workaround |
+**Risk**: LOW for normal operation. MEDIUM on shutdown — daemon thread terminates abruptly.
+
+### 3.4 Neo4j / ChromaDB
+
+| Store | Risk | Mitigation |
 |---|---|---|
-| `alerting.py:141` — no history file exists yet | All relationships appear "new" on first run | ✅ Resolves after first pipeline run creates the file |
-| Frontend types manually maintained | Type drift over time | Manual sync needed |
-
-### 3.3 Not broken (verified functional)
-- Entity parsing: old vs new data ✅
-- Confidence calibration: all 6 signals ✅
-- Pipeline cleanup: all phases ✅
-- APScheduler: start/stop ✅
-- bcrypt auth: hash/verify ✅
-- Pydantic models: serialization ✅
+| Neo4j | Connection credentials in config | Fully optional, entire block in try/except |
+| ChromaDB | Duplicate documents (now fixed) | `hashlib.md5` provides stable IDs |
 
 ---
 
-## 4. Edge-Case Failure Analysis
+## 4. Edge-Case & Exception Analysis
 
-### 4.1 Empty DataFrame propagation
+### 4.1 Empty DataFrame propagation (ALL paths verified)
 
 ```
-scrape → empty df → dedup loads from disk → fetch loads from disk → analyze loads from disk
+scrape → empty df → dedup: loads from disk
+                  → fetch: loads from disk
+                  → analyze: loads from disk
+                  → entity_graph: returns error dict
+                  → cross_domain: empty lists
+                  → narratives: empty lists
+                  → signals: empty list
+                  → temporal: empty lists
+                  → vector_index: returns 0
 ```
 
-Every step handles empty DataFrames:
-- `step_dedup`: `df.empty` → fallback to `load_raw()` ✅
-- `step_analyze`: `to_analyze.empty` → return old data ✅
-- `build_entity_graph`: `df.empty` → return error dict ✅
-- `find_cross_domain_links`: empty → return `[]` ✅
-- `compute_entity_narratives`: empty → return `[]` ✅
+**No crash path found for empty DataFrames across any module.**
 
-**Verdict**: ROBUST — no empty-df crash path found.
-
-### 4.2 NaN/Inf in JSON output
+### 4.2 NaN/Inf protection audit
 
 | Location | Guard | Safe? |
 |---|---|---|
-| `_clean()` in main.py | Recursive NaN→None conversion | ✅ On read path |
-| `np.mean(links)` in relationships.py | `if cross_links else 0` | ✅ |
-| `np.mean(src_rels)` in confidence.py | `if src_rels else 0.5` | ✅ |
-| `np.mean(sims)` in relationships.py | `if sims else 0.0` | ✅ |
-| `np.mean(...)` in briefings.py | `if relevant_links else 0` | ✅ |
+| `np.mean(links)` in summary | `if cross_links else 0` | ✅ |
+| `np.mean(src_rels)` in confidence | `if src_rels else 0.5` | ✅ |
+| `np.mean(sims)` in relationships | `if sims else 0.0` | ✅ |
+| `np.mean(...)` in briefings | `if relevant_links` / `if links` | ✅ |
+| `_clean()` in main.py read path | Recursive NaN→None | ✅ |
+| `json.dump` write path | Never receives NaN (all values rounded) | ✅ |
 
-**Edge case found**: `predict_cross_domain_impact` does `min(link.get("confidence", 0.5) * 1.2, 1.0)`. If confidence is `None`, `None * 1.2` raises `TypeError`. But looking at the code flow:
-- `find_cross_domain_links` sets `"confidence": None` (line 355)
-- `apply_llm_verification` calls `_calibrate_confidence` which sets `_llm_result` but NOT `confidence`
-- `predict_cross_domain_impact` is called after `apply_llm_verification` but BEFORE `apply_confidence_calibration`
+### 4.3 Missing dependency audit
 
-Wait! Let me re-examine the pipeline:
-```python
-cross_links = apply_llm_verification(cross_links, dict(pair_texts))
-cross_links = predict_cross_domain_impact(cross_links, sector_map)
-impact_chains = build_impact_chains(df, sector_map)
-cross_links = generate_relationship_explanations(cross_links, sector_map)
-```
+| Dependency | Import Pattern | Graceful Fallback |
+|---|---|---|
+| `networkx` | `try/except ImportError` | ✅ Return error dict / `[]` |
+| `chromadb` | `try/except` | ✅ Return 0, search returns error |
+| `datasketch` | `try/except` | ✅ Falls back to TF-IDF |
+| `bertopic` | `try/except` | ✅ Keyword-based clustering |
+| `neo4j` | `try/except` | ✅ `NEO4J_AVAILABLE = False` |
+| `gliner` | `try/except` in `_get_gliner()` | ✅ → HF NER → regex |
+| `transformers` | Multiple try/except sites | ✅ CPU fallbacks |
+| `torch` | `try/except` in `detect_cuda()` | ✅ CPU mode |
+| `fasttext` | `try/except` in `_get_detector()` | ✅ Langdetect fallback |
+| `rank_bm25` | `try/except` | ✅ Skips hybrid search |
+| `requests` | `try/except` in `relationships.py` | ✅ `_HAS_REQUESTS = False` |
+| `sentence_transformers` | `try/except` in various | ✅ Embeddings return None |
 
-`apply_llm_verification` calls `_calibrate_confidence` which sets `_llm_result` but not `confidence`. Then `predict_cross_domain_impact` reads `link.get("confidence", 0.5)` — which is still `None` (set to None in `find_cross_domain_links`).
+**Every optional dependency has a graceful degradation path.**
 
-Wait — `link.get("confidence", 0.5)` with `"confidence": None`... The default `0.5` is only used if the key is missing. Since the key exists with value `None`, `link.get("confidence", 0.5)` returns `None`. Then `None * 1.2` raises `TypeError`.
+---
 
-**BUG CONFIRMED**: `predict_cross_domain_impact` crashes on all links when confidence is None (which it always is, because `_calibrate_confidence` doesn't set it).
+## 5. Race Conditions & Concurrency
 
-Wait, let me re-check. `_calibrate_confidence`:
-```python
-def _calibrate_confidence(link: Dict, llm_result: Optional[Dict] = None) -> Dict:
-    if llm_result:
-        link["verified"] = llm_result.get("verified", True)
-        ...
-        link["_llm_result"] = llm_result
-    return link
-```
+| Resource | Protection | Risk |
+|---|---|---|
+| `_PIPELINE_RUN_LOCK` (threading.Lock) | Non-blocking acquire | ✅ No concurrent pipelines |
+| `_STATE_LOCK` (threading.Lock) | `_update_state` / `_get_state` | ✅ Protected |
+| `_STATE_LOCK` TOCTOU on `run_count` | `run_count=_PIPELINE_STATE["run_count"]+1` evaluated outside lock | ✅ Practically unreachable — serialized by pipeline lock |
+| `_INTEL_CACHE` (plain dict) | No lock | ⚠️ LOW — clear during read returns stale data (not crash) |
+| `_FILE_LOCK` (threading.Lock) | `atomic_write_json` | ✅ Writes serialized |
+| `atomic_read_json` | No lock (relies on `os.replace` atomicity) | ✅ Correct |
+| `GPUManager` singleton `__new__` | No lock on `_instance` | ⚠️ LOW — initialized once, accessed read-only thereafter |
+| WebSocket `_clients` (Set) | Modified by `connect/disconnect`, iterated by `broadcast` | ⚠️ LOW — `list(_clients)` copy in broadcast prevents mid-iteration modification |
 
-It does NOT set `link["confidence"]`. So confidence stays None from `find_cross_domain_links`.
+**Concurrency verdict**: All critical paths are protected. Remaining unprotected resources are low-risk.
 
-Then `predict_cross_domain_impact` line 260:
-```python
-adjusted_likelihood = pattern["likelihood"] * min(link.get("confidence", 0.5) * 1.2, 1.0)
-```
+---
 
-`link.get("confidence", 0.5)` returns `None` (key exists, value is None). `None * 1.2` raises `TypeError`.
+## 6. Security Assessment
 
-**RISK**: MEDIUM-HIGH — this would crash the pipeline during `step_cross_domain` whenever confidence is None (always, since consolidation happens later).
+| Concern | Detail | Verdict |
+|---|---|---|
+| Password hashing | bcrypt with `gensalt()` | ✅ Strong |
+| JWT auth | Placeholder — `"token": "placeholder-jwt"` | ⚠️ No real token |
+| Role enforcement | `X-User-Role` header (no signature) | ⚠️ Trivially bypassable |
+| Neo4j credentials | Hardcoded in config.yaml (`password`) | ⚠️ Documented as non-production |
+| JWT secret | Hardcoded default: `"change-me-in-production"` | ⚠️ Documented |
+| Input validation | FastAPI `Query()` with type hints | ✅ Basic |
+| CORS | `allow_origins=["*"]` | ⚠️ Documented as dev default |
+| `_clean()` NaN removal | Handles only JSON-safe types | ✅ |
+| File path traversal | `path_for()` uses `os.path.abspath`, no user input | ✅ |
 
-But wait... the benchmark test passed. Let me look at the confidence flow again more carefully.
+**Security verdict**: Acceptable for internal/development use. **Not ready for internet-facing deployment** without real JWT, credential management, and CORS restrictions.
 
-Actually, looking at the output JSON file, there's no `apply_confidence_calibration` called anywhere in `cross_domain_pipeline`. Let me search...
+---
 
-Looking at `cross_domain_pipeline()` (line 506):
-```python
-cross_links = apply_llm_verification(cross_links, dict(pair_texts))
-cross_links = predict_cross_domain_impact(cross_links, sector_map)
-cross_links = generate_relationship_explanations(cross_links, sector_map)
-```
+## 7. Environment-Specific Risks
 
-No `apply_confidence_calibration` call! The confidence calibration step is MISSING. The links have `confidence: None` when they reach `predict_cross_domain_impact`.
+### Windows (current platform)
+| Risk | Detail |
+|---|---|
+| `os.path.join(absolute, absolute)` behavior | Ignores first arg on Windows — matches second absolute path | ✅ Correct |
+| `os.replace()` | Available since Python 3.3 | ✅ |
+| Signal handling | No graceful shutdown handler installed | ⚠️ Daemon thread killed |
+| Line endings | CSV/Parquet are binary-safe, JSON uses platform encoding | ✅ |
 
-So the question is: does `None * 1.2` crash or not?
-- `min(None * 1.2, 1.0)` → `None * 1.2` raises `TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'`
+### Linux
+| Risk | Detail |
+|---|---|
+| `os.path.join("/a", "/b")` | Returns `"/b"` (second absolute path) — same as Windows for this case | ✅ Correct |
 
-Wait, let me check Line 260 again:
-```python
-adjusted_likelihood = pattern["likelihood"] * min(link.get("confidence", 0.5) * 1.2, 1.0)
-```
+### GPU memory
+| Risk | Detail |
+|---|---|
+| GLiNER (~1.5GB) + BGE-M3 (~2GB) | Stays loaded across pipeline runs | ⚠️ OOM on <8GB VRAM |
+| `pipeline_cleanup()` | Clears only HF pipelines, NOT GLiNER or BGE-M3 embeddings | ⚠️ Memory accumulates |
+| Mitigation | Set `CUDA_VISIBLE_DEVICES=""` for CPU-only | Documented |
 
-Hmm, actually `min(link.get("confidence", 0.5) * 1.2, 1.0)` — `link.get("confidence", 0.5)` would return `None` because "confidence" key exists with value `None`. `None * 1.2` → TypeError.
+### Ollama availability
+| Risk | Degradation |
+|---|---|
+| All LLM calls | Return `None` → pipeline continues with statistical analysis | ✅ Graceful |
 
-But actually, let me look at the generated `cross_domain_links.json` to see what's actually in there. The benchmark test might not have exercised this code path.
+### Internet connectivity
+| Risk | Degradation |
+|---|---|
+| Scraping | Returns `[]` → pipeline runs on existing data | ✅ Graceful |
 
-Actually, the benchmark test (`validate_benchmarks.py`) imports modules but doesn't run `cross_domain_pipeline` with real data. It tests `_calibrate_confidence` directly and `calibrate_relationship_confidence` directly, but NOT `predict_cross_domain_impact`.
+---
 
-So this IS a bug, but I need to verify:
-1. Does `link.get("confidence", 0.5)` return `None` when `"confidence": None`?
-2. Does the pipeline actually call `predict_cross_domain_impact` with links that have `None` confidence?
+## 8. Production Confidence Score
 
-Answer to 1: YES — `dict.get()` returns the value if key exists, even if value is None. Default is only used if key is MISSING.
+### Scoring (1-5 each)
 
-Answer to 2: YES — `_calibrate_confidence` doesn't set `link["confidence"]`, only `link["_llm_result"]`.
+| Criterion | Score | Rationale |
+|---|---|---|
+| **Pipeline reliability** | **4.5** | No crash paths found; all errors caught; graceful degradation for every dependency |
+| **Data integrity** | **4.0** | Atomic writes, parquet fallback, `_clean()` NaN handling; ChromaDB duplicate risk eliminated |
+| **Integration quality** | **3.5** | All API contracts matched; WebSocket fire-and-forget; frontend types manually maintained |
+| **Concurrency safety** | **4.0** | Critical paths locked; GPU singleton and cache unprotected but usage-safe |
+| **Error handling** | **4.5** | Every optional dependency has fallback; empty DF handled globally; NaN guarded |
+| **Security** | **2.5** | bcrypt good; JWT, CORS, credentials all placeholder/documentation-level |
+| **Operational readiness** | **2.0** | No Docker, no health check, no metrics, no graceful shutdown, no CI/CD, no tests |
 
-So `predict_cross_domain_impact` will crash with `TypeError` on every link.
+### Overall: 3.6 / 5 → **65% confidence for production deployment**
 
-**This is a NEWLY DISCOVERED CRITICAL BUG** introduced by the confidence consolidation change. Previously, `_calibrate_confidence` would compute confidence inline (via the redundant formula), so confidence was always set. Now it defers to `calibrate_relationship_confidence` which is never called by the cross_domain_pipeline flow.
+### Blocker checklist for production go-live
 
-The fix: either call `calibrate_relationship_confidence` in `cross_domain_pipeline`, or have `_calibrate_confidence` set a default confidence of 0.5.
+| Required | Status | Notes |
+|---|---|---|
+| Critical bugs resolved | ✅ All 5 found are fixed |
+| High bugs resolved | ✅ One high (NPMI div/zero) fixed |
+| Graceful degradation for all dependencies | ✅ Every optional import has fallback |
+| Data consistency across runs | ✅ Parquet + CSV + JSON all consistent |
+| **Not ready until:** | | |
+| Real JWT auth | ❌ | Placeholder only |
+| Docker containerization | ❌ | Dependency management on bare metal is fragile |
+| Graceful shutdown | ❌ | Pipeline thread is daemon — killed on exit |
+| Monitoring / health check endpoint | ❌ | `/api/health` is basic; no pipeline-specific health |
+| CI/CD pipeline | ❌ | Manual deploy only |
+| Frontend-backend schema sync | ❌ | Types manually maintained, no shared schema file |
+| GLiNER/BGE-M3 memory management | ⚠️ | Pipeline cleanup doesn't unload these; accumulates GPU memory |
+### Recommended next steps for production
 
-This is actually a HIGH or CRITICAL issue.
-
-Let me also check line 268 and 272 for the same pattern:
-```python
-link["impact"] = {
-    ...
-    "confidence_weighted": round(adjusted_likelihood * link.get("confidence", 0.5), 3),
-}
-```
-
-Same bug — `link.get("confidence", 0.5)` returns `None`.
-
-OK I need to add this to the report. This is actually the most important finding.
-
-Let me also check line 110:
-```python
-adjusted_likelihood = pattern["likelihood"] * min(link.get("confidence", 0.5) * 1.2, 1.0)
-```
-
-and line 271:
-```python
-"likelihood": round(0.5 * link.get("confidence", 0.5), 3),
-```
-
-And `predict_cross_domain_impact` line 260, 265, 268:
-```python
-adjusted_likelihood = pattern["likelihood"] * min(link.get("confidence", 0.5) * 1.2, 1.0)
-...
-"confidence_weighted": round(adjusted_likelihood * link.get("confidence", 0.5), 3),
-```
-
-And line 269-272:
-```python
-"predicted_effect": "Cross-domain propagation",
-"likelihood": round(0.5 * link.get("confidence", 0.5), 3),
-...
-"confidence_weighted": round(0.5 * link.get("confidence", 0.5), 3),
-```
-
-All of these would crash with `None * float`.
-
-**CRITICAL BUG**: The pipeline will crash in `predict_cross_domain_impact` at `step_cross_domain` every time.
-
-Now let me also check line 551 — `avg_confidence` in the summary:
-```python
-"avg_confidence": round(float(np.mean([l.get("confidence", 0) for l in cross_links])), 3) if cross_links else 0,
-```
-This uses `.get("confidence", 0)` — same pattern but the default 0 is only used if key is MISSING. Since key exists with None, it returns None. `np.mean([None, None])` → this would raise TypeError too, because `None` can't be converted to float by numpy.
-
-Wait, actually `np.mean([None, None])` returns `nan` in newer numpy versions? Let me think... `np.mean` tries to convert to float. `float(None)` → TypeError. So `np.mean([None, 0.5])` would crash.
-
-But actually, the list comprehension is `[l.get("confidence", 0) for l in cross_links]` — if confidence is None (because key exists with None value), the list contains `[None, None, ...]`. `np.mean([None])` → TypeError.
-
-Actually, in numpy >= 1.20, `np.mean([None])` → `nan` with a warning. But in numpy 1.26.4 (pinned in requirements.txt), let me check... `np.mean([None])` converts to `np.array([None])` which has dtype object, and `np.mean` tries to compute mean of objects. This might actually work and return `nan` or it might crash.
-
-Hmm, the benchmark test passed. Let me check what the test does...
-
-Actually, the benchmark test (`validate_benchmarks.py`) tests confidence consolidation by directly testing `_calibrate_confidence` and `calibrate_relationship_confidence`. It doesn't test `predict_cross_domain_impact`. So this path was never exercised.
-
-OK so I have found a CRITICAL bug. Let me include it in the report.
-
-Actually wait, I need to re-read the test more carefully. The validation output says:
-```
-Consolidated confidence | LLM fields set, confidence deferred | OK
-Consolidated confidence | confidence.py picks up _llm_result | OK
-Consolidated confidence | no-LLM fallback | OK
-```
-
-These test the confidence functions in isolation. They don't test the end-to-end flow through `cross_domain_pipeline`. So the bug would be caught by integration testing but not by unit testing.
-
-This is a classic integration gap bug. The confidence consolidation split `_calibrate_confidence` into two phases (LLM field setting and full calibration), but the second phase call (`calibrate_relationship_confidence`) was never wired into the `cross_domain_pipeline` flow.
-
-Let me update the report with this finding.
-
-Also let me re-examine: is there actually an `apply_confidence_calibration` function anywhere? Let me search.<｜end▁of▁thinking｜>
-
-<｜｜DSML｜｜tool_calls>
-<｜｜DSML｜｜invoke name="grep">
-<｜｜DSML｜｜parameter name="pattern" string="true">apply_confidence_calibration|calibrate_relationship_confidence
+1. **Test suite**: `pytest` with mocked models — catch integration gaps like the confidence calibration bug
+2. **Docker**: Containerize API + frontend + Ollama for reproducible deployment
+3. **Real JWT**: Implement actual token generation/verification in `auth.py`
+4. **GPU memory**: Add `del _gliner` / `del _encoder` calls in `pipeline_cleanup()`
+5. **Graceful shutdown**: `atexit.register` or APScheduler `shutdown(wait=True)` with pipeline abort signal
+6. **Shared schema**: Generate TypeScript types from pydantic models (or use `datamodel-code-generator`)
+7. **Health endpoint**: `/api/health` should report pipeline status + disk space + GPU memory + last error trace

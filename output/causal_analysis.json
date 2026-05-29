@@ -1,53 +1,43 @@
 {
   "causal_candidates": [
     {
-      "source": "nato",
-      "target": "romania",
-      "direction": "nato->romania",
-      "mean_lag_hours": 19.1,
-      "lag_samples": 110,
-      "causal_score": 1.0,
-      "evidence_strength": 47,
-      "mechanism": "temporal_precedence"
-    },
-    {
       "source": "nhl",
       "target": "claude lemieux",
       "direction": "nhl->claude lemieux",
       "mean_lag_hours": 13.0,
-      "lag_samples": 160,
+      "lag_samples": 192,
       "causal_score": 1.0,
-      "evidence_strength": 48,
+      "evidence_strength": 50,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "blair",
       "target": "labour",
       "direction": "blair->labour",
-      "mean_lag_hours": 24.7,
-      "lag_samples": 73,
+      "mean_lag_hours": 25.3,
+      "lag_samples": 81,
       "causal_score": 1.0,
-      "evidence_strength": 29,
+      "evidence_strength": 30,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "ukraine",
       "target": "romania",
       "direction": "ukraine->romania",
-      "mean_lag_hours": 30.5,
-      "lag_samples": 742,
+      "mean_lag_hours": 29.8,
+      "lag_samples": 882,
       "causal_score": 1.0,
-      "evidence_strength": 75,
+      "evidence_strength": 85,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "florida",
       "target": "blue origin",
       "direction": "florida->blue origin",
-      "mean_lag_hours": 16.4,
-      "lag_samples": 143,
+      "mean_lag_hours": 16.5,
+      "lag_samples": 153,
       "causal_score": 1.0,
-      "evidence_strength": 36,
+      "evidence_strength": 37,
       "mechanism": "temporal_precedence"
     },
     {
@@ -55,19 +45,19 @@
       "target": "nta",
       "direction": "supreme court->nta",
       "mean_lag_hours": 36.0,
-      "lag_samples": 297,
+      "lag_samples": 328,
       "causal_score": 1.0,
-      "evidence_strength": 62,
+      "evidence_strength": 63,
       "mechanism": "temporal_precedence"
     },
     {
-      "source": "kyiv",
-      "target": "russia",
-      "direction": "kyiv->russia",
-      "mean_lag_hours": 41.0,
-      "lag_samples": 184,
+      "source": "ukraine",
+      "target": "nato",
+      "direction": "ukraine->nato",
+      "mean_lag_hours": 30.5,
+      "lag_samples": 515,
       "causal_score": 1.0,
-      "evidence_strength": 53,
+      "evidence_strength": 74,
       "mechanism": "temporal_precedence"
     },
     {
@@ -81,6 +71,26 @@
       "mechanism": "temporal_precedence"
     },
     {
+      "source": "new york",
+      "target": "penn station",
+      "direction": "new york->penn station",
+      "mean_lag_hours": 31.8,
+      "lag_samples": 273,
+      "causal_score": 1.0,
+      "evidence_strength": 52,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "kyiv",
+      "target": "russia",
+      "direction": "kyiv->russia",
+      "mean_lag_hours": 41.2,
+      "lag_samples": 205,
+      "causal_score": 1.0,
+      "evidence_strength": 56,
+      "mechanism": "temporal_precedence"
+    },
+    {
       "source": "florida",
       "target": "new glenn",
       "direction": "florida->new glenn",
@@ -88,6 +98,16 @@
       "lag_samples": 41,
       "causal_score": 1.0,
       "evidence_strength": 24,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "cha",
+      "target": "##tgpt",
+      "direction": "cha->##tgpt",
+      "mean_lag_hours": 29.1,
+      "lag_samples": 90,
+      "causal_score": 1.0,
+      "evidence_strength": 30,
       "mechanism": "temporal_precedence"
     },
     {
@@ -101,33 +121,13 @@
       "mechanism": "temporal_precedence"
     },
     {
-      "source": "cha",
-      "target": "##tgpt",
-      "direction": "cha->##tgpt",
-      "mean_lag_hours": 29.0,
-      "lag_samples": 70,
-      "causal_score": 1.0,
-      "evidence_strength": 26,
-      "mechanism": "temporal_precedence"
-    },
-    {
       "source": "delhi",
       "target": "ncr",
       "direction": "delhi->ncr",
-      "mean_lag_hours": 28.3,
-      "lag_samples": 304,
+      "mean_lag_hours": 28.0,
+      "lag_samples": 312,
       "causal_score": 1.0,
-      "evidence_strength": 107,
-      "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "ferrari",
-      "target": "benedetto vigna",
-      "direction": "ferrari->benedetto vigna",
-      "mean_lag_hours": 39.6,
-      "lag_samples": 49,
-      "causal_score": 1.0,
-      "evidence_strength": 24,
+      "evidence_strength": 112,
       "mechanism": "temporal_precedence"
     },
     {
@@ -136,8 +136,8 @@
       "direction": "nta->neet",
       "mean_lag_hours": 20.8,
       "lag_samples": 30,
-      "causal_score": 0.952,
-      "evidence_strength": 23,
+      "causal_score": 0.925,
+      "evidence_strength": 24,
       "mechanism": "temporal_precedence"
     },
     {
@@ -165,29 +165,39 @@
       "target": "chinnappa",
       "direction": "green->chinnappa",
       "mean_lag_hours": 24.7,
-      "lag_samples": 18,
-      "causal_score": 0.75,
-      "evidence_strength": 20,
+      "lag_samples": 22,
+      "causal_score": 0.758,
+      "evidence_strength": 24,
+      "mechanism": "temporal_precedence"
+    },
+    {
+      "source": "nta",
+      "target": "upsc",
+      "direction": "nta->upsc",
+      "mean_lag_hours": 21.3,
+      "lag_samples": 9,
+      "causal_score": 0.581,
+      "evidence_strength": 16,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "reliance industries",
       "target": "sat",
       "direction": "reliance industries->sat",
-      "mean_lag_hours": 13.7,
-      "lag_samples": 10,
-      "causal_score": 0.538,
-      "evidence_strength": 21,
+      "mean_lag_hours": 13.6,
+      "lag_samples": 12,
+      "causal_score": 0.54,
+      "evidence_strength": 25,
       "mechanism": "temporal_precedence"
     },
     {
       "source": "reliance industries",
       "target": "sebi",
       "direction": "reliance industries->sebi",
-      "mean_lag_hours": 13.7,
-      "lag_samples": 10,
-      "causal_score": 0.538,
-      "evidence_strength": 21,
+      "mean_lag_hours": 13.6,
+      "lag_samples": 12,
+      "causal_score": 0.54,
+      "evidence_strength": 25,
       "mechanism": "temporal_precedence"
     },
     {
@@ -199,27 +209,25 @@
       "causal_score": 0.5,
       "evidence_strength": 10,
       "mechanism": "temporal_precedence"
-    },
-    {
-      "source": "european commission",
-      "target": "temu",
-      "direction": "european commission->temu",
-      "mean_lag_hours": 8.4,
-      "lag_samples": 4,
-      "causal_score": 0.482,
-      "evidence_strength": 11,
-      "mechanism": "temporal_precedence"
     }
   ],
-  "causal_chains": [],
+  "causal_chains": [
+    {
+      "chain": [
+        "supreme court",
+        "nta",
+        "upsc"
+      ],
+      "length": 3,
+      "avg_causal_score": 0.79,
+      "mechanisms": [
+        "preference_driven",
+        "general"
+      ]
+    }
+  ],
   "causal_graph": {
     "nodes": [
-      {
-        "id": "nato"
-      },
-      {
-        "id": "romania"
-      },
       {
         "id": "nhl"
       },
@@ -236,6 +244,9 @@
         "id": "ukraine"
       },
       {
+        "id": "romania"
+      },
+      {
         "id": "florida"
       },
       {
@@ -248,19 +259,25 @@
         "id": "nta"
       },
       {
+        "id": "nato"
+      },
+      {
+        "id": "neet"
+      },
+      {
+        "id": "new york"
+      },
+      {
+        "id": "penn station"
+      },
+      {
         "id": "kyiv"
       },
       {
         "id": "russia"
       },
       {
-        "id": "neet"
-      },
-      {
         "id": "new glenn"
-      },
-      {
-        "id": "centre"
       },
       {
         "id": "cha"
@@ -269,16 +286,13 @@
         "id": "##tgpt"
       },
       {
+        "id": "centre"
+      },
+      {
         "id": "delhi"
       },
       {
         "id": "ncr"
-      },
-      {
-        "id": "ferrari"
-      },
-      {
-        "id": "benedetto vigna"
       },
       {
         "id": "kent"
@@ -299,6 +313,9 @@
         "id": "chinnappa"
       },
       {
+        "id": "upsc"
+      },
+      {
         "id": "reliance industries"
       },
       {
@@ -312,23 +329,9 @@
       },
       {
         "id": "nick bilton"
-      },
-      {
-        "id": "european commission"
-      },
-      {
-        "id": "temu"
       }
     ],
     "edges": [
-      {
-        "source": "nato",
-        "target": "romania",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "strategic_posture",
-        "mean_lag_hours": 19.1
-      },
       {
         "source": "nhl",
         "target": "claude lemieux",
@@ -343,11 +346,19 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
-        "mean_lag_hours": 24.7
+        "mean_lag_hours": 25.3
       },
       {
         "source": "ukraine",
         "target": "romania",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "strategic_posture",
+        "mean_lag_hours": 29.8
+      },
+      {
+        "source": "ukraine",
+        "target": "nato",
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "strategic_posture",
@@ -359,7 +370,7 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "policy_shock",
-        "mean_lag_hours": 16.4
+        "mean_lag_hours": 16.5
       },
       {
         "source": "florida",
@@ -388,10 +399,26 @@
       {
         "source": "nta",
         "target": "neet",
-        "weight": 0.952,
+        "weight": 0.925,
         "mechanism": "temporal_precedence",
         "pattern": "general",
         "mean_lag_hours": 20.8
+      },
+      {
+        "source": "nta",
+        "target": "upsc",
+        "weight": 0.581,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 21.3
+      },
+      {
+        "source": "new york",
+        "target": "penn station",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "general",
+        "mean_lag_hours": 31.8
       },
       {
         "source": "kyiv",
@@ -399,7 +426,15 @@
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "strategic_posture",
-        "mean_lag_hours": 41.0
+        "mean_lag_hours": 41.2
+      },
+      {
+        "source": "cha",
+        "target": "##tgpt",
+        "weight": 1.0,
+        "mechanism": "temporal_precedence",
+        "pattern": "demand_shock",
+        "mean_lag_hours": 29.1
       },
       {
         "source": "centre",
@@ -410,28 +445,12 @@
         "mean_lag_hours": 22.8
       },
       {
-        "source": "cha",
-        "target": "##tgpt",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "demand_shock",
-        "mean_lag_hours": 29.0
-      },
-      {
         "source": "delhi",
         "target": "ncr",
         "weight": 1.0,
         "mechanism": "temporal_precedence",
         "pattern": "policy_shock",
-        "mean_lag_hours": 28.3
-      },
-      {
-        "source": "ferrari",
-        "target": "benedetto vigna",
-        "weight": 1.0,
-        "mechanism": "temporal_precedence",
-        "pattern": "policy_shock",
-        "mean_lag_hours": 39.6
+        "mean_lag_hours": 28.0
       },
       {
         "source": "kent",
@@ -452,7 +471,7 @@
       {
         "source": "green",
         "target": "chinnappa",
-        "weight": 0.75,
+        "weight": 0.758,
         "mechanism": "temporal_precedence",
         "pattern": "general",
         "mean_lag_hours": 24.7
@@ -460,18 +479,18 @@
       {
         "source": "reliance industries",
         "target": "sat",
-        "weight": 0.538,
+        "weight": 0.54,
         "mechanism": "temporal_precedence",
         "pattern": "demand_shock",
-        "mean_lag_hours": 13.7
+        "mean_lag_hours": 13.6
       },
       {
         "source": "reliance industries",
         "target": "sebi",
-        "weight": 0.538,
+        "weight": 0.54,
         "mechanism": "temporal_precedence",
         "pattern": "demand_shock",
-        "mean_lag_hours": 13.7
+        "mean_lag_hours": 13.6
       },
       {
         "source": "new york times",
@@ -480,22 +499,14 @@
         "mechanism": "temporal_precedence",
         "pattern": "regulatory_drag",
         "mean_lag_hours": 320.4
-      },
-      {
-        "source": "european commission",
-        "target": "temu",
-        "weight": 0.482,
-        "mechanism": "temporal_precedence",
-        "pattern": "regulatory_drag",
-        "mean_lag_hours": 8.4
       }
     ]
   },
   "summary": {
     "total_candidates": 21,
-    "total_causal_chains": 0,
-    "graph_nodes": 35,
+    "total_causal_chains": 1,
+    "graph_nodes": 34,
     "graph_edges": 21,
-    "avg_causal_score": 0.882
+    "avg_causal_score": 0.886
   }
 }

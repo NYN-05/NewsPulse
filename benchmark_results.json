@@ -187,7 +187,7 @@
   {
     "module": "iterrows (N=5000)",
     "change": "time",
-    "value": "0.3011s"
+    "value": "0.2942s"
   },
   {
     "module": "itertuples (N=5000)",
@@ -197,17 +197,17 @@
   {
     "module": "Speedup",
     "change": "itertuples vs iterrows",
-    "value": "42.30x"
+    "value": "41.61x"
   },
   {
     "module": "df.copy()+mutate (50000x20)",
     "change": "time",
-    "value": "0.0025s"
+    "value": "0.0037s"
   },
   {
     "module": "df.assign (50000x20)",
     "change": "time",
-    "value": "0.0031s"
+    "value": "0.0047s"
   },
   {
     "module": "Speedup",
@@ -217,32 +217,32 @@
   {
     "module": "list comprehension json.loads (N=5000)",
     "change": "time",
-    "value": "0.0134s"
+    "value": "0.0178s"
   },
   {
     "module": ".apply(json.loads) (N=5000)",
     "change": "time",
-    "value": "0.0194s"
+    "value": "0.0166s"
   },
   {
     "module": "Speedup",
     "change": "list comp vs .apply",
-    "value": "1.45x"
+    "value": "0.93x"
   },
   {
     "module": "Old O(n\u00b2) pairs (1K articles)",
     "change": "time",
-    "value": "0.0922s"
+    "value": "0.0679s"
   },
   {
     "module": "New two-pass (1K articles)",
     "change": "time",
-    "value": "0.0991s"
+    "value": "0.0711s"
   },
   {
     "module": "Speedup",
     "change": "two-pass vs O(n\u00b2)",
-    "value": "0.93x"
+    "value": "0.95x"
   },
   {
     "module": "Pairs (old)",
@@ -262,7 +262,7 @@
   {
     "module": "pipeline_cleanup()",
     "change": "execution time",
-    "value": "0.2336s"
+    "value": "0.2140s"
   },
   {
     "module": "",
@@ -287,12 +287,12 @@
   {
     "module": "df.copy()+mutate",
     "change": "time/size",
-    "value": "0.0020s / 6903 KB"
+    "value": "0.0013s / 6903 KB"
   },
   {
     "module": "df.assign()",
     "change": "time/size",
-    "value": "0.0019s / 6903 KB"
+    "value": "0.0021s / 6903 KB"
   },
   {
     "module": "",
@@ -307,7 +307,7 @@
   {
     "module": "_calibrate_confidence",
     "change": "lines (simplified)",
-    "value": "16"
+    "value": "11"
   },
   {
     "module": "get_entity_dict()",
@@ -366,23 +366,23 @@
   },
   {
     "module": "Entity pairs (1K articles)",
-    "change": "0.092s",
-    "value": "0.099s | 0.9x"
+    "change": "0.068s",
+    "value": "0.071s | 1.0x"
   },
   {
     "module": "DataFrame iteration (5K rows)",
-    "change": "0.301s",
-    "value": "0.007s | 42.3x"
+    "change": "0.294s",
+    "value": "0.007s | 41.6x"
   },
   {
     "module": "JSON parse (5K rows)",
-    "change": "0.019s",
-    "value": "0.013s | 1.5x"
+    "change": "0.017s",
+    "value": "0.018s | 0.9x"
   },
   {
     "module": "DataFrame copy+mutate (50K)",
-    "change": "0.002s",
-    "value": "0.002s | 1.0x"
+    "change": "0.001s",
+    "value": "0.002s | 0.6x"
   },
   {
     "module": "Ollama connections (20 calls)",

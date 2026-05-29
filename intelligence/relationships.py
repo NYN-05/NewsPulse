@@ -332,7 +332,8 @@ def find_cross_domain_links(df: pd.DataFrame, sector_map: Dict[str, Dict]) -> Li
         p_a = entity_freq.get(e1, 1) / N
         p_b = entity_freq.get(e2, 1) / N
         pmi_raw = math.log(max(p_ab / (p_a * p_b), 1e-10))
-        npmi = pmi_raw / (-math.log(max(p_ab, 1e-10)))
+        denom = -math.log(max(p_ab, 1e-10))
+        npmi = pmi_raw / denom if denom > 1e-10 else 1.0
         pmi_score = max(0.0, npmi)
         diversity_norm = min(source_diversity / 5.0, 1.0)
         strength = round(pmi_score * 0.6 + diversity_norm * 0.4, 3)
