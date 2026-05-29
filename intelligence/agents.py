@@ -9,6 +9,7 @@ A pipeline of specialized AI agents that collaboratively analyze intelligence:
 
 import json
 import logging
+import time
 import numpy as np
 from collections import Counter
 from typing import Dict, List, Optional
@@ -19,6 +20,11 @@ logger = logging.getLogger(__name__)
 
 
 _OLLAMA_SESSION = None
+_OLLAMA_FAILURE_COUNT = 0
+_OLLAMA_LAST_FAILURE = 0.0
+_OLLAMA_CIRCUIT_OPEN = False
+_CIRCUIT_BREAK_THRESHOLD = 3
+_CIRCUIT_RESET_SECONDS = 300
 
 def close_ollama_session():
     global _OLLAMA_SESSION
@@ -26,8 +32,34 @@ def close_ollama_session():
         _OLLAMA_SESSION.close()
         _OLLAMA_SESSION = None
 
+def _check_ollama_circuit() -> bool:
+    global _OLLAMA_CIRCUIT_OPEN, _OLLAMA_LAST_FAILURE, _OLLAMA_FAILURE_COUNT
+    if _OLLAMA_CIRCUIT_OPEN:
+        if time.time() - _OLLAMA_LAST_FAILURE > _CIRCUIT_RESET_SECONDS:
+            _OLLAMA_CIRCUIT_OPEN = False
+            _OLLAMA_FAILURE_COUNT = 0
+            logger.info("Ollama circuit breaker reset after %.0fs", _CIRCUIT_RESET_SECONDS)
+        else:
+            logger.warning("Ollama circuit breaker open — skipping LLM calls")
+            return False
+    return True
+
+def _record_ollama_failure():
+    global _OLLAMA_FAILURE_COUNT, _OLLAMA_LAST_FAILURE, _OLLAMA_CIRCUIT_OPEN
+    _OLLAMA_FAILURE_COUNT += 1
+    _OLLAMA_LAST_FAILURE = time.time()
+    if _OLLAMA_FAILURE_COUNT >= _CIRCUIT_BREAK_THRESHOLD:
+        _OLLAMA_CIRCUIT_OPEN = True
+        logger.warning("Ollama circuit breaker opened after %d consecutive failures", _OLLAMA_FAILURE_COUNT)
+
+def _record_ollama_success():
+    global _OLLAMA_FAILURE_COUNT
+    _OLLAMA_FAILURE_COUNT = 0
+
 def _ollama_generate(prompt: str, system: str = "", model: str = None) -> Optional[str]:
     global _OLLAMA_SESSION
+    if not _check_ollama_circuit():
+        return None
     try:
         import requests
     except ImportError:
@@ -49,10 +81,13 @@ def _ollama_generate(prompt: str, system: str = "", model: str = None) -> Option
             timeout=60,
         )
         if not resp.ok:
+            _record_ollama_failure()
             return None
+        _record_ollama_success()
         return resp.json().get("response", "")
     except Exception as e:
         logger.debug("Ollama call failed: %s", e)
+        _record_ollama_failure()
         return None
 
 

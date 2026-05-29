@@ -9,23 +9,31 @@ Single-entry process with:
 5. All endpoints reflect Phase 3–5 capabilities
 """
 
-import os, sys, logging, math, threading, time
+import os, sys, logging, math, threading, time, traceback
 from datetime import datetime, timedelta
 from typing import Optional
+from collections import OrderedDict
 
 import uvicorn
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Query, WebSocket, WebSocketDisconnect, Depends
+from fastapi import FastAPI, Query, Request, WebSocket, WebSocketDisconnect, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 from config.settings import load_config, get, path_for, atomic_write_json, atomic_read_json
+from dashboard.backend.auth import require_role, LoginRequest, RegisterRequest
 
 load_config(as_settings=True)
 logger = logging.getLogger("api")
+
+limiter = Limiter(key_func=get_remote_address)
 
 
 # ---------------------------------------------------------------------------
@@ -41,6 +49,7 @@ _PIPELINE_STATE = {
     "next_run_at": None,
     "run_count": 0,
     "articles_analyzed": 0,
+    "_last_error_detail": None,
 }
 _STATE_LOCK = threading.Lock()
 _PIPELINE_RUN_LOCK = threading.Lock()
@@ -108,14 +117,16 @@ def _run_pipeline():
 
     except Exception as e:
         duration = round(time.time() - start, 1)
-        error = f"{type(e).__name__}: {e}"
-        logger.error("Pipeline failed after %.1f s: %s", duration, error)
+        error_detail = f"{type(e).__name__}: {e}"
+        logger.error("Pipeline failed after %.1f s: %s", duration, error_detail)
+        logger.debug("Pipeline failure traceback:\n%s", traceback.format_exc())
         _update_state(
             status="error",
             last_run_at=datetime.now().isoformat(),
             last_run_duration=duration,
             last_run_success=False,
-            last_error=error,
+            last_error="Pipeline execution failed",
+            _last_error_detail=error_detail,
         )
     finally:
         _PIPELINE_RUN_LOCK.release()
@@ -124,13 +135,10 @@ def _run_pipeline():
 def _broadcast_pipeline_complete():
     try:
         import asyncio
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
         from dashboard.backend.ws import broadcast_pipeline_complete
-        loop.run_until_complete(broadcast_pipeline_complete(_get_state()))
-        loop.close()
+        asyncio.run(broadcast_pipeline_complete(_get_state()))
     except Exception:
-        pass
+        logger.debug("WebSocket broadcast failed", exc_info=True)
 
 
 # ---------------------------------------------------------------------------
@@ -144,8 +152,14 @@ def _update_next_run_state():
     if _SCHEDULER is None:
         return
     job = _SCHEDULER.get_job("pipeline_run")
-    if job and job.next_run_time:
-        _update_state(next_run_at=job.next_run_time.isoformat())
+    if job is None:
+        return
+    try:
+        next_run = getattr(job, "next_run_time", None)
+        if next_run is not None:
+            _update_state(next_run_at=next_run.isoformat())
+    except Exception:
+        pass
 
 
 def start_scheduler():
@@ -164,7 +178,7 @@ def start_scheduler():
         _run_pipeline,
         trigger=IntervalTrigger(
             minutes=interval,
-            start_at=datetime.now() + timedelta(seconds=initial_delay),
+            start_date=datetime.now() + timedelta(seconds=initial_delay),
         ),
         id="pipeline_run",
         replace_existing=True,
@@ -196,9 +210,21 @@ async def lifespan(app: FastAPI):
     start_scheduler()
     yield
     stop_scheduler()
+    from intelligence.agents import close_ollama_session
+    from intelligence.relationships import close_llm_session
+    close_ollama_session()
+    close_llm_session()
 
 app = FastAPI(title="NewsPulse Intelligence API", version="3.0", lifespan=lifespan)
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
+    allow_credentials=True,
+)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 
 # ---------------------------------------------------------------------------
@@ -210,6 +236,11 @@ from dashboard.backend.ws import connect as ws_connect, disconnect as ws_disconn
 
 @app.websocket("/ws")
 async def websocket_endpoint(ws: WebSocket):
+    from dashboard.backend.auth import verify_ws_token
+    user = await verify_ws_token(ws)
+    if user is None:
+        await ws.close(code=4001, reason="Authentication required")
+        return
     await ws_connect(ws)
     try:
         while True:
@@ -222,8 +253,35 @@ async def websocket_endpoint(ws: WebSocket):
 # Helpers
 # ---------------------------------------------------------------------------
 
-_INTEL_CACHE: dict = {}
-_INTEL_CACHE_TTL = 5.0  # seconds
+class _TTLCache:
+    def __init__(self, maxsize: int = 128, ttl: float = 5.0):
+        self._maxsize = maxsize
+        self._ttl = ttl
+        self._cache = OrderedDict()
+        self._timestamps = {}
+
+    def get(self, key: str):
+        if key not in self._cache:
+            return None
+        now = time.time()
+        if now - self._timestamps.get(key, 0) > self._ttl:
+            self._cache.pop(key, None)
+            self._timestamps.pop(key, None)
+            return None
+        self._cache.move_to_end(key)
+        return self._cache[key]
+
+    def set(self, key: str, value):
+        if len(self._cache) >= self._maxsize:
+            self._cache.popitem(last=False)
+        self._cache[key] = value
+        self._timestamps[key] = time.time()
+
+    def clear(self):
+        self._cache.clear()
+        self._timestamps.clear()
+
+_INTEL_CACHE = _TTLCache(maxsize=128, ttl=5.0)
 
 
 def _clean(obj):
@@ -238,16 +296,26 @@ def _clean(obj):
 
 
 def _load_intel(name: str):
-    now = time.time()
-    if name in _INTEL_CACHE and now - _INTEL_CACHE[name][1] < _INTEL_CACHE_TTL:
-        return _INTEL_CACHE[name][0]
+    cached = _INTEL_CACHE.get(name)
+    if cached is not None:
+        return cached
     p = os.path.join(path_for("output_dir"), name)
     data = atomic_read_json(p)
     if data is None:
         data = {}
     data = _clean(data)
-    _INTEL_CACHE[name] = (data, now)
+    _INTEL_CACHE.set(name, data)
     return data
+
+
+def _sanitize_pipeline_state(state: dict) -> dict:
+    safe = dict(state)
+    safe.pop("_last_error_detail", None)
+    return safe
+
+
+def _error_response(msg: str = "Internal server error"):
+    return {"error": msg}
 
 
 # ---------------------------------------------------------------------------
@@ -256,7 +324,7 @@ def _load_intel(name: str):
 
 @app.get("/api/health")
 def health():
-    state = _get_state()
+    state = _sanitize_pipeline_state(_get_state())
     return {
         "status": "ok",
         "timestamp": datetime.now().isoformat(),
@@ -266,12 +334,12 @@ def health():
 
 
 @app.get("/api/pipeline-status")
-def pipeline_status():
-    return _get_state()
+def pipeline_status(user: dict = Depends(require_role("viewer"))):
+    return _sanitize_pipeline_state(_get_state())
 
 
 @app.post("/api/trigger-pipeline")
-def trigger_pipeline():
+def trigger_pipeline(user: dict = Depends(require_role("analyst"))):
     if _PIPELINE_RUN_LOCK.locked():
         return {"status": "already_running", "message": "Pipeline is already running"}
     t = threading.Thread(target=_run_pipeline, daemon=True)
@@ -280,7 +348,7 @@ def trigger_pipeline():
 
 
 @app.get("/api/cross-domain")
-def cross_domain():
+def cross_domain(user: dict = Depends(require_role("viewer"))):
     links = _load_intel("cross_domain_links.json")
     chains = _load_intel("impact_chains.json")
     sector_map = _load_intel("sector_map.json")
@@ -292,17 +360,17 @@ def cross_domain():
 
 
 @app.get("/api/entity-graph")
-def entity_graph():
+def entity_graph(user: dict = Depends(require_role("viewer"))):
     return _load_intel("entity_graph.json")
 
 
 @app.get("/api/narratives")
-def narratives():
+def narratives(user: dict = Depends(require_role("viewer"))):
     return _load_intel("narrative_evolution.json")
 
 
 @app.get("/api/signals")
-def signals():
+def signals(user: dict = Depends(require_role("viewer"))):
     data = _load_intel("breaking_events.json")
     if isinstance(data, dict):
         return data
@@ -310,19 +378,31 @@ def signals():
 
 
 @app.get("/api/search")
-def search(q: str = Query("", min_length=1), n: int = 10):
+def search(
+    q: str = Query("", min_length=1, max_length=200),
+    n: int = Query(10, ge=1, le=100),
+    user: dict = Depends(require_role("viewer")),
+):
+    import re
+    if not re.match(r"^[a-zA-Z0-9\s\-_.,:;!?()@#%&+=/]+$", q):
+        return {"results": [], "query": q}
     try:
         from vector_store.chroma_store import semantic_search
         results = semantic_search(q, n_results=n)
         return {"results": results, "query": q}
-    except Exception as e:
-        return {"error": str(e), "results": []}
+    except Exception:
+        logger.debug("Search failed", exc_info=True)
+        return {"results": [], "query": q}
 
 
 @app.get("/api/explain")
-def explain_relationship(source: str = Query(""), target: str = Query("")):
+def explain_relationship(
+    source: str = Query("", min_length=1, max_length=200),
+    target: str = Query("", min_length=1, max_length=200),
+    user: dict = Depends(require_role("viewer")),
+):
     if not source or not target:
-        return {"error": "source and target required"}
+        return _error_response("source and target required")
     try:
         links = _load_intel("cross_domain_links.json")
         if isinstance(links, list):
@@ -343,9 +423,10 @@ def explain_relationship(source: str = Query(""), target: str = Query("")):
                         impact_prediction=l.get("impact_prediction"),
                     )
                     return {"link": l, "explanation": explanation}
-        return {"error": "relationship not found"}
-    except Exception as e:
-        return {"error": str(e)}
+        return _error_response("relationship not found")
+    except Exception:
+        logger.debug("Explain failed", exc_info=True)
+        return _error_response("relationship lookup failed")
 
 
 # ---------------------------------------------------------------------------
@@ -353,7 +434,7 @@ def explain_relationship(source: str = Query(""), target: str = Query("")):
 # ---------------------------------------------------------------------------
 
 @app.get("/api/causal-analysis")
-def get_causal_analysis():
+def get_causal_analysis(user: dict = Depends(require_role("viewer"))):
     return _load_intel("causal_analysis.json")
 
 
@@ -362,17 +443,17 @@ def get_causal_analysis():
 # ---------------------------------------------------------------------------
 
 @app.get("/api/multi-agent-analysis")
-def get_multi_agent_analysis():
+def get_multi_agent_analysis(user: dict = Depends(require_role("viewer"))):
     return _load_intel("multi_agent_analysis.json")
 
 
 @app.get("/api/temporal-patterns")
-def get_temporal_patterns():
+def get_temporal_patterns(user: dict = Depends(require_role("viewer"))):
     return _load_intel("temporal_patterns.json")
 
 
 @app.get("/api/briefing")
-def get_briefing():
+def get_briefing(user: dict = Depends(require_role("viewer"))):
     return _load_intel("intelligence_briefing.json")
 
 
@@ -381,12 +462,15 @@ def get_briefing():
 # ---------------------------------------------------------------------------
 
 @app.get("/api/alerts")
-def get_alerts():
+def get_alerts(user: dict = Depends(require_role("viewer"))):
     return _load_intel("alerts.json")
 
 
 @app.post("/api/export")
-def trigger_export(fmt: str = Query("json", pattern="^(json|csv|markdown)$")):
+def trigger_export(
+    fmt: str = Query("json", pattern="^(json|csv|markdown)$"),
+    user: dict = Depends(require_role("analyst")),
+):
     try:
         from dashboard.backend.exporter import export_json, export_csv, export_markdown
         export_dir = path_for("export.json_dir") or os.path.join(path_for("output_dir"), "exports")
@@ -400,51 +484,56 @@ def trigger_export(fmt: str = Query("json", pattern="^(json|csv|markdown)$")):
         fn, name = path_map[fmt]
         out = fn(os.path.join(export_dir, name))
         return {"status": "ok", "path": out, "format": fmt}
-    except Exception as e:
-        return {"error": str(e)}
+    except Exception:
+        logger.debug("Export failed", exc_info=True)
+        return _error_response("export failed")
 
 
 @app.get("/api/neo4j-status")
-def neo4j_status():
+def neo4j_status(user: dict = Depends(require_role("viewer"))):
     try:
         from vector_store.neo4j_store import Neo4jStore
         store = Neo4jStore(
             uri=get("neo4j.uri", "bolt://localhost:7687"),
             user=get("neo4j.user", "neo4j"),
-            password=get("neo4j.password", "password"),
+            password=get("neo4j.password", ""),
         )
         stats = store.get_statistics() if store.enabled else {"enabled": False}
         store.close()
         return stats
-    except Exception as e:
-        return {"enabled": False, "error": str(e)}
+    except Exception:
+        logger.debug("Neo4j status check failed", exc_info=True)
+        return {"enabled": False}
 
 
 # ---------------------------------------------------------------------------
-# Auth endpoints (if enabled)
+# Auth endpoints (rate-limited, request body)
 # ---------------------------------------------------------------------------
 
 @app.post("/api/auth/login")
-def auth_login(username: str = Query(""), password: str = Query("")):
-    if not get("auth.enabled", False):
+@limiter.limit("5/minute")
+def auth_login(request: Request, body: LoginRequest):
+    if not get("auth.enabled", True):
         return {"status": "auth_disabled"}
-    from dashboard.backend.auth import authenticate
-    user = authenticate(username, password)
+    from dashboard.backend.auth import authenticate, create_token
+    user = authenticate(body.username, body.password)
     if not user:
-        return {"error": "Invalid credentials"}
-    return {"user": user, "token": "placeholder-jwt"}
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    token = create_token(user["username"], user["role"])
+    return {"user": user, "token": token}
 
 
 @app.post("/api/auth/register")
-def auth_register(username: str = Query(""), password: str = Query(""), role: str = "viewer"):
-    if not get("auth.enabled", False):
+@limiter.limit("2/minute")
+def auth_register(request: Request, body: RegisterRequest):
+    if not get("auth.enabled", True):
         return {"status": "auth_disabled"}
     from dashboard.backend.auth import create_user
     try:
-        create_user(username, password, role)
-        return {"status": "ok", "user": username, "role": role}
+        create_user(body.username, body.password, body.role)
     except ValueError as e:
-        return {"error": str(e)}
+        raise HTTPException(status_code=400, detail=str(e))
+    return {"status": "ok", "user": body.username, "role": body.role}
 
 
 # ---------------------------------------------------------------------------

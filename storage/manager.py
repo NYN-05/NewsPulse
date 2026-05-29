@@ -15,13 +15,30 @@ class DataManager:
         self._analyzed_csv_fallback = path_for("analyzed_csv")
         self._raw_csv = path_for("news_csv")
 
+    def _validate_dataframe(self, df: pd.DataFrame, name: str) -> pd.DataFrame:
+        if df.empty:
+            return df
+        if df.shape[1] < 2:
+            logger.warning("%s has fewer than 2 columns — possible corruption", name)
+            return pd.DataFrame()
+        for col in ["title", "link"]:
+            if col in df.columns:
+                null_pct = df[col].isna().sum() / len(df)
+                if null_pct > 0.5:
+                    logger.warning("%s column '%s' is %.0f%% null — possible corruption", name, col, null_pct * 100)
+        row_cap = get("storage.max_rows_per_file", 500000)
+        if len(df) > row_cap:
+            logger.warning("%s has %d rows (cap: %d) — truncating", name, len(df), row_cap)
+            df = df.head(row_cap)
+        return df
+
     def load_raw(self, force_reload: bool = False) -> pd.DataFrame:
         if self._df_raw is not None and not force_reload:
             return self._df_raw
         path = self._raw_csv
         if os.path.exists(path):
             logger.info("Loading raw data from %s", path)
-            self._df_raw = pd.read_csv(path)
+            self._df_raw = self._validate_dataframe(pd.read_csv(path), "raw_csv")
         else:
             logger.warning("Raw data file not found: %s", path)
             self._df_raw = pd.DataFrame()
@@ -42,10 +59,10 @@ class DataManager:
 
         if os.path.exists(parquet_path):
             logger.info("Loading analyzed data from %s", parquet_path)
-            self._df_analyzed = pd.read_parquet(parquet_path)
+            self._df_analyzed = self._validate_dataframe(pd.read_parquet(parquet_path), "analyzed_parquet")
         elif os.path.exists(csv_path):
             logger.info("Loading analyzed data from %s (CSV fallback)", csv_path)
-            self._df_analyzed = pd.read_csv(csv_path)
+            self._df_analyzed = self._validate_dataframe(pd.read_csv(csv_path), "analyzed_csv")
         else:
             logger.warning("No analyzed data file found")
             self._df_analyzed = pd.DataFrame()

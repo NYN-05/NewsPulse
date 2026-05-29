@@ -12,6 +12,7 @@ scraper:
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
   timeout: 15
   max_articles_per_source: 50
+  global_article_cap: 500
   max_workers: 8
   retry_attempts: 3
   retry_backoff: 1.0
@@ -69,7 +70,7 @@ neo4j:
   enabled: false
   uri: "bolt://localhost:7687"
   user: "neo4j"
-  password: "password"
+  password: ""
 
 alerts:
   enabled: true
@@ -80,8 +81,8 @@ alerts:
   relationship_confidence_threshold: 0.8
 
 auth:
-  enabled: false
-  jwt_secret: "change-me-in-production"
+  enabled: true
+  jwt_secret: ""
   jwt_expiry_hours: 24
 
 export:

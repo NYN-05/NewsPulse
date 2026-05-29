@@ -67,7 +67,8 @@ class TestCalibrateRelationshipConfidence:
         llm_result = {"verified": True, "confidence": 0.9}
         calibrate_relationship_confidence(link, llm_result)
         assert link["confidence"] > 0.6
-        assert link._llm_result["verified"] is True
+        assert "confidence_signals" in link
+        assert "llm_verification" in link["confidence_signals"]
 
     def test_with_llm_not_verified(self):
         link = {

@@ -113,10 +113,10 @@ def calibrate_narrative_confidence(narrative: Dict) -> Dict:
 
 
 def calibrate_signal_confidence(signal: Dict) -> Dict:
-    score = signal.get("score", 0)
+    score = signal.get("score") or 0
     signal_type = signal.get("type", "general")
-    burst = abs(signal.get("burst_factor", 0))
-    recent = signal.get("recent_count", 0)
+    burst = abs(signal.get("burst_factor") or 0)
+    recent = signal.get("recent_count") or 0
 
     type_baseline = {
         "emerging_relationship": 0.3,

@@ -26,7 +26,8 @@ class Settings:
     })
     scraper: Dict[str, Any] = field(default_factory=lambda: {
         "user_agent": "Mozilla/5.0", "timeout": 15,
-        "max_articles_per_source": 50, "max_workers": 8,
+        "max_articles_per_source": 50, "global_article_cap": 500,
+        "max_workers": 8,
         "retry_attempts": 3, "retry_backoff": 1.0, "request_delay": 0.0,
     })
     nlp: Dict[str, Any] = field(default_factory=lambda: {
@@ -57,7 +58,7 @@ class Settings:
     })
     neo4j: Dict[str, Any] = field(default_factory=lambda: {
         "enabled": False, "uri": "bolt://localhost:7687",
-        "user": "neo4j", "password": "password",
+        "user": "neo4j", "password": "",
     })
     alerts: Dict[str, Any] = field(default_factory=lambda: {
         "enabled": True, "velocity_acceleration_threshold": 3.0,
@@ -65,7 +66,7 @@ class Settings:
         "phase_transition_threshold": 0.7, "relationship_confidence_threshold": 0.8,
     })
     auth: Dict[str, Any] = field(default_factory=lambda: {
-        "enabled": False, "jwt_secret": "change-me-in-production",
+        "enabled": True, "jwt_secret": "",
         "jwt_expiry_hours": 24,
     })
     export: Dict[str, Any] = field(default_factory=lambda: {
@@ -144,6 +145,22 @@ def _suppress_warnings():
         pass
 
 
+def _validate_secrets():
+    jwt_secret = get("auth.jwt_secret", "")
+    if not jwt_secret:
+        env_val = os.environ.get("NEWSPULSE_AUTH_JWT_SECRET")
+        if env_val:
+            _CONFIG["auth"]["jwt_secret"] = env_val
+            return
+        if get("auth.enabled", True):
+            warnings.warn(
+                "CRITICAL: JWT secret is not configured! "
+                "Set NEWSPULSE_AUTH_JWT_SECRET environment variable. "
+                "Falling back to disabled auth for safety."
+            )
+            _CONFIG["auth"]["enabled"] = False
+
+
 def load_config(path: str = None, as_settings: bool = False) -> Any:
     _suppress_warnings()
     global _CONFIG, _SETTINGS
@@ -157,6 +174,13 @@ def load_config(path: str = None, as_settings: bool = False) -> Any:
     _resolve_paths()
     if as_settings:
         _SETTINGS = Settings.from_env(base=Settings.from_yaml(path))
+        _validate_secrets()
+        auth_enabled = get("auth.enabled", True)
+        if not auth_enabled:
+            logging.getLogger("api").warning(
+                "SECURITY: Authentication is DISABLED. All API endpoints are publicly accessible. "
+                "Set auth.enabled: true in config or NEWSPULSE_AUTH_ENABLED=true env var in production."
+            )
         return _SETTINGS
     return _CONFIG
 

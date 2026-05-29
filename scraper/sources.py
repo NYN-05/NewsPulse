@@ -144,15 +144,21 @@ def scrape_source(source_cfg: dict) -> list:
 
 def scrape_all_sources() -> list:
     all_articles = []
+    global_article_cap = get("scraper.global_article_cap", 500)
     with ThreadPoolExecutor(max_workers=get("scraper.max_workers", 8)) as executor:
         futures = {executor.submit(scrape_source, src): src for src in SOURCES}
         for future in as_completed(futures):
             try:
                 result = future.result()
                 all_articles.extend(result)
+                if len(all_articles) >= global_article_cap:
+                    logger.warning("Global article cap of %d reached — truncating", global_article_cap)
+                    for f in futures:
+                        f.cancel()
+                    break
             except Exception as e:
                 logger.error("Scraping failed: %s", e)
-    return all_articles
+    return all_articles[:global_article_cap]
 
 
 def fetch_article_body(url: str, detail_selectors: list) -> str:

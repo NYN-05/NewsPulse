@@ -35,7 +35,11 @@ class Neo4jStore:
 
         uri = uri or "bolt://localhost:7687"
         user = user or "neo4j"
-        password = password or "password"
+        password = password or ""
+
+        if not password:
+            logger.warning("Neo4j password not configured — graph features disabled")
+            return
 
         try:
             self.driver = GraphDatabase.driver(uri, auth=basic_auth(user, password))

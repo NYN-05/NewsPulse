@@ -21,6 +21,7 @@ def canonicalize_url(url: str) -> str:
     if not isinstance(url, str) or not url.strip():
         return ""
     url = url.strip().rstrip("/")
+    url = url.lower()
     url = re.sub(r"\?utm_[^&]+(&|$)", "", url)
     url = re.sub(r"\?fbclid=[^&]+(&|$)", "", url)
     url = re.sub(r"\?ref=[^&]+(&|$)", "", url)
@@ -28,6 +29,7 @@ def canonicalize_url(url: str) -> str:
     url = re.sub(r"\?amp;?", "", url)
     url = re.sub(r"\?amp$", "", url)
     url = re.sub(r"(\?|&)_[^=&]+=[^&]+", "", url)
+    url = re.sub(r"^https?://www\.", "https://", url)
     url = url.rstrip("?&")
     return url
 

@@ -24,6 +24,38 @@ try:
     import requests
     _HAS_REQUESTS = True
     _LLM_SESSION = None
+    _LLM_FAILURE_COUNT = 0
+    _LLM_LAST_FAILURE = 0.0
+    _LLM_CIRCUIT_OPEN = False
+    _CIRCUIT_BREAK_THRESHOLD = 3
+    _CIRCUIT_RESET_SECONDS = 300
+
+    def _check_llm_circuit():
+        global _LLM_CIRCUIT_OPEN, _LLM_LAST_FAILURE, _LLM_FAILURE_COUNT
+        if _LLM_CIRCUIT_OPEN:
+            import time
+            if time.time() - _LLM_LAST_FAILURE > _CIRCUIT_RESET_SECONDS:
+                _LLM_CIRCUIT_OPEN = False
+                _LLM_FAILURE_COUNT = 0
+                logger.info("LLM circuit breaker reset")
+            else:
+                logger.warning("LLM circuit breaker open — skipping verification")
+                return False
+        return True
+
+    def _record_llm_failure():
+        global _LLM_FAILURE_COUNT, _LLM_LAST_FAILURE, _LLM_CIRCUIT_OPEN
+        import time
+        _LLM_FAILURE_COUNT += 1
+        _LLM_LAST_FAILURE = time.time()
+        if _LLM_FAILURE_COUNT >= _CIRCUIT_BREAK_THRESHOLD:
+            _LLM_CIRCUIT_OPEN = True
+            logger.warning("LLM circuit breaker opened after %d consecutive failures", _LLM_FAILURE_COUNT)
+
+    def _record_llm_success():
+        global _LLM_FAILURE_COUNT
+        _LLM_FAILURE_COUNT = 0
+
     def _get_llm_session():
         global _LLM_SESSION
         if _LLM_SESSION is None:
@@ -38,6 +70,12 @@ try:
 except ImportError:
     _HAS_REQUESTS = False
     _LLM_SESSION = None
+    def _check_llm_circuit():
+        return False
+    def _record_llm_failure():
+        pass
+    def _record_llm_success():
+        pass
     def _get_llm_session():
         return None
     def close_llm_session():
@@ -168,6 +206,8 @@ def _llm_verify_relationship(source: str, target: str, src_sec: str, tgt_sec: st
     """Verify a candidate relationship using Ollama, returning causal + confidence data."""
     if not _HAS_REQUESTS:
         return None
+    if not _check_llm_circuit():
+        return None
 
     context = "\n".join(contexts[:5]) if contexts else "No direct article context available."
     prompt = (
@@ -197,7 +237,9 @@ def _llm_verify_relationship(source: str, target: str, src_sec: str, tgt_sec: st
             timeout=45,
         )
         if not resp.ok:
+            _record_llm_failure()
             return None
+        _record_llm_success()
         result = resp.json().get("response", "{}")
         parsed = json.loads(result)
         return {
@@ -210,6 +252,7 @@ def _llm_verify_relationship(source: str, target: str, src_sec: str, tgt_sec: st
         }
     except Exception as e:
         logger.debug("LLM verification failed for %s<->%s: %s", source, target, e)
+        _record_llm_failure()
         return None
 
 
