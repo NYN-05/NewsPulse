@@ -1,6 +1,10 @@
 import os
+import json
 import yaml
+import threading
 from typing import Any, Dict
+
+_FILE_LOCK = threading.Lock()
 
 _CONFIG: Dict[str, Any] = {}
 
@@ -52,3 +56,22 @@ def path_for(key: str) -> str:
         return ""
     data_dir = get("paths.data_dir", ".")
     return os.path.abspath(os.path.join(data_dir, raw))
+
+
+def atomic_write_json(path: str, data):
+    """Thread-safe atomic JSON write — never exposes partial output."""
+    with _FILE_LOCK:
+        tmp = path + ".tmp"
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(tmp, "w") as f:
+            json.dump(data, f, indent=2)
+        os.replace(tmp, path)
+
+
+def atomic_read_json(path: str):
+    """Thread-safe atomic JSON read."""
+    with _FILE_LOCK:
+        if not os.path.exists(path):
+            return None
+        with open(path) as f:
+            return json.load(f)

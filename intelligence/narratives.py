@@ -15,6 +15,7 @@ import pandas as pd
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
+from config.settings import atomic_write_json
 
 logger = logging.getLogger(__name__)
 
@@ -385,8 +386,7 @@ def narrative_pipeline(df: pd.DataFrame) -> Dict:
     from config.settings import path_for
     import os
     base = path_for("output_dir")
-    with open(os.path.join(base, "narrative_evolution.json"), "w") as f:
-        json.dump(result, f, indent=2)
+    atomic_write_json(os.path.join(base, "narrative_evolution.json"), result)
     logger.info("Saved narrative_evolution.json")
     logger.info("=" * 60)
     return result

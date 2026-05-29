@@ -72,6 +72,17 @@ export interface Narrative {
   top_keywords?: string[]
 }
 
+export interface PipelineStatus {
+  status: string
+  last_run_at: string | null
+  last_run_duration: number | null
+  last_run_success: boolean | null
+  last_error: string | null
+  next_run_at: string | null
+  run_count: number
+  articles_analyzed: number
+}
+
 export interface NarrativeData {
   mutations: any[]
   entity_narratives: Narrative[]

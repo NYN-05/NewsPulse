@@ -16,6 +16,7 @@ import pandas as pd
 from collections import Counter, defaultdict
 from typing import List, Dict
 from datetime import datetime, timedelta
+from config.settings import atomic_write_json
 
 logger = logging.getLogger(__name__)
 
@@ -222,8 +223,7 @@ def signals_pipeline(df: pd.DataFrame) -> Dict:
     }
 
     base = path_for("output_dir")
-    with open(os.path.join(base, "breaking_events.json"), "w") as f:
-        json.dump(result, f, indent=2)
+    atomic_write_json(os.path.join(base, "breaking_events.json"), result)
 
     logger.info("Saved breaking_events.json")
     logger.info("=" * 60)

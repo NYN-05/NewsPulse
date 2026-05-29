@@ -15,6 +15,7 @@ import numpy as np
 import pandas as pd
 from collections import Counter, defaultdict
 from typing import List, Dict
+from config.settings import atomic_write_json
 
 logger = logging.getLogger(__name__)
 

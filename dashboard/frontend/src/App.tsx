@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 import { MainLayout } from "@/components/layout/main-layout"
 import { HomePage } from "@/pages/home"
 import { ExplorePage } from "@/pages/explore"
@@ -16,20 +16,28 @@ const pages: Record<string, React.ReactNode> = {
   signals: <SignalsPage />,
 }
 
+const POLL_INTERVAL = 30000
+
 export default function App() {
   const [activeTab, setActiveTab] = useState("home")
   const [healthy, setHealthy] = useState<boolean | null>(null)
-
-  useEffect(() => {
-    api.health()
-      .then((h) => {
-        setHealthy(h.status === "ok")
-        if (h.status === "ok") useStore.setState({ lastUpdated: new Date().toISOString() })
-      })
-      .catch(() => setHealthy(false))
-  }, [])
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const handleSearchClick = useCallback(() => setActiveTab("search"), [])
+
+  useEffect(() => {
+    const check = () => {
+      api.health()
+        .then((h) => {
+          setHealthy(true)
+          if (h.pipeline) useStore.getState().setPipeline(h.pipeline)
+        })
+        .catch(() => setHealthy(false))
+    }
+    check()
+    pollRef.current = setInterval(check, POLL_INTERVAL)
+    return () => { if (pollRef.current) clearInterval(pollRef.current) }
+  }, [])
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -60,7 +68,7 @@ export default function App() {
         <button
           onClick={() => {
             setHealthy(null)
-            api.health().then((h) => setHealthy(h.status === "ok")).catch(() => setHealthy(false))
+            api.health().then((h) => { setHealthy(true); if (h.pipeline) useStore.getState().setPipeline(h.pipeline) }).catch(() => setHealthy(false))
           }}
           className="text-[10px] font-mono text-[var(--color-accent)] hover:underline mt-2 tracking-wider"
         >

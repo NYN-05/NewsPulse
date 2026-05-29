@@ -15,7 +15,7 @@ import logging
 from datetime import datetime
 import pandas as pd
 
-from config.settings import load_config, get, path_for
+from config.settings import load_config, get, path_for, atomic_write_json
 from compute.gpu_manager import GPUManager
 from storage.manager import DataManager
 from scraper.sources import scrape_all_sources, fetch_all_details
@@ -165,10 +165,7 @@ def step_entity_graph(df: pd.DataFrame):
     if "stats" in graph:
         s = graph["stats"]
         logger.info("Entity graph: %d important nodes, %d edges", s.get("total_nodes", 0), s.get("total_edges", 0))
-    graph_path = path_for("output_dir") + "/entity_graph.json"
-    os.makedirs(os.path.dirname(graph_path), exist_ok=True)
-    with open(graph_path, "w") as f:
-        json.dump(graph, f, indent=2)
+    atomic_write_json(os.path.join(path_for("output_dir"), "entity_graph.json"), graph)
 
 
 def step_cross_domain(df: pd.DataFrame):

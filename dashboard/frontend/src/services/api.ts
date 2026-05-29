@@ -1,4 +1,4 @@
-import type { CrossDomainData, SignalsData, SearchResult, NarrativeData } from "@/types"
+import type { CrossDomainData, SignalsData, SearchResult, NarrativeData, PipelineStatus } from "@/types"
 
 async function fetchJSON<T>(url: string): Promise<T> {
   const r = await fetch(url)
@@ -7,7 +7,9 @@ async function fetchJSON<T>(url: string): Promise<T> {
 }
 
 export const api = {
-  health: () => fetchJSON<{ status: string; timestamp: string; version: string }>("/api/health"),
+  health: () => fetchJSON<{ status: string; timestamp: string; version: string; pipeline: PipelineStatus }>("/api/health"),
+  pipelineStatus: () => fetchJSON<PipelineStatus>("/api/pipeline-status"),
+  triggerPipeline: () => fetchJSON<{ status: string; message: string }>("/api/trigger-pipeline"),
   crossDomain: () => fetchJSON<CrossDomainData>("/api/cross-domain"),
   entityGraph: () => fetchJSON<{ nodes: any[]; edges: any[] }>("/api/entity-graph"),
   signals: () => fetchJSON<SignalsData>("/api/signals"),
