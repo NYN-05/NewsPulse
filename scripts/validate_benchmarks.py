@@ -6,8 +6,8 @@ import sys, os, time, gc, json, math, inspect, re, random, pickle, tempfile, shu
 from collections import Counter, defaultdict
 from datetime import datetime
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 RESULTS = []
 
@@ -471,7 +471,8 @@ metric4("Confidence calibration", "2x redundant compute", "1x with LLM signal", 
 metric4("GPU memory (per run)", "no cleanup → OOM", "clear_pipelines()", "prevents OOM")
 metric4("Auth hashing", "SHA-256 (weak)", "bcrypt (strong)", "security upgrade")
 
-with open(os.path.join(BASE, 'benchmark_results.json'), 'w') as f:
+os.makedirs(os.path.join(BASE, 'reports'), exist_ok=True)
+with open(os.path.join(BASE, 'reports', 'benchmark_results.json'), 'w') as f:
     json.dump([{"module": m, "change": c, "value": v} for m, c, v in RESULTS], f, indent=2)
 
 print("\n" + "=" * 72)
