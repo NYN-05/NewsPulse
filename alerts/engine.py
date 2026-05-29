@@ -81,14 +81,4 @@ class AlertEngine:
                     channel="telegram",
                 )
 
-    def check_virality_alerts(self, df):
-        if "virality_score" not in df.columns:
-            return
-        threshold = get("alerts.virality_threshold", 0.8)
-        viral = df[df["virality_score"] >= threshold].head(5)
-        for _, row in viral.iterrows():
-            self.send_alert(
-                title=f"Viral: {row.get('title', '')[:80]}",
-                message=f"Virality: {row['virality_score']:.2f} | Source: {row.get('source', '')}",
-                link=row.get("link", ""),
-            )
+

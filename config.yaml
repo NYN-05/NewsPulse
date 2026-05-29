@@ -1,5 +1,4 @@
-# News Analytics Pipeline Configuration
-# =======================================
+# NewsPulse Intelligence Discovery Engine Configuration
 
 paths:
   data_dir: "."
@@ -8,11 +7,9 @@ paths:
   plots_dir: "output/plots"
   models_dir: "output/models"
   logs_dir: "output/logs"
-  reports_dir: "output/reports"
   news_csv: "output/data/news_data.csv"
   analyzed_parquet: "output/data/news_analyzed.parquet"
   analyzed_csv: "output/data/news_analyzed.csv"
-  trends_db: "output/data/news_trends.db"
   update_log: "output/logs/update_log.json"
 
 scraper:
@@ -30,21 +27,6 @@ nlp:
   sentiment_threshold_positive: 0.35
   sentiment_threshold_negative: -0.35
 
-clustering:
-  n_clusters: 8
-  max_features: 500
-  min_clusters: 2
-  articles_per_cluster: 5
-  random_state: 42
-  pca_components: 2
-
-trending:
-  stop_words: ["the","a","an","is","it","in","on","of","to","and","for","with","at","by","from","as","be","are","was","were","been","that","this","these","those","have","has","had","not","do","does","did","but","or","if","because","so","about","into","through","during","before","after","above","below","between","out","off","over","under","again","further","then","once","here","there","when","where","why","how","all","each","every","both","few","more","most","other","some","such","no","nor","only","own","same","too","very","will","just","should","now","also","its","can","could","would","may","shall","might","must","need","ought","dare","said","says","tell","told","make","made","take","took","know","knows","known","like","likes","get","gets","got","see","seen","saw","come","came","go","goes","went","use","used","using","one","two","new","old","first","last","year","years","day","days","time","times","way","ways","people","thing","things","world","life","hand","hands","part","parts","place","places","number","numbers","case","cases","group","groups","problem","problems","fact","facts","good","bad","big","small","high","low","long","short","still","even","much","many","well","back","right","left","top","bottom","post","your","yours","himself","herself","itself","themselves","already","always","never","ever","today","yesterday","tomorrow","hereby","herein","hereof","hereto","herewith","thereafter","thereby","therefore","therein","thereof","thereto","therewith","whereas","whereby","wherein","whereof","whereto","wherewith","across","along","among","around","behind","beneath","beside","beyond","inside","outside","upon","within","without","anything","everything","nothing","something","anyone","everyone","someone","nobody","somebody","anybody","anyway","everywhere","somewhere","nowhere","whatever","whenever","wherever","whosoever","whomever","whichever","whoever","may","might","shall","should","ought","dare","need","used","wont","lets","much","more","most","less","least"]
-  top_keywords: 15
-  rising_window_days: 7
-  rising_min_mentions: 2
-  rising_min_pct: 50.0
-
 quality:
   dedup_threshold: 0.85
   enable_semantic_dedup: true
@@ -56,7 +38,6 @@ vector_store:
 
 alerts:
   breaking_threshold: 20
-  virality_threshold: 0.8
   webhooks:
     telegram: ""
     slack: ""
@@ -65,6 +46,3 @@ alerts:
 logging:
   level: "INFO"
   format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
-
-dashboard:
-  title: "NewsPulse Intelligence Dashboard"

@@ -1,7 +1,7 @@
 import { useStore } from "@/store/dashboard"
 
 const items = [
-  { id: "home", label: "Discoveries" },
+  { id: "home", label: "Dashboard" },
   { id: "explore", label: "Relationships" },
   { id: "timeline", label: "Timeline" },
   { id: "search", label: "Search" },
@@ -33,7 +33,7 @@ export function Sidebar({ activeTab, onTabChange }: { activeTab: string; onTabCh
         ))}
       </nav>
       <div className="absolute bottom-0 left-0 right-0 border-t border-[var(--color-border)] px-5 py-3">
-        <p className="text-[9px] font-mono text-[var(--color-fg-muted)]">v2.0</p>
+        <p className="text-[9px] font-mono text-[var(--color-fg-muted)]">intel v2</p>
       </div>
     </aside>
   )

@@ -5,7 +5,6 @@ import { ExplorePage } from "@/pages/explore"
 import { TimelinePage } from "@/pages/timeline"
 import { SearchPage } from "@/pages/search"
 import { SignalsPage } from "@/pages/signals"
-import { SettingsPage } from "@/pages/settings"
 import { api } from "@/services/api"
 import { useStore } from "@/store/dashboard"
 
@@ -15,7 +14,6 @@ const pages: Record<string, React.ReactNode> = {
   timeline: <TimelinePage />,
   search: <SearchPage />,
   signals: <SignalsPage />,
-  settings: <SettingsPage />,
 }
 
 export default function App() {

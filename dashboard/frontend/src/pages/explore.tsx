@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { api } from "@/services/api"
 import type { CrossDomainLink } from "@/types"
+import { RelationshipGraph } from "@/components/charts/relationship-graph"
 
 const SECTOR_LABELS: Record<string, string> = {
   politics: "Politics", finance: "Finance", technology: "Technology",
@@ -13,6 +14,7 @@ export function ExplorePage() {
   const [search, setSearch] = useState("")
   const [sectorFilter, setSectorFilter] = useState("")
   const [selected, setSelected] = useState<CrossDomainLink | null>(null)
+  const [selectedEntity, setSelectedEntity] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -33,16 +35,22 @@ export function ExplorePage() {
     return true
   })
 
+  const entityLinks = selectedEntity
+    ? filtered.filter((l) => l.source_entity === selectedEntity || l.target_entity === selectedEntity)
+    : []
+
+  const handleNodeClick = (entity: string) => {
+    setSelectedEntity(entity === selectedEntity ? null : entity)
+    setSelected(null)
+  }
+
   if (loading) {
     return (
       <div className="space-y-5">
-        <p className="text-xs font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Loading relationships...</p>
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="rounded-lg border border-[var(--color-border)] p-5 animate-pulse">
-            <div className="h-4 w-64 bg-[var(--color-border)] rounded mb-3" />
-            <div className="h-3 w-full bg-[var(--color-border)] rounded" />
-          </div>
-        ))}
+        <p className="text-xs font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">Loading relationship graph...</p>
+        <div className="rounded-lg border border-[var(--color-border)] p-5 animate-pulse">
+          <div className="h-[500px] bg-[var(--color-card)] rounded" />
+        </div>
       </div>
     )
   }
@@ -74,47 +82,55 @@ export function ExplorePage() {
             <option key={s} value={s}>{SECTOR_LABELS[s] || s}</option>
           ))}
         </select>
+        {selectedEntity && (
+          <button
+            onClick={() => setSelectedEntity(null)}
+            className="text-[10px] font-mono text-[var(--color-accent)] hover:underline ml-auto"
+          >
+            Clear selection
+          </button>
+        )}
       </div>
 
-      <div className="space-y-1">
-        {filtered.slice(0, 100).map((link, i) => {
-          const isSelected = selected === link
-          return (
-            <button
-              key={`${link.source_entity}-${link.target_entity}-${i}`}
-              onClick={() => setSelected(isSelected ? null : link)}
-              className={`w-full text-left rounded-lg border transition-all p-3.5 ${
-                isSelected
-                  ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
-                  : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)] hover:border-[var(--color-border-hover)]"
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-sm text-[var(--color-fg)] min-w-0 truncate">{link.source_entity}</span>
-                <span className="text-[var(--color-fg-muted)] shrink-0 font-mono text-xs">→</span>
-                <span className="font-mono text-sm text-[var(--color-fg)] min-w-0 truncate">{link.target_entity}</span>
-                <span className="ml-auto shrink-0 flex items-center gap-2 text-[10px] font-mono">
-                  <span className="text-[var(--color-fg-muted)]">{SECTOR_LABELS[link.source_sector] || link.source_sector}</span>
-                  <span className="text-[var(--color-fg-muted)]">/</span>
-                  <span className="text-[var(--color-fg-muted)]">{SECTOR_LABELS[link.target_sector] || link.target_sector}</span>
-                  <span className="text-[var(--color-accent)] w-10 text-right">{link.strength.toFixed(1)}</span>
-                </span>
-              </div>
-              {isSelected && (
-                <div className="mt-3 pt-3 border-t border-[var(--color-border)] text-[10px] font-mono text-[var(--color-fg-muted)] space-y-0.5">
-                  <div>Co-occurrences: {link.cooccurrence_count}</div>
-                  <div>Source diversity: {link.source_diversity.toFixed(2)}</div>
-                  <div>Sentiment variance: {link.sentiment_variance.toFixed(2)}</div>
+      <RelationshipGraph links={filtered} onNodeClick={handleNodeClick} />
+
+      {selectedEntity && entityLinks.length > 0 && (
+        <div className="space-y-2 animate-slideUp">
+          <p className="text-[10px] font-mono text-[var(--color-fg-muted)] tracking-wider uppercase">
+            Connections for <span className="text-[var(--color-accent)]">{selectedEntity}</span>
+          </p>
+          {entityLinks.map((link, i) => {
+            const isSelected = selected === link
+            return (
+              <button
+                key={`detail-${i}`}
+                onClick={() => setSelected(isSelected ? null : link)}
+                className={`w-full text-left rounded-lg border transition-all p-3 ${
+                  isSelected
+                    ? "border-[var(--color-accent)] bg-[var(--color-accent-subtle)]"
+                    : "border-[var(--color-border)] bg-[var(--color-card)] hover:bg-[var(--color-card-hover)]"
+                }`}
+              >
+                <div className="flex items-center gap-3 text-xs font-mono">
+                  <span className="text-[var(--color-fg)] truncate">
+                    {link.source_entity === selectedEntity ? link.target_entity : link.source_entity}
+                  </span>
+                  <span className="text-[var(--color-fg-muted)] shrink-0">→</span>
+                  <span className="text-[var(--color-fg-muted)] text-[10px]">
+                    {SECTOR_LABELS[link.source_sector]}/{SECTOR_LABELS[link.target_sector]}
+                  </span>
+                  <span className="ml-auto text-[var(--color-accent)]">{link.strength.toFixed(1)}</span>
                 </div>
-              )}
-            </button>
-          )
-        })}
-      </div>
-
-      {filtered.length === 0 && (
-        <div className="flex h-48 items-center justify-center border border-dashed border-[var(--color-border)] rounded-lg">
-          <p className="text-xs font-mono text-[var(--color-fg-muted)]">No relationships match the current filters.</p>
+                {isSelected && (
+                  <div className="mt-2 pt-2 border-t border-[var(--color-border)] text-[10px] font-mono text-[var(--color-fg-muted)] space-y-0.5">
+                    <div>Co-occurrences: {link.cooccurrence_count}</div>
+                    <div>Source diversity: {link.source_diversity.toFixed(2)}</div>
+                    <div>Sentiment variance: {link.sentiment_variance.toFixed(2)}</div>
+                  </div>
+                )}
+              </button>
+            )
+          })}
         </div>
       )}
     </div>

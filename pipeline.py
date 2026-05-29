@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-NewsPulse - AI-Powered Media Intelligence Pipeline
+NewsPulse - AI-Powered Cross-Domain Intelligence Discovery Engine
 
-Orchestrates: scraping -> dedup -> detail fetching -> NLP analysis ->
-clustering -> intelligence -> vector indexing -> trends -> alerts
+Core pipeline: scrape → analyze → entity graph → cross-domain relationships →
+narrative tracking → influence mapping → signal detection → semantic indexing
 """
 
 import os
@@ -17,22 +17,16 @@ import pandas as pd
 from config.settings import load_config, get, path_for
 from compute.gpu_manager import GPUManager
 from storage.manager import DataManager
-from scraper.sources import scrape_all_sources, fetch_all_details, SOURCES
+from scraper.sources import scrape_all_sources, fetch_all_details
 from scraper.rss_scraper import scrape_all_rss
 from nlp.preprocess import clean_text, extract_category, detect_sensationalism
-from nlp.sentiment import analyze_sentiment, analyze_sentiment_batch, label_sentiment, compute_subjectivity
-from nlp.entities import extract_entities, extract_entities_batch
-from nlp.summarization import extractive_summary, summarize_batch
-from analytics.clustering import cluster_articles
-from analytics.trending import compute_trends
-from analytics.comparison import historical_comparison
-from quality.dedup import deduplicate_semantic, deduplicate_exact, canonicalize_url, normalize_title
+from nlp.sentiment import analyze_sentiment_batch, label_sentiment, compute_subjectivity
+from nlp.entities import extract_entities_batch
+from nlp.summarization import summarize_batch
+from quality.dedup import deduplicate_semantic, deduplicate_exact
 from quality.boilerplate import remove_boilerplate, extract_clean_title
 from intelligence.entity_graph import build_entity_graph, compute_entity_trends
 from intelligence.event_detection import detect_breaking_events
-from intelligence.virality import predict_virality
-from intelligence.bias import analyze_bias, compute_source_reliability
-from intelligence.topics import track_topic_evolution
 from intelligence.cross_domain import cross_domain_pipeline
 from intelligence.narrative_tracker import narrative_pipeline
 from intelligence.influence import influence_pipeline
@@ -77,7 +71,7 @@ def step_scrape(data_mgr: DataManager) -> pd.DataFrame:
 
 
 def step_scrape_rss(data_mgr: DataManager) -> pd.DataFrame:
-    logger.info("=== Step 1b: Scraping RSS feeds ===")
+    logger.info("=== Step 2: Scraping RSS feeds ===")
     new_articles = scrape_all_rss()
     if new_articles:
         df = data_mgr.merge_new_articles(new_articles)
@@ -89,7 +83,7 @@ def step_scrape_rss(data_mgr: DataManager) -> pd.DataFrame:
 
 
 def step_dedup(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
-    logger.info("=== Step 1c: Semantic Deduplication ===")
+    logger.info("=== Step 3: Deduplication ===")
     n_before = len(df)
     df = deduplicate_exact(df)
     if get("quality.enable_semantic_dedup", True) and len(df) > 10:
@@ -100,7 +94,7 @@ def step_dedup(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
 
 
 def step_fetch_details(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
-    logger.info("=== Step 2: Fetching article details ===")
+    logger.info("=== Step 4: Fetching article details ===")
     if "full_text" not in df.columns:
         df["full_text"] = ""
         df["full_text_fetched_at"] = ""
@@ -131,7 +125,7 @@ def step_fetch_details(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
 
 
 def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
-    logger.info("=== Step 3: NLP Analysis ===")
+    logger.info("=== Step 5: NLP Analysis ===")
     old_analyzed = data_mgr.load_analyzed()
     existing_keys = data_mgr.get_existing_keys(old_analyzed) if not old_analyzed.empty else set()
 
@@ -150,9 +144,6 @@ def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
         return old_analyzed if not old_analyzed.empty else df
 
     logger.info("Raw in: %d | Old analyzed: %d | New candidates: %d", len(df), len(old_analyzed), len(to_analyze))
-    description_na = to_analyze["description"].isna().sum()
-    description_empty = (to_analyze["description"].fillna("").str.strip() == "").sum()
-    logger.info("Descriptions: %d missing, %d empty", description_na, description_empty)
 
     to_analyze["title"] = to_analyze["title"].apply(clean_text)
     to_analyze["description"] = to_analyze["description"].apply(clean_text)
@@ -203,13 +194,6 @@ def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
     if non_english > 0:
         logger.info("Non-English articles detected: %d", non_english)
 
-    logger.info("Analyzing bias and clickbait...")
-    bias_results = to_analyze["text"].apply(analyze_bias)
-    bias_df = pd.DataFrame.from_records(bias_results)
-    to_analyze = pd.concat([to_analyze, bias_df], axis=1)
-
-    to_analyze = predict_virality(to_analyze)
-
     df_result = pd.concat([old_analyzed, to_analyze], ignore_index=True) if not old_analyzed.empty else to_analyze
     data_mgr.save_analyzed(df_result)
 
@@ -218,43 +202,12 @@ def step_analyze(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
     return df_result
 
 
-def step_cluster(df: pd.DataFrame, data_mgr: DataManager) -> pd.DataFrame:
-    logger.info("=== Step 4: Topic Clustering ===")
-    df = cluster_articles(df)
-    data_mgr.save_analyzed(df)
-    metrics.record_clustered(len(df))
-    return df
-
-
-def step_trends(df: pd.DataFrame):
-    logger.info("=== Step 5: Trend Detection ===")
-    trends = compute_trends(df)
-    if trends:
-        logger.info("Top keywords: %s", trends.get("top_keywords", [])[:10])
-        rising = trends.get("rising_keywords", {})
-        if rising:
-            logger.info("Rising keywords: %s", dict(list(rising.items())[:10]))
-
-
-def step_comparison(df: pd.DataFrame):
-    logger.info("=== Step 6: Historical Comparison ===")
-    comparison = historical_comparison(df)
-    if comparison:
-        early = comparison["early_period"]
-        late = comparison["late_period"]
-        logger.info("Early: %s (%d articles)", early["start"].date(), early["count"])
-        logger.info("Late: %s (%d articles)", late["start"].date(), late["count"])
-
-
 def step_entity_graph(df: pd.DataFrame):
-    logger.info("=== Step 6b: Entity Relationship Graph ===")
+    logger.info("=== Step 6: Entity Relationship Graph ===")
     graph = build_entity_graph(df, max_age_days=365)
     if "stats" in graph:
         stats = graph["stats"]
         logger.info("Entity graph: %d nodes, %d edges", stats.get("total_nodes", 0), stats.get("total_edges", 0))
-        top = stats.get("top_entities", [])[:5]
-        for e in top:
-            logger.info("  Influential: %s (centrality=%.3f)", e["entity"], e["centrality"])
     graph_path = path_for("output_dir") + "/entity_graph.json"
     os.makedirs(os.path.dirname(graph_path), exist_ok=True)
     with open(graph_path, "w") as f:
@@ -262,68 +215,38 @@ def step_entity_graph(df: pd.DataFrame):
     logger.info("Entity graph saved to %s", graph_path)
 
 
-def step_breaking_news(df: pd.DataFrame):
-    logger.info("=== Step 6c: Breaking News Detection ===")
-    events = detect_breaking_events(df)
-    if events:
-        logger.info("Breaking events detected: %d", len(events))
-        for e in events[:5]:
-            kw = e.get("keyword") or e.get("entity", "?")
-            logger.info("  %s (score=%.1f, count=%d)", kw, e.get("score", 0), e.get("recent_count", 0))
-    events_path = path_for("output_dir") + "/breaking_events.json"
-    with open(events_path, "w") as f:
-        json.dump(events, f, indent=2)
-
-
 def step_entity_trends(df: pd.DataFrame):
-    logger.info("=== Step 6ba: Entity Trend Analysis ===")
+    logger.info("=== Step 6a: Entity Trend Analysis ===")
     trends = compute_entity_trends(df)
     if trends:
         logger.info("Entity trends: %d trending entities", len(trends))
-        for t in trends[:5]:
-            logger.info("  %s (momentum=%d, recent=%d)", t["entity"], t["momentum"], t["recent_mentions"])
     trends_path = path_for("output_dir") + "/entity_trends.json"
     with open(trends_path, "w") as f:
         json.dump(trends, f, indent=2)
 
 
-def step_topic_evolution(df: pd.DataFrame):
-    logger.info("=== Step 6d: Topic Evolution Tracking ===")
-    evolution = track_topic_evolution(df)
-    if "clusters" in evolution:
-        logger.info("Tracking %d clusters over time", len(evolution["clusters"]))
-        for c in evolution["clusters"][:3]:
-            logger.info("  Cluster %d: %d articles, momentum=%d", c["cluster"], c["total_articles"], c["momentum"])
-    evo_path = path_for("output_dir") + "/topic_evolution.json"
-    with open(evo_path, "w") as f:
-        json.dump(evolution, f, indent=2)
+def step_breaking_news(df: pd.DataFrame):
+    logger.info("=== Step 6b: Signal Detection ===")
+    events = detect_breaking_events(df)
+    if events:
+        logger.info("Breaking events detected: %d", len(events))
+    events_path = path_for("output_dir") + "/breaking_events.json"
+    with open(events_path, "w") as f:
+        json.dump(events, f, indent=2)
 
 
-def step_source_reliability(df: pd.DataFrame):
-    logger.info("=== Step 6e: Source Reliability Scoring ===")
-    reliability = compute_source_reliability(df)
-    if reliability:
-        logger.info("Source reliability scores:")
-        for source, stats in list(reliability.items())[:5]:
-            logger.info("  %s: %.1f/100 (%d articles)", source, stats["reliability_score"], stats["total_articles"])
-    rel_path = path_for("output_dir") + "/source_reliability.json"
-    with open(rel_path, "w") as f:
-        json.dump(reliability, f, indent=2)
-
-
-def step_vector_index(df: pd.DataFrame):
-    logger.info("=== Step 6f: Vector Database Indexing ===")
-    try:
-        from vector_store.chroma_store import index_articles, get_collection_stats
-        count = index_articles(df)
-        stats = get_collection_stats()
-        logger.info("Vector DB: %d articles indexed", stats.get("count", 0))
-    except ImportError:
-        logger.warning("chromadb not installed, skipping vector indexing")
+def step_cross_domain(df: pd.DataFrame):
+    logger.info("=== Step 7: Cross-Domain Relationship Discovery ===")
+    result = cross_domain_pipeline(df)
+    summary = result.get("summary", {})
+    logger.info("Cross-domain: %d links, %d chains across %d entities",
+                summary.get("total_cross_domain_links", 0),
+                summary.get("total_impact_chains", 0),
+                summary.get("total_entities_mapped", 0))
 
 
 def step_narrative_tracker(df: pd.DataFrame):
-    logger.info("=== Step 6h: Narrative Evolution Tracking ===")
+    logger.info("=== Step 8: Narrative Evolution Tracking ===")
     result = narrative_pipeline(df)
     summary = result.get("summary", {})
     logger.info("Narratives: %d emerging, %d disappearing, %d mutations across %d entities",
@@ -333,18 +256,8 @@ def step_narrative_tracker(df: pd.DataFrame):
                 summary.get("total_entity_narratives", 0))
 
 
-def step_cross_domain(df: pd.DataFrame):
-    logger.info("=== Step 6g: Cross-Domain Relationship Discovery ===")
-    result = cross_domain_pipeline(df)
-    summary = result.get("summary", {})
-    logger.info("Cross-domain: %d links, %d chains across %d entities",
-                summary.get("total_cross_domain_links", 0),
-                summary.get("total_impact_chains", 0),
-                summary.get("total_entities_mapped", 0))
-
-
 def step_influence(df: pd.DataFrame):
-    logger.info("=== Step 6i: Influence Mapping ===")
+    logger.info("=== Step 9: Influence Mapping ===")
     result = influence_pipeline(df)
     summary = result.get("summary", {})
     logger.info("Influence: %d entities scored, %d sources, %d propagation tracks",
@@ -353,23 +266,19 @@ def step_influence(df: pd.DataFrame):
                 summary.get("total_propagation_tracked", 0))
 
 
-def step_alerts(df: pd.DataFrame):
-    logger.info("=== Step 8: Alerts ===")
+def step_vector_index(df: pd.DataFrame):
+    logger.info("=== Step 10: Vector Database Indexing ===")
     try:
-        engine = AlertEngine()
-        events_path = path_for("output_dir") + "/breaking_events.json"
-        if os.path.exists(events_path):
-            with open(events_path) as f:
-                events = json.load(f)
-            engine.check_breaking_events(events)
-        engine.check_virality_alerts(df)
-        logger.info("Alerts processed")
-    except Exception as e:
-        logger.warning("Alert step failed: %s", e)
+        from vector_store.chroma_store import index_articles, get_collection_stats
+        count = index_articles(df)
+        stats = get_collection_stats()
+        logger.info("Vector DB: %d articles indexed", stats.get("count", 0))
+    except ImportError:
+        logger.warning("chromadb not installed, skipping vector indexing")
 
 
 def step_update_tracking(df: pd.DataFrame):
-    logger.info("=== Step 7: Article Update Tracking ===")
+    logger.info("=== Step 11: Article Update Tracking ===")
     log_path = path_for("update_log")
     if os.path.exists(log_path):
         with open(log_path, "r") as f:
@@ -401,8 +310,20 @@ def step_update_tracking(df: pd.DataFrame):
 
     if changes:
         logger.info("%d article(s) changed since last check", len(changes))
-    else:
-        logger.info("No changes detected")
+
+
+def step_alerts(df: pd.DataFrame):
+    logger.info("=== Step 12: Alerts ===")
+    try:
+        engine = AlertEngine()
+        events_path = path_for("output_dir") + "/breaking_events.json"
+        if os.path.exists(events_path):
+            with open(events_path) as f:
+                events = json.load(f)
+            engine.check_breaking_events(events)
+        logger.info("Alerts processed")
+    except Exception as e:
+        logger.warning("Alert step failed: %s", e)
 
 
 def run_pipeline(steps: list = None):
@@ -410,53 +331,35 @@ def run_pipeline(steps: list = None):
     metrics.start_run()
 
     if steps is None:
-        steps = ["scrape", "rss", "dedup", "fetch", "analyze", "cluster",
-                 "trends", "compare", "entity_graph", "entity_trends", "breaking",
-                 "topics", "reliability", "cross_domain", "narratives", "influence",
+        steps = ["scrape", "rss", "dedup", "fetch", "analyze",
+                 "entity_graph", "entity_trends", "breaking",
+                 "cross_domain", "narratives", "influence",
                  "vector_index", "track", "alerts"]
 
     df = pd.DataFrame()
 
     if "scrape" in steps:
         df = step_scrape(data_mgr)
-
     if "rss" in steps:
         df = step_scrape_rss(data_mgr)
-
     if "dedup" in steps and not df.empty:
         df = step_dedup(df, data_mgr)
     elif "dedup" in steps and df.empty:
         df = data_mgr.load_raw()
-
     if "fetch" in steps and not df.empty:
         df = step_fetch_details(df, data_mgr)
     elif "fetch" in steps and df.empty:
         df = data_mgr.load_raw()
-
     if "analyze" in steps and not df.empty:
         df = step_analyze(df, data_mgr)
     elif "analyze" in steps:
         df = data_mgr.load_analyzed()
-
-    if "cluster" in steps and not df.empty:
-        df = step_cluster(df, data_mgr)
-    elif "cluster" in steps:
-        df = data_mgr.load_analyzed()
-
-    if "trends" in steps and not df.empty:
-        step_trends(df)
-    if "compare" in steps and not df.empty:
-        step_comparison(df)
     if "entity_graph" in steps and not df.empty:
         step_entity_graph(df)
     if "entity_trends" in steps and not df.empty:
         step_entity_trends(df)
     if "breaking" in steps and not df.empty:
         step_breaking_news(df)
-    if "topics" in steps and not df.empty:
-        step_topic_evolution(df)
-    if "reliability" in steps and not df.empty:
-        step_source_reliability(df)
     if "cross_domain" in steps and not df.empty:
         step_cross_domain(df)
     if "narratives" in steps and not df.empty:
@@ -467,7 +370,6 @@ def run_pipeline(steps: list = None):
         step_vector_index(df)
     if "track" in steps and not df.empty:
         step_update_tracking(df)
-
     if "alerts" in steps and not df.empty:
         step_alerts(df)
 

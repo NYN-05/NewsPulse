@@ -9,6 +9,7 @@ async function fetchJSON<T>(url: string): Promise<T> {
 export const api = {
   health: () => fetchJSON<{ status: string }>("/api/health"),
   crossDomain: () => fetchJSON<CrossDomainData>("/api/cross-domain"),
+  entityGraph: () => fetchJSON<{ nodes: any[]; edges: any[] }>("/api/entity-graph"),
   breaking: () => fetchJSON<BreakingEvent[]>("/api/breaking"),
   search: (q: string, n = 10) => fetchJSON<{ results: SearchResult[] }>(`/api/search?q=${encodeURIComponent(q)}&n=${n}`),
   narratives: () => fetchJSON<any>("/api/narratives"),
