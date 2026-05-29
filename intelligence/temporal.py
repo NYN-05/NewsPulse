@@ -23,12 +23,16 @@ logger = logging.getLogger(__name__)
 def _extract_daily_entity_counts(df) -> Dict[str, List[Tuple[str, int]]]:
     entity_daily = defaultdict(lambda: defaultdict(int))
     for row in df.itertuples(index=False):
-        date_str = getattr(row, "published", "") or getattr(row, "date", "") or ""
+        date_str = getattr(row, "published", "")
+        if not isinstance(date_str, str):
+            date_str = getattr(row, "date", "")
+        if not isinstance(date_str, str):
+            date_str = ""
         if not date_str:
             continue
         try:
             day = datetime.fromisoformat(date_str.replace("Z", "+00:00")).strftime("%Y-%m-%d")
-        except (ValueError, TypeError):
+        except (ValueError, TypeError, AttributeError):
             continue
         parsed = get_entity_dict(row)
         for key in ("persons", "orgs", "locations"):
@@ -103,11 +107,15 @@ def detect_bursts(entity_daily: Dict, df) -> List[Dict]:
     logger.info("Detecting citation bursts...")
     all_days = set()
     for row in df.itertuples():
-        date_str = getattr(row, "published", "") or getattr(row, "date", "") or ""
+        date_str = getattr(row, "published", "")
+        if not isinstance(date_str, str):
+            date_str = getattr(row, "date", "")
+        if not isinstance(date_str, str):
+            date_str = ""
         if date_str:
             try:
                 all_days.add(datetime.fromisoformat(date_str.replace("Z", "+00:00")).strftime("%Y-%m-%d"))
-            except (ValueError, TypeError):
+            except (ValueError, TypeError, AttributeError):
                 pass
     all_days = sorted(all_days)
     if len(all_days) < 5:

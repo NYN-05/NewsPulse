@@ -6,7 +6,9 @@ from typing import List, Dict
 logger = logging.getLogger(__name__)
 
 _gliner = None
+_gliner_failed = False
 _hf_ner = None
+_hf_ner_failed = False
 
 LABELS = ["person", "organization", "location", "political entity", "technology", "financial entity", "energy company", "military"]
 
@@ -17,7 +19,9 @@ _SKIP_WORDS = {"The", "This", "That", "These", "Those", "What", "When", "Where",
 
 
 def _get_gliner():
-    global _gliner
+    global _gliner, _gliner_failed
+    if _gliner_failed:
+        return None
     if _gliner is None:
         try:
             from gliner import GLiNER
@@ -26,15 +30,19 @@ def _get_gliner():
             return _gliner
         except ImportError:
             logger.info("GLiNER not installed — using HuggingFace NER fallback")
+            _gliner_failed = True
             return None
         except Exception as e:
             logger.warning("GLiNER load failed: %s — using fallback NER", e)
+            _gliner_failed = True
             return None
     return _gliner
 
 
 def _get_hf_ner():
-    global _hf_ner
+    global _hf_ner, _hf_ner_failed
+    if _hf_ner_failed:
+        return None
     if _hf_ner is None:
         try:
             from transformers import pipeline
@@ -42,6 +50,7 @@ def _get_hf_ner():
             _hf_ner = pipeline("token-classification", model="dslim/bert-base-NER", aggregation_strategy="simple")
         except Exception as e:
             logger.warning("HF NER pipeline failed: %s", e)
+            _hf_ner_failed = True
     return _hf_ner
 
 
@@ -94,7 +103,10 @@ def _extract_hf(text: str) -> Dict[str, List[str]]:
         locations = []
         seen = set()
         for r in results:
-            word = r.get("word", "").strip()
+            word = r.get("word", "")
+            if not isinstance(word, str):
+                continue
+            word = word.strip()
             entity_group = r.get("entity_group", r.get("label", ""))
             if not word or word.lower() in seen:
                 continue
@@ -124,7 +136,10 @@ def extract_entities(text: str, threshold: float = 0.5) -> Dict[str, List[str]]:
             seen = set()
             for e in entities:
                 label = e.get("label", "")
-                text_val = e.get("text", "").strip()
+                text_val = e.get("text", "")
+                if not isinstance(text_val, str):
+                    continue
+                text_val = text_val.strip()
                 if not text_val or text_val.lower() in seen:
                     continue
                 seen.add(text_val.lower())
@@ -140,21 +155,36 @@ def extract_entities(text: str, threshold: float = 0.5) -> Dict[str, List[str]]:
     return _extract_hf(text)
 
 
+def _sanitize_entities(d: Dict[str, List]) -> Dict[str, List[str]]:
+    """Ensure all entity values are strings, filter out non-string entries."""
+    out = {"persons": [], "orgs": [], "locations": []}
+    for key in out:
+        items = d.get(key, [])
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if isinstance(item, str) and item.strip():
+                out[key].append(item.strip())
+    return out
+
+
 def get_entity_dict(row) -> Dict[str, List[str]]:
     """Get parsed entities from a DataFrame row (itertuples or dict-like).
 
     Checks _parsed_entities column first (pre-parsed), falls back to parsing
-    the entities JSON string.
+    the entities JSON string. All values are sanitized to strings.
     """
     entities = getattr(row, "_parsed_entities", None)
     if isinstance(entities, dict):
-        return entities
+        return _sanitize_entities(entities)
     raw = getattr(row, "entities", "{}")
     if isinstance(raw, str) and raw:
         try:
-            return json.loads(raw)
+            return _sanitize_entities(json.loads(raw))
         except (json.JSONDecodeError, TypeError):
             pass
+    if isinstance(raw, dict):
+        return _sanitize_entities(raw)
     return {"persons": [], "orgs": [], "locations": []}
 
 

@@ -42,12 +42,16 @@ def detect_causal_candidates(
     logger.info("Detecting causal candidates with temporal analysis...")
     articles = []
     for row in df.itertuples(index=False):
-        date_str = getattr(row, "published", "") or getattr(row, "date", "") or ""
+        date_str = getattr(row, "published", "")
+        if not isinstance(date_str, str):
+            date_str = getattr(row, "date", "")
+        if not isinstance(date_str, str):
+            date_str = ""
         text = str(getattr(row, "text", "") or "")
         if date_str and text:
             try:
                 dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-            except (ValueError, TypeError):
+            except (ValueError, TypeError, AttributeError):
                 continue
             entities = set()
             parsed = get_entity_dict(row)
